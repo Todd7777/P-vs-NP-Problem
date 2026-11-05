@@ -1,0 +1,15 @@
+GT    n= 10 vars=   90 clauses=   910 sat=False conflicts=        89 time=   0.001s
+GT    n= 20 vars=  380 clauses=  7620 sat=False conflicts=      1396 time=   0.017s
+GT    n= 30 vars=  870 clauses= 26130 sat=False conflicts=      6393 time=   0.148s
+GT    n= 40 vars= 1560 clauses= 62440 sat=False conflicts=      8083 time=   0.314s
+GT    n= 50 vars= 2450 clauses=122550 sat=False conflicts=     18407 time=   0.999s
+GT    n= 60 vars= 3540 clauses=212460 sat=False conflicts=     11204 time=   0.916s
+GT    n= 70 vars= 4830 clauses=338170 sat=False conflicts=    261874 time=   8.981s
+GT    n= 80 vars= 6320 clauses=505680 sat=False conflicts=     70424 time=   5.584s
+PHP   n=  6 vars=   42 clauses=   133 sat=False conflicts=      1044 time=   0.005s
+PHP   n=  7 vars=   56 clauses=   204 sat=False conflicts=      7130 time=   0.043s
+PHP   n=  8 vars=   72 clauses=   297 sat=False conflicts=     31719 time=   0.282s
+PHP   n=  9 vars=   90 clauses=   415 sat=False conflicts=    267023 time=   3.525s
+PHP   n= 10 vars=  110 clauses=   561 sat=False conflicts=   2227032 time=  36.616s
+PHP   n= 11 vars=  132 clauses=   738 sat=False conflicts=  14398674 time= 502.599s
+   (stopping PHP: exceeded 120.0s)

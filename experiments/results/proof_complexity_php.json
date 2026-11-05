@@ -1,0 +1,142 @@
+[
+ {
+  "family": "GT",
+  "n": 10,
+  "vars": 90,
+  "clauses": 910,
+  "sat": false,
+  "seconds": 0.001,
+  "conflicts": 89,
+  "decisions": 115
+ },
+ {
+  "family": "GT",
+  "n": 20,
+  "vars": 380,
+  "clauses": 7620,
+  "sat": false,
+  "seconds": 0.017,
+  "conflicts": 1396,
+  "decisions": 2832
+ },
+ {
+  "family": "GT",
+  "n": 30,
+  "vars": 870,
+  "clauses": 26130,
+  "sat": false,
+  "seconds": 0.148,
+  "conflicts": 6393,
+  "decisions": 14671
+ },
+ {
+  "family": "GT",
+  "n": 40,
+  "vars": 1560,
+  "clauses": 62440,
+  "sat": false,
+  "seconds": 0.314,
+  "conflicts": 8083,
+  "decisions": 30262
+ },
+ {
+  "family": "GT",
+  "n": 50,
+  "vars": 2450,
+  "clauses": 122550,
+  "sat": false,
+  "seconds": 0.999,
+  "conflicts": 18407,
+  "decisions": 55162
+ },
+ {
+  "family": "GT",
+  "n": 60,
+  "vars": 3540,
+  "clauses": 212460,
+  "sat": false,
+  "seconds": 0.916,
+  "conflicts": 11204,
+  "decisions": 47077
+ },
+ {
+  "family": "GT",
+  "n": 70,
+  "vars": 4830,
+  "clauses": 338170,
+  "sat": false,
+  "seconds": 8.981,
+  "conflicts": 261874,
+  "decisions": 696234
+ },
+ {
+  "family": "GT",
+  "n": 80,
+  "vars": 6320,
+  "clauses": 505680,
+  "sat": false,
+  "seconds": 5.584,
+  "conflicts": 70424,
+  "decisions": 236869
+ },
+ {
+  "family": "PHP",
+  "n": 6,
+  "vars": 42,
+  "clauses": 133,
+  "sat": false,
+  "seconds": 0.005,
+  "conflicts": 1044,
+  "decisions": 1356
+ },
+ {
+  "family": "PHP",
+  "n": 7,
+  "vars": 56,
+  "clauses": 204,
+  "sat": false,
+  "seconds": 0.043,
+  "conflicts": 7130,
+  "decisions": 8534
+ },
+ {
+  "family": "PHP",
+  "n": 8,
+  "vars": 72,
+  "clauses": 297,
+  "sat": false,
+  "seconds": 0.282,
+  "conflicts": 31719,
+  "decisions": 38058
+ },
+ {
+  "family": "PHP",
+  "n": 9,
+  "vars": 90,
+  "clauses": 415,
+  "sat": false,
+  "seconds": 3.525,
+  "conflicts": 267023,
+  "decisions": 303383
+ },
+ {
+  "family": "PHP",
+  "n": 10,
+  "vars": 110,
+  "clauses": 561,
+  "sat": false,
+  "seconds": 36.616,
+  "conflicts": 2227032,
+  "decisions": 2539250
+ },
+ {
+  "family": "PHP",
+  "n": 11,
+  "vars": 132,
+  "clauses": 738,
+  "sat": false,
+  "seconds": 502.599,
+  "conflicts": 14398674,
+  "decisions": 16035007
+ }
+]

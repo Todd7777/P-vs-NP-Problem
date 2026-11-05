@@ -1,0 +1,312 @@
+[
+ {
+  "name": "parity_3",
+  "n": 3,
+  "basis": "B2",
+  "cost": 2,
+  "status": "exact",
+  "circuit": "g4 = XOR(x1,x2); g5 = XOR(x3,g4)",
+  "per_k": {
+   "1": {
+    "result": false,
+    "seconds": 0.0,
+    "vars": 13,
+    "clauses": 53
+   },
+   "2": {
+    "result": true,
+    "seconds": 0.0,
+    "vars": 29,
+    "clauses": 187
+   }
+  }
+ },
+ {
+  "name": "parity_3",
+  "n": 3,
+  "basis": "U2",
+  "cost": 6,
+  "status": "exact",
+  "circuit": "g4 = AND(x1,x2); g5 = OR(x1,x2); g6 = x<y(g4,g5); g7 = x>y(x3,g6); g8 = x<y(x3,g6); g9 = OR(g7,g8)",
+  "per_k": {
+   "1": {
+    "result": false,
+    "seconds": 0.0,
+    "vars": 13,
+    "clauses": 54
+   },
+   "2": {
+    "result": false,
+    "seconds": 0.0,
+    "vars": 29,
+    "clauses": 189
+   },
+   "3": {
+    "result": false,
+    "seconds": 0.001,
+    "vars": 49,
+    "clauses": 478
+   },
+   "4": {
+    "result": false,
+    "seconds": 0.003,
+    "vars": 74,
+    "clauses": 1000
+   },
+   "5": {
+    "result": false,
+    "seconds": 0.02,
+    "vars": 105,
+    "clauses": 1849
+   },
+   "6": {
+    "result": true,
+    "seconds": 0.083,
+    "vars": 143,
+    "clauses": 3137
+   }
+  }
+ },
+ {
+  "name": "parity_4",
+  "n": 4,
+  "basis": "B2",
+  "cost": 3,
+  "status": "exact",
+  "circuit": "g5 = XOR(x1,x2); g6 = XOR(x4,g5); g7 = XOR(x3,g6)",
+  "per_k": {
+   "1": {
+    "result": false,
+    "seconds": 0.0,
+    "vars": 24,
+    "clauses": 196
+   },
+   "2": {
+    "result": false,
+    "seconds": 0.0,
+    "vars": 52,
+    "clauses": 620
+   },
+   "3": {
+    "result": true,
+    "seconds": 0.001,
+    "vars": 85,
+    "clauses": 1421
+   }
+  }
+ },
+ {
+  "name": "parity_4",
+  "n": 4,
+  "basis": "U2",
+  "cost": 9,
+  "status": "exact",
+  "circuit": "g5 = x<y(x3,x4); g6 = x>y(x3,x4); g7 = OR(x1,x2); g8 = AND(x1,x2); g9 = x>y(g7,g8); g10 = OR(g5,g6); g11 = AND(g9,g10); g12 = OR(g9,g10); g13 = x<y(g11,g12)",
+  "per_k": {
+   "1": {
+    "result": false,
+    "seconds": 0.0,
+    "vars": 24,
+    "clauses": 197
+   },
+   "2": {
+    "result": false,
+    "seconds": 0.0,
+    "vars": 52,
+    "clauses": 622
+   },
+   "3": {
+    "result": false,
+    "seconds": 0.001,
+    "vars": 85,
+    "clauses": 1424
+   },
+   "4": {
+    "result": false,
+    "seconds": 0.003,
+    "vars": 124,
+    "clauses": 2753
+   },
+   "5": {
+    "result": false,
+    "seconds": 0.018,
+    "vars": 170,
+    "clauses": 4777
+   },
+   "6": {
+    "result": false,
+    "seconds": 0.267,
+    "vars": 224,
+    "clauses": 7685
+   },
+   "7": {
+    "result": false,
+    "seconds": 4.522,
+    "vars": 287,
+    "clauses": 11690
+   },
+   "8": {
+    "result": false,
+    "seconds": 100.09,
+    "vars": 360,
+    "clauses": 17032
+   },
+   "9": {
+    "result": true,
+    "seconds": 0.263,
+    "vars": 444,
+    "clauses": 23981
+   }
+  }
+ },
+ {
+  "name": "parity_5",
+  "n": 5,
+  "basis": "B2",
+  "cost": 4,
+  "status": "exact",
+  "circuit": "g6 = XOR(x3,x4); g7 = XOR(x5,g6); g8 = XOR(x1,g7); g9 = XOR(x2,g8)",
+  "per_k": {
+   "1": {
+    "result": false,
+    "seconds": 0.0,
+    "vars": 44,
+    "clauses": 630
+   },
+   "2": {
+    "result": false,
+    "seconds": 0.001,
+    "vars": 93,
+    "clauses": 1835
+   },
+   "3": {
+    "result": false,
+    "seconds": 0.003,
+    "vars": 148,
+    "clauses": 3907
+   },
+   "4": {
+    "result": true,
+    "seconds": 0.005,
+    "vars": 210,
+    "clauses": 7126
+   }
+  }
+ },
+ {
+  "name": "parity_5",
+  "n": 5,
+  "basis": "U2",
+  "cost": 9,
+  "status": "lower_bound_only",
+  "circuit": "",
+  "per_k": {
+   "1": {
+    "result": false,
+    "seconds": 0.0,
+    "vars": 44,
+    "clauses": 631
+   },
+   "2": {
+    "result": false,
+    "seconds": 0.001,
+    "vars": 93,
+    "clauses": 1837
+   },
+   "3": {
+    "result": false,
+    "seconds": 0.002,
+    "vars": 148,
+    "clauses": 3910
+   },
+   "4": {
+    "result": false,
+    "seconds": 0.005,
+    "vars": 210,
+    "clauses": 7130
+   },
+   "5": {
+    "result": false,
+    "seconds": 0.026,
+    "vars": 280,
+    "clauses": 11798
+   },
+   "6": {
+    "result": false,
+    "seconds": 0.366,
+    "vars": 359,
+    "clauses": 18239
+   },
+   "7": {
+    "result": false,
+    "seconds": 5.293,
+    "vars": 448,
+    "clauses": 26805
+   },
+   "8": {
+    "result": false,
+    "seconds": 88.556,
+    "vars": 548,
+    "clauses": 37878
+   },
+   "9": {
+    "result": null,
+    "seconds": 398.321,
+    "vars": 660,
+    "clauses": 51873
+   }
+  }
+ },
+ {
+  "name": "MAJ_5",
+  "n": 5,
+  "basis": "B2",
+  "cost": 7,
+  "status": "lower_bound_only",
+  "circuit": "",
+  "per_k": {
+   "1": {
+    "result": false,
+    "seconds": 0.0,
+    "vars": 44,
+    "clauses": 630
+   },
+   "2": {
+    "result": false,
+    "seconds": 0.001,
+    "vars": 93,
+    "clauses": 1835
+   },
+   "3": {
+    "result": false,
+    "seconds": 0.004,
+    "vars": 148,
+    "clauses": 3907
+   },
+   "4": {
+    "result": false,
+    "seconds": 0.041,
+    "vars": 210,
+    "clauses": 7126
+   },
+   "5": {
+    "result": false,
+    "seconds": 0.406,
+    "vars": 280,
+    "clauses": 11793
+   },
+   "6": {
+    "result": false,
+    "seconds": 10.084,
+    "vars": 359,
+    "clauses": 18233
+   },
+   "7": {
+    "result": null,
+    "seconds": 261.419,
+    "vars": 448,
+    "clauses": 26798
+   }
+  }
+ }
+]
