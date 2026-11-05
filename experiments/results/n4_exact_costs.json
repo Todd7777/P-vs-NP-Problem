@@ -1,0 +1,2259 @@
+{
+ "n": 4,
+ "classes": [
+  {
+   "canonical": 0,
+   "size": 2,
+   "cost_B2": 0,
+   "circuit_B2": "",
+   "U2_lower": 0,
+   "U2_upper": 0,
+   "U2_status": "exact",
+   "circuit_U2": ""
+  },
+  {
+   "canonical": 1,
+   "size": 32,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = OR(x2,x4); g6 = OR(x3,g5); g7 = OR(x1,g6)",
+   "U2_lower": 3,
+   "U2_upper": 3,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x4); g6 = OR(x3,g5); g7 = OR(x1,g6)"
+  },
+  {
+   "canonical": 3,
+   "size": 64,
+   "cost_B2": 2,
+   "circuit_B2": "g5 = OR(x3,x4); g6 = OR(x2,g5)",
+   "U2_lower": 2,
+   "U2_upper": 2,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x3,x4); g6 = OR(x2,g5)"
+  },
+  {
+   "canonical": 6,
+   "size": 96,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = OR(x3,x4); g6 = XOR(x1,x2); g7 = x<y(g5,g6)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = x<y(x3,g5); g8 = x<y(x4,g7); g9 = x<y(g6,g8)"
+  },
+  {
+   "canonical": 7,
+   "size": 192,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = AND(x1,x2); g6 = OR(x3,x4); g7 = OR(g5,g6)",
+   "U2_lower": 3,
+   "U2_upper": 3,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x3,x4); g7 = OR(g5,g6)"
+  },
+  {
+   "canonical": 15,
+   "size": 48,
+   "cost_B2": 1,
+   "circuit_B2": "g5 = OR(x3,x4)",
+   "U2_lower": 1,
+   "U2_upper": 1,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x3,x4)"
+  },
+  {
+   "canonical": 22,
+   "size": 128,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = AND(x1,x2); g6 = XOR(x2,x3); g7 = XOR(x1,g6); g8 = OR(x4,g5); g9 = x>y(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x1,g5); g7 = OR(x1,g5); g8 = x<y(x4,g7); g9 = AND(x2,x3); g10 = x<y(g6,g8); g11 = x<y(g9,g10)"
+  },
+  {
+   "canonical": 23,
+   "size": 128,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = AND(x3,g5); g7 = OR(x4,g6); g8 = AND(x1,x2); g9 = OR(g7,g8)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x1,x2); g7 = OR(x4,g5); g8 = AND(x3,g6); g9 = OR(g7,g8)"
+  },
+  {
+   "canonical": 24,
+   "size": 64,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x1,x3); g7 = OR(x4,g5); g8 = x>y(g6,g7)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x1,x3); g7 = x>y(g5,g6); g8 = x<y(x1,x2); g9 = OR(x4,g8); g10 = x>y(g7,g9)"
+  },
+  {
+   "canonical": 25,
+   "size": 384,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = AND(x1,x3); g6 = x>y(x2,g5); g7 = XOR(x1,g6); g8 = OR(x4,g7)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x1,x2); g7 = x<y(x3,g5); g8 = x>y(g6,g7); g9 = OR(x4,g8)"
+  },
+  {
+   "canonical": 27,
+   "size": 384,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = AND(x1,x3); g6 = x<y(x1,x2); g7 = OR(x4,g5); g8 = OR(g6,g7)",
+   "U2_lower": 4,
+   "U2_upper": 4,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x3); g6 = x<y(x1,x2); g7 = OR(x4,g5); g8 = OR(g6,g7)"
+  },
+  {
+   "canonical": 30,
+   "size": 384,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = XOR(x3,g5); g7 = x<y(x4,g6)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x3,g5); g7 = OR(x3,g5); g8 = x<y(x4,g7); g9 = x<y(g6,g8)"
+  },
+  {
+   "canonical": 31,
+   "size": 384,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = AND(x3,g5); g7 = OR(x4,g6)",
+   "U2_lower": 3,
+   "U2_upper": 3,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x3,g5); g7 = OR(x4,g6)"
+  },
+  {
+   "canonical": 60,
+   "size": 96,
+   "cost_B2": 2,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = x<y(x4,g5)",
+   "U2_lower": 4,
+   "U2_upper": 4,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x2,x3); g7 = OR(x4,g6); g8 = x>y(g5,g7)"
+  },
+  {
+   "canonical": 61,
+   "size": 384,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = x<y(x3,g5); g7 = XOR(x2,g6); g8 = OR(x4,g7)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x1,x2); g6 = x<y(x3,g5); g7 = OR(x4,g6); g8 = AND(x2,x3); g9 = OR(g7,g8)"
+  },
+  {
+   "canonical": 63,
+   "size": 192,
+   "cost_B2": 2,
+   "circuit_B2": "g5 = AND(x2,x3); g6 = OR(x4,g5)",
+   "U2_lower": 2,
+   "U2_upper": 2,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = OR(x4,g5)"
+  },
+  {
+   "canonical": 105,
+   "size": 32,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = XOR(x1,g5); g7 = OR(x4,g6)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x2); g6 = x>y(x1,x2); g7 = OR(g5,g6); g8 = OR(x3,g7); g9 = AND(x3,g7); g10 = x>y(g8,g9); g11 = OR(x4,g10)"
+  },
+  {
+   "canonical": 107,
+   "size": 128,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = x>y(x1,x3); g6 = OR(x2,g5); g7 = XOR(x1,g6); g8 = XOR(x3,g7); g9 = OR(x4,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x2); g6 = OR(x3,g5); g7 = x>y(x1,x2); g8 = AND(x3,g5); g9 = x>y(g6,g7); g10 = x<y(g8,g9); g11 = OR(x4,g10)"
+  },
+  {
+   "canonical": 111,
+   "size": 192,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = x>y(x3,g5); g7 = OR(x4,g6)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x2); g6 = x>y(x1,x2); g7 = OR(g5,g6); g8 = x>y(x3,g7); g9 = OR(x4,g8)"
+  },
+  {
+   "canonical": 126,
+   "size": 64,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = XOR(x1,x3); g6 = XOR(x1,x2); g7 = OR(g5,g6); g8 = x<y(x4,g7)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = OR(x3,g5); g8 = x<y(x4,g7); g9 = AND(x3,g6); g10 = x>y(g8,g9)"
+  },
+  {
+   "canonical": 127,
+   "size": 128,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = AND(x2,x3); g6 = AND(x1,g5); g7 = OR(x4,g6)",
+   "U2_lower": 3,
+   "U2_upper": 3,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = AND(x1,g5); g7 = OR(x4,g6)"
+  },
+  {
+   "canonical": 255,
+   "size": 8,
+   "cost_B2": 0,
+   "circuit_B2": "",
+   "U2_lower": 0,
+   "U2_upper": 0,
+   "U2_status": "exact",
+   "circuit_U2": ""
+  },
+  {
+   "canonical": 278,
+   "size": 32,
+   "cost_B2": 7,
+   "circuit_B2": "g5 = OR(x3,x4); g6 = XOR(x1,g5); g7 = AND(x3,x4); g8 = OR(x2,g7); g9 = x>y(g5,g6); g10 = x>y(g8,g9); g11 = XOR(g6,g10)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = OR(x4,g5); g7 = AND(x4,g5); g8 = x>y(g6,g7); g9 = OR(x1,g8); g10 = AND(x2,x3); g11 = x>y(g9,g10); g12 = AND(x1,g6); g13 = x>y(g11,g12)"
+  },
+  {
+   "canonical": 279,
+   "size": 32,
+   "cost_B2": 7,
+   "circuit_B2": "g5 = OR(x3,x4); g6 = OR(x1,x2); g7 = XOR(x1,x2); g8 = AND(x3,x4); g9 = x<y(g5,g7); g10 = XOR(g6,g9); g11 = OR(g8,g10)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x4); g6 = AND(x1,x3); g7 = OR(g5,g6); g8 = AND(x2,x4); g9 = OR(x1,g8); g10 = OR(x3,g9); g11 = AND(g7,g10)"
+  },
+  {
+   "canonical": 280,
+   "size": 192,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = AND(x2,x3); g6 = XOR(x1,x2); g7 = OR(x1,x3); g8 = OR(x4,g5); g9 = XOR(g7,g8); g10 = x<y(g6,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x3,x4); g7 = AND(x1,x2); g8 = OR(g5,g6); g9 = OR(x3,x4); g10 = OR(g7,g9); g11 = AND(g8,g9); g12 = x>y(g10,g11)"
+  },
+  {
+   "canonical": 281,
+   "size": 192,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = x<y(x4,g5); g7 = OR(x3,g5); g8 = XOR(x1,x2); g9 = XOR(g6,g7); g10 = OR(g8,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x2); g6 = x>y(x2,x3); g7 = x>y(x1,g6); g8 = OR(x1,x3); g9 = OR(x4,g7); g10 = AND(g8,g9); g11 = OR(g5,g10)"
+  },
+  {
+   "canonical": 282,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x3,x4); g6 = AND(x3,x4); g7 = x<y(x1,x2); g8 = x>y(x1,g6); g9 = XOR(g5,g8); g10 = x<y(g7,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = OR(x3,x4); g7 = AND(x3,x4); g8 = x>y(g6,g7); g9 = x<y(g5,g8); g10 = x>y(x1,g6); g11 = OR(g9,g10)"
+  },
+  {
+   "canonical": 283,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x3,x4); g6 = XOR(x2,g5); g7 = AND(x3,x4); g8 = x>y(g6,g7); g9 = x<y(x1,g8); g10 = XOR(g5,g9)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = x>y(x1,x3); g7 = AND(x3,x4); g8 = x<y(x4,g6); g9 = OR(g5,g7); g10 = x<y(g8,g9)"
+  },
+  {
+   "canonical": 286,
+   "size": 192,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = AND(x3,g5); g7 = XOR(x4,g5); g8 = XOR(x3,g7); g9 = x<y(g6,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x3,x4); g7 = OR(x3,x4); g8 = OR(g5,g6); g9 = x>y(g7,g8); g10 = x>y(g5,g7); g11 = OR(g9,g10)"
+  },
+  {
+   "canonical": 287,
+   "size": 192,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = XOR(x4,g5); g7 = x>y(x4,g6); g8 = AND(x3,g6); g9 = XOR(g7,g8)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x3,x4); g6 = AND(x3,x4); g7 = OR(x1,g6); g8 = OR(x2,g7); g9 = AND(g5,g8)"
+  },
+  {
+   "canonical": 300,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = x>y(x1,x2); g7 = XOR(x3,g6); g8 = XOR(x4,g5); g9 = x<y(g7,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x4); g6 = x>y(x1,x2); g7 = OR(x2,x3); g8 = x>y(g5,g7); g9 = x>y(x3,g6); g10 = x>y(g7,g9); g11 = x<y(x4,g10); g12 = OR(g8,g11)"
+  },
+  {
+   "canonical": 301,
+   "size": 768,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = OR(x1,x2); g7 = AND(x4,g5); g8 = x>y(g6,g7); g9 = XOR(g5,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x1,x2); g6 = AND(x3,g5); g7 = OR(x3,g5); g8 = AND(x2,x4); g9 = OR(g7,g8); g10 = x<y(x4,g6); g11 = x>y(g9,g10)"
+  },
+  {
+   "canonical": 303,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = AND(x4,g5); g7 = XOR(x2,g5); g8 = x>y(x3,g7); g9 = OR(g6,g8)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x4,g5); g7 = x>y(x1,x2); g8 = x>y(x3,g7); g9 = OR(g6,g8)"
+  },
+  {
+   "canonical": 316,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x3); g6 = AND(x4,g5); g7 = OR(x3,x4); g8 = OR(x2,g6); g9 = XOR(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = OR(x2,x4); g7 = AND(x3,g6); g8 = AND(x4,g5); g9 = OR(x3,g6); g10 = x<y(g7,g9); g11 = x<y(g8,g10)"
+  },
+  {
+   "canonical": 317,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = OR(x1,g5); g7 = x<y(x4,g5); g8 = OR(x2,g6); g9 = x<y(g7,g8)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x2,x3); g7 = x<y(x4,g5); g8 = OR(x1,g5); g9 = x<y(g7,g8); g10 = OR(g6,g9)"
+  },
+  {
+   "canonical": 318,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = OR(x1,g5); g7 = AND(x2,x3); g8 = XOR(x4,g6); g9 = x<y(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = OR(x2,x3); g7 = OR(x1,g6); g8 = OR(x4,g7); g9 = AND(x4,g7); g10 = x>y(g8,g9); g11 = x<y(g5,g10)"
+  },
+  {
+   "canonical": 319,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = AND(x2,x3); g7 = OR(x3,g5); g8 = OR(x4,g6); g9 = AND(g7,g8)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = OR(x1,x3); g7 = OR(x2,g6); g8 = AND(x4,g7); g9 = OR(g5,g8)"
+  },
+  {
+   "canonical": 360,
+   "size": 128,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = XOR(x1,x2); g7 = XOR(x3,g6); g8 = XOR(x4,g5); g9 = x<y(g7,g8)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x4,g5); g7 = AND(x1,x2); g8 = x>y(g5,g7); g9 = x>y(x3,g8); g10 = OR(x3,g7); g11 = OR(x4,g10); g12 = OR(g6,g9); g13 = x>y(g11,g12)"
+  },
+  {
+   "canonical": 361,
+   "size": 128,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = OR(x1,g5); g7 = AND(x4,g6); g8 = XOR(x3,g5); g9 = OR(g7,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x1,x2); g6 = x>y(x1,x4); g7 = x>y(x2,g6); g8 = OR(g5,g7); g9 = x>y(x3,g8); g10 = x>y(x3,x4); g11 = x>y(g8,g10); g12 = OR(g9,g11)"
+  },
+  {
+   "canonical": 362,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x3,x4); g6 = XOR(x2,x4); g7 = AND(g5,g6); g8 = XOR(x1,g7); g9 = AND(x1,x4); g10 = x>y(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = OR(x4,g5); g7 = AND(x1,g6); g8 = OR(x2,x3); g9 = AND(x4,g8); g10 = x>y(g6,g9); g11 = OR(x1,g10); g12 = x<y(g7,g11)"
+  },
+  {
+   "canonical": 363,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = AND(x2,x3); g6 = XOR(x1,g5); g7 = OR(x2,x3); g8 = x<y(g6,g7); g9 = AND(x4,g6); g10 = XOR(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x2,x3); g7 = AND(x1,g6); g8 = OR(x3,g5); g9 = OR(x1,g6); g10 = x<y(x4,g9); g11 = x>y(g8,g10); g12 = OR(g7,g11)"
+  },
+  {
+   "canonical": 366,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = XOR(x1,x2); g7 = x>y(x3,g6); g8 = XOR(x4,g5); g9 = x<y(g7,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x4,g5); g7 = AND(x3,g6); g8 = OR(x1,x2); g9 = OR(x4,g8); g10 = AND(x4,g8); g11 = x>y(g9,g10); g12 = x<y(g7,g11)"
+  },
+  {
+   "canonical": 367,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = AND(x4,g5); g7 = XOR(x1,x2); g8 = x>y(x3,g7); g9 = OR(g6,g8)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x4,g5); g7 = AND(x1,x2); g8 = x>y(g5,g7); g9 = x>y(x3,g8); g10 = OR(g6,g9)"
+  },
+  {
+   "canonical": 382,
+   "size": 128,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = AND(x3,g6); g8 = OR(x3,g5); g9 = XOR(x4,g8); g10 = x<y(g7,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x1,x2); g7 = AND(x3,g5); g8 = OR(x3,g6); g9 = x>y(x4,g8); g10 = x<y(g7,g8); g11 = x<y(x4,g10); g12 = OR(g9,g11)"
+  },
+  {
+   "canonical": 383,
+   "size": 64,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = AND(x3,g6); g8 = OR(x3,g5); g9 = OR(x4,g7); g10 = AND(g8,g9)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = AND(x4,g5); g8 = OR(x4,g6); g9 = OR(x3,g7); g10 = AND(g8,g9)"
+  },
+  {
+   "canonical": 384,
+   "size": 16,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x2,x4); g6 = XOR(x1,x2); g7 = XOR(x1,x3); g8 = x>y(g5,g6); g9 = x<y(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = x<y(x3,g5); g8 = x<y(x3,x4); g9 = x<y(x4,g6); g10 = OR(g8,g9); g11 = x<y(g7,g10)"
+  },
+  {
+   "canonical": 385,
+   "size": 128,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x3); g6 = AND(x1,x4); g7 = OR(g5,g6); g8 = XOR(x2,x3); g9 = OR(g7,g8)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = AND(x3,g6); g8 = OR(x3,g5); g9 = x<y(x4,g7); g10 = x>y(g8,g9)"
+  },
+  {
+   "canonical": 386,
+   "size": 96,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x4); g6 = AND(x3,x4); g7 = XOR(x2,x3); g8 = x>y(g5,g7); g9 = x<y(g6,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = OR(x1,x4); g7 = AND(x4,g5); g8 = x<y(x2,x3); g9 = OR(g7,g8); g10 = x>y(g6,g9); g11 = x>y(x2,x3); g12 = x>y(g10,g11)"
+  },
+  {
+   "canonical": 387,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x2,x4); g6 = XOR(x2,x3); g7 = AND(x1,g5); g8 = XOR(x2,g7); g9 = OR(g6,g8)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x1,x2); g7 = AND(x3,g6); g8 = AND(x1,x4); g9 = x>y(g5,g7); g10 = OR(g8,g9)"
+  },
+  {
+   "canonical": 390,
+   "size": 192,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = AND(x1,x2); g6 = OR(x1,x2); g7 = XOR(x3,g5); g8 = XOR(x4,g6); g9 = x<y(g7,g8)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x1,x2); g7 = x<y(x3,g5); g8 = x>y(g6,g7); g9 = AND(x4,g6); g10 = x>y(x3,g5); g11 = OR(x4,g8); g12 = OR(g9,g10); g13 = x>y(g11,g12)"
+  },
+  {
+   "canonical": 391,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = AND(x4,g5); g8 = XOR(x3,g6); g9 = OR(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = x>y(x3,g5); g7 = x<y(x3,g5); g8 = OR(x1,x2); g9 = AND(x4,g8); g10 = OR(g6,g7); g11 = OR(g9,g10)"
+  },
+  {
+   "canonical": 393,
+   "size": 192,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = x>y(x1,x4); g6 = OR(x1,x3); g7 = x>y(x2,g5); g8 = x>y(g6,g7); g9 = XOR(x2,g8)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x2,x4); g6 = OR(x2,x3); g7 = x>y(x1,g5); g8 = x<y(x1,g6); g9 = OR(g7,g8)"
+  },
+  {
+   "canonical": 395,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = AND(x1,x4); g6 = x<y(x2,x3); g7 = x<y(x1,x2); g8 = XOR(g5,g7); g9 = OR(g6,g8)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x2,x3); g6 = AND(x1,x4); g7 = x<y(x1,x2); g8 = OR(g5,g6); g9 = OR(g7,g8)"
+  },
+  {
+   "canonical": 399,
+   "size": 192,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = AND(x4,g5); g8 = x>y(x3,g6); g9 = OR(g7,g8)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = AND(x4,g5); g8 = x>y(x3,g6); g9 = OR(g7,g8)"
+  },
+  {
+   "canonical": 406,
+   "size": 128,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x3); g6 = OR(x2,x3); g7 = AND(x4,g6); g8 = OR(x2,x4); g9 = OR(g5,g7); g10 = XOR(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = OR(x2,x3); g7 = OR(x4,g6); g8 = x<y(g5,g7); g9 = OR(x1,g8); g10 = AND(x1,g8); g11 = AND(x4,g6); g12 = x>y(g9,g10); g13 = x<y(g11,g12)"
+  },
+  {
+   "canonical": 407,
+   "size": 128,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = OR(x1,x3); g7 = XOR(x4,g6); g8 = OR(x1,x4); g9 = x<y(g5,g7); g10 = XOR(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = OR(x2,x3); g7 = AND(x1,x4); g8 = x<y(x1,g5); g9 = x<y(g5,g6); g10 = OR(g7,g8); g11 = OR(x1,x4); g12 = AND(g9,g11); g13 = OR(g10,g12)"
+  },
+  {
+   "canonical": 408,
+   "size": 384,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = OR(x2,x3); g7 = XOR(x4,g6); g8 = x<y(g5,g7)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x3,x4); g7 = x<y(x4,g5); g8 = OR(x1,x2); g9 = AND(x3,x4); g10 = OR(g8,g9); g11 = x>y(g6,g10); g12 = OR(g7,g11)"
+  },
+  {
+   "canonical": 409,
+   "size": 384,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = XOR(x1,x2); g7 = AND(x4,g5); g8 = OR(g6,g7)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = x<y(x4,g5); g7 = AND(x3,x4); g8 = OR(x1,g7); g9 = OR(x2,g8); g10 = x<y(g6,g9)"
+  },
+  {
+   "canonical": 410,
+   "size": 768,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = AND(x1,x4); g6 = XOR(x3,x4); g7 = x<y(x2,g6); g8 = OR(g5,g7); g9 = XOR(x1,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x2,x3); g6 = OR(x4,g5); g7 = AND(x3,x4); g8 = OR(x2,g7); g9 = OR(x1,g8); g10 = x>y(g6,g9); g11 = x>y(x1,g6); g12 = OR(g10,g11)"
+  },
+  {
+   "canonical": 411,
+   "size": 768,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = OR(x4,g5); g7 = OR(x2,x3); g8 = AND(x4,g5); g9 = OR(g7,g8); g10 = AND(g6,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x2); g6 = x>y(x1,x2); g7 = OR(x4,g6); g8 = AND(x1,x4); g9 = OR(x3,g8); g10 = AND(g7,g9); g11 = OR(g5,g10)"
+  },
+  {
+   "canonical": 414,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x3); g6 = XOR(x2,g5); g7 = x>y(x3,g6); g8 = OR(x1,g6); g9 = XOR(x4,g8); g10 = x<y(g7,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = x>y(x3,g6); g8 = AND(g5,g7); g9 = OR(g5,g7); g10 = OR(x4,g8); g11 = x>y(x4,g9); g12 = x>y(g9,g10); g13 = OR(g11,g12)"
+  },
+  {
+   "canonical": 415,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = XOR(x1,x2); g7 = OR(x4,g6); g8 = AND(x4,g5); g9 = OR(x3,g8); g10 = AND(g7,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x1,x2); g7 = OR(x3,g6); g8 = AND(x4,g7); g9 = AND(x3,g6); g10 = x<y(g5,g9); g11 = OR(g8,g10)"
+  },
+  {
+   "canonical": 424,
+   "size": 192,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = XOR(x1,g5); g7 = XOR(x4,g5); g8 = x<y(g6,g7)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = x>y(x1,g5); g7 = x>y(x4,g5); g8 = x>y(x1,x4); g9 = OR(g7,g8); g10 = x<y(g6,g9)"
+  },
+  {
+   "canonical": 425,
+   "size": 384,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = AND(x1,x4); g7 = x>y(g5,g6); g8 = XOR(x1,g7)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = OR(x1,g5); g7 = x>y(x1,x4); g8 = AND(g5,g7); g9 = x>y(g6,g8)"
+  },
+  {
+   "canonical": 426,
+   "size": 192,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = XOR(x1,x4); g7 = AND(x4,g5); g8 = x>y(g6,g7)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x4); g6 = x<y(x3,x4); g7 = x<y(x2,g6); g8 = OR(x1,g7); g9 = x<y(g5,g8)"
+  },
+  {
+   "canonical": 427,
+   "size": 384,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = OR(x1,x3); g6 = x>y(x1,x4); g7 = OR(x2,g5); g8 = x<y(g6,g7)",
+   "U2_lower": 4,
+   "U2_upper": 4,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x3); g6 = OR(x2,g5); g7 = x>y(x1,x4); g8 = x>y(g6,g7)"
+  },
+  {
+   "canonical": 428,
+   "size": 768,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = AND(x1,x3); g6 = XOR(x2,x4); g7 = x<y(x3,g6); g8 = XOR(g5,g7); g9 = AND(x1,x4); g10 = x>y(g8,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x4,g5); g7 = OR(x2,x4); g8 = OR(x3,g7); g9 = x<y(g6,g8); g10 = x<y(x1,x3); g11 = x>y(g9,g10)"
+  },
+  {
+   "canonical": 429,
+   "size": 768,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = x<y(x1,x3); g6 = XOR(x1,x4); g7 = OR(x2,x3); g8 = AND(g6,g7); g9 = OR(g5,g8); g10 = XOR(x1,g9)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = OR(x1,g5); g7 = x<y(x1,x3); g8 = x<y(x4,g5); g9 = x<y(g7,g8); g10 = x>y(g6,g9)"
+  },
+  {
+   "canonical": 430,
+   "size": 768,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = x<y(x1,x3); g6 = OR(x1,x2); g7 = XOR(x4,g6); g8 = x<y(g5,g7)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = x<y(x1,x3); g7 = AND(x4,g5); g8 = OR(g6,g7); g9 = OR(x4,g5); g10 = x<y(g8,g9)"
+  },
+  {
+   "canonical": 431,
+   "size": 768,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = x<y(x1,x3); g7 = AND(x4,g5); g8 = OR(g6,g7)",
+   "U2_lower": 4,
+   "U2_upper": 4,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x4,g5); g7 = x<y(x1,x3); g8 = OR(g6,g7)"
+  },
+  {
+   "canonical": 444,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = OR(x2,x3); g7 = XOR(x4,g6); g8 = XOR(x1,x3); g9 = AND(g5,g8); g10 = x>y(g7,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = x<y(x1,x3); g7 = AND(x4,g5); g8 = OR(x2,x4); g9 = AND(g6,g8); g10 = OR(x3,g8); g11 = x<y(g7,g10); g12 = x<y(g9,g11)"
+  },
+  {
+   "canonical": 445,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x2,x3); g7 = x>y(g5,g6); g8 = OR(x2,x3); g9 = AND(x4,g8); g10 = OR(g7,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x3); g6 = OR(x2,x3); g7 = AND(x2,g5); g8 = x<y(x4,g6); g9 = OR(x1,g6); g10 = x<y(g8,g9); g11 = OR(g7,g10)"
+  },
+  {
+   "canonical": 446,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = AND(x2,x4); g6 = XOR(x2,x3); g7 = OR(x1,g5); g8 = OR(g6,g7); g9 = XOR(x4,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x3); g6 = AND(x4,g5); g7 = OR(x4,g5); g8 = x<y(g6,g7); g9 = OR(x1,x2); g10 = AND(g7,g9); g11 = OR(g8,g9); g12 = x<y(g10,g11)"
+  },
+  {
+   "canonical": 447,
+   "size": 192,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = XOR(x2,x4); g7 = OR(x1,g5); g8 = x>y(g6,g7); g9 = XOR(x4,g8)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x3,x4); g6 = x<y(x1,x2); g7 = OR(x1,x3); g8 = AND(x4,g7); g9 = OR(g6,g8); g10 = AND(g5,g9)"
+  },
+  {
+   "canonical": 488,
+   "size": 128,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = XOR(x4,g5); g7 = AND(x1,x2); g8 = OR(x3,g7); g9 = XOR(g5,g8); g10 = x>y(g6,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x4,g5); g7 = AND(x3,g5); g8 = AND(x1,x2); g9 = x<y(x3,x4); g10 = OR(g7,g9); g11 = OR(g8,g10); g12 = x<y(g6,g11)"
+  },
+  {
+   "canonical": 489,
+   "size": 128,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = XOR(x3,g5); g8 = x<y(g6,g7); g9 = AND(x4,g5); g10 = OR(g8,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x3); g6 = AND(x1,x3); g7 = OR(x2,g5); g8 = OR(x2,g6); g9 = x<y(x4,g8); g10 = AND(g5,g9); g11 = x>y(g7,g10)"
+  },
+  {
+   "canonical": 490,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = OR(x1,x3); g7 = XOR(g5,g6); g8 = XOR(x4,g6); g9 = x<y(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = x>y(x4,g5); g7 = x<y(x4,g5); g8 = x<y(x3,g6); g9 = OR(x1,x3); g10 = AND(g7,g9); g11 = OR(g8,g10)"
+  },
+  {
+   "canonical": 491,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x3); g6 = OR(x1,x2); g7 = AND(x4,g6); g8 = x>y(g5,g7); g9 = XOR(g6,g8)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x3); g6 = OR(x1,x2); g7 = x<y(g5,g6); g8 = x<y(x4,g6); g9 = x>y(g5,g8); g10 = OR(g7,g9)"
+  },
+  {
+   "canonical": 494,
+   "size": 384,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = x>y(x3,g5); g7 = XOR(x4,g5); g8 = x<y(g6,g7)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = x>y(x4,g5); g7 = x<y(x4,g5); g8 = x<y(x3,g6); g9 = OR(g7,g8)"
+  },
+  {
+   "canonical": 495,
+   "size": 192,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = x<y(x4,g5); g7 = OR(x3,g5); g8 = x<y(g6,g7)",
+   "U2_lower": 4,
+   "U2_upper": 4,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = OR(x3,g5); g7 = x<y(x4,g5); g8 = x>y(g6,g7)"
+  },
+  {
+   "canonical": 510,
+   "size": 64,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = OR(x1,g5); g7 = XOR(x4,g6)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x3); g6 = OR(x2,g5); g7 = x<y(x4,g6); g8 = x>y(x4,g6); g9 = OR(g7,g8)"
+  },
+  {
+   "canonical": 828,
+   "size": 64,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = x>y(x3,g5); g7 = x>y(x4,g6); g8 = XOR(g5,g7)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x2,x3); g7 = x>y(g5,g6); g8 = x>y(x4,g5); g9 = x<y(x4,g7); g10 = OR(g8,g9)"
+  },
+  {
+   "canonical": 829,
+   "size": 128,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = AND(x2,x4); g6 = OR(x1,x3); g7 = x<y(x2,g6); g8 = x<y(x4,g7); g9 = XOR(x3,g8); g10 = OR(g5,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x3,x4); g6 = x>y(x1,x2); g7 = OR(g5,g6); g8 = x<y(x2,g5); g9 = AND(x3,x4); g10 = x>y(g8,g9); g11 = x>y(g7,g10)"
+  },
+  {
+   "canonical": 831,
+   "size": 32,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = AND(x2,x3); g7 = AND(x4,g5); g8 = OR(g6,g7)",
+   "U2_lower": 4,
+   "U2_upper": 4,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x2,x3); g7 = OR(x4,g6); g8 = AND(g5,g7)"
+  },
+  {
+   "canonical": 854,
+   "size": 96,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = OR(x1,x4); g7 = XOR(g5,g6)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = OR(x1,x4); g7 = OR(g5,g6); g8 = AND(g5,g6); g9 = x>y(g7,g8)"
+  },
+  {
+   "canonical": 855,
+   "size": 96,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = OR(x1,x4); g6 = OR(x2,x3); g7 = AND(g5,g6)",
+   "U2_lower": 3,
+   "U2_upper": 3,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x4); g6 = OR(x2,x3); g7 = AND(g5,g6)"
+  },
+  {
+   "canonical": 856,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = XOR(x4,g5); g7 = OR(x1,x4); g8 = XOR(x3,g7); g9 = AND(g6,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x4); g6 = OR(x2,x3); g7 = AND(g5,g6); g8 = OR(x3,x4); g9 = x<y(g7,g8); g10 = x>y(g7,g8); g11 = OR(g9,g10)"
+  },
+  {
+   "canonical": 857,
+   "size": 384,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = XOR(x1,x3); g7 = x<y(x4,g6); g8 = XOR(g5,g7)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x3,x4); g6 = x>y(x2,x3); g7 = x>y(x1,x4); g8 = OR(g6,g7); g9 = OR(g5,g8); g10 = AND(g6,g7); g11 = x>y(g9,g10)"
+  },
+  {
+   "canonical": 858,
+   "size": 768,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = AND(x2,x4); g6 = OR(x1,x4); g7 = OR(x3,g5); g8 = XOR(g6,g7)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x4); g6 = OR(x3,g5); g7 = AND(x3,g5); g8 = x>y(g6,g7); g9 = AND(x2,x4); g10 = x>y(g8,g9)"
+  },
+  {
+   "canonical": 859,
+   "size": 768,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = XOR(x1,x3); g7 = x<y(x4,g6); g8 = x>y(g5,g7)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = OR(x1,x3); g7 = AND(x1,x3); g8 = x<y(x4,g6); g9 = x<y(g7,g8); g10 = x>y(g5,g9)"
+  },
+  {
+   "canonical": 862,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = x>y(x2,x3); g6 = x>y(x1,g5); g7 = XOR(x3,g5); g8 = OR(x4,g6); g9 = XOR(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = OR(x1,x4); g7 = x<y(g5,g6); g8 = AND(x3,g6); g9 = OR(x4,g8); g10 = x>y(g5,g9); g11 = OR(g7,g10)"
+  },
+  {
+   "canonical": 863,
+   "size": 192,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = AND(x1,x3); g7 = AND(x4,g5); g8 = OR(g6,g7)",
+   "U2_lower": 4,
+   "U2_upper": 4,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x1,x3); g7 = AND(x4,g5); g8 = OR(g6,g7)"
+  },
+  {
+   "canonical": 872,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = x>y(x1,x4); g6 = XOR(x3,g5); g7 = OR(x2,g5); g8 = XOR(x2,g6); g9 = XOR(x4,g7); g10 = x<y(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = AND(x1,g5); g7 = OR(x1,g5); g8 = OR(x4,g6); g9 = x>y(g7,g8); g10 = OR(x2,x3); g11 = x<y(g9,g10); g12 = OR(g8,g10); g13 = x<y(g11,g12)"
+  },
+  {
+   "canonical": 873,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = AND(x2,x4); g7 = x<y(x4,g5); g8 = OR(x3,g6); g9 = XOR(g7,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = x>y(x3,x4); g7 = AND(x2,g6); g8 = x>y(g5,g7); g9 = x>y(x1,x4); g10 = OR(g8,g9); g11 = AND(g8,g9); g12 = x>y(g10,g11)"
+  },
+  {
+   "canonical": 874,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = x<y(x4,g5); g7 = XOR(x2,x4); g8 = x<y(x3,g7); g9 = XOR(g6,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = OR(x4,g5); g7 = OR(x2,x3); g8 = AND(g6,g7); g9 = OR(x1,x4); g10 = AND(g8,g9); g11 = OR(x1,g6); g12 = x<y(g10,g11)"
+  },
+  {
+   "canonical": 875,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x3); g6 = XOR(x2,g5); g7 = OR(x2,x3); g8 = OR(x4,g6); g9 = AND(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = x<y(x1,g5); g7 = x>y(x1,g5); g8 = OR(g6,g7); g9 = x<y(x4,g8); g10 = OR(x2,x3); g11 = x<y(g9,g10)"
+  },
+  {
+   "canonical": 876,
+   "size": 768,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = OR(x2,x3); g7 = x>y(x3,g5); g8 = OR(x4,g7); g9 = XOR(g6,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x3,x4); g6 = AND(x1,x3); g7 = OR(x4,g6); g8 = OR(x2,g5); g9 = AND(g7,g8); g10 = OR(x2,g7); g11 = x<y(g9,g10)"
+  },
+  {
+   "canonical": 877,
+   "size": 768,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x3,x4); g7 = OR(x4,g5); g8 = x>y(x2,x3); g9 = x>y(g7,g8); g10 = XOR(g6,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x1,x4); g6 = OR(x3,g5); g7 = AND(x3,g5); g8 = x>y(g6,g7); g9 = OR(x2,g8); g10 = OR(x4,g7); g11 = x>y(x2,g10); g12 = x>y(g9,g11)"
+  },
+  {
+   "canonical": 878,
+   "size": 768,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = x<y(x4,g5); g7 = XOR(x2,x4); g8 = x<y(x3,g7); g9 = OR(g6,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x2,x4); g6 = OR(x3,g5); g7 = OR(x2,x4); g8 = x>y(x1,g7); g9 = OR(x1,x4); g10 = AND(g6,g9); g11 = x>y(g7,g10); g12 = OR(g8,g11)"
+  },
+  {
+   "canonical": 879,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = AND(x1,x3); g6 = OR(x2,x3); g7 = XOR(x2,g5); g8 = x<y(x4,g7); g9 = x>y(g6,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x4,g5); g7 = x>y(x1,x2); g8 = x>y(x3,g7); g9 = x<y(x1,x2); g10 = x>y(g8,g9); g11 = OR(g6,g10)"
+  },
+  {
+   "canonical": 892,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = AND(x1,x2); g7 = AND(x3,g6); g8 = XOR(x4,g5); g9 = x<y(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = x<y(x4,g5); g7 = AND(x1,x3); g8 = AND(x2,g7); g9 = x>y(x4,g5); g10 = OR(g6,g9); g11 = x<y(g8,g10)"
+  },
+  {
+   "canonical": 893,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x2,x4); g6 = x>y(x2,g5); g7 = XOR(x3,g5); g8 = x<y(g6,g7); g9 = OR(x1,x4); g10 = x<y(g8,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x4,g5); g7 = OR(x4,g5); g8 = AND(x2,x3); g9 = x>y(g7,g8); g10 = x>y(x1,g9); g11 = OR(g6,g10)"
+  },
+  {
+   "canonical": 894,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = OR(x2,g5); g7 = x>y(x1,g5); g8 = OR(x4,g7); g9 = XOR(g6,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x2,x3); g7 = AND(x1,g6); g8 = x>y(x4,g5); g9 = OR(x1,g5); g10 = OR(x4,g7); g11 = x>y(g9,g10); g12 = OR(g8,g11)"
+  },
+  {
+   "canonical": 960,
+   "size": 32,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = XOR(x2,x4); g6 = XOR(x3,x4); g7 = AND(g5,g6)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x2,x4); g6 = x<y(x3,x4); g7 = x>y(x2,x3); g8 = OR(g5,g6); g9 = x<y(g7,g8)"
+  },
+  {
+   "canonical": 961,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x3); g6 = XOR(x2,x3); g7 = XOR(x3,x4); g8 = x>y(g5,g7); g9 = OR(g6,g8)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x2,x4); g6 = AND(x3,g5); g7 = x>y(x1,x4); g8 = OR(x2,g7); g9 = OR(x3,g8); g10 = x<y(g6,g9)"
+  },
+  {
+   "canonical": 963,
+   "size": 192,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = AND(x3,x4); g7 = OR(g5,g6)",
+   "U2_lower": 4,
+   "U2_upper": 4,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x2,x4); g6 = x>y(x2,x3); g7 = x>y(x3,g5); g8 = OR(g6,g7)"
+  },
+  {
+   "canonical": 965,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = x>y(x1,x4); g6 = XOR(x3,x4); g7 = OR(x3,g5); g8 = AND(x2,g6); g9 = XOR(g7,g8)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x2,x4); g6 = x>y(x1,x4); g7 = AND(x2,x3); g8 = OR(x3,g6); g9 = x<y(g7,g8); g10 = OR(g5,g9)"
+  },
+  {
+   "canonical": 966,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = x>y(x1,x3); g6 = AND(x3,x4); g7 = OR(x4,g5); g8 = OR(x2,g6); g9 = XOR(g7,g8)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x4); g6 = x<y(x3,g5); g7 = AND(x2,g6); g8 = x>y(x2,x4); g9 = OR(g6,g8); g10 = x<y(g7,g9)"
+  },
+  {
+   "canonical": 967,
+   "size": 768,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = x<y(x1,x2); g6 = OR(x3,g5); g7 = AND(x2,x4); g8 = x>y(g6,g7); g9 = XOR(x2,g8)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = x>y(x2,x4); g7 = x>y(x1,x3); g8 = x>y(g6,g7); g9 = x>y(g5,g8)"
+  },
+  {
+   "canonical": 975,
+   "size": 96,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = x<y(x2,x3); g6 = AND(x2,x4); g7 = OR(g5,g6)",
+   "U2_lower": 3,
+   "U2_upper": 3,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x2,x3); g6 = AND(x2,x4); g7 = OR(g5,g6)"
+  },
+  {
+   "canonical": 980,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = AND(x1,g5); g7 = OR(x2,g5); g8 = OR(x4,g6); g9 = XOR(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = x<y(x4,g5); g7 = AND(x2,x3); g8 = x>y(x4,g5); g9 = x>y(x1,g7); g10 = x>y(g6,g9); g11 = OR(g8,g10)"
+  },
+  {
+   "canonical": 981,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x4); g6 = XOR(x3,x4); g7 = XOR(x2,x4); g8 = AND(g6,g7); g9 = x>y(g5,g8)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x2,x3); g7 = x>y(x1,g6); g8 = x>y(x4,g5); g9 = OR(x4,g7); g10 = x<y(g8,g9)"
+  },
+  {
+   "canonical": 982,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = AND(x2,x3); g6 = x>y(x1,g5); g7 = OR(x2,x3); g8 = OR(x4,g6); g9 = XOR(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = OR(x2,x3); g7 = x>y(x1,g5); g8 = OR(x4,g7); g9 = OR(g6,g8); g10 = AND(g6,g8); g11 = x>y(g9,g10)"
+  },
+  {
+   "canonical": 983,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = AND(x4,g5); g7 = XOR(x2,x3); g8 = AND(x1,g7); g9 = OR(g6,g8)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = x>y(x1,g5); g7 = OR(x4,g6); g8 = OR(x2,x3); g9 = AND(g7,g8)"
+  },
+  {
+   "canonical": 984,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = x>y(x1,x4); g6 = OR(x1,x4); g7 = AND(x2,g6); g8 = x>y(x3,g5); g9 = OR(g7,g8); g10 = XOR(x4,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x1,x2); g6 = x<y(x3,x4); g7 = x<y(x2,g6); g8 = OR(x1,x3); g9 = OR(x4,g5); g10 = x>y(g8,g9); g11 = OR(g7,g10)"
+  },
+  {
+   "canonical": 985,
+   "size": 768,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x2,x4); g6 = x>y(x1,x4); g7 = AND(x3,g5); g8 = OR(g6,g7); g9 = XOR(x2,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x3,x4); g6 = x>y(x1,x4); g7 = x<y(x2,g6); g8 = OR(g5,g7); g9 = x>y(x2,g6); g10 = x<y(x3,g9); g11 = OR(g8,g10)"
+  },
+  {
+   "canonical": 987,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x1,x4); g6 = XOR(x2,g5); g7 = XOR(x2,x3); g8 = AND(g6,g7); g9 = AND(x2,x4); g10 = OR(g8,g9)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x3); g6 = x>y(x1,x2); g7 = x<y(x4,g5); g8 = x<y(g6,g7); g9 = OR(x2,x3); g10 = x<y(g8,g9)"
+  },
+  {
+   "canonical": 988,
+   "size": 768,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = x>y(x1,x4); g6 = x>y(x3,g5); g7 = OR(x2,g6); g8 = XOR(x4,g7)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = OR(x2,x4); g7 = AND(x4,g5); g8 = x<y(x1,g5); g9 = OR(g6,g8); g10 = x<y(g7,g9)"
+  },
+  {
+   "canonical": 989,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = OR(x2,x4); g7 = AND(x4,g5); g8 = x>y(x1,g6); g9 = OR(g7,g8)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x2,x4); g6 = x>y(x1,x2); g7 = x<y(x3,g5); g8 = OR(x4,g6); g9 = x<y(g7,g8)"
+  },
+  {
+   "canonical": 990,
+   "size": 768,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = x>y(x1,x2); g7 = OR(x4,g6); g8 = XOR(g5,g7)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x1,x2); g6 = OR(x4,g5); g7 = OR(x2,x3); g8 = x<y(g6,g7); g9 = x>y(g6,g7); g10 = OR(g8,g9)"
+  },
+  {
+   "canonical": 1020,
+   "size": 96,
+   "cost_B2": 2,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = XOR(x4,g5)",
+   "U2_lower": 4,
+   "U2_upper": 4,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = x<y(x4,g5); g7 = x>y(x4,g5); g8 = OR(g6,g7)"
+  },
+  {
+   "canonical": 1632,
+   "size": 24,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x3,x4); g7 = AND(g5,g6)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x2); g6 = AND(x3,x4); g7 = OR(x3,x4); g8 = x<y(g6,g7); g9 = x>y(x1,x2); g10 = OR(g5,g9); g11 = AND(g8,g10)"
+  },
+  {
+   "canonical": 1633,
+   "size": 96,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x3,x4); g6 = XOR(x1,x2); g7 = OR(x1,x3); g8 = x<y(g5,g7); g9 = OR(g6,g8); g10 = XOR(g5,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = x>y(x4,g5); g7 = x<y(x4,g5); g8 = AND(x1,x2); g9 = OR(g6,g7); g10 = x>y(x3,g7); g11 = OR(g8,g10); g12 = x<y(x3,g9); g13 = OR(g11,g12)"
+  },
+  {
+   "canonical": 1634,
+   "size": 192,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x2,x4); g6 = x<y(x3,g5); g7 = XOR(x1,x2); g8 = XOR(x4,g6); g9 = x>y(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x3,x4); g6 = x<y(x1,g5); g7 = AND(x3,x4); g8 = x>y(x2,g6); g9 = OR(g7,g8); g10 = OR(x1,x2); g11 = x<y(g9,g10)"
+  },
+  {
+   "canonical": 1635,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = AND(x3,x4); g6 = OR(x2,g5); g7 = XOR(x3,x4); g8 = x<y(x1,g7); g9 = XOR(g6,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x3,x4); g6 = x<y(x1,g5); g7 = AND(x2,g6); g8 = OR(x2,g6); g9 = AND(x3,x4); g10 = x<y(g7,g8); g11 = OR(g9,g10)"
+  },
+  {
+   "canonical": 1638,
+   "size": 96,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = AND(x3,x4); g6 = XOR(x1,x2); g7 = x<y(g5,g6)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = AND(x3,x4); g8 = x>y(g5,g6); g9 = x<y(g7,g8)"
+  },
+  {
+   "canonical": 1639,
+   "size": 192,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = OR(x1,x3); g7 = x<y(g5,g6); g8 = XOR(x3,g5); g9 = x>y(x4,g8); g10 = OR(g7,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = OR(x3,x4); g7 = x<y(g5,g6); g8 = AND(x1,x2); g9 = AND(x3,x4); g10 = OR(g8,g9); g11 = OR(g7,g10)"
+  },
+  {
+   "canonical": 1641,
+   "size": 96,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x2,x4); g6 = AND(x3,x4); g7 = XOR(x1,x3); g8 = XOR(g5,g7); g9 = OR(g6,g8)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x3,x4); g6 = AND(x1,x2); g7 = OR(g5,g6); g8 = OR(x3,x4); g9 = OR(x1,x2); g10 = x<y(g7,g9); g11 = x>y(g8,g10); g12 = x<y(g8,g10); g13 = OR(g11,g12)"
+  },
+  {
+   "canonical": 1643,
+   "size": 192,
+   "cost_B2": 7,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x3,g5); g7 = XOR(x4,g6); g8 = OR(x2,x3); g9 = AND(g7,g8); g10 = x>y(x4,g5); g11 = OR(g9,g10)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x3,x4); g6 = AND(x3,x4); g7 = OR(x2,g5); g8 = AND(x2,g5); g9 = OR(x1,g8); g10 = AND(x1,g8); g11 = x<y(g6,g9); g12 = x<y(g10,g11); g13 = x>y(g7,g12)"
+  },
+  {
+   "canonical": 1647,
+   "size": 48,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x3,x4); g6 = XOR(x1,x2); g7 = x>y(x3,g5); g8 = x>y(g5,g6); g9 = OR(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x3,x4); g6 = AND(x3,x4); g7 = AND(x1,x2); g8 = OR(g6,g7); g9 = OR(x1,x2); g10 = x<y(g8,g9); g11 = x>y(g5,g10)"
+  },
+  {
+   "canonical": 1650,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = x>y(x2,x4); g6 = XOR(x3,g5); g7 = AND(x3,x4); g8 = OR(x2,g7); g9 = OR(x1,g6); g10 = XOR(g8,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x3); g6 = AND(x1,x2); g7 = AND(x2,x4); g8 = OR(g5,g7); g9 = AND(x3,x4); g10 = OR(g6,g9); g11 = x>y(g8,g10)"
+  },
+  {
+   "canonical": 1651,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = OR(x2,x4); g7 = XOR(x3,x4); g8 = AND(g5,g7); g9 = x>y(g6,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x3,x4); g6 = x<y(x1,g5); g7 = x<y(x2,g6); g8 = x>y(x2,g6); g9 = OR(x3,g7); g10 = AND(x4,g9); g11 = OR(g8,g10)"
+  },
+  {
+   "canonical": 1654,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = x<y(x2,x3); g7 = OR(g5,g6); g8 = AND(x3,x4); g9 = x>y(g7,g8)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x1,x2); g7 = AND(x3,x4); g8 = OR(g6,g7); g9 = OR(x1,g5); g10 = x<y(g8,g9)"
+  },
+  {
+   "canonical": 1656,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = AND(x1,x2); g6 = XOR(x1,x2); g7 = XOR(x3,g5); g8 = XOR(x4,g7); g9 = OR(g6,g7); g10 = AND(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x3,x4); g7 = OR(x1,x2); g8 = x<y(g5,g6); g9 = x<y(x3,g7); g10 = x>y(g5,g6); g11 = x>y(x4,g9); g12 = x>y(g8,g11); g13 = OR(g10,g12)"
+  },
+  {
+   "canonical": 1657,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = x>y(x2,x4); g6 = XOR(x1,x2); g7 = x>y(x3,g5); g8 = OR(g6,g7); g9 = XOR(x3,g8); g10 = XOR(x4,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x1,x2); g7 = x<y(g5,g6); g8 = x<y(x3,g7); g9 = OR(x4,g8); g10 = AND(x3,g5); g11 = OR(g9,g10); g12 = AND(x4,g8); g13 = x>y(g11,g12)"
+  },
+  {
+   "canonical": 1658,
+   "size": 768,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x3,x4); g6 = XOR(x1,g5); g7 = x<y(x4,g6); g8 = XOR(x1,x2); g9 = AND(g5,g8); g10 = OR(g7,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x3,x4); g6 = AND(x2,g5); g7 = OR(x1,x3); g8 = AND(x1,g6); g9 = AND(x3,x4); g10 = OR(g6,g7); g11 = x<y(g9,g10); g12 = x<y(g8,g11)"
+  },
+  {
+   "canonical": 1659,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = AND(x1,x4); g6 = AND(x1,x2); g7 = XOR(x2,g5); g8 = x<y(x3,g7); g9 = OR(x4,g6); g10 = XOR(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x2,x4); g6 = OR(x3,g5); g7 = x<y(x1,g6); g8 = AND(x3,x4); g9 = x>y(g7,g8); g10 = OR(x2,x4); g11 = x>y(x1,g6); g12 = x>y(g10,g11); g13 = x<y(g9,g12)"
+  },
+  {
+   "canonical": 1662,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = x>y(x2,x4); g7 = XOR(x3,g6); g8 = x<y(x4,g7); g9 = x>y(g5,g7); g10 = XOR(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x3); g6 = OR(x3,x4); g7 = AND(x2,g6); g8 = AND(x1,g7); g9 = OR(x2,g5); g10 = AND(x3,x4); g11 = x<y(g8,g9); g12 = x<y(g10,g11)"
+  },
+  {
+   "canonical": 1680,
+   "size": 48,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = XOR(x1,x4); g6 = XOR(x2,g5); g7 = XOR(x3,x4); g8 = x<y(g6,g7)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x2); g6 = x>y(x1,x2); g7 = OR(g5,g6); g8 = AND(x3,x4); g9 = OR(x3,g7); g10 = x<y(x4,g7); g11 = OR(g8,g10); g12 = x>y(g9,g11)"
+  },
+  {
+   "canonical": 1681,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x2,x4); g6 = XOR(x3,x4); g7 = XOR(x1,g5); g8 = OR(x1,x3); g9 = x<y(g6,g8); g10 = OR(g7,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = x>y(g5,g6); g8 = AND(x4,g7); g9 = x<y(x3,g5); g10 = x<y(x3,g8); g11 = OR(x4,g7); g12 = OR(g9,g11); g13 = x<y(g10,g12)"
+  },
+  {
+   "canonical": 1683,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = x>y(x2,x4); g6 = XOR(x1,x2); g7 = XOR(x3,x4); g8 = OR(x3,g5); g9 = x<y(g6,g7); g10 = XOR(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x1,x3); g6 = AND(x3,x4); g7 = OR(x1,x4); g8 = x<y(g5,g7); g9 = x<y(x2,g8); g10 = x>y(x2,g8); g11 = OR(g9,g10); g12 = OR(g6,g11)"
+  },
+  {
+   "canonical": 1686,
+   "size": 192,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = x>y(x4,g5); g7 = XOR(x3,g5); g8 = x<y(g6,g7)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x3,x4); g6 = x>y(x1,x2); g7 = x<y(x1,x2); g8 = OR(g6,g7); g9 = OR(g5,g8); g10 = AND(x3,g8); g11 = x>y(g9,g10)"
+  },
+  {
+   "canonical": 1687,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = XOR(x1,x2); g7 = x<y(x3,g5); g8 = x>y(x4,g6); g9 = OR(g7,g8); g10 = XOR(g6,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x1,x3); g6 = x>y(x1,x2); g7 = x<y(x1,x2); g8 = OR(g6,g7); g9 = x<y(x3,g8); g10 = OR(g5,g8); g11 = OR(x4,g10); g12 = x<y(g9,g11)"
+  },
+  {
+   "canonical": 1695,
+   "size": 48,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x3,x4); g7 = x<y(g5,g6); g8 = XOR(x3,g7)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = x>y(g5,g6); g8 = AND(x3,g7); g9 = x>y(x4,g7); g10 = OR(g8,g9)"
+  },
+  {
+   "canonical": 1712,
+   "size": 192,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x2,x4); g6 = OR(x2,g5); g7 = XOR(x3,x4); g8 = XOR(x1,g5); g9 = AND(g6,g8); g10 = x>y(g7,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x1,x2); g6 = x<y(x1,x2); g7 = OR(x4,g6); g8 = AND(x3,g7); g9 = OR(g5,g6); g10 = AND(x4,g9); g11 = OR(x3,g10); g12 = x<y(g8,g11)"
+  },
+  {
+   "canonical": 1713,
+   "size": 768,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = x<y(x3,g5); g7 = XOR(x4,g6); g8 = XOR(x1,x4); g9 = x>y(x2,g8); g10 = OR(g7,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = x<y(x1,x2); g7 = x<y(x3,g5); g8 = AND(x1,x2); g9 = AND(x4,g7); g10 = x<y(g8,g9); g11 = OR(x4,g7); g12 = OR(g6,g11); g13 = x<y(g10,g12)"
+  },
+  {
+   "canonical": 1714,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x4,g5); g7 = OR(x1,x4); g8 = AND(g5,g7); g9 = x>y(x3,g6); g10 = XOR(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x2); g6 = OR(x4,g5); g7 = OR(x3,g5); g8 = x>y(x1,x2); g9 = OR(g7,g8); g10 = x<y(x3,x4); g11 = x>y(g6,g10); g12 = x>y(g9,g11)"
+  },
+  {
+   "canonical": 1715,
+   "size": 768,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = AND(x1,x3); g6 = x<y(x1,x4); g7 = x>y(x2,g5); g8 = AND(x3,x4); g9 = XOR(g6,g7); g10 = OR(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x1,x3); g6 = x>y(x1,g5); g7 = x>y(x4,g5); g8 = x>y(x2,g7); g9 = x<y(g6,g8); g10 = x>y(x2,x3); g11 = x>y(g7,g10); g12 = OR(g9,g11)"
+  },
+  {
+   "canonical": 1716,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = x>y(x1,x4); g6 = AND(x3,x4); g7 = OR(x2,g5); g8 = XOR(x1,g7); g9 = OR(g6,g8); g10 = XOR(x3,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x4); g6 = x>y(x3,x4); g7 = AND(x1,x2); g8 = OR(x2,g5); g9 = x<y(g7,g8); g10 = OR(g6,g9); g11 = AND(x3,g9); g12 = x>y(g10,g11)"
+  },
+  {
+   "canonical": 1717,
+   "size": 768,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x4); g6 = XOR(x3,x4); g7 = AND(x1,x3); g8 = AND(x2,g6); g9 = OR(g7,g8); g10 = XOR(g5,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x1,x3); g6 = x<y(x1,x2); g7 = OR(x4,g6); g8 = x>y(x2,x3); g9 = x>y(g7,g8); g10 = x>y(g5,g9); g11 = x<y(g5,g9); g12 = OR(g10,g11)"
+  },
+  {
+   "canonical": 1718,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = x>y(x1,x2); g6 = x>y(x3,g5); g7 = AND(x3,x4); g8 = XOR(x1,g6); g9 = XOR(x2,g8); g10 = x<y(g7,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x2); g6 = x>y(x1,x2); g7 = OR(x4,g5); g8 = AND(x3,g7); g9 = OR(x3,g6); g10 = OR(g5,g9); g11 = x<y(g8,g10)"
+  },
+  {
+   "canonical": 1719,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = x>y(x1,x3); g6 = OR(x1,x4); g7 = x>y(x4,g5); g8 = XOR(x3,g6); g9 = AND(x2,g8); g10 = XOR(g7,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x2); g6 = x>y(x1,x3); g7 = OR(x4,g5); g8 = OR(g6,g7); g9 = x<y(x3,g5); g10 = x<y(x2,g6); g11 = x>y(g8,g10); g12 = x<y(g9,g11)"
+  },
+  {
+   "canonical": 1721,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x4); g6 = XOR(x1,x2); g7 = AND(x3,g5); g8 = x>y(g6,g7); g9 = XOR(x4,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = x>y(x1,g5); g7 = x<y(x1,x2); g8 = OR(g6,g7); g9 = OR(x4,g8); g10 = AND(x4,g8); g11 = x<y(x3,g10); g12 = x>y(g9,g11)"
+  },
+  {
+   "canonical": 1725,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = x>y(x2,x4); g7 = XOR(x3,g6); g8 = x>y(g5,g7); g9 = XOR(x4,g8)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = x>y(x1,x3); g6 = OR(x2,x4); g7 = OR(x2,g5); g8 = AND(x1,x2); g9 = x<y(x3,g6); g10 = x>y(g7,g8); g11 = x<y(g9,g10); g12 = x>y(x4,g10); g13 = OR(g11,g12)"
+  },
+  {
+   "canonical": 1776,
+   "size": 96,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = x>y(x4,g5); g7 = XOR(x3,x4); g8 = x<y(g6,g7)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = AND(x4,g5); g8 = AND(x3,x4); g9 = x<y(g6,g7); g10 = OR(x3,g9); g11 = x<y(g8,g10)"
+  },
+  {
+   "canonical": 1777,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = x>y(x1,x4); g6 = x>y(x2,g5); g7 = XOR(x1,g6); g8 = x<y(x3,g7); g9 = XOR(x4,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = x<y(x3,g5); g7 = AND(x1,x2); g8 = x>y(g6,g7); g9 = x>y(x4,g8); g10 = x<y(x4,g6); g11 = OR(g9,g10)"
+  },
+  {
+   "canonical": 1778,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x2,x4); g6 = XOR(x1,x2); g7 = x<y(x3,g5); g8 = XOR(x4,g7); g9 = OR(x3,g6); g10 = x<y(g8,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x3,g5); g7 = x>y(x3,x4); g8 = AND(x2,x4); g9 = OR(x1,g8); g10 = x<y(g6,g9); g11 = OR(g7,g10)"
+  },
+  {
+   "canonical": 1782,
+   "size": 96,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = x>y(x3,x4); g7 = x<y(x3,g5); g8 = XOR(g6,g7)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x1,x2); g6 = x>y(x3,x4); g7 = x<y(x1,x2); g8 = OR(g5,g7); g9 = x<y(x3,g8); g10 = OR(g6,g9)"
+  },
+  {
+   "canonical": 1785,
+   "size": 96,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = x<y(x3,g5); g7 = XOR(x4,g6)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x1,x2); g7 = x<y(g5,g6); g8 = x<y(x3,g7); g9 = AND(x4,g8); g10 = OR(x4,g8); g11 = x<y(g9,g10)"
+  },
+  {
+   "canonical": 1910,
+   "size": 96,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = x<y(x4,g5); g7 = AND(x1,x2); g8 = OR(x3,g6); g9 = XOR(x4,g8); g10 = x<y(g7,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x1,x4); g7 = AND(x3,x4); g8 = OR(x2,x3); g9 = OR(g6,g8); g10 = x<y(g7,g9); g11 = x<y(g5,g10)"
+  },
+  {
+   "canonical": 1912,
+   "size": 192,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = AND(x3,x4); g6 = AND(x1,x2); g7 = XOR(x3,x4); g8 = XOR(g6,g7); g9 = x<y(g5,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x4,g5); g7 = AND(x3,g6); g8 = AND(x4,g5); g9 = OR(x3,g6); g10 = x<y(g7,g9); g11 = x<y(g8,g10)"
+  },
+  {
+   "canonical": 1913,
+   "size": 192,
+   "cost_B2": 7,
+   "circuit_B2": "g5 = AND(x3,x4); g6 = OR(x1,x2); g7 = x<y(x3,g6); g8 = x<y(x4,g7); g9 = AND(x1,x2); g10 = OR(g5,g9); g11 = XOR(g8,g10)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x3,x4); g6 = x<y(x1,g5); g7 = x>y(x2,g6); g8 = x>y(x1,g5); g9 = x>y(g7,g8); g10 = AND(x3,x4); g11 = OR(g8,g10); g12 = x<y(g7,g11); g13 = OR(g9,g12)"
+  },
+  {
+   "canonical": 1914,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = x>y(x1,x2); g6 = XOR(x3,x4); g7 = x<y(g5,g6); g8 = x>y(x4,g6); g9 = x>y(x1,g8); g10 = XOR(g7,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x3,x4); g6 = OR(x3,x4); g7 = x>y(x1,g6); g8 = AND(x1,x2); g9 = OR(g5,g8); g10 = x>y(g6,g9); g11 = OR(g7,g10)"
+  },
+  {
+   "canonical": 1918,
+   "size": 192,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x3,x4); g6 = AND(x3,x4); g7 = XOR(x1,x2); g8 = XOR(x2,g5); g9 = OR(g7,g8); g10 = x<y(g6,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x2); g6 = AND(x3,x4); g7 = OR(x3,x4); g8 = x>y(x1,g7); g9 = x<y(x2,g7); g10 = OR(g5,g8); g11 = OR(g9,g10); g12 = x<y(g6,g11)"
+  },
+  {
+   "canonical": 1968,
+   "size": 192,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = XOR(x1,x4); g6 = XOR(x3,x4); g7 = x>y(x2,g5); g8 = x>y(g6,g7)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x3,x4); g6 = AND(x1,x2); g7 = x<y(x1,x2); g8 = x<y(x3,x4); g9 = x<y(g6,g8); g10 = x>y(g5,g7); g11 = OR(g9,g10)"
+  },
+  {
+   "canonical": 1969,
+   "size": 768,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x3,x4); g6 = XOR(x1,x4); g7 = x>y(x2,g6); g8 = OR(x1,g6); g9 = x<y(g5,g8); g10 = OR(g7,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x3,g5); g7 = AND(x4,g6); g8 = OR(x1,x2); g9 = AND(x1,x3); g10 = x<y(x4,g8); g11 = x<y(g9,g10); g12 = OR(g7,g11)"
+  },
+  {
+   "canonical": 1972,
+   "size": 768,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = x<y(x1,x2); g6 = x>y(x2,x3); g7 = x>y(x4,g6); g8 = OR(g5,g7); g9 = XOR(x3,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = x<y(x1,x2); g7 = OR(x4,g6); g8 = OR(x3,g7); g9 = OR(x3,g5); g10 = AND(g7,g9); g11 = x>y(g8,g10)"
+  },
+  {
+   "canonical": 1973,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x3); g6 = AND(x2,g5); g7 = OR(x4,g5); g8 = XOR(x3,x4); g9 = x<y(g6,g8); g10 = x>y(g7,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x2,x4); g6 = x>y(x3,x4); g7 = x<y(x1,x2); g8 = x>y(g6,g7); g9 = x>y(x1,g5); g10 = OR(x3,g9); g11 = x<y(g8,g10)"
+  },
+  {
+   "canonical": 1974,
+   "size": 768,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x2,x4); g6 = x<y(x1,g5); g7 = x>y(x1,g5); g8 = OR(x3,g7); g9 = OR(x4,g6); g10 = XOR(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x4); g6 = x<y(x2,g5); g7 = x<y(x1,x2); g8 = OR(g6,g7); g9 = x<y(x3,g8); g10 = x>y(x3,x4); g11 = x<y(g7,g10); g12 = OR(g9,g11)"
+  },
+  {
+   "canonical": 1980,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = x>y(x2,x3); g6 = x<y(x1,x2); g7 = XOR(x3,x4); g8 = x<y(g6,g7); g9 = XOR(g5,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = x<y(x1,x2); g7 = OR(x3,g5); g8 = OR(x4,g6); g9 = x>y(g7,g8); g10 = x<y(g7,g8); g11 = OR(g9,g10)"
+  },
+  {
+   "canonical": 2016,
+   "size": 96,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x1,x4); g7 = XOR(x3,x4); g8 = OR(g5,g6); g9 = AND(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = x<y(x4,g5); g8 = x<y(x3,x4); g9 = x<y(g6,g8); g10 = AND(x3,g7); g11 = OR(g9,g10)"
+  },
+  {
+   "canonical": 2017,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = x<y(x3,g6); g8 = x<y(x4,g5); g9 = OR(g7,g8); g10 = XOR(x3,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x1,x2); g7 = x<y(x4,g6); g8 = AND(x3,g7); g9 = OR(g5,g7); g10 = OR(x3,g9); g11 = x<y(g8,g10)"
+  },
+  {
+   "canonical": 2018,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = AND(x3,x4); g6 = XOR(x2,x4); g7 = OR(x1,g6); g8 = x>y(x2,x3); g9 = x<y(g5,g7); g10 = XOR(g8,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x1,x2); g6 = AND(x3,x4); g7 = AND(x2,x3); g8 = x<y(x1,x4); g9 = OR(g7,g8); g10 = OR(g5,g9); g11 = x<y(g6,g10)"
+  },
+  {
+   "canonical": 2019,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = x<y(x1,g5); g7 = XOR(x3,g6); g8 = XOR(x2,x4); g9 = x>y(g7,g8); g10 = XOR(g5,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x1,x4); g6 = OR(x3,g5); g7 = OR(x1,x2); g8 = x<y(x4,g7); g9 = x>y(x3,g8); g10 = x>y(x2,g6); g11 = OR(g9,g10)"
+  },
+  {
+   "canonical": 2022,
+   "size": 192,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = XOR(x3,g5); g7 = AND(x1,x2); g8 = OR(x3,g7); g9 = OR(x4,g6); g10 = XOR(g8,g9)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x3,x4); g6 = x>y(x1,x2); g7 = x>y(x1,x3); g8 = OR(x2,x4); g9 = x<y(g7,g8); g10 = OR(g6,g9); g11 = x<y(g5,g10)"
+  },
+  {
+   "canonical": 2025,
+   "size": 192,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = x<y(x4,g5); g8 = OR(x3,g6); g9 = XOR(g7,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x1,x2); g7 = x<y(x4,g6); g8 = OR(x3,g5); g9 = x>y(g7,g8); g10 = x<y(g7,g8); g11 = OR(g9,g10)"
+  },
+  {
+   "canonical": 2032,
+   "size": 192,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = XOR(x3,x4); g6 = x>y(x1,x3); g7 = AND(x2,g6); g8 = x>y(g5,g7)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = x>y(x4,g5); g7 = OR(x3,g6); g8 = AND(x3,x4); g9 = x>y(g7,g8)"
+  },
+  {
+   "canonical": 2033,
+   "size": 192,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x4); g6 = XOR(x1,x2); g7 = OR(g5,g6); g8 = x<y(x3,g7); g9 = XOR(x4,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x3,x4); g6 = AND(x1,x2); g7 = x>y(g5,g6); g8 = OR(x1,x2); g9 = x<y(x3,g8); g10 = OR(x4,g9); g11 = x<y(g7,g10)"
+  },
+  {
+   "canonical": 2034,
+   "size": 384,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = XOR(x2,x4); g6 = x>y(x1,g5); g7 = OR(x3,g6); g8 = XOR(x4,g7)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x3,x4); g6 = x<y(x1,x4); g7 = x>y(x1,x2); g8 = OR(g6,g7); g9 = OR(x3,g8); g10 = x<y(g5,g9)"
+  },
+  {
+   "canonical": 2040,
+   "size": 192,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = AND(x1,x2); g6 = OR(x3,g5); g7 = XOR(x4,g6)",
+   "U2_lower": 5,
+   "U2_upper": 5,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x3,g5); g7 = AND(x4,g6); g8 = OR(x4,g6); g9 = x<y(g7,g8)"
+  },
+  {
+   "canonical": 4080,
+   "size": 12,
+   "cost_B2": 1,
+   "circuit_B2": "g5 = XOR(x3,x4)",
+   "U2_lower": 3,
+   "U2_upper": 3,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x3,x4); g6 = x<y(x3,x4); g7 = OR(g5,g6)"
+  },
+  {
+   "canonical": 5736,
+   "size": 16,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x2,x4); g6 = XOR(x1,x2); g7 = XOR(x3,x4); g8 = OR(g5,g6); g9 = x<y(g7,g8); g10 = XOR(g6,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = OR(x2,x3); g7 = OR(x1,x4); g8 = AND(g6,g7); g9 = AND(x1,x4); g10 = OR(g5,g9); g11 = x<y(g8,g10); g12 = x>y(g8,g10); g13 = OR(g11,g12)"
+  },
+  {
+   "canonical": 5737,
+   "size": 32,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x3,g5); g7 = AND(x1,x3); g8 = AND(g6,g7); g9 = x>y(x4,g8); g10 = XOR(g6,g9)",
+   "U2_lower": 8,
+   "U2_upper": 12,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x3,g5); g7 = AND(x1,x2); g8 = OR(x4,g7); g9 = OR(x3,g5); g10 = OR(x3,x4); g11 = AND(g8,g10); g12 = x<y(g6,g9); g13 = x<y(g7,g12); g14 = x>y(g11,g13); g15 = x<y(g8,g13); g16 = OR(g14,g15)"
+  },
+  {
+   "canonical": 5738,
+   "size": 128,
+   "cost_B2": 7,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = AND(x2,x3); g7 = AND(x1,g6); g8 = x>y(x4,g7); g9 = AND(g5,g8); g10 = XOR(x1,g9); g11 = XOR(g6,g10)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x3,x4); g6 = AND(x2,g5); g7 = AND(x3,x4); g8 = OR(x1,g7); g9 = AND(x1,g7); g10 = x>y(g8,g9); g11 = x<y(g6,g10); g12 = x>y(g6,g8); g13 = OR(g11,g12)"
+  },
+  {
+   "canonical": 5739,
+   "size": 64,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = XOR(x2,x4); g7 = OR(g5,g6); g8 = XOR(x1,g5); g9 = AND(g7,g8); g10 = XOR(x4,g9)",
+   "U2_lower": 8,
+   "U2_upper": 11,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x3,x4); g6 = AND(x1,x2); g7 = OR(x1,g5); g8 = AND(g5,g6); g9 = AND(x3,x4); g10 = x>y(g7,g8); g11 = OR(x1,x2); g12 = x<y(g9,g10); g13 = x>y(g11,g12); g14 = x<y(g11,g12); g15 = OR(g13,g14)"
+  },
+  {
+   "canonical": 5742,
+   "size": 192,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x3,x4); g6 = x>y(x2,g5); g7 = x>y(x1,g6); g8 = AND(x3,x4); g9 = XOR(x2,g8); g10 = XOR(g7,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x3,x4); g6 = OR(x1,g5); g7 = AND(x1,g5); g8 = x>y(g6,g7); g9 = OR(x3,x4); g10 = AND(x2,g6); g11 = AND(g9,g10); g12 = OR(x2,g8); g13 = x<y(g11,g12)"
+  },
+  {
+   "canonical": 5758,
+   "size": 128,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x3); g6 = XOR(x1,x2); g7 = XOR(x3,g6); g8 = OR(g5,g6); g9 = x>y(x4,g7); g10 = x>y(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = OR(x1,x4); g7 = AND(g5,g6); g8 = OR(x2,x3); g9 = x>y(x1,g8); g10 = AND(x1,x4); g11 = x>y(g8,g10); g12 = OR(g9,g11); g13 = x<y(g7,g12)"
+  },
+  {
+   "canonical": 5761,
+   "size": 32,
+   "cost_B2": 7,
+   "circuit_B2": "g5 = x<y(x1,x4); g6 = XOR(x3,g5); g7 = XOR(x1,x2); g8 = OR(g5,g7); g9 = XOR(x4,g8); g10 = XOR(x2,g6); g11 = OR(g9,g10)",
+   "U2_lower": 8,
+   "U2_upper": 11,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = x>y(x4,g5); g7 = x<y(x4,g5); g8 = OR(g6,g7); g9 = AND(x2,x3); g10 = x<y(x1,g8); g11 = x>y(g7,g9); g12 = OR(x1,g9); g13 = x<y(g8,g12); g14 = OR(g11,g13); g15 = OR(g10,g14)"
+  },
+  {
+   "canonical": 5763,
+   "size": 192,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x3,x4); g6 = XOR(x1,x4); g7 = AND(g5,g6); g8 = XOR(x2,g7); g9 = x>y(x3,g6); g10 = OR(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 10,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x2,x3); g7 = x<y(x1,x4); g8 = x>y(g5,g6); g9 = x<y(g7,g8); g10 = x>y(x1,x4); g11 = x>y(g7,g8); g12 = x>y(g6,g10); g13 = OR(g11,g12); g14 = OR(g9,g13)"
+  },
+  {
+   "canonical": 5766,
+   "size": 192,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x1,x4); g7 = OR(g5,g6); g8 = AND(x3,g7); g9 = XOR(g5,g8)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x3,g5); g7 = OR(x4,g5); g8 = OR(x1,x2); g9 = AND(x4,g8); g10 = x>y(x3,g9); g11 = AND(g7,g10); g12 = x<y(g6,g8); g13 = OR(g11,g12)"
+  },
+  {
+   "canonical": 5767,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = x<y(x3,x4); g7 = x>y(x1,g6); g8 = XOR(x4,g7); g9 = x<y(g5,g8); g10 = XOR(x3,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = x<y(x2,x4); g6 = x<y(x1,g5); g7 = AND(x1,x2); g8 = OR(g6,g7); g9 = AND(x1,x4); g10 = x>y(g8,g9); g11 = x<y(x3,g8); g12 = x>y(x3,g10); g13 = OR(g11,g12)"
+  },
+  {
+   "canonical": 5769,
+   "size": 128,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x1,x3); g6 = XOR(x1,x2); g7 = AND(x3,g6); g8 = XOR(x2,x4); g9 = XOR(g5,g8); g10 = OR(g7,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = x<y(x2,x4); g6 = x>y(x3,g5); g7 = OR(x1,g6); g8 = x>y(x2,x4); g9 = x<y(x3,g5); g10 = OR(g8,g9); g11 = OR(g7,g10); g12 = AND(x1,g10); g13 = x>y(g11,g12)"
+  },
+  {
+   "canonical": 5771,
+   "size": 384,
+   "cost_B2": 7,
+   "circuit_B2": "g5 = XOR(x1,x4); g6 = OR(x2,x3); g7 = x>y(x2,x3); g8 = OR(x1,g7); g9 = XOR(x2,g8); g10 = x>y(g5,g9); g11 = XOR(g6,g10)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = x<y(x1,x4); g6 = x>y(x3,g5); g7 = x<y(x3,g5); g8 = OR(g6,g7); g9 = x>y(x2,g7); g10 = x>y(x1,x4); g11 = x>y(g9,g10); g12 = x<y(x2,g8); g13 = OR(g11,g12)"
+  },
+  {
+   "canonical": 5774,
+   "size": 384,
+   "cost_B2": 7,
+   "circuit_B2": "g5 = XOR(x3,x4); g6 = AND(x2,x4); g7 = x<y(x1,g5); g8 = XOR(x1,x3); g9 = OR(x2,g8); g10 = x<y(g7,g9); g11 = XOR(g6,g10)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = OR(x3,g5); g7 = AND(x4,g6); g8 = x>y(g5,g7); g9 = OR(x1,x2); g10 = OR(g7,g9); g11 = AND(g6,g9); g12 = x<y(g8,g11); g13 = x>y(g10,g12)"
+  },
+  {
+   "canonical": 5782,
+   "size": 128,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = AND(x1,x4); g6 = XOR(x1,x3); g7 = x>y(g5,g6); g8 = x>y(x2,g7); g9 = XOR(g6,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x3); g6 = x<y(x4,g5); g7 = OR(x2,g5); g8 = OR(x1,x3); g9 = x<y(g7,g8); g10 = x<y(g6,g8); g11 = x>y(x2,g10); g12 = OR(g9,g11)"
+  },
+  {
+   "canonical": 5783,
+   "size": 64,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x1,x4); g7 = XOR(x3,x4); g8 = OR(g6,g7); g9 = x<y(g5,g8); g10 = XOR(x3,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x1,x3); g6 = AND(x1,x3); g7 = OR(x2,g6); g8 = x>y(x4,g5); g9 = OR(g7,g8); g10 = x<y(x4,g6); g11 = x>y(g5,g10); g12 = x>y(x2,g11); g13 = x>y(g9,g12)"
+  },
+  {
+   "canonical": 5784,
+   "size": 192,
+   "cost_B2": 7,
+   "circuit_B2": "g5 = x<y(x2,x3); g6 = x>y(x4,g5); g7 = XOR(x2,x3); g8 = OR(x1,g7); g9 = XOR(x1,x2); g10 = XOR(g6,g9); g11 = x>y(g8,g10)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x1,x2); g6 = x<y(x4,g5); g7 = OR(x1,x2); g8 = OR(x3,g5); g9 = OR(x3,g7); g10 = x>y(x4,g8); g11 = x>y(g7,g10); g12 = x>y(g9,g11); g13 = OR(g6,g12)"
+  },
+  {
+   "canonical": 5785,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = AND(x1,x2); g6 = XOR(x1,x2); g7 = x>y(x3,g5); g8 = x>y(x4,g7); g9 = XOR(g6,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = x>y(x3,g6); g8 = x>y(g5,g6); g9 = x>y(x4,g7); g10 = x<y(g8,g9); g11 = x>y(g8,g9); g12 = OR(g10,g11)"
+  },
+  {
+   "canonical": 5786,
+   "size": 768,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = AND(x2,x4); g6 = x<y(x1,g5); g7 = x>y(x2,g6); g8 = x>y(x3,g7); g9 = XOR(x1,g8); g10 = XOR(g5,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x<y(x2,x3); g6 = AND(x2,x4); g7 = AND(x3,g6); g8 = OR(g5,g6); g9 = OR(x1,g8); g10 = AND(x1,g8); g11 = x>y(g9,g10); g12 = x<y(g7,g11)"
+  },
+  {
+   "canonical": 5787,
+   "size": 384,
+   "cost_B2": 7,
+   "circuit_B2": "g5 = AND(x3,x4); g6 = XOR(x2,g5); g7 = XOR(x3,x4); g8 = OR(g6,g7); g9 = AND(x1,g8); g10 = XOR(x4,g9); g11 = XOR(g6,g10)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = x<y(x3,x4); g6 = x>y(x1,x3); g7 = OR(x1,g5); g8 = x<y(x2,g7); g9 = AND(x1,x4); g10 = x<y(g6,g8); g11 = x>y(g7,g9); g12 = x>y(x2,g11); g13 = OR(g10,g12)"
+  },
+  {
+   "canonical": 5790,
+   "size": 192,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x3,x4); g7 = x>y(x2,g6); g8 = OR(g5,g7); g9 = XOR(x3,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x4); g6 = x<y(x1,x3); g7 = x>y(x2,g5); g8 = x<y(g6,g7); g9 = x>y(x1,x3); g10 = OR(g6,g9); g11 = x<y(x2,g10); g12 = OR(g8,g11)"
+  },
+  {
+   "canonical": 5801,
+   "size": 192,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = XOR(x1,g5); g7 = AND(x2,x4); g8 = XOR(x4,g6); g9 = AND(x3,g7); g10 = OR(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = OR(x2,x3); g7 = AND(x4,g6); g8 = OR(x4,g6); g9 = x<y(g7,g8); g10 = OR(x1,g9); g11 = AND(x1,g9); g12 = OR(g5,g10); g13 = x<y(g11,g12)"
+  },
+  {
+   "canonical": 5804,
+   "size": 384,
+   "cost_B2": 7,
+   "circuit_B2": "g5 = AND(x3,x4); g6 = AND(x1,x4); g7 = XOR(x1,x2); g8 = OR(x2,g5); g9 = AND(x3,g7); g10 = OR(g6,g9); g11 = XOR(g8,g10)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x1,x4); g6 = OR(x2,x3); g7 = x<y(x2,x4); g8 = OR(g5,g6); g9 = x>y(x3,g7); g10 = AND(g5,g6); g11 = x>y(g8,g10); g12 = x<y(x1,g9); g13 = x>y(g11,g12)"
+  },
+  {
+   "canonical": 5805,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = XOR(x1,x4); g6 = XOR(x3,g5); g7 = AND(x2,x4); g8 = AND(x1,x2); g9 = x>y(g6,g8); g10 = XOR(g7,g9)",
+   "U2_lower": 8,
+   "U2_upper": 10,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x1,x4); g6 = OR(x2,x3); g7 = x<y(x2,x4); g8 = OR(x1,g7); g9 = AND(g6,g8); g10 = OR(x3,g8); g11 = x<y(g5,g9); g12 = x>y(g5,g9); g13 = OR(g11,g12); g14 = x>y(g10,g13)"
+  },
+  {
+   "canonical": 5820,
+   "size": 384,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = AND(x1,x4); g6 = AND(x1,x2); g7 = XOR(x2,x3); g8 = OR(g6,g7); g9 = XOR(g5,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = OR(x2,x3); g7 = AND(x1,x4); g8 = x<y(x1,g5); g9 = x>y(g6,g8); g10 = x>y(g7,g9); g11 = x<y(g7,g9); g12 = OR(g10,g11)"
+  },
+  {
+   "canonical": 5865,
+   "size": 64,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = AND(x2,x3); g6 = x>y(x1,g5); g7 = XOR(x2,x4); g8 = XOR(g6,g7); g9 = XOR(x3,g8)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = AND(x1,x3); g6 = OR(x2,g5); g7 = OR(x4,g6); g8 = AND(x4,g6); g9 = x>y(g7,g8); g10 = OR(x1,x3); g11 = OR(g9,g10); g12 = AND(g9,g10); g13 = x>y(g11,g12)"
+  },
+  {
+   "canonical": 6014,
+   "size": 32,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = AND(x1,x3); g6 = XOR(x1,x4); g7 = XOR(x3,g6); g8 = XOR(x2,x4); g9 = OR(g7,g8); g10 = XOR(g5,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x1,x3); g6 = OR(x2,x4); g7 = OR(g5,g6); g8 = AND(x2,x4); g9 = AND(g5,g8); g10 = x>y(g7,g9); g11 = AND(x1,g6); g12 = AND(x3,g11); g13 = x>y(g10,g12)"
+  },
+  {
+   "canonical": 6030,
+   "size": 96,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x3,x4); g6 = XOR(x1,g5); g7 = XOR(x2,g5); g8 = OR(g6,g7); g9 = XOR(x3,g8)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = x>y(g5,g6); g8 = AND(x3,g7); g9 = AND(x4,g6); g10 = OR(g8,g9); g11 = OR(x4,g5); g12 = x<y(g10,g11)"
+  },
+  {
+   "canonical": 6038,
+   "size": 64,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x2,x3); g7 = x>y(x4,g6); g8 = OR(g5,g7); g9 = XOR(x3,g8)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x1,x3); g6 = x>y(x2,x4); g7 = AND(x1,x3); g8 = x>y(g5,g7); g9 = x>y(g6,g8); g10 = x<y(x2,g8); g11 = x>y(x4,g5); g12 = OR(g10,g11); g13 = OR(g9,g12)"
+  },
+  {
+   "canonical": 6040,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = AND(x1,x2); g6 = OR(x1,x2); g7 = XOR(x4,g6); g8 = x>y(x3,g7); g9 = OR(g5,g8); g10 = XOR(x4,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = AND(x1,x2); g7 = x<y(x4,g6); g8 = OR(x3,g6); g9 = x<y(g7,g8); g10 = OR(x4,g8); g11 = AND(g5,g9); g12 = x>y(g10,g11)"
+  },
+  {
+   "canonical": 6042,
+   "size": 384,
+   "cost_B2": 7,
+   "circuit_B2": "g5 = OR(x1,x4); g6 = AND(x1,x4); g7 = XOR(x1,x2); g8 = x<y(x3,g5); g9 = XOR(x3,g6); g10 = x<y(g7,g9); g11 = XOR(g8,g10)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x2,x4); g6 = x<y(x3,x4); g7 = x<y(x2,x3); g8 = x>y(x1,g7); g9 = OR(g6,g7); g10 = x<y(x1,g9); g11 = x<y(g5,g8); g12 = OR(g10,g11)"
+  },
+  {
+   "canonical": 6060,
+   "size": 384,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = AND(x1,x3); g6 = XOR(x4,g5); g7 = x<y(x1,x4); g8 = XOR(x3,g7); g9 = x>y(x2,g8); g10 = XOR(g6,g9)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x3); g6 = AND(x1,x4); g7 = OR(x2,g5); g8 = x>y(x3,g5); g9 = OR(g6,g8); g10 = OR(x4,g7); g11 = AND(g7,g9); g12 = x>y(g10,g11)"
+  },
+  {
+   "canonical": 6120,
+   "size": 32,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = OR(x2,x3); g6 = XOR(x2,x3); g7 = x<y(x1,g6); g8 = XOR(g5,g7); g9 = XOR(x4,g8)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x2,x3); g6 = OR(x1,g5); g7 = OR(x2,x3); g8 = AND(g6,g7); g9 = AND(x4,g8); g10 = OR(x4,g8); g11 = x<y(g9,g10)"
+  },
+  {
+   "canonical": 6375,
+   "size": 32,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x1,x3); g7 = x<y(g5,g6); g8 = XOR(x4,g7)",
+   "U2_lower": 8,
+   "U2_upper": 8,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x1,x3); g7 = x<y(x1,x2); g8 = OR(g6,g7); g9 = x>y(g5,g8); g10 = x>y(x4,g9); g11 = x<y(x4,g9); g12 = OR(g10,g11)"
+  },
+  {
+   "canonical": 6625,
+   "size": 96,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = x<y(x3,x4); g6 = XOR(x1,x2); g7 = x>y(x3,x4); g8 = x>y(x2,g5); g9 = OR(g6,g8); g10 = XOR(g7,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = x>y(x3,x4); g6 = x>y(x1,x3); g7 = AND(x2,x4); g8 = AND(g6,g7); g9 = OR(x1,x2); g10 = x>y(g5,g9); g11 = OR(g5,g8); g12 = x>y(g9,g11); g13 = OR(g10,g12)"
+  },
+  {
+   "canonical": 6627,
+   "size": 192,
+   "cost_B2": 6,
+   "circuit_B2": "g5 = OR(x1,x3); g6 = XOR(x1,x2); g7 = AND(x2,x3); g8 = OR(g6,g7); g9 = x<y(x4,g5); g10 = XOR(g8,g9)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x1,x3); g6 = x<y(x4,g5); g7 = OR(x1,x2); g8 = AND(x2,g5); g9 = x<y(x3,g8); g10 = x>y(g7,g9); g11 = x<y(g6,g10); g12 = x>y(g6,g10); g13 = OR(g11,g12)"
+  },
+  {
+   "canonical": 6630,
+   "size": 192,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = AND(x2,x3); g6 = x>y(x1,g5); g7 = XOR(x2,g6); g8 = XOR(x4,g7)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = OR(x1,x2); g6 = x>y(x2,x3); g7 = AND(x1,g6); g8 = x>y(g5,g7); g9 = OR(x4,g8); g10 = AND(x4,g8); g11 = x>y(g9,g10)"
+  },
+  {
+   "canonical": 7128,
+   "size": 24,
+   "cost_B2": 5,
+   "circuit_B2": "g5 = XOR(x1,x4); g6 = XOR(x2,x3); g7 = x>y(g5,g6); g8 = XOR(x3,g7); g9 = XOR(x1,g8)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = x>y(x2,x4); g6 = x<y(x3,x4); g7 = AND(x1,g5); g8 = OR(g6,g7); g9 = x<y(x1,x2); g10 = x<y(x1,x3); g11 = OR(g8,g10); g12 = AND(x4,g9); g13 = x>y(g11,g12)"
+  },
+  {
+   "canonical": 7140,
+   "size": 96,
+   "cost_B2": 4,
+   "circuit_B2": "g5 = XOR(x2,x3); g6 = AND(x1,g5); g7 = XOR(x2,g6); g8 = XOR(x4,g7)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = AND(x1,x3); g6 = x<y(x1,x2); g7 = OR(g5,g6); g8 = x<y(x4,g7); g9 = x>y(x4,g7); g10 = OR(g8,g9)"
+  },
+  {
+   "canonical": 7905,
+   "size": 48,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = OR(x1,x2); g6 = XOR(x3,g5); g7 = XOR(x4,g6)",
+   "U2_lower": 7,
+   "U2_upper": 7,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x3,x4); g6 = x<y(x3,x4); g7 = OR(g5,g6); g8 = OR(x1,x2); g9 = x<y(g7,g8); g10 = x>y(g7,g8); g11 = OR(g9,g10)"
+  },
+  {
+   "canonical": 15555,
+   "size": 8,
+   "cost_B2": 2,
+   "circuit_B2": "g5 = XOR(x3,x4); g6 = XOR(x2,g5)",
+   "U2_lower": 6,
+   "U2_upper": 6,
+   "U2_status": "exact",
+   "circuit_U2": "g5 = x>y(x2,x4); g6 = x<y(x2,x4); g7 = OR(g5,g6); g8 = x<y(x3,g7); g9 = x>y(x3,g7); g10 = OR(g8,g9)"
+  },
+  {
+   "canonical": 27030,
+   "size": 2,
+   "cost_B2": 3,
+   "circuit_B2": "g5 = XOR(x1,x2); g6 = XOR(x4,g5); g7 = XOR(x3,g6)",
+   "U2_lower": 8,
+   "U2_upper": 9,
+   "U2_status": "interval",
+   "circuit_U2": "g5 = OR(x2,x3); g6 = AND(x2,x3); g7 = x>y(g5,g6); g8 = OR(x1,x4); g9 = AND(x1,x4); g10 = x>y(g8,g9); g11 = x>y(g7,g10); g12 = x<y(g7,g10); g13 = OR(g11,g12)"
+  }
+ ],
+ "distribution_B2": {
+  "0": 10,
+  "1": 60,
+  "2": 456,
+  "3": 2474,
+  "4": 10624,
+  "5": 24184,
+  "6": 25008,
+  "7": 2720
+ },
+ "knuth_B2": [
+  10,
+  60,
+  456,
+  2474,
+  10624,
+  24184,
+  25008,
+  2720
+ ],
+ "match_knuth": true,
+ "distribution_U2_exact_part": {
+  "0": 10,
+  "1": 48,
+  "2": 256,
+  "3": 940,
+  "4": 2336,
+  "5": 6464,
+  "6": 10616,
+  "7": 18984,
+  "8": 16912
+ },
+ "U2_classes_unresolved": 43,
+ "seconds": 1027.0
+}

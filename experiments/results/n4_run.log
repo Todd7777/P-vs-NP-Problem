@@ -1,0 +1,22 @@
+Computing NPN classes of all 65536 4-input functions ...
+  222 NPN classes (expected 222)
+  1/222 classes done (0s)
+  21/222 classes done (1s)
+  41/222 classes done (54s)
+  61/222 classes done (118s)
+  81/222 classes done (134s)
+  101/222 classes done (176s)
+  121/222 classes done (181s)
+  141/222 classes done (304s)
+  161/222 classes done (361s)
+  181/222 classes done (410s)
+  201/222 classes done (851s)
+  221/222 classes done (1013s)
+
+Distribution of C_B2(f) over all 65536 functions of 4 variables:
+  cost : [0, 1, 2, 3, 4, 5, 6, 7]
+  count: [10, 60, 456, 2474, 10624, 24184, 25008, 2720]
+  Knuth: [10, 60, 456, 2474, 10624, 24184, 25008, 2720]
+  MATCH
+U2: exact for 179/222 classes; distribution (exact part): {0: 10, 1: 48, 2: 256, 3: 940, 4: 2336, 5: 6464, 6: 10616, 7: 18984, 8: 16912}
+total time 1027.0s
