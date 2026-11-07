@@ -1,2 +1,3 @@
 experiments/results/*_run.log
 __pycache__/
+experiments/results/*_progress.jsonl
