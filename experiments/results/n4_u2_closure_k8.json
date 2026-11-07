@@ -1,0 +1,30 @@
+[
+ {
+  "canonical": 5763,
+  "k": 8,
+  "result": false,
+  "seconds": 86.3,
+  "circuit": null
+ },
+ {
+  "canonical": 5761,
+  "k": 8,
+  "result": false,
+  "seconds": 85.1,
+  "circuit": null
+ },
+ {
+  "canonical": 5739,
+  "k": 8,
+  "result": false,
+  "seconds": 105.0,
+  "circuit": null
+ },
+ {
+  "canonical": 5737,
+  "k": 8,
+  "result": false,
+  "seconds": 84.0,
+  "circuit": null
+ }
+]

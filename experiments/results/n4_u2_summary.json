@@ -1,0 +1,58 @@
+{
+ "distribution_U2_exact_part": {
+  "0": 10,
+  "1": 48,
+  "2": 256,
+  "3": 940,
+  "4": 2336,
+  "5": 6464,
+  "6": 10616,
+  "7": 18984,
+  "8": 17680,
+  "9": 7882
+ },
+ "functions_exact": 65216,
+ "functions_total": 65536,
+ "open_classes": [
+  {
+   "canonical": "0x1669",
+   "size": 32,
+   "cost_B2": 6,
+   "U2_lower": 9,
+   "U2_upper": 12
+  },
+  {
+   "canonical": "0x166b",
+   "size": 64,
+   "cost_B2": 6,
+   "U2_lower": 9,
+   "U2_upper": 11
+  },
+  {
+   "canonical": "0x1681",
+   "size": 32,
+   "cost_B2": 7,
+   "U2_lower": 9,
+   "U2_upper": 10
+  },
+  {
+   "canonical": "0x1683",
+   "size": 192,
+   "cost_B2": 6,
+   "U2_lower": 9,
+   "U2_upper": 10
+  }
+ ],
+ "functions_open": 320,
+ "max_exact": 9,
+ "distribution_B2": {
+  "0": 10,
+  "1": 60,
+  "2": 456,
+  "3": 2474,
+  "4": 10624,
+  "5": 24184,
+  "6": 25008,
+  "7": 2720
+ }
+}
