@@ -44,7 +44,7 @@ If you are looking for the one-paragraph answer: see `docs/00-executive-summary.
 
 ```bash
 pip install -r requirements.txt
-pytest                                         # ~10 s; RUN_SLOW=1 pytest adds ~30 s of slower checks
+pytest                                         # ~15 s; RUN_SLOW=1 pytest adds ~30 s of slower checks
 cd experiments
 python3 exact_circuit_complexity.py n4         # first encoding: all 222 NPN classes of 4-input functions vs Knuth
 python3 exact_circuit_complexity.py explicit   # first encoding: explicit 4/5-input functions (intervals if the budget runs out)

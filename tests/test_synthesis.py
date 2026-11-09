@@ -1,6 +1,6 @@
 """Tests for the exact circuit synthesis code in experiments/.
 
-Run from the repository root with `pytest` (about half a minute). `RUN_SLOW=1 pytest` adds the
+Run from the repository root with `pytest` (about 15 seconds). `RUN_SLOW=1 pytest` adds the
 slower checks (all 222 NPN classes of 4-input functions against Knuth's distribution, more rule
 ablations).
 """
