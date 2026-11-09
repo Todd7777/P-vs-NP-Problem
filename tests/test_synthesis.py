@@ -239,3 +239,13 @@ def test_optimal5_record_decoder(tmp_path):
     table, _ = O.parse(str(path))
     x1, x2 = O.INPUTS[0], O.INPUTS[1]
     assert table == {x1 ^ (x1 & x2): (2, [(1, "&", 2), (1, "^", 6)])}
+
+
+@needs_drat
+def test_cube_split_refutation(tmp_path, monkeypatch):
+    import argparse
+    import certify_cubes as Q
+    monkeypatch.setattr(Q, "R", str(tmp_path))          # keep results/ untouched
+    Q.main(argparse.Namespace(name="MOD3_4", basis="B2", k=6, proofs=str(tmp_path), gate=None, workers=1))
+    entry = json.load(open(tmp_path / "cube_certificates.json"))[0]
+    assert entry["all_unsat_and_verified"] and len(entry["cubes"]) == 10   # gate 5 can read 10 pairs
