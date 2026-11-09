@@ -249,3 +249,16 @@ def test_cube_split_refutation(tmp_path, monkeypatch):
     Q.main(argparse.Namespace(name="MOD3_4", basis="B2", k=6, proofs=str(tmp_path), gate=None, workers=1))
     entry = json.load(open(tmp_path / "cube_certificates.json"))[0]
     assert entry["all_unsat_and_verified"] and len(entry["cubes"]) == 10   # gate 5 can read 10 pairs
+
+
+def test_recorded_old_encoding_crosscheck():
+    """MOD3_4 in U2: the first encoding alone refutes k = 1..9, every proof checked by drat-trim."""
+    single = os.path.join(RESULTS, "crosscheck_old_encoding.json")
+    cubes = os.path.join(RESULTS, "crosscheck_old_encoding_cubes.json")
+    if not (os.path.exists(single) and os.path.exists(cubes)):
+        pytest.skip("cross-check results not recorded")
+    recs = {r["k"]: r for r in json.load(open(single)) if r["basis"] == "U2" and r["name"].startswith("MOD3_4")}
+    assert all(recs[k]["result"] is False and recs[k]["drat_trim"]["verified"] for k in range(1, 9))
+    c = json.load(open(cubes))
+    assert (c["k"], c["basis"], c["cubes"], c["all_unsat_and_verified"]) == (9, "U2", 60, True)
+    assert len({tuple(r["units"]) for r in c["records"]}) == 60           # 6 x 10 distinct cubes

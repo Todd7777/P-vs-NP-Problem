@@ -37,9 +37,9 @@ full runs take much longer.
   closed as MAJ_5 = 9, EXACTLY2_5 = 9, MOD3_5 = 10 and THR2_5 = 10 (B2), MOD3_4 = 10 (U2), and
   parity_5 = 12 (U2; Schnorr's theorem, docs/05 §5.2). Every B2 value agrees with Knuth's table of
   optimal 5-input chains (optimal5, parsed by `experiments/compare_optimal5.py`). No published value
-  was found for MOD3_4 in U2. `crosscheck_old_encoding.py` re-derived its refutations with the first
-  encoding up to k = 8 (checked proofs); k = 9 did not finish in 30 CPU-minutes (proof already 1.2 GB).
-  Splitting it into cubes (as in `certify_cubes.py`) is the obvious next try.
+  was found for MOD3_4 in U2. `crosscheck_old_encoding.py` independently re-derived its lower bound with
+  the first encoding (elementary symmetry breaking only): k = 1..8 directly and k = 9 as 60 cubes, every
+  proof checked by drat-trim (26 minutes on 4 cores for the cubes).
 - Lower bounds come from `experiments/circuit_sat.py` (symmetry-reduced encoding; soundness proof in
   `experiments/ENCODING.md`) with DRAT proofs checked by drat-trim. The two 9-gate B2 refutations took
   about 16 minutes each to solve and about 50 minutes each to check (proofs of 0.8 GB). The proofs are
