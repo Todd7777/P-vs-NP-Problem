@@ -62,12 +62,12 @@ months, and a ranked list of the next lemmas.
 - Built a SAT-based exact circuit synthesizer and validated it against Knuth's exhaustive tables:
   all 222 classes of 4-variable functions, and every 5-variable function in its suite. With a
   symmetry-reduced encoding whose lower bounds come with DRAT proofs checked by drat-trim, it
-  determined exact circuit sizes that the first runs could only bracket, for example
-  $C_{B_2}(\mathrm{MAJ}_5)=9$ and $C_{U_2}(\mathrm{MOD}_3^4)=10$, all agreeing with Knuth where he has a value
-  (table and per-value status in `README.md`). Schnorr's bound is machine-checked at $n=2,3,4$, and
-  $C_{U_2}(\oplus_5)=12$ follows from the theorem (`experiments/`). Measured the exponential growth of
-  CDCL on pigeonhole formulas against polynomial behavior on the ordering principle, the empirical
-  face of Haken's theorem.
+  determined the exact circuit size of every explicit function in the suite, including the six the
+  first runs could only bracket (for example $C_{B_2}(\mathrm{MAJ}_5)=9$, $C_{B_2}(\mathrm{MOD}_3^5)=10$,
+  $C_{U_2}(\mathrm{MOD}_3^4)=10$), all agreeing with Knuth where he has a value (table in `README.md`).
+  Schnorr's bound is machine-checked at $n=2,3,4$, and $C_{U_2}(\oplus_5)=12$ follows from the theorem
+  (`experiments/`). Measured the exponential growth of CDCL on pigeonhole formulas against polynomial
+  behavior on the ordering principle, the empirical face of Haken's theorem.
 - Ranked nine attack vectors by the next lemma each needs (`04-attack-vectors.md`) and listed 24
   open sub-problems in three tiers (`07-open-subproblems.md`).
 

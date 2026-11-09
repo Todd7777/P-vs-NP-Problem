@@ -17,6 +17,7 @@ proof are in `ENCODING.md`.
 | `compare_optimal5.py` | Parses Knuth's optimal 5-input chains (optimal5 `knuthies.dat`) and compares every B2 value. |
 | `crosscheck_old_encoding.py` | Re-derives a refutation with the first encoding, as an independent check. |
 | `certify_n4_u2.py` | Settles the 4-input NPN classes whose U2 cost the first runs left open; writes the complete U2 distribution. |
+| `certify_cubes.py` | Fallback for very large refutations: splits one instance into cubes on a gate's input pair, each with its own checked proof. |
 | `close_u2_n4.py`, `close_u2_n4_k8.py`, `summarize_u2_n4.py` | Earlier attempts at the n = 4 U2 distribution (budgeted first encoding). `summarize_u2_n4.py` cannot be rerun: one of its inputs was never committed. |
 | `proof_complexity_php.py` | CDCL on pigeonhole formulas (exponential) vs the ordering principle (polynomial). |
 
@@ -28,6 +29,7 @@ proof are in `ENCODING.md`.
 | `certificates.json` | Per refutation: k, CNF and proof SHA-256, solver statistics, drat-trim verdict and time. |
 | `explicit_costs.json`, `explicit_run.log` | First run of the explicit suite (intervals where the budget ran out). |
 | `n4_exact_costs.json`, `n4_run.log` | First run over the 222 NPN classes of 4-input functions. |
+| `n4_u2_complete.json`, `n4_u2_open_classes.json` | Complete U2 distribution for n = 4; certificates for the four classes that were open. |
 | `n4_u2_summary.json`, `n4_u2_closure_k8.json` | Earlier U2 distribution for n = 4 with four classes open. |
 | `validation_encoding.json` | Output of `validate_encoding.py`. |
 | `optimal5_comparison.json` | Output of `compare_optimal5.py`. |

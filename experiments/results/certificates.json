@@ -622,9 +622,9 @@
   {
    "name": "MOD3_5 (sum=0 mod 3)",
    "basis": "B2",
-   "lower": 9,
+   "lower": 10,
    "upper": 10,
-   "exact": false,
+   "exact": true,
    "all_refutations_drat_verified": true,
    "circuit": "g6 = XOR(x1,x2); g7 = XOR(x3,x4); g8 = OR(x3,x4); g9 = XOR(x5,g6); g10 = XOR(x1,g9); g11 = x>y(g8,g9); g12 = OR(g6,g10); g13 = XOR(g7,g11); g14 = XOR(g8,g12); g15 = OR(g13,g14)",
    "circuit_source": "circuit_sat.py",
@@ -772,6 +772,24 @@
      "proof_sha256": "6d85ede649fc3f7daf3d5c125c0b475fb386b8e17e3b4c14c20c00b421789099",
      "drat_trim_verified": true,
      "drat_trim_seconds": 39.2
+    },
+    {
+     "k": 9,
+     "nvars": 2193,
+     "nclauses": 50896,
+     "cnf_sha256": "66a090f7dc2d2840950f9b744338358bf00cd39e0848a50cffb89b511462d05f",
+     "solver": "cadical195",
+     "solve_seconds": 1022.202,
+     "stats": {
+      "restarts": 376172,
+      "conflicts": 10133091,
+      "decisions": 13969805,
+      "propagations": 984772325
+     },
+     "proof_bytes": 846429241,
+     "proof_sha256": "7f449e1645b2b935675b13a00479d8fdfadb217f31cdc5ad896c978655f8d2ca",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 3288.2
     }
    ]
   },
@@ -1228,9 +1246,9 @@
   {
    "name": "THR2_5 (sum>=2)",
    "basis": "B2",
-   "lower": 9,
+   "lower": 10,
    "upper": 10,
-   "exact": false,
+   "exact": true,
    "all_refutations_drat_verified": true,
    "circuit": "g6 = AND(x1,x2); g7 = OR(x1,x2); g8 = XOR(x3,x4); g9 = XOR(x3,g7); g10 = XOR(x4,g9); g11 = OR(g8,g9); g12 = AND(x5,g11); g13 = XOR(g10,g11); g14 = OR(g6,g13); g15 = OR(g12,g14)",
    "circuit_source": "circuit_sat.py",
@@ -1378,6 +1396,24 @@
      "proof_sha256": "a4e743aa66046154e67adfe94dc64d7373d5b711896bebd12dac9349d5c23b33",
      "drat_trim_verified": true,
      "drat_trim_seconds": 30.6
+    },
+    {
+     "k": 9,
+     "nvars": 2193,
+     "nclauses": 50896,
+     "cnf_sha256": "eb84472cbe5714ad01b495ffb5ca2db985e4b65d191ae3801cfd9fa4750d961d",
+     "solver": "cadical195",
+     "solve_seconds": 920.259,
+     "stats": {
+      "restarts": 382175,
+      "conflicts": 9720564,
+      "decisions": 13432407,
+      "propagations": 930212075
+     },
+     "proof_bytes": 796914085,
+     "proof_sha256": "83c31ae2b0e9199f7a20de7b6cf55f7074f4de355293b024ca88b2dac335301f",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 2951.8
     }
    ]
   },

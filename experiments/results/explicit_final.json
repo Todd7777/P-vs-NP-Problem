@@ -816,10 +816,10 @@
     7,
     10
    ],
-   "lower": 9,
+   "lower": 10,
    "upper": 10,
-   "label": "Open",
-   "lower_evidence": "k = 1..8 refuted",
+   "label": "Machine-checked",
+   "lower_evidence": "k = 1..9 refuted (circuit_sat.py; DRAT proofs verified by drat-trim)",
    "circuit": "g6 = XOR(x1,x2); g7 = XOR(x3,x4); g8 = OR(x3,x4); g9 = XOR(x5,g6); g10 = XOR(x1,g9); g11 = x>y(g8,g9); g12 = OR(g6,g10); g13 = XOR(g7,g11); g14 = XOR(g8,g12); g15 = OR(g13,g14)",
    "gates": [
     [
@@ -933,7 +933,7 @@
      ]
     ]
    ],
-   "also_machine_checked": false,
+   "also_machine_checked": true,
    "published": {
     "value": 10,
     "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)",
@@ -952,10 +952,10 @@
     7,
     10
    ],
-   "lower": 9,
+   "lower": 10,
    "upper": 10,
-   "label": "Open",
-   "lower_evidence": "k = 1..8 refuted",
+   "label": "Machine-checked",
+   "lower_evidence": "k = 1..9 refuted (circuit_sat.py; DRAT proofs verified by drat-trim)",
    "circuit": "g6 = AND(x1,x2); g7 = OR(x1,x2); g8 = XOR(x3,x4); g9 = XOR(x3,g7); g10 = XOR(x4,g9); g11 = OR(g8,g9); g12 = AND(x5,g11); g13 = XOR(g10,g11); g14 = OR(g6,g13); g15 = OR(g12,g14)",
    "gates": [
     [
@@ -1069,7 +1069,7 @@
      ]
     ]
    ],
-   "also_machine_checked": false,
+   "also_machine_checked": true,
    "published": {
     "value": 10,
     "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)"

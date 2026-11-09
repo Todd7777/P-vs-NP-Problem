@@ -32,20 +32,19 @@ full runs take much longer.
 
 ## State on 2026-11-09
 
-- Of the six intervals the first run left in `experiments/results/explicit_run.log`, four are closed
-  and Machine-checked or Theorem: MAJ_5 = 9 and EXACTLY2_5 = 9 (B2), MOD3_4 = 10 (U2), and
-  parity_5 = 12 (U2, Schnorr's theorem, docs/05 §5.2). For MOD3_5 and THR2_5 (B2) the 9-gate
-  instance is UNSAT according to CaDiCaL and its DRAT proof (about 0.8 GB each) was still being
-  checked by drat-trim at the last commit; until that check is recorded they stay [9, 10] in
-  `experiments/results/explicit_final.json`. Knuth's table gives 10 for both.
+- Every cost in `experiments/results/explicit_final.json` is exact and labelled Theorem or
+  Machine-checked. The six intervals the first run left in `experiments/results/explicit_run.log`
+  closed as MAJ_5 = 9, EXACTLY2_5 = 9, MOD3_5 = 10 and THR2_5 = 10 (B2), MOD3_4 = 10 (U2), and
+  parity_5 = 12 (U2; Schnorr's theorem, docs/05 §5.2). Every B2 value agrees with Knuth's table of
+  optimal 5-input chains (optimal5, parsed by `experiments/compare_optimal5.py`). No published value
+  was found for MOD3_4 in U2.
 - Lower bounds come from `experiments/circuit_sat.py` (symmetry-reduced encoding; soundness proof in
-  `experiments/ENCODING.md`) with DRAT proofs checked by drat-trim. The proofs are not committed
-  (about 2 GB): `certify_costs.py recheck` regenerates them bit for bit and checks them again.
-- Every B2 value agrees with Knuth's table of optimal 5-input chains, as packaged by optimal5 and
-  parsed by `experiments/compare_optimal5.py`. No published value was found for MOD3_4 in U2;
-  `crosscheck_old_encoding.py` re-derives its refutations with the first, independently written encoding.
-- `summarize_u2_n4.py` cannot be rerun: its input `results/n4_u2_closure.json` was never committed.
-  `certify_n4_u2.py` replaces it (the four 4-input U2 classes it left open).
+  `experiments/ENCODING.md`) with DRAT proofs checked by drat-trim. The two 9-gate B2 refutations took
+  about 16 minutes each to solve and about 50 minutes each to check (proofs of 0.8 GB). The proofs are
+  not committed (about 2 GB); `certify_costs.py recheck` regenerates them bit for bit and checks them again.
+- The U2 cost of all 65,536 functions of 4 variables is now complete (`results/n4_u2_complete.json`):
+  the four NPN classes the earlier runs left open all cost 10 (`certify_n4_u2.py`, checked proofs).
+  `summarize_u2_n4.py` cannot be rerun, because its input `results/n4_u2_closure.json` was never committed.
 - The session that wrote the docs could not fetch arXiv, ECCC or the ACM DL. Citations it could not verify
   are marked **[U]** and still need checking. On 2026-11-09 arXiv and gitlab.com were reachable through
   the proxy; Knuth's Stanford pages failed TLS verification, so TAOCP itself was not consulted.

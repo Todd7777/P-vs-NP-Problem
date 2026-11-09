@@ -74,16 +74,14 @@ drat-trim is not a Python package: build it from https://github.com/marijnheule/
 | EXACTLY2_5 | 5 | B2 | [7, 9] | 9 | Machine-checked | 9 | yes |
 | MAJ_3 xor x4 xor x5 | 5 | B2 | 6 | 6 | Machine-checked | 6 | yes |
 | MAJ_5 | 5 | B2 | [7, 10] | 9 | Machine-checked | 9 | yes |
-| MOD3_5 (sum=0 mod 3) | 5 | B2 | [7, 10] | [9, 10] | Open | 10 | yes |
-| THR2_5 (sum>=2) | 5 | B2 | [7, 10] | [9, 10] | Open | 10 | yes |
+| MOD3_5 (sum=0 mod 3) | 5 | B2 | [7, 10] | 10 | Machine-checked | 10 | yes |
+| THR2_5 (sum>=2) | 5 | B2 | [7, 10] | 10 | Machine-checked | 10 | yes |
 | parity_5 | 5 | B2 | 4 | 4 | Theorem | 4 | yes |
 | parity_2 | 2 | U2 | 3 | 3 | Theorem | 3 | yes |
 | parity_3 | 3 | U2 | 6 | 6 | Theorem | 6 | yes |
 | MOD3_4 (sum=0 mod 3) | 4 | U2 | [9, 10] | 10 | Machine-checked | — | — |
 | parity_4 | 4 | U2 | 9 | 9 | Theorem | 9 | yes |
 | parity_5 | 5 | U2 | [9, 12] | 12 | Theorem | 12 | yes |
-
-*Status at this commit (2026-11-09):* for MOD3_5 and THR2_5 the 9-gate instance is UNSAT according to CaDiCaL, but drat-trim is still checking the two 0.8 GB proofs, so both stay listed as open intervals until it finishes. Knuth's table gives 10 for both.
 <!-- TABLE END -->
 
 *Before* is the first run (`results/explicit_run.log`, a conflict budget per SAT call); *now* is
@@ -94,6 +92,12 @@ verified. The encoding (`experiments/circuit_sat.py`) and the proof that its sym
 a minimum circuit are in `experiments/ENCODING.md`. *Published* is Knuth's value for B2 (his optimal
 5-input chains, as packaged by optimal5; for MOD3 also as quoted by Kulikov, Pechenev and Slezkin)
 and Schnorr's theorem for parity in U2. No published value was found for MOD3_4 in U2.
+
+The same method completes the U2 table for 4 variables: the four NPN classes that the earlier runs
+left open all have U2 cost 10, so over all 65,536 functions of 4 variables the U2 cost is
+0, 1, ..., 10 for 10, 48, 256, 940, 2,336, 6,464, 10,616, 18,984, 17,680, 7,882 and 320 functions
+(`results/n4_u2_complete.json`; the four classes Machine-checked, the other 218 Numerical, agreeing
+with the earlier runs).
 
 The DRAT proofs (about 2 GB) are not in the repository. CaDiCaL is deterministic, so
 `python3 certify_costs.py recheck --proofs DIR` regenerates every proof bit for bit (the SHA-256 of
