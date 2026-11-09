@@ -13,6 +13,7 @@ finish, so an interrupted run can be resumed; `summarize` writes results/certifi
 
 Usage:
   python3 certify_costs.py run --proofs DIR [--workers 4] [--only NAME[,NAME]] [--kmin K] [--kmax K]
+                                [--skip NAME:BASIS:K[,...]]
   python3 certify_costs.py summarize
 """
 import argparse, json, os, sys, time
@@ -71,14 +72,17 @@ def run(a):
     os.makedirs(a.proofs, exist_ok=True)
     have = load_progress()
     only = set(a.only.split(",")) if a.only else None
+    skip = set(tuple(x.rsplit(":", 2)) for x in a.skip.split(",")) if a.skip else set()
     jobs = []
     for name, basis, U in TARGETS:
         full = C.suite_function(name)[0]
         if only and name not in only and full not in only:
             continue
+        sat = [k for (nm, b, k), r in have.items() if nm == full and b == basis and r["result"] is True]
+        U = min([U] + sat)                               # never go past a k already shown SAT
         for k in range(max(1, a.kmin), min(U, a.kmax) + 1):
             r = have.get((full, basis, k))
-            if r and done_ok(r):
+            if (r and done_ok(r)) or (name, basis, str(k)) in skip:
                 continue
             jobs.append((name, basis, k, a.proofs))
     jobs.sort(key=lambda j: -j[2])                      # hardest (largest k) first
@@ -130,5 +134,6 @@ if __name__ == "__main__":
     ap.add_argument("--only")
     ap.add_argument("--kmin", type=int, default=1)
     ap.add_argument("--kmax", type=int, default=99)
+    ap.add_argument("--skip", default="", help="comma-separated NAME:BASIS:K jobs to leave out")
     a = ap.parse_args()
     run(a) if a.cmd == "run" else summarize()
