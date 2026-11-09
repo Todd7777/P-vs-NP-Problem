@@ -91,7 +91,10 @@ on its whole truth table, and every smaller gate count was refuted by a DRAT pro
 verified. The encoding (`experiments/circuit_sat.py`) and the proof that its symmetry breaking keeps
 a minimum circuit are in `experiments/ENCODING.md`. *Published* is Knuth's value for B2 (his optimal
 5-input chains, as packaged by optimal5; for MOD3 also as quoted by Kulikov, Pechenev and Slezkin)
-and Schnorr's theorem for parity in U2. No published value was found for MOD3_4 in U2.
+and Schnorr's theorem for parity in U2. No published value was found for MOD3_4 in U2; as an
+independent check, the first, separately written encoding also refutes it for up to 8 gates with
+checked proofs (`results/crosscheck_old_encoding.json`), but its 9-gate run did not finish within
+30 CPU-minutes and was stopped.
 
 The same method completes the U2 table for 4 variables: the four NPN classes that the earlier runs
 left open all have U2 cost 10, so over all 65,536 functions of 4 variables the U2 cost is
