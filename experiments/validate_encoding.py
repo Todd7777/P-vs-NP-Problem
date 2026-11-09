@@ -7,8 +7,10 @@ validate_encoding.py -- cross-check the symmetry-reduced encoding of circuit_sat
 2. n = 4, B2: exact cost of all 222 NPN classes; the distribution over all 65,536 functions must
    equal Knuth's table (TAOCP 4A §7.1.2, reproduced by the first run) and every class must get the
    same cost as in results/n4_exact_costs.json (old encoding, fewer symmetry-breaking rules).
-3. n = 4, U2 (optional, slower): every class whose U2 cost the old runs determined exactly must get
-   the same value; for the classes they left open, the new values are reported.
+3. n = 4, U2 (slower): the 179 classes the first run settled must get the same value one by one; the
+   39 classes settled later by the closure run (whose per-class output was not kept) must fall in the
+   first run's interval, and the total over these 218 classes must equal the exact U2 distribution in
+   results/n4_u2_summary.json. The four classes still open after the old runs are not compared.
 Writes results/validation_encoding.json.
 
 Usage: python3 validate_encoding.py [b2|u2|all] [workers]
@@ -60,8 +62,18 @@ def check_n4(basis, workers):
             old_u2[canon] = open_cls.get(canon, (c["U2_lower"], c["U2_upper"]))
             # classes closed by the 50M-budget run are not in n4_exact_costs.json; take them from the summary
     t0 = time.time()
+    todo = sorted(base)
+    skipped = []
+    if basis == "U2":   # the four classes still open after the old runs are not part of the comparison
+        skipped = sorted(open_cls)
+        todo = [c for c in todo if c not in open_cls]
+    res = []
     with Pool(workers) as pool:
-        res = pool.map(_class_job, [(c, basis) for c in sorted(base)], chunksize=1)
+        for r in pool.imap_unordered(_class_job, [(c, basis) for c in todo], chunksize=1):
+            res.append(r)
+            if len(res) % 20 == 0:
+                print(f"  {len(res)}/{len(todo)} classes ({time.time() - t0:.0f}s)", flush=True)
+    res.sort()
     dist, disagree, newly = Counter(), [], []
     for canon, b, lo, hi, st, sec in res:
         assert st == "exact", (canon, lo, hi)
@@ -80,9 +92,17 @@ def check_n4(basis, workers):
     if basis == "B2":
         out["matches_knuth"] = dict(sorted(dist.items())) == KNUTH_N4
     else:
-        out["previously_open"] = newly
-    print(f"n=4 {basis}: {len(disagree)} disagreements; distribution {dict(sorted(dist.items()))}; "
-          f"{out['seconds']}s" + (f"; matches Knuth: {out['matches_knuth']}" if basis == "B2" else ""), flush=True)
+        # 179 classes were exact in the first run (compared one by one above); 39 more were closed by the
+        # 50M-budget closure run, whose per-class output was not kept, so for those the new value must lie
+        # in the first run's interval and the total must equal the exact distribution in n4_u2_summary.json.
+        out["compared_classes"] = len(res)
+        out["closed_later_classes"] = newly
+        out["not_compared_open_in_old_runs"] = [hex(c) for c in skipped]
+        out["matches_summary_distribution"] = ({str(k): v for k, v in sorted(dist.items())}
+                                                == summ["distribution_U2_exact_part"])
+    print(f"n=4 {basis}: {len(disagree)} disagreements over {len(res)} classes; distribution {dict(sorted(dist.items()))}; "
+          f"{out['seconds']}s" + (f"; matches Knuth: {out['matches_knuth']}" if basis == "B2" else
+                                  f"; total equals n4_u2_summary.json: {out['matches_summary_distribution']}"), flush=True)
     return out
 
 

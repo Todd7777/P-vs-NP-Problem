@@ -215,3 +215,27 @@ def test_recorded_labels_are_justified():
             assert [r["k"] for r in c["refutations"]] == list(range(1, e["upper"]))
         if e["label"] == "Open":
             assert e["lower"] < e["upper"]
+
+
+# ------------------------------------------------------------------ helpers of the result scripts
+def test_parse_circuit_roundtrip():
+    import build_final_table as B
+    full, n, tt = C.suite_function("MOD3_4")
+    r = C.cost(n, tt, "B2")
+    s = E.gates_to_str(n, r["circuit"])
+    assert E.gates_to_str(n, B.parse_circuit(n, s)) == s
+    assert E.verify(n, tt, B.parse_circuit(n, s))
+
+
+def test_optimal5_record_decoder(tmp_path):
+    import compare_optimal5 as O
+    # one record: x1 & x2 (operator code 0, operand indices 1 and 2 stored as 0 and 1), then x1 ^ gate6
+    g1 = (0 << 8) | (1 << 4) | 0
+    g2 = (2 << 8) | (5 << 4) | 0
+    x = g1 | (g2 << 10)
+    rec = x.to_bytes(5, "little") + bytes(10)
+    path = tmp_path / "one.dat"
+    path.write_bytes(rec)
+    table, _ = O.parse(str(path))
+    x1, x2 = O.INPUTS[0], O.INPUTS[1]
+    assert table == {x1 ^ (x1 & x2): (2, [(1, "&", 2), (1, "^", 6)])}
