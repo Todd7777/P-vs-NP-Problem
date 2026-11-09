@@ -14,7 +14,9 @@ stored chain (so each stored chain is a verified upper bound), and then
   1. checks that the number of classes per cost equals the table in checktab.py, and
   2. looks up every function of the explicit suite (n <= 5; a function of fewer inputs is a 5-input
      function that ignores the rest, with the same cost) by trying all 7,680 NPN transforms of its
-     truth table against the stored class representatives.
+     truth table against the stored class representatives, and
+  3. compares the B2 cost of each of the 222 NPN classes of 4-input functions in
+     results/n4_exact_costs.json the same way.
 
 Usage: python3 compare_optimal5.py PATH/TO/knuthies.dat   (writes results/optimal5_comparison.json)
 """
@@ -59,19 +61,19 @@ def parse(path):
     return table, hashlib.sha256(data).hexdigest()
 
 
+_MAPS = [[sum((((t >> perm[j]) & 1) ^ ((neg >> j) & 1)) << j for j in range(5)) for t in range(32)]
+         for perm in itertools.permutations(range(5)) for neg in range(32)]
+
+
 def npn_orbit(tt32):
     """All 7,680 images of a 5-input truth table under permuting/negating inputs and negating the output."""
     out = set()
-    for perm in itertools.permutations(range(5)):
-        for neg in range(32):
-            y = 0
-            for t in range(32):
-                src = 0
-                for j in range(5):
-                    src |= (((t >> perm[j]) & 1) ^ ((neg >> j) & 1)) << j
-                y |= ((tt32 >> src) & 1) << t
-            out.add(y)
-            out.add(y ^ FULL)
+    for src in _MAPS:
+        y = 0
+        for t in range(32):
+            y |= ((tt32 >> src[t]) & 1) << t
+        out.add(y)
+        out.add(y ^ FULL)
     return out
 
 
@@ -106,9 +108,21 @@ def main(path):
         cost, rep = lookup(table, n, tt)
         rows.append({"name": name, "n": n, "knuth_B2_cost": cost, "class_representative": hex(rep) if rep is not None else None})
         print(f"  {name:28s} n={n}: Knuth/optimal5 B2 cost {cost}")
+    # all 222 NPN classes of 4-input functions, against the first run (results/n4_exact_costs.json)
+    n4 = json.load(open(os.path.join(R, "n4_exact_costs.json")))["classes"]
+    n4_mismatch, n4_dist = [], {}
+    for c in n4:
+        cost, _ = lookup(table, 4, E.int_to_tt(c["canonical"], 4))
+        cost = 0 if cost is None else cost          # constants and literals are not stored
+        n4_dist[cost] = n4_dist.get(cost, 0) + c["size"]
+        if cost != c["cost_B2"]:
+            n4_mismatch.append((hex(c["canonical"]), c["cost_B2"], cost))
+    n4_dist = dict(sorted(n4_dist.items()))
+    print(f"n=4: {len(n4)} classes compared, {len(n4_mismatch)} disagreements; distribution from Knuth's chains {n4_dist}")
     out = {"source": "https://gitlab.com/apgoucher/optimal5 knuthies.dat (Knuth's optimal 5-input chains)",
            "knuthies_sha256": digest, "classes_per_cost": dist, "matches_knuth_table2": table2_ok,
-           "readme_example_0x169ae443": readme_example, "functions": rows}
+           "readme_example_0x169ae443": readme_example, "functions": rows,
+           "n4_classes_compared": len(n4), "n4_disagreements": n4_mismatch, "n4_distribution_from_optimal5": n4_dist}
     json.dump(out, open(os.path.join(R, "optimal5_comparison.json"), "w"), indent=1)
     return out
 

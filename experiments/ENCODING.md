@@ -151,3 +151,13 @@ For each refuted $k$ the run keeps the exact DIMACS file and CaDiCaL's binary DR
 
 Upper bounds need no trust in the encoding at all: every circuit is re-evaluated on the full truth
 table by `exact_circuit_complexity.verify`.
+
+**Where the proofs are.** The DRAT files total about 2 GB (the two 9-gate refutations are about
+0.8 GB each), too large for this repository. They are reproducible: CaDiCaL is deterministic, so
+with the pinned `python-sat` the command
+
+    python3 certify_costs.py recheck --proofs DIR [--only MOD3_5] [--kmin 9]
+
+regenerates each CNF and proof, requires both to be bit-identical to the SHA-256 recorded in
+`results/certificates.json`, and runs drat-trim on them again. (Bit-identical regeneration was
+confirmed for the 55 MB proof of MAJ_5 at k = 8, under a different machine load.)

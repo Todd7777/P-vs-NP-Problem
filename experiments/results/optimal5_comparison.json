@@ -103,5 +103,17 @@
    "knuth_B2_cost": 3,
    "class_representative": "0xf333c"
   }
- ]
+ ],
+ "n4_classes_compared": 222,
+ "n4_disagreements": [],
+ "n4_distribution_from_optimal5": {
+  "0": 10,
+  "1": 60,
+  "2": 456,
+  "3": 2474,
+  "4": 10624,
+  "5": 24184,
+  "6": 25008,
+  "7": 2720
+ }
 }

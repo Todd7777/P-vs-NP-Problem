@@ -2,19 +2,25 @@
 """
 certify_costs.py -- certified exact costs for the explicit functions of exact_circuit_complexity.py.
 
-For a function f with best known upper bound U (a verified circuit), the driver runs the
-symmetry-reduced encoding of circuit_sat.py at every k = 1..U:
-  * k < U: the CNF must be UNSAT. CaDiCaL writes a binary DRAT proof, drat-trim checks it against
-    the exact CNF file, and the record keeps the SHA-256 of both files;
-  * k = U: the CNF must be SAT; the decoded circuit is re-evaluated on the full truth table.
-If some k < U turns out SAT, that k is the new upper bound and larger k are not needed.
+For a function f with best known upper bound U (a circuit from results/explicit_costs.json, which
+summarize re-evaluates on the whole truth table), the driver runs the symmetry-reduced encoding of
+circuit_sat.py at every k = 1..U-1. An UNSAT answer comes with a binary DRAT proof from CaDiCaL that
+drat-trim checks against the exact CNF file; the record keeps the SHA-256 of both files. If some
+k < U is SAT, the decoded circuit (re-evaluated on the truth table) is the new upper bound and
+larger k are skipped. The CNF is not run at k = U itself: the symmetry-breaking rules are only
+claimed sound at k = C(f), and the old circuit already proves C(f) <= U.
 Jobs run in parallel (one solver per process). Records are appended to a progress file as they
-finish, so an interrupted run can be resumed; `summarize` writes results/certificates.json.
+finish, so an interrupted run can be resumed; `summarize` writes results/certificates.json, and
+`merge FILE NAME BASIS` adds a record printed by `circuit_sat.py solve ... --proofs`.
 
 Usage:
   python3 certify_costs.py run --proofs DIR [--workers 4] [--only NAME[,NAME]] [--kmin K] [--kmax K]
                                 [--skip NAME:BASIS:K[,...]]
   python3 certify_costs.py summarize
+  python3 certify_costs.py merge RECORD.json NAME BASIS
+  python3 certify_costs.py recheck --proofs DIR [--workers 4] [--only NAME[,NAME]] [--kmin K] [--kmax K]
+      regenerates the recorded refutations, requires bit-identical CNF and proof files (same
+      SHA-256 as in results/certificates.json), and runs drat-trim on each again
 """
 import argparse, json, os, sys, time
 from multiprocessing import Pool
@@ -80,7 +86,7 @@ def run(a):
             continue
         sat = [k for (nm, b, k), r in have.items() if nm == full and b == basis and r["result"] is True]
         U = min([U] + sat)                               # never go past a k already shown SAT
-        for k in range(max(1, a.kmin), min(U, a.kmax) + 1):
+        for k in range(max(1, a.kmin), min(U - 1, a.kmax) + 1):
             r = have.get((full, basis, k))
             if (r and done_ok(r)) or (name, basis, str(k)) in skip:
                 continue
@@ -102,19 +108,26 @@ def run(a):
 
 def summarize():
     recs = load_progress()
+    old = {(r["name"], r["basis"]): r for r in json.load(open(os.path.join(R, "explicit_costs.json")))}
     out = []
     for name, basis, U in TARGETS:
-        full = C.suite_function(name)[0]
+        full, n, tt = C.suite_function(name)
         ks = sorted(k for (nm, b, k) in recs if nm == full and b == basis)
         sat = [k for k in ks if recs[(full, basis, k)]["result"] is True]
-        cost = min(sat) if sat else None
+        cost = min(sat + [U])
+        if sat and min(sat) == cost:
+            circuit, source = recs[(full, basis, cost)]["circuit"], "circuit_sat.py"
+        else:
+            circuit, source = old[(full, basis)]["circuit"], "results/explicit_costs.json"
+        import build_final_table
+        assert E.verify(n, tt, build_final_table.parse_circuit(n, circuit)), (full, basis)
         lower = 1
         while (full, basis, lower) in recs and recs[(full, basis, lower)]["result"] is False:
             lower += 1                                   # contiguous refuted prefix 1..lower-1
         verified = all(recs[(full, basis, k)].get("drat_trim", {}).get("verified") is True for k in range(1, lower))
         entry = {"name": full, "basis": basis, "lower": lower, "upper": cost,
-                 "exact": cost is not None and lower == cost, "all_refutations_drat_verified": verified,
-                 "circuit": recs[(full, basis, cost)]["circuit"] if cost else None,
+                 "exact": lower == cost, "all_refutations_drat_verified": verified,
+                 "circuit": circuit, "circuit_source": source,
                  "refutations": [{k2: recs[(full, basis, k)].get(k2) for k2 in
                                   ("k", "nvars", "nclauses", "cnf_sha256", "solver", "solve_seconds", "stats",
                                    "proof_bytes", "proof_sha256")} | {"drat_trim_verified":
@@ -126,9 +139,55 @@ def summarize():
     json.dump({"rules": C.DEFAULT_RULES, "encoding": "circuit_sat.py", "results": out}, open(FINAL, "w"), indent=1)
 
 
+def _recheck_job(args):
+    name, basis, k, proofs, cnf_hash, proof_hash = args
+    rec = job((name, basis, k, proofs))
+    same = rec["cnf_sha256"] == cnf_hash and rec.get("proof_sha256") == proof_hash
+    ok = same and rec.get("drat_trim", {}).get("verified") is True
+    return ok, (f"{'OK  ' if ok else 'FAIL'} {name:24s} {basis} k={k:2d}: identical CNF and proof: {same}; "
+                f"drat-trim: {rec.get('drat_trim', {}).get('verified')} ({rec.get('drat_trim', {}).get('seconds')}s)")
+
+
+def recheck(a):
+    """Regenerate recorded refutations (CaDiCaL is deterministic, so CNF and proof must be bit-identical
+    to the recorded SHA-256), and check each proof again with drat-trim."""
+    os.makedirs(a.proofs, exist_ok=True)
+    only = set(a.only.split(",")) if a.only else None
+    jobs = []
+    for c in json.load(open(FINAL))["results"]:
+        if only and c["name"] not in only and c["name"].split(" ")[0] not in only:
+            continue
+        for r in c["refutations"]:
+            if a.kmin <= r["k"] <= a.kmax:
+                jobs.append((c["name"], c["basis"], r["k"], a.proofs, r["cnf_sha256"], r["proof_sha256"]))
+    jobs.sort(key=lambda j: -j[2])
+    print(f"rechecking {len(jobs)} refutations with {a.workers} workers", flush=True)
+    fails = 0
+    with Pool(a.workers, maxtasksperchild=1) as pool:
+        for ok, msg in pool.imap_unordered(_recheck_job, jobs):
+            fails += not ok
+            print(msg, flush=True)
+    print("all identical and verified" if not fails else f"{fails} FAILED")
+
+
+def merge(path, name, basis):
+    rec = json.load(open(path))
+    rec["name"], rec["basis"] = C.suite_function(name)[0], basis
+    assert rec["basis"] == basis and rec["n"] == C.suite_function(name)[1]
+    full, n, tt = C.suite_function(name)
+    assert rec["cnf_sha256"] == C.sha256(C.Encoding(n, tt, rec["k"], basis, rec["rules"]).dimacs(rec["units"])), \
+        "record does not belong to this function/basis/k"
+    with open(PROGRESS, "a") as fh:
+        fh.write(json.dumps(rec) + "\n")
+    print("merged", rec["name"], basis, "k =", rec["k"], rec["result"], rec.get("drat_trim", {}).get("verified"))
+
+
 if __name__ == "__main__":
+    if len(sys.argv) == 5 and sys.argv[1] == "merge":
+        merge(*sys.argv[2:])
+        sys.exit()
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["run", "summarize"])
+    ap.add_argument("cmd", choices=["run", "summarize", "recheck"])
     ap.add_argument("--proofs", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "proofs"))
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--only")
@@ -136,4 +195,4 @@ if __name__ == "__main__":
     ap.add_argument("--kmax", type=int, default=99)
     ap.add_argument("--skip", default="", help="comma-separated NAME:BASIS:K jobs to leave out")
     a = ap.parse_args()
-    run(a) if a.cmd == "run" else summarize()
+    {"run": run, "recheck": recheck}.get(a.cmd, lambda a: summarize())(a)
