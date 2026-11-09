@@ -1,0 +1,7 @@
+# Python dependencies for experiments/ and tests/.
+# python-sat is pinned because the SAT solvers it bundles (CaDiCaL 1.9.5 / 3.0.0, Kissat 4.0.4)
+# produced the UNSAT proofs recorded in experiments/results/; a different build can produce
+# different (equally valid) proofs.
+python-sat==1.9.dev21
+numpy>=1.24
+pytest>=7
