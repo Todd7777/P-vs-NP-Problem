@@ -1,5 +1,10 @@
 """Combine the n=4 U2 results into one distribution.
 
+Note (2026-11-09): this script cannot be rerun from the repository as committed. Its second input,
+results/n4_u2_closure.json (or the .jsonl progress file), was never committed; only its output,
+results/n4_u2_summary.json, was. certify_n4_u2.py supersedes it: it settles the classes left open
+here with checked proofs and writes the complete distribution to results/n4_u2_complete.json.
+
 Sources (all in results/): n4_exact_costs.json (first run, 400k-conflict budget),
 n4_u2_closure.json or n4_u2_closure_progress.jsonl (closure run, 50M budget per call), and
 n4_u2_closure_k8.json (8-gate refutations for the classes the closure run had not finished), and

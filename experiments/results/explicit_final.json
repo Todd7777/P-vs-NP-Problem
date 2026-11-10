@@ -1,0 +1,1693 @@
+{
+ "description": "build_final_table.py -- one labelled table of the explicit-function costs.",
+ "functions": [
+  {
+   "name": "parity_2",
+   "n": 2,
+   "basis": "B2",
+   "previous_interval": [
+    1,
+    1
+   ],
+   "lower": 1,
+   "upper": 1,
+   "label": "Theorem",
+   "lower_evidence": "each gate joins at most two components of the wiring graph (docs/05 \u00a75.2)",
+   "circuit": "g3 = XOR(x1,x2)",
+   "gates": [
+    [
+     2,
+     0,
+     1,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 1,
+    "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "parity_3",
+   "n": 3,
+   "basis": "B2",
+   "previous_interval": [
+    2,
+    2
+   ],
+   "lower": 2,
+   "upper": 2,
+   "label": "Theorem",
+   "lower_evidence": "each gate joins at most two components of the wiring graph (docs/05 \u00a75.2)",
+   "circuit": "g4 = XOR(x1,x2); g5 = XOR(x3,g4)",
+   "gates": [
+    [
+     3,
+     0,
+     1,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     4,
+     2,
+     3,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 2,
+    "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "ADD2 carry-out",
+   "n": 4,
+   "basis": "B2",
+   "previous_interval": [
+    5,
+    5
+   ],
+   "lower": 5,
+   "upper": 5,
+   "label": "Machine-checked",
+   "lower_evidence": "k = 1..4 refuted (circuit_sat.py; DRAT proofs verified by drat-trim)",
+   "circuit": "g5 = AND(x1,x3); g6 = AND(x2,g5); g7 = XOR(x2,g5); g8 = AND(x4,g7); g9 = XOR(g6,g8)",
+   "gates": [
+    [
+     4,
+     0,
+     2,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     5,
+     1,
+     4,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     6,
+     1,
+     4,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     7,
+     3,
+     6,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     8,
+     5,
+     7,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 5,
+    "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "MOD3_4 (sum=0 mod 3)",
+   "n": 4,
+   "basis": "B2",
+   "previous_interval": [
+    7,
+    7
+   ],
+   "lower": 7,
+   "upper": 7,
+   "label": "Machine-checked",
+   "lower_evidence": "k = 1..6 refuted (circuit_sat.py; DRAT proofs verified by drat-trim)",
+   "circuit": "g5 = AND(x3,x4); g6 = AND(x1,x2); g7 = XOR(x1,x2); g8 = XOR(x3,g6); g9 = XOR(g5,g7); g10 = XOR(x4,g8); g11 = OR(g9,g10)",
+   "gates": [
+    [
+     4,
+     2,
+     3,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     5,
+     0,
+     1,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     6,
+     0,
+     1,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     7,
+     2,
+     5,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     8,
+     4,
+     6,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     9,
+     3,
+     7,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     10,
+     8,
+     9,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 7,
+    "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)",
+    "also": {
+     "value": 7,
+     "source": "Knuth via Kulikov-Pechenev-Slezkin, arXiv:2102.12579"
+    }
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "MUL2 bit1",
+   "n": 4,
+   "basis": "B2",
+   "previous_interval": [
+    3,
+    3
+   ],
+   "lower": 3,
+   "upper": 3,
+   "label": "Machine-checked",
+   "lower_evidence": "k = 1..2 refuted (circuit_sat.py; DRAT proofs verified by drat-trim)",
+   "circuit": "g5 = AND(x1,x4); g6 = AND(x2,x3); g7 = XOR(g5,g6)",
+   "gates": [
+    [
+     4,
+     0,
+     3,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     5,
+     1,
+     2,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     6,
+     4,
+     5,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 3,
+    "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "MUL2 bit2",
+   "n": 4,
+   "basis": "B2",
+   "previous_interval": [
+    3,
+    3
+   ],
+   "lower": 3,
+   "upper": 3,
+   "label": "Machine-checked",
+   "lower_evidence": "k = 1..2 refuted (circuit_sat.py; DRAT proofs verified by drat-trim)",
+   "circuit": "g5 = AND(x1,x3); g6 = AND(x2,x4); g7 = x<y(g5,g6)",
+   "gates": [
+    [
+     4,
+     0,
+     2,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     5,
+     1,
+     3,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     6,
+     4,
+     5,
+     [
+      0,
+      1,
+      0,
+      0
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 3,
+    "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "MUL2 bit3",
+   "n": 4,
+   "basis": "B2",
+   "previous_interval": [
+    3,
+    3
+   ],
+   "lower": 3,
+   "upper": 3,
+   "label": "Machine-checked",
+   "lower_evidence": "k = 1..2 refuted (circuit_sat.py; DRAT proofs verified by drat-trim)",
+   "circuit": "g5 = AND(x1,x2); g6 = AND(x4,g5); g7 = AND(x3,g6)",
+   "gates": [
+    [
+     4,
+     0,
+     1,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     5,
+     3,
+     4,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     6,
+     2,
+     5,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 3,
+    "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "parity_4",
+   "n": 4,
+   "basis": "B2",
+   "previous_interval": [
+    3,
+    3
+   ],
+   "lower": 3,
+   "upper": 3,
+   "label": "Theorem",
+   "lower_evidence": "each gate joins at most two components of the wiring graph (docs/05 \u00a75.2)",
+   "circuit": "g5 = XOR(x1,x2); g6 = XOR(x4,g5); g7 = XOR(x3,g6)",
+   "gates": [
+    [
+     4,
+     0,
+     1,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     5,
+     3,
+     4,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     6,
+     2,
+     5,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 3,
+    "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "EXACTLY2_5",
+   "n": 5,
+   "basis": "B2",
+   "previous_interval": [
+    7,
+    9
+   ],
+   "lower": 9,
+   "upper": 9,
+   "label": "Machine-checked",
+   "lower_evidence": "k = 1..8 refuted (circuit_sat.py; DRAT proofs verified by drat-trim)",
+   "circuit": "g6 = XOR(x1,x2); g7 = XOR(x3,x4); g8 = XOR(x5,g6); g9 = XOR(x2,g7); g10 = x>y(x4,g8); g11 = XOR(g7,g8); g12 = OR(g6,g9); g13 = XOR(g10,g12); g14 = x<y(g11,g13)",
+   "gates": [
+    [
+     5,
+     0,
+     1,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     6,
+     2,
+     3,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     7,
+     4,
+     5,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     8,
+     1,
+     6,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     9,
+     3,
+     7,
+     [
+      0,
+      0,
+      1,
+      0
+     ]
+    ],
+    [
+     10,
+     6,
+     7,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     11,
+     5,
+     8,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     12,
+     9,
+     11,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     13,
+     10,
+     12,
+     [
+      0,
+      1,
+      0,
+      0
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 9,
+    "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "MAJ_3 xor x4 xor x5",
+   "n": 5,
+   "basis": "B2",
+   "previous_interval": [
+    6,
+    6
+   ],
+   "lower": 6,
+   "upper": 6,
+   "label": "Machine-checked",
+   "lower_evidence": "k = 1..5 refuted (circuit_sat.py; DRAT proofs verified by drat-trim)",
+   "circuit": "g6 = XOR(x1,x2); g7 = XOR(x1,x3); g8 = x<y(g6,g7); g9 = XOR(x3,x4); g10 = XOR(x5,g9); g11 = XOR(g8,g10)",
+   "gates": [
+    [
+     5,
+     0,
+     1,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     6,
+     0,
+     2,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     7,
+     5,
+     6,
+     [
+      0,
+      1,
+      0,
+      0
+     ]
+    ],
+    [
+     8,
+     2,
+     3,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     9,
+     4,
+     8,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     10,
+     7,
+     9,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 6,
+    "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "MAJ_5",
+   "n": 5,
+   "basis": "B2",
+   "previous_interval": [
+    7,
+    10
+   ],
+   "lower": 9,
+   "upper": 9,
+   "label": "Machine-checked",
+   "lower_evidence": "k = 1..8 refuted (circuit_sat.py; DRAT proofs verified by drat-trim)",
+   "circuit": "g6 = XOR(x1,x2); g7 = XOR(x1,x3); g8 = XOR(x4,x5); g9 = XOR(x2,g7); g10 = OR(g6,g7); g11 = XOR(x5,g9); g12 = OR(g8,g11); g13 = AND(g10,g12); g14 = XOR(g9,g13)",
+   "gates": [
+    [
+     5,
+     0,
+     1,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     6,
+     0,
+     2,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     7,
+     3,
+     4,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     8,
+     1,
+     6,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     9,
+     5,
+     6,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     10,
+     4,
+     8,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     11,
+     7,
+     10,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     12,
+     9,
+     11,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     13,
+     8,
+     12,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 9,
+    "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "MOD3_5 (sum=0 mod 3)",
+   "n": 5,
+   "basis": "B2",
+   "previous_interval": [
+    7,
+    10
+   ],
+   "lower": 10,
+   "upper": 10,
+   "label": "Machine-checked",
+   "lower_evidence": "k = 1..9 refuted (circuit_sat.py; DRAT proofs verified by drat-trim)",
+   "circuit": "g6 = XOR(x1,x2); g7 = XOR(x3,x4); g8 = OR(x3,x4); g9 = XOR(x5,g6); g10 = XOR(x1,g9); g11 = x>y(g8,g9); g12 = OR(g6,g10); g13 = XOR(g7,g11); g14 = XOR(g8,g12); g15 = OR(g13,g14)",
+   "gates": [
+    [
+     5,
+     0,
+     1,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     6,
+     2,
+     3,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     7,
+     2,
+     3,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     8,
+     4,
+     5,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     9,
+     0,
+     8,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     10,
+     7,
+     8,
+     [
+      0,
+      0,
+      1,
+      0
+     ]
+    ],
+    [
+     11,
+     5,
+     9,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     12,
+     6,
+     10,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     13,
+     7,
+     11,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     14,
+     12,
+     13,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 10,
+    "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)",
+    "also": {
+     "value": 10,
+     "source": "Knuth via Kulikov-Pechenev-Slezkin, arXiv:2102.12579"
+    }
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "THR2_5 (sum>=2)",
+   "n": 5,
+   "basis": "B2",
+   "previous_interval": [
+    7,
+    10
+   ],
+   "lower": 10,
+   "upper": 10,
+   "label": "Machine-checked",
+   "lower_evidence": "k = 1..9 refuted (circuit_sat.py; DRAT proofs verified by drat-trim)",
+   "circuit": "g6 = AND(x1,x2); g7 = OR(x1,x2); g8 = XOR(x3,x4); g9 = XOR(x3,g7); g10 = XOR(x4,g9); g11 = OR(g8,g9); g12 = AND(x5,g11); g13 = XOR(g10,g11); g14 = OR(g6,g13); g15 = OR(g12,g14)",
+   "gates": [
+    [
+     5,
+     0,
+     1,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     6,
+     0,
+     1,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     7,
+     2,
+     3,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     8,
+     2,
+     6,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     9,
+     3,
+     8,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     10,
+     7,
+     8,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     11,
+     4,
+     10,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     12,
+     9,
+     10,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     13,
+     5,
+     12,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     14,
+     11,
+     13,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 10,
+    "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "parity_5",
+   "n": 5,
+   "basis": "B2",
+   "previous_interval": [
+    4,
+    4
+   ],
+   "lower": 4,
+   "upper": 4,
+   "label": "Theorem",
+   "lower_evidence": "each gate joins at most two components of the wiring graph (docs/05 \u00a75.2)",
+   "circuit": "g6 = XOR(x3,x4); g7 = XOR(x5,g6); g8 = XOR(x1,g7); g9 = XOR(x2,g8)",
+   "gates": [
+    [
+     5,
+     2,
+     3,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     6,
+     4,
+     5,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     7,
+     0,
+     6,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    [
+     8,
+     1,
+     7,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 4,
+    "source": "Knuth's optimal 5-input chains (optimal5 knuthies.dat)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "parity_2",
+   "n": 2,
+   "basis": "U2",
+   "previous_interval": [
+    3,
+    3
+   ],
+   "lower": 3,
+   "upper": 3,
+   "label": "Theorem",
+   "lower_evidence": "Schnorr's theorem C_U2(parity_n) = 3(n-1), docs/05 Theorem 5.3",
+   "circuit": "g3 = x>y(x1,x2); g4 = x<y(x1,x2); g5 = OR(g3,g4)",
+   "gates": [
+    [
+     2,
+     0,
+     1,
+     [
+      0,
+      0,
+      1,
+      0
+     ]
+    ],
+    [
+     3,
+     0,
+     1,
+     [
+      0,
+      1,
+      0,
+      0
+     ]
+    ],
+    [
+     4,
+     2,
+     3,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 3,
+    "source": "Schnorr 1974 (docs/05 Theorem 5.3)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "parity_3",
+   "n": 3,
+   "basis": "U2",
+   "previous_interval": [
+    6,
+    6
+   ],
+   "lower": 6,
+   "upper": 6,
+   "label": "Theorem",
+   "lower_evidence": "Schnorr's theorem C_U2(parity_n) = 3(n-1), docs/05 Theorem 5.3",
+   "circuit": "g4 = AND(x2,x3); g5 = OR(x2,x3); g6 = x<y(g4,g5); g7 = x>y(x1,g6); g8 = x<y(x1,g6); g9 = OR(g7,g8)",
+   "gates": [
+    [
+     3,
+     1,
+     2,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     4,
+     1,
+     2,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     5,
+     3,
+     4,
+     [
+      0,
+      1,
+      0,
+      0
+     ]
+    ],
+    [
+     6,
+     0,
+     5,
+     [
+      0,
+      0,
+      1,
+      0
+     ]
+    ],
+    [
+     7,
+     0,
+     5,
+     [
+      0,
+      1,
+      0,
+      0
+     ]
+    ],
+    [
+     8,
+     6,
+     7,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 6,
+    "source": "Schnorr 1974 (docs/05 Theorem 5.3)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "MOD3_4 (sum=0 mod 3)",
+   "n": 4,
+   "basis": "U2",
+   "previous_interval": [
+    9,
+    10
+   ],
+   "lower": 10,
+   "upper": 10,
+   "label": "Machine-checked",
+   "lower_evidence": "k = 1..9 refuted (circuit_sat.py; DRAT proofs verified by drat-trim)",
+   "circuit": "g5 = AND(x1,x2); g6 = OR(x1,x2); g7 = AND(x3,x4); g8 = OR(x3,x4); g9 = x<y(g5,g8); g10 = x<y(g7,g8); g11 = x>y(g6,g10); g12 = AND(g9,g11); g13 = OR(g9,g11); g14 = x<y(g12,g13)",
+   "gates": [
+    [
+     4,
+     0,
+     1,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     5,
+     0,
+     1,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     6,
+     2,
+     3,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     7,
+     2,
+     3,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     8,
+     4,
+     7,
+     [
+      0,
+      1,
+      0,
+      0
+     ]
+    ],
+    [
+     9,
+     6,
+     7,
+     [
+      0,
+      1,
+      0,
+      0
+     ]
+    ],
+    [
+     10,
+     5,
+     9,
+     [
+      0,
+      0,
+      1,
+      0
+     ]
+    ],
+    [
+     11,
+     8,
+     10,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     12,
+     8,
+     10,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     13,
+     11,
+     12,
+     [
+      0,
+      1,
+      0,
+      0
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": null,
+   "agrees_with_published": null
+  },
+  {
+   "name": "parity_4",
+   "n": 4,
+   "basis": "U2",
+   "previous_interval": [
+    9,
+    9
+   ],
+   "lower": 9,
+   "upper": 9,
+   "label": "Theorem",
+   "lower_evidence": "Schnorr's theorem C_U2(parity_n) = 3(n-1), docs/05 Theorem 5.3",
+   "circuit": "g5 = OR(x2,x3); g6 = AND(x2,x3); g7 = x>y(g5,g6); g8 = OR(x1,x4); g9 = AND(x1,x4); g10 = x>y(g8,g9); g11 = x>y(g7,g10); g12 = x<y(g7,g10); g13 = OR(g11,g12)",
+   "gates": [
+    [
+     4,
+     1,
+     2,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     5,
+     1,
+     2,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     6,
+     4,
+     5,
+     [
+      0,
+      0,
+      1,
+      0
+     ]
+    ],
+    [
+     7,
+     0,
+     3,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     8,
+     0,
+     3,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     9,
+     7,
+     8,
+     [
+      0,
+      0,
+      1,
+      0
+     ]
+    ],
+    [
+     10,
+     6,
+     9,
+     [
+      0,
+      0,
+      1,
+      0
+     ]
+    ],
+    [
+     11,
+     6,
+     9,
+     [
+      0,
+      1,
+      0,
+      0
+     ]
+    ],
+    [
+     12,
+     10,
+     11,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ]
+   ],
+   "also_machine_checked": true,
+   "published": {
+    "value": 9,
+    "source": "Schnorr 1974 (docs/05 Theorem 5.3)"
+   },
+   "agrees_with_published": true
+  },
+  {
+   "name": "parity_5",
+   "n": 5,
+   "basis": "U2",
+   "previous_interval": [
+    9,
+    12
+   ],
+   "lower": 12,
+   "upper": 12,
+   "label": "Theorem",
+   "lower_evidence": "Schnorr's theorem C_U2(parity_n) = 3(n-1), docs/05 Theorem 5.3",
+   "circuit": "g6 = OR(x2,x4); g7 = AND(x2,x4); g8 = x>y(g6,g7); g9 = x>y(x1,x3); g10 = x<y(x1,x3); g11 = OR(g9,g10); g12 = AND(x5,g8); g13 = OR(x5,g8); g14 = x<y(g12,g13); g15 = AND(g11,g14); g16 = OR(g11,g14); g17 = x<y(g15,g16)",
+   "gates": [
+    [
+     5,
+     1,
+     3,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     6,
+     1,
+     3,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     7,
+     5,
+     6,
+     [
+      0,
+      0,
+      1,
+      0
+     ]
+    ],
+    [
+     8,
+     0,
+     2,
+     [
+      0,
+      0,
+      1,
+      0
+     ]
+    ],
+    [
+     9,
+     0,
+     2,
+     [
+      0,
+      1,
+      0,
+      0
+     ]
+    ],
+    [
+     10,
+     8,
+     9,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     11,
+     4,
+     7,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     12,
+     4,
+     7,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     13,
+     11,
+     12,
+     [
+      0,
+      1,
+      0,
+      0
+     ]
+    ],
+    [
+     14,
+     10,
+     13,
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    [
+     15,
+     10,
+     13,
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    [
+     16,
+     14,
+     15,
+     [
+      0,
+      1,
+      0,
+      0
+     ]
+    ]
+   ],
+   "also_machine_checked": false,
+   "published": {
+    "value": 12,
+    "source": "Schnorr 1974 (docs/05 Theorem 5.3)"
+   },
+   "agrees_with_published": true
+  }
+ ]
+}

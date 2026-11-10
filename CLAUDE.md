@@ -20,21 +20,36 @@ P vs NP is open, and this repository does not resolve it.
 ## Setup and checks
 
 ```bash
-pip install python-sat numpy
+pip install -r requirements.txt
+pytest                      # about 15 s; RUN_SLOW=1 pytest adds about 30 s of slower checks
 cd experiments && python3 -c "import exact_circuit_complexity as E; r = E.cost_bounds(3, E.tt_from_fn(3, lambda r: sum(r) % 2)); assert (r['lower'], r['upper']) == (2, 2); print('ok')"
 ```
 
-There is no test suite yet. The line above checks the SAT pipeline in about a second (3-input parity has
-B2 cost 2). The README's full runs take much longer.
+The one-liner checks the first SAT pipeline in about a second (3-input parity has B2 cost 2).
+drat-trim is not on PyPI: `git clone https://github.com/marijnheule/drat-trim && make -C drat-trim`,
+then put it on `PATH` or set `DRAT_TRIM`; tests that need it are skipped without it. The README's
+full runs take much longer.
 
-## State on 2026-11-08
+## State on 2026-11-09
 
-- Six functions in `experiments/results/explicit_run.log` still have cost intervals because the SAT budget
-  ran out: MOD3_5, MAJ_5, EXACTLY2_5 and THR2_5 in B2, and parity_5 and MOD3_4 in U2.
+- Every cost in `experiments/results/explicit_final.json` is exact and labelled Theorem or
+  Machine-checked. The six intervals the first run left in `experiments/results/explicit_run.log`
+  closed as MAJ_5 = 9, EXACTLY2_5 = 9, MOD3_5 = 10 and THR2_5 = 10 (B2), MOD3_4 = 10 (U2), and
+  parity_5 = 12 (U2; Schnorr's theorem, docs/05 §5.2). Every B2 value agrees with Knuth's table of
+  optimal 5-input chains (optimal5, parsed by `experiments/compare_optimal5.py`). No published value
+  was found for MOD3_4 in U2. `crosscheck_old_encoding.py` independently re-derived its lower bound with
+  the first encoding (elementary symmetry breaking only): k = 1..8 directly and k = 9 as 60 cubes, every
+  proof checked by drat-trim (26 minutes on 4 cores for the cubes).
+- Lower bounds come from `experiments/circuit_sat.py` (symmetry-reduced encoding; soundness proof in
+  `experiments/ENCODING.md`) with DRAT proofs checked by drat-trim. The two 9-gate B2 refutations took
+  about 16 minutes each to solve and about 50 minutes each to check (proofs of 0.8 GB). The proofs are
+  not committed (about 2 GB); `certify_costs.py recheck` regenerates them bit for bit and checks them again.
+- The U2 cost of all 65,536 functions of 4 variables is now complete (`results/n4_u2_complete.json`):
+  the four NPN classes the earlier runs left open all cost 10 (`certify_n4_u2.py`, checked proofs).
+  `summarize_u2_n4.py` cannot be rerun, because its input `results/n4_u2_closure.json` was never committed.
 - The session that wrote the docs could not fetch arXiv, ECCC or the ACM DL. Citations it could not verify
-  are marked **[U]** and still need checking.
-- There is no requirements file, so the README's install line is the reference. A stray
-  `experiments/__pycache__/*.pyc` is tracked and should be removed.
+  are marked **[U]** and still need checking. On 2026-11-09 arXiv and gitlab.com were reachable through
+  the proxy; Knuth's Stanford pages failed TLS verification, so TAOCP itself was not consulted.
 
 ## Where the next steps are
 

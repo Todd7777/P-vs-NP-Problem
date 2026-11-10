@@ -1,0 +1,1751 @@
+{
+ "rules": "ADRLV",
+ "encoding": "circuit_sat.py",
+ "results": [
+  {
+   "name": "parity_2",
+   "basis": "B2",
+   "lower": 1,
+   "upper": 1,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g3 = XOR(x1,x2)",
+   "circuit_source": "results/explicit_costs.json",
+   "refutations": []
+  },
+  {
+   "name": "parity_2",
+   "basis": "U2",
+   "lower": 3,
+   "upper": 3,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g3 = x>y(x1,x2); g4 = x<y(x1,x2); g5 = OR(g3,g4)",
+   "circuit_source": "results/explicit_costs.json",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 8,
+     "nclauses": 21,
+     "cnf_sha256": "83e09a7606b8a256c4f818ee473662bb6156d08ed28ea637a5fd33a0d3164a57",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 0,
+      "decisions": 0,
+      "propagations": 7
+     },
+     "proof_bytes": 100,
+     "proof_sha256": "72f466e9ad64d7234d1648852876df73ae326f5ea653748f363c8bfd28739cd1",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.0
+    },
+    {
+     "k": 2,
+     "nvars": 24,
+     "nclauses": 91,
+     "cnf_sha256": "171518c7b9cc57b133a6f5ce0c63ce8483be3a506df2ba8004c67a1d5c26e37c",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 0,
+      "decisions": 0,
+      "propagations": 13
+     },
+     "proof_bytes": 268,
+     "proof_sha256": "b3660ce3fd18daca725a33df0660b7d3866d2054d017f561e259119e27d7d9ea",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    }
+   ]
+  },
+  {
+   "name": "parity_3",
+   "basis": "B2",
+   "lower": 2,
+   "upper": 2,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g4 = XOR(x1,x2); g5 = XOR(x3,g4)",
+   "circuit_source": "results/explicit_costs.json",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 17,
+     "nclauses": 71,
+     "cnf_sha256": "121f99ac563eb27be24014b715e04e0e51b6d11c1310f0646974b4af225dcc52",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 0,
+      "decisions": 0,
+      "propagations": 15
+     },
+     "proof_bytes": 124,
+     "proof_sha256": "fcb685d454145b067b73b928202372005a748812e3e70d6a7497a64667b8e235",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.0
+    }
+   ]
+  },
+  {
+   "name": "parity_3",
+   "basis": "U2",
+   "lower": 6,
+   "upper": 6,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g4 = AND(x2,x3); g5 = OR(x2,x3); g6 = x<y(g4,g5); g7 = x>y(x1,g6); g8 = x<y(x1,g6); g9 = OR(g7,g8)",
+   "circuit_source": "results/explicit_costs.json",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 17,
+     "nclauses": 72,
+     "cnf_sha256": "603db4f5728570269235342e1548c982027795906828bef970793718dfcf646c",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 0,
+      "decisions": 0,
+      "propagations": 15
+     },
+     "proof_bytes": 130,
+     "proof_sha256": "37ce33630c307f0427125de1bb58107784d9d3113daf2e05e9e91ab68a93ef13",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.0
+    },
+    {
+     "k": 2,
+     "nvars": 48,
+     "nclauses": 262,
+     "cnf_sha256": "106dbd8acfe4190e03c2869687e6f9007022e2a66905f7dd7703d8f5793a543c",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 7,
+      "decisions": 10,
+      "propagations": 77
+     },
+     "proof_bytes": 288,
+     "proof_sha256": "074cd078dcf883f87f08b0b52640e4abb7fd683a400fe2c052b4bd25f0f2e852",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 3,
+     "nvars": 95,
+     "nclauses": 643,
+     "cnf_sha256": "bb37d9e9ad185f317175bae3d0104f5bdf733ce398b3ef4175b118772491ed40",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 32,
+      "decisions": 39,
+      "propagations": 470
+     },
+     "proof_bytes": 802,
+     "proof_sha256": "86fa29f04e359b912be592600e6b1893a850efa315f538c54c154fa741c01fcf",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 4,
+     "nvars": 160,
+     "nclauses": 1284,
+     "cnf_sha256": "87971fc65f7a2a5642c2e6aa1ec00fea0be063eb3581db866d43f5a07668ab55",
+     "solver": "cadical195",
+     "solve_seconds": 0.002,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 174,
+      "decisions": 204,
+      "propagations": 4007
+     },
+     "proof_bytes": 2755,
+     "proof_sha256": "37c26d4cc974e807269657ff8cd960ea7bf088df9ca91e837f5953b6517b6c35",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 5,
+     "nvars": 245,
+     "nclauses": 2258,
+     "cnf_sha256": "e988f2d8c1d28e7adf2f2b85b871ae5793bd725b81fde90fce6ecbfa7aaed4c9",
+     "solver": "cadical195",
+     "solve_seconds": 0.005,
+     "stats": {
+      "restarts": 3,
+      "conflicts": 470,
+      "decisions": 620,
+      "propagations": 13422
+     },
+     "proof_bytes": 22114,
+     "proof_sha256": "585f396644c4d417020e27e6cbcbfae171a0e6a254d8174821104b3da1abba80",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    }
+   ]
+  },
+  {
+   "name": "parity_4",
+   "basis": "B2",
+   "lower": 3,
+   "upper": 3,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g5 = XOR(x1,x2); g6 = XOR(x4,g5); g7 = XOR(x3,g6)",
+   "circuit_source": "results/explicit_costs.json",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 32,
+     "nclauses": 222,
+     "cnf_sha256": "183ef3ed58e4e5f85c6a0dc9ceb5addd6b6c09ae539041a59c99623ce8a193da",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 0,
+      "decisions": 0,
+      "propagations": 29
+     },
+     "proof_bytes": 275,
+     "proof_sha256": "e7ac44097f8a1f6366a71e4da689a230cd67f40d21c686b4420e572b7e500acd",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 2,
+     "nvars": 88,
+     "nclauses": 723,
+     "cnf_sha256": "815c534b5c5acbd0e2ba418d26a5450e79ad51d4d6495c93420ebdd08a8288a7",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 8,
+      "decisions": 12,
+      "propagations": 122
+     },
+     "proof_bytes": 717,
+     "proof_sha256": "a9dd373899e74482a4e887d4bf908675d9bc02db9fd6ee0e21d6d16ae33e1461",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    }
+   ]
+  },
+  {
+   "name": "parity_4",
+   "basis": "U2",
+   "lower": 9,
+   "upper": 9,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g5 = x>y(x1,x2); g6 = x<y(x1,x2); g7 = OR(g5,g6); g8 = AND(x3,g7); g9 = OR(x3,g7); g10 = x<y(g8,g9); g11 = AND(x4,g10); g12 = OR(x4,g10); g13 = x<y(g11,g12)",
+   "circuit_source": "circuit_sat.py",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 32,
+     "nclauses": 223,
+     "cnf_sha256": "d44e5a914778f0ee3a1b871934acf2252a21a31676cc3f5b99dcdfed6360acb9",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 0,
+      "decisions": 0,
+      "propagations": 29
+     },
+     "proof_bytes": 281,
+     "proof_sha256": "72e873ecff938090482c61f6737e5290337a9fc5fb0b620b103e3f6b2242c40e",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 2,
+     "nvars": 88,
+     "nclauses": 725,
+     "cnf_sha256": "02bf15107aa79f069296372fb9140b0e715c8291a8e4b1530b6eab84d7d70484",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 10,
+      "decisions": 14,
+      "propagations": 128
+     },
+     "proof_bytes": 709,
+     "proof_sha256": "004cc7830f64081365c802fe2ca40b3d7c44733014a5eddb54ac6b8ef7500dfe",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 3,
+     "nvars": 170,
+     "nclauses": 1648,
+     "cnf_sha256": "da1dbd14fe0dfff3b1b196676ffa655540815c1b775858b5d5a97fda9dd7b9f3",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 45,
+      "decisions": 52,
+      "propagations": 892
+     },
+     "proof_bytes": 1640,
+     "proof_sha256": "22ca20d330ec328ee9d9cee6e4c702c8a7d77d6833b6b93cd5d44bba763e24c7",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 4,
+     "nvars": 280,
+     "nclauses": 3121,
+     "cnf_sha256": "bce3561ad2f4fa479985ac9921f1b92f52b78d7b76c8df98e026ade69d90b0a5",
+     "solver": "cadical195",
+     "solve_seconds": 0.003,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 180,
+      "decisions": 211,
+      "propagations": 4417
+     },
+     "proof_bytes": 3967,
+     "proof_sha256": "ecca46207f98a11f1866b19f9749cd935830a582b809c5ef6562916ae7a1f935",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 5,
+     "nvars": 420,
+     "nclauses": 5277,
+     "cnf_sha256": "b724d106b0645bfe262a80f198c0bb08c329d894de0981d4de374b46d64b3999",
+     "solver": "cadical195",
+     "solve_seconds": 0.007,
+     "stats": {
+      "restarts": 3,
+      "conflicts": 396,
+      "decisions": 587,
+      "propagations": 14852
+     },
+     "proof_bytes": 42276,
+     "proof_sha256": "9a4ddd85b1b5b820845995e810ec9b7ecd00768529c85459fb4da15e4b05343f",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 6,
+     "nvars": 592,
+     "nclauses": 8253,
+     "cnf_sha256": "403c1585a64f410d68d83544e03edd827c1b6e4e4f03e79330f253d843a11e68",
+     "solver": "cadical195",
+     "solve_seconds": 0.021,
+     "stats": {
+      "restarts": 34,
+      "conflicts": 1544,
+      "decisions": 2418,
+      "propagations": 75764
+     },
+     "proof_bytes": 80781,
+     "proof_sha256": "b1398659206e524addbcce576ecd82b880548d1db0a0bc8b6324b1bc44f52677",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 7,
+     "nvars": 798,
+     "nclauses": 12190,
+     "cnf_sha256": "4ae261b9e497ef7223c333e2497875c486a7347bb555a96e3e295ac72fe14c6f",
+     "solver": "cadical195",
+     "solve_seconds": 0.174,
+     "stats": {
+      "restarts": 316,
+      "conflicts": 9559,
+      "decisions": 15046,
+      "propagations": 550584
+     },
+     "proof_bytes": 827075,
+     "proof_sha256": "5928db57e6c18d3b3650e1f32ecd4a1c280bacb4b303a0276157afd596aebf0d",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.3
+    },
+    {
+     "k": 8,
+     "nvars": 1040,
+     "nclauses": 17233,
+     "cnf_sha256": "ec0bcdc26f4b3efcd2e32af61e7da8635cfd2497a2eb65ff75837f926cf45e7c",
+     "solver": "cadical195",
+     "solve_seconds": 1.332,
+     "stats": {
+      "restarts": 2104,
+      "conflicts": 57948,
+      "decisions": 86688,
+      "propagations": 3490108
+     },
+     "proof_bytes": 3992943,
+     "proof_sha256": "3c60ccf8e0ae198136417605b735d180a489e1630c1b9c8c1b92bb6540c887f3",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 1.7
+    }
+   ]
+  },
+  {
+   "name": "parity_5",
+   "basis": "B2",
+   "lower": 4,
+   "upper": 4,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g6 = XOR(x3,x4); g7 = XOR(x5,g6); g8 = XOR(x1,g7); g9 = XOR(x2,g8)",
+   "circuit_source": "results/explicit_costs.json",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 57,
+     "nclauses": 652,
+     "cnf_sha256": "357d8f2818458b030f373cd355263f02beca42a96e69148cc721ced2f12626cc",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 0,
+      "decisions": 0,
+      "propagations": 53
+     },
+     "proof_bytes": 556,
+     "proof_sha256": "d42aeb8e3b2b645fdc4ddebc4d172b464f1dad1e9646ef2c666420fc15086dd7",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 2,
+     "nvars": 156,
+     "nclauses": 1952,
+     "cnf_sha256": "7b6c37ea1648a3b2f80612970ba109149a90dc38582aaa2ee070783813ab6360",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 35,
+      "decisions": 38,
+      "propagations": 455
+     },
+     "proof_bytes": 1748,
+     "proof_sha256": "c587d23ec5df108ea558ffac4cee5b95102519c38b8e21fe0254c82ac29a9fb0",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 3,
+     "nvars": 299,
+     "nclauses": 4175,
+     "cnf_sha256": "be0ba0e432687ec4864ff229b609fcda4a2dee2d4cc6f022be1b14cd7c861a58",
+     "solver": "cadical195",
+     "solve_seconds": 0.003,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 85,
+      "decisions": 110,
+      "propagations": 2319
+     },
+     "proof_bytes": 3634,
+     "proof_sha256": "773104aff6304b1115464d2976d775a7e91389e418b423474a00c75338414ac2",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    }
+   ]
+  },
+  {
+   "name": "MAJ_5",
+   "basis": "B2",
+   "lower": 9,
+   "upper": 9,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g6 = XOR(x1,x2); g7 = XOR(x1,x3); g8 = XOR(x4,x5); g9 = XOR(x2,g7); g10 = OR(g6,g7); g11 = XOR(x5,g9); g12 = OR(g8,g11); g13 = AND(g10,g12); g14 = XOR(g9,g13)",
+   "circuit_source": "circuit_sat.py",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 57,
+     "nclauses": 652,
+     "cnf_sha256": "f12870e2d983b5cbdf95232cb9f200fc3956f34cdf4552caec64ec96361eb721",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 1,
+      "decisions": 0,
+      "propagations": 44
+     },
+     "proof_bytes": 403,
+     "proof_sha256": "140900eef84cc8424b754467eb8b20b84c7bf73abc659445a1ab5a8714195242",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.0
+    },
+    {
+     "k": 2,
+     "nvars": 156,
+     "nclauses": 1952,
+     "cnf_sha256": "a012ab46e79f770479af17dae3995f5e4d796229e88a8eed2921b8e9b6ec98e0",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 33,
+      "decisions": 38,
+      "propagations": 408
+     },
+     "proof_bytes": 1744,
+     "proof_sha256": "916f84124c1861eac6b8d0e60a850dee19d06dab7299dea6d64229feef4f9d36",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.0
+    },
+    {
+     "k": 3,
+     "nvars": 299,
+     "nclauses": 4175,
+     "cnf_sha256": "1afebc4b2ee7eacfc1738527039f5771326c36bca773cc367598b18e936c8e09",
+     "solver": "cadical195",
+     "solve_seconds": 0.002,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 53,
+      "decisions": 75,
+      "propagations": 1761
+     },
+     "proof_bytes": 3390,
+     "proof_sha256": "769834f296e73d28eafe29cc46b1e80f8eef99c643ac1302669978ce7058312a",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 4,
+     "nvars": 488,
+     "nclauses": 7566,
+     "cnf_sha256": "70d260b67604c49af4c6de44f55aa0f0aca1d413dde4c7c08fc2e402133563d0",
+     "solver": "cadical195",
+     "solve_seconds": 0.007,
+     "stats": {
+      "restarts": 1,
+      "conflicts": 356,
+      "decisions": 517,
+      "propagations": 13702
+     },
+     "proof_bytes": 44947,
+     "proof_sha256": "e48100439f4f4e31f451e80384f04f6e0e2db9a5535294a82d0e39e8cc56821e",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 5,
+     "nvars": 725,
+     "nclauses": 12374,
+     "cnf_sha256": "a00881d4698b6817e754ae7674ff91d8dca5f3cf99072b8c8901f3734f82b328",
+     "solver": "cadical195",
+     "solve_seconds": 0.018,
+     "stats": {
+      "restarts": 31,
+      "conflicts": 924,
+      "decisions": 1605,
+      "propagations": 52646
+     },
+     "proof_bytes": 145059,
+     "proof_sha256": "9ea7dd83cb962fb524d9a1453db6985b69ccfd7b59812429a346757667127a1d",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 6,
+     "nvars": 1012,
+     "nclauses": 18852,
+     "cnf_sha256": "7ed090c0b317e11f36925ead5a27ce452fc884a7085c6718492d0d54d6447e71",
+     "solver": "cadical195",
+     "solve_seconds": 0.102,
+     "stats": {
+      "restarts": 71,
+      "conflicts": 5920,
+      "decisions": 7630,
+      "propagations": 392648
+     },
+     "proof_bytes": 529085,
+     "proof_sha256": "8bf9ee523f170705c638bf49d4fb0aee5e82a9206331014b38b37ab1787e2967",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.2
+    },
+    {
+     "k": 7,
+     "nvars": 1351,
+     "nclauses": 27257,
+     "cnf_sha256": "4991b1df734a60758e16c2a56a0f6c6550f9b2504a40edaa7a30bf93102aae3a",
+     "solver": "cadical195",
+     "solve_seconds": 1.394,
+     "stats": {
+      "restarts": 1368,
+      "conflicts": 57224,
+      "decisions": 75920,
+      "propagations": 3818340
+     },
+     "proof_bytes": 4082187,
+     "proof_sha256": "e65d44c322d2122c7bca42309a1556a33204e72332dc72bc7633812a94bc9bae",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 1.7
+    },
+    {
+     "k": 8,
+     "nvars": 1744,
+     "nclauses": 37850,
+     "cnf_sha256": "a8e4eba0e36e83ada40a8780fddb8624b4da33fcc13b122f0194e49e3d7cae56",
+     "solver": "cadical195",
+     "solve_seconds": 32.505,
+     "stats": {
+      "restarts": 25578,
+      "conflicts": 739696,
+      "decisions": 1018413,
+      "propagations": 57864967
+     },
+     "proof_bytes": 55452866,
+     "proof_sha256": "9be83a518bdb2fcc8d5fbace56ff03e495802ee53bde30c59dcd8643c7bdc9a5",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 55.5
+    }
+   ]
+  },
+  {
+   "name": "MOD3_5 (sum=0 mod 3)",
+   "basis": "B2",
+   "lower": 10,
+   "upper": 10,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g6 = XOR(x1,x2); g7 = XOR(x3,x4); g8 = OR(x3,x4); g9 = XOR(x5,g6); g10 = XOR(x1,g9); g11 = x>y(g8,g9); g12 = OR(g6,g10); g13 = XOR(g7,g11); g14 = XOR(g8,g12); g15 = OR(g13,g14)",
+   "circuit_source": "circuit_sat.py",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 57,
+     "nclauses": 652,
+     "cnf_sha256": "1f751544eb3b2a5902133508fd9e26c0ccfbc1994b30f224e27dd9963da9efe2",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 0,
+      "decisions": 0,
+      "propagations": 53
+     },
+     "proof_bytes": 556,
+     "proof_sha256": "ec7b282d5187afbb8f9db7b13b417715598507c03805760397229ab16ae7d34f",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 2,
+     "nvars": 156,
+     "nclauses": 1952,
+     "cnf_sha256": "fe1c0ed0ab75449ba02d4d4f2d4e4666da146d77b5308d278be21d9657e5c3df",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 16,
+      "decisions": 22,
+      "propagations": 283
+     },
+     "proof_bytes": 1610,
+     "proof_sha256": "4befa51172ca3316c6e2c09a302c4372e7cfa335e7014a5e1c5fb7e3a88d961a",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 3,
+     "nvars": 299,
+     "nclauses": 4175,
+     "cnf_sha256": "f882139274ddb34b7f1de31633b5788be62fa1a792f1cd0c89909d797c3daac8",
+     "solver": "cadical195",
+     "solve_seconds": 0.003,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 156,
+      "decisions": 183,
+      "propagations": 3628
+     },
+     "proof_bytes": 4622,
+     "proof_sha256": "940ca036f0b9e650dbcce112c3267caa4e39c9f9e3a18e982d7c8647f218fc30",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 4,
+     "nvars": 488,
+     "nclauses": 7566,
+     "cnf_sha256": "bbca238a4ce465914c98a46afe442c7068f72790580acc10af08dee7b1b2cc22",
+     "solver": "cadical195",
+     "solve_seconds": 0.005,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 112,
+      "decisions": 175,
+      "propagations": 6026
+     },
+     "proof_bytes": 4941,
+     "proof_sha256": "ce500276f18f0c6ed371dc099e8446927e3a539b3eae365c58db7f1ac702f052",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 5,
+     "nvars": 725,
+     "nclauses": 12374,
+     "cnf_sha256": "9a4a6c8fb2153ad5c673fb42343885d9bd2fc8d11113ead52cc873f29c75a730",
+     "solver": "cadical195",
+     "solve_seconds": 0.012,
+     "stats": {
+      "restarts": 29,
+      "conflicts": 459,
+      "decisions": 864,
+      "propagations": 29162
+     },
+     "proof_bytes": 90838,
+     "proof_sha256": "9055651c238cf6da2d438ed2d1be65a0e73b1b4c3ac847828bfa5f6804c7d5f1",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 6,
+     "nvars": 1012,
+     "nclauses": 18852,
+     "cnf_sha256": "b033a1b5f5d638104714b0393eeb1c994fb1eaf22302e403c1da5820ff664874",
+     "solver": "cadical195",
+     "solve_seconds": 0.064,
+     "stats": {
+      "restarts": 42,
+      "conflicts": 3174,
+      "decisions": 4382,
+      "propagations": 219983
+     },
+     "proof_bytes": 284287,
+     "proof_sha256": "480a895984a9152ca410691ab312f1afc688c5570f7583aa976734864acf8d47",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 7,
+     "nvars": 1351,
+     "nclauses": 27257,
+     "cnf_sha256": "c22a1528b78375fe511d1dc67a55dadc84274cf8946f46efafb2c4a2621b89f3",
+     "solver": "cadical195",
+     "solve_seconds": 1.037,
+     "stats": {
+      "restarts": 1460,
+      "conflicts": 40734,
+      "decisions": 57291,
+      "propagations": 2726859
+     },
+     "proof_bytes": 2993376,
+     "proof_sha256": "a7d20e49d96cd4fcdd874f877ca52aa7c5e729adf159b968904ae579abbed92a",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 1.1
+    },
+    {
+     "k": 8,
+     "nvars": 1744,
+     "nclauses": 37850,
+     "cnf_sha256": "03309bc63eb68424607580c9fad83deae99a3dfc3a6df7f0e1495168d8bd3fe1",
+     "solver": "cadical195",
+     "solve_seconds": 22.242,
+     "stats": {
+      "restarts": 24305,
+      "conflicts": 566525,
+      "decisions": 784729,
+      "propagations": 40966186
+     },
+     "proof_bytes": 39762868,
+     "proof_sha256": "6d85ede649fc3f7daf3d5c125c0b475fb386b8e17e3b4c14c20c00b421789099",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 39.2
+    },
+    {
+     "k": 9,
+     "nvars": 2193,
+     "nclauses": 50896,
+     "cnf_sha256": "66a090f7dc2d2840950f9b744338358bf00cd39e0848a50cffb89b511462d05f",
+     "solver": "cadical195",
+     "solve_seconds": 1022.202,
+     "stats": {
+      "restarts": 376172,
+      "conflicts": 10133091,
+      "decisions": 13969805,
+      "propagations": 984772325
+     },
+     "proof_bytes": 846429241,
+     "proof_sha256": "7f449e1645b2b935675b13a00479d8fdfadb217f31cdc5ad896c978655f8d2ca",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 3288.2
+    }
+   ]
+  },
+  {
+   "name": "MOD3_4 (sum=0 mod 3)",
+   "basis": "B2",
+   "lower": 7,
+   "upper": 7,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g5 = AND(x3,x4); g6 = AND(x1,x2); g7 = XOR(x1,x2); g8 = XOR(x3,g6); g9 = XOR(g5,g7); g10 = XOR(x4,g8); g11 = OR(g9,g10)",
+   "circuit_source": "results/explicit_costs.json",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 32,
+     "nclauses": 222,
+     "cnf_sha256": "289587fd00f4553d288d1d2d37f038f5c98f5a45474e2b44c174e4c69af39820",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 0,
+      "decisions": 0,
+      "propagations": 29
+     },
+     "proof_bytes": 275,
+     "proof_sha256": "f5a405c6f1123dfca697d2e2f7eca53f0757006d0a7f9c1d99eda7522615fd73",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 2,
+     "nvars": 88,
+     "nclauses": 723,
+     "cnf_sha256": "0fe7fd689552f64d22023790b0c3e91cac8f366cec9c549c2ff1f4b617f71fac",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 10,
+      "decisions": 14,
+      "propagations": 142
+     },
+     "proof_bytes": 711,
+     "proof_sha256": "b30d95c53cb08a4ed8f703f370fb5fbddef309ddcadcd878bfce1b5ab1ba0932",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 3,
+     "nvars": 170,
+     "nclauses": 1645,
+     "cnf_sha256": "47d904867d8a99158c88b73f15ce0b2b8d9cb05819f1a959198e06cddadb4f6f",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 21,
+      "decisions": 34,
+      "propagations": 515
+     },
+     "proof_bytes": 1430,
+     "proof_sha256": "edf340d6b1724a41db77c6a61a746059868e2251e74fc343504731f8a02fce2b",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 4,
+     "nvars": 280,
+     "nclauses": 3117,
+     "cnf_sha256": "aa5b3be7f9f41f1fe8b5c8c44ef5af4d942a3f2afe7bad4e639d703a2d3eca15",
+     "solver": "cadical195",
+     "solve_seconds": 0.003,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 116,
+      "decisions": 147,
+      "propagations": 4010
+     },
+     "proof_bytes": 3112,
+     "proof_sha256": "234674d8e24d4cdc5aaf21ecefe5700b85b11100b26aaf2aa8e8393283e97150",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 5,
+     "nvars": 420,
+     "nclauses": 5272,
+     "cnf_sha256": "471fa9e7949952c8bba9b9fad133a65f7d5c64d05144309be2934928ea11e879",
+     "solver": "cadical195",
+     "solve_seconds": 0.013,
+     "stats": {
+      "restarts": 38,
+      "conflicts": 1054,
+      "decisions": 1420,
+      "propagations": 42475
+     },
+     "proof_bytes": 66794,
+     "proof_sha256": "5edc8c90df000a593910cef9c67890716e1b89cc49a812fec97bd5feb660e126",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 6,
+     "nvars": 592,
+     "nclauses": 8247,
+     "cnf_sha256": "2c2aea6b0e1479d8def8587584385d32dc8f1dc9b4534f7fe485529ecf2d203a",
+     "solver": "cadical195",
+     "solve_seconds": 0.187,
+     "stats": {
+      "restarts": 335,
+      "conflicts": 13167,
+      "decisions": 16966,
+      "propagations": 579533
+     },
+     "proof_bytes": 800821,
+     "proof_sha256": "72c4b4cb094f8e3e0f87946ba89ecc2c6d63a7f2f6a9f569ca7da2091bb0a0d1",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.3
+    }
+   ]
+  },
+  {
+   "name": "MOD3_4 (sum=0 mod 3)",
+   "basis": "U2",
+   "lower": 10,
+   "upper": 10,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g5 = AND(x1,x2); g6 = OR(x1,x2); g7 = AND(x3,x4); g8 = OR(x3,x4); g9 = x<y(g5,g8); g10 = x<y(g7,g8); g11 = x>y(g6,g10); g12 = AND(g9,g11); g13 = OR(g9,g11); g14 = x<y(g12,g13)",
+   "circuit_source": "circuit_sat.py",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 32,
+     "nclauses": 223,
+     "cnf_sha256": "dfc8f024cd52be85f5899bb6072bc3eb38fc76edc3df8f5850d30f266bb72255",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 0,
+      "decisions": 0,
+      "propagations": 29
+     },
+     "proof_bytes": 281,
+     "proof_sha256": "021389dcd734182d6e338ef2d1ef681c2c0a7d90b6fc5e0fb78099c84d24dc00",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 2,
+     "nvars": 88,
+     "nclauses": 725,
+     "cnf_sha256": "48d3832104a3cdd55acb809e8a21f4d494a91278308b40e806becc4565467467",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 12,
+      "decisions": 16,
+      "propagations": 149
+     },
+     "proof_bytes": 743,
+     "proof_sha256": "0677aec2ec4e543cda5b27196cdd8ea561b1f3b827b023d682492e740ed04a68",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 3,
+     "nvars": 170,
+     "nclauses": 1648,
+     "cnf_sha256": "1333917e6d4b52eaf28eee91c193e5c92646f0b7912c29bc5c122c280f3101da",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 54,
+      "decisions": 67,
+      "propagations": 897
+     },
+     "proof_bytes": 1767,
+     "proof_sha256": "2d233694bc9ceb9f7b7db4bfa3f25bf12ffbc6611efc9444881eb0203a1323ff",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 4,
+     "nvars": 280,
+     "nclauses": 3121,
+     "cnf_sha256": "57df62806ed045b9b56e345a431d22fc7dab0fd715e2ec2e866ffec1f6c9d808",
+     "solver": "cadical195",
+     "solve_seconds": 0.002,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 76,
+      "decisions": 106,
+      "propagations": 2387
+     },
+     "proof_bytes": 2889,
+     "proof_sha256": "6a12849d679a7d385a3105a1f02d8792b042c741c1b14e4a7e95a3768411ae48",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 5,
+     "nvars": 420,
+     "nclauses": 5277,
+     "cnf_sha256": "d89bc7383f4f57683622b7a04cfa5b738b7c32eb062b5d84154976a11618a255",
+     "solver": "cadical195",
+     "solve_seconds": 0.006,
+     "stats": {
+      "restarts": 7,
+      "conflicts": 306,
+      "decisions": 424,
+      "propagations": 11570
+     },
+     "proof_bytes": 40574,
+     "proof_sha256": "0ee50fcdcd9e364d208ac54de5583665d49c1089649ba01397fefcdbc88b20f8",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 6,
+     "nvars": 592,
+     "nclauses": 8253,
+     "cnf_sha256": "5a755114542cab8adbc1a09bd0725c3e9090e35cfd8d80d3e4d7ac6fef296705",
+     "solver": "cadical195",
+     "solve_seconds": 0.034,
+     "stats": {
+      "restarts": 41,
+      "conflicts": 2491,
+      "decisions": 3647,
+      "propagations": 116082
+     },
+     "proof_bytes": 175291,
+     "proof_sha256": "01183ae1090c77dcdadd6dd0689329a7a73ada9dc435825248af340388c05fb5",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 7,
+     "nvars": 798,
+     "nclauses": 12190,
+     "cnf_sha256": "375be0338328a5136b6280354f96f157df0707aafe74b838aad7857ea1051737",
+     "solver": "cadical195",
+     "solve_seconds": 0.332,
+     "stats": {
+      "restarts": 673,
+      "conflicts": 18354,
+      "decisions": 26867,
+      "propagations": 945642
+     },
+     "proof_bytes": 1152214,
+     "proof_sha256": "f8b8e802562cfd05051bb4dfd9d0ae807c79a69ec77d82d69d762daa8358b542",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.4
+    },
+    {
+     "k": 8,
+     "nvars": 1040,
+     "nclauses": 17233,
+     "cnf_sha256": "372ddae85a35e2aca79cba5968c99b859608d10758e766c745787c3e2af08858",
+     "solver": "cadical195",
+     "solve_seconds": 4.228,
+     "stats": {
+      "restarts": 7262,
+      "conflicts": 152260,
+      "decisions": 231808,
+      "propagations": 8713270
+     },
+     "proof_bytes": 10288278,
+     "proof_sha256": "c453e0aef5f2d08c4cc1879335bb2833d9dc0d053688a85d0d73aa5c32e3a813",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 5.9
+    },
+    {
+     "k": 9,
+     "nvars": 1320,
+     "nclauses": 23531,
+     "cnf_sha256": "8cdafb1e5a694eeb610f1ee956638de51a0009b2af91ffb335d7306911624444",
+     "solver": "cadical195",
+     "solve_seconds": 30.177,
+     "stats": {
+      "restarts": 28913,
+      "conflicts": 655190,
+      "decisions": 1001706,
+      "propagations": 42906038
+     },
+     "proof_bytes": 48844234,
+     "proof_sha256": "d73f77693396be91a26d6d153e121ce65b38f1c87a9b0bb5c046136a9f138d5b",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 48.8
+    }
+   ]
+  },
+  {
+   "name": "EXACTLY2_5",
+   "basis": "B2",
+   "lower": 9,
+   "upper": 9,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g6 = XOR(x1,x2); g7 = XOR(x3,x4); g8 = XOR(x5,g6); g9 = XOR(x2,g7); g10 = x>y(x4,g8); g11 = XOR(g7,g8); g12 = OR(g6,g9); g13 = XOR(g10,g12); g14 = x<y(g11,g13)",
+   "circuit_source": "circuit_sat.py",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 57,
+     "nclauses": 652,
+     "cnf_sha256": "0ad7d7d5c1c93a71925b24e60ffa18403827971d9762e7977d817041be28acdd",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 1,
+      "decisions": 0,
+      "propagations": 28
+     },
+     "proof_bytes": 451,
+     "proof_sha256": "dfbc7b67589b816cc1c491e08ca63e5961a4bffd9b6caeb88a2b5a0e9f29cacb",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.0
+    },
+    {
+     "k": 2,
+     "nvars": 156,
+     "nclauses": 1952,
+     "cnf_sha256": "131c615a95f449261eb2d17c37e056ff72d9698d8d9d8f49282ebf160691fa0b",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 29,
+      "decisions": 36,
+      "propagations": 467
+     },
+     "proof_bytes": 1745,
+     "proof_sha256": "bdfe5bf372cda0901c940153d83bfd7ae14a358e7bd08030483033a5aa14bcc2",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.0
+    },
+    {
+     "k": 3,
+     "nvars": 299,
+     "nclauses": 4175,
+     "cnf_sha256": "83484f7171f0e481e28601734faac2b17bdcfabd6021e406b911d54d481b6e05",
+     "solver": "cadical195",
+     "solve_seconds": 0.003,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 83,
+      "decisions": 93,
+      "propagations": 2392
+     },
+     "proof_bytes": 3631,
+     "proof_sha256": "7ef9834e19b34030a6a33e4aba5f50a69a76b37ccbd932307e9a6c0d2b83f86a",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.0
+    },
+    {
+     "k": 4,
+     "nvars": 488,
+     "nclauses": 7566,
+     "cnf_sha256": "6cdbb4ca20106b5d798003206aed19da0cbd2cf8bd81184af30e27010343c0ea",
+     "solver": "cadical195",
+     "solve_seconds": 0.005,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 186,
+      "decisions": 303,
+      "propagations": 7446
+     },
+     "proof_bytes": 6434,
+     "proof_sha256": "2088459b691ce12e2e1a81be0187a506e6f9478090cf378246cc28be539b1276",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 5,
+     "nvars": 725,
+     "nclauses": 12374,
+     "cnf_sha256": "1fc83ba3b90fc9039c4a0e6a5d8c29a3c4716b039dbca36d31731545a60a8730",
+     "solver": "cadical195",
+     "solve_seconds": 0.014,
+     "stats": {
+      "restarts": 33,
+      "conflicts": 722,
+      "decisions": 1321,
+      "propagations": 41089
+     },
+     "proof_bytes": 91025,
+     "proof_sha256": "bd37ca4df698ab3ebf922204eb9eabda65e8a02b3c89ef53e26dd62c252baa7e",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 6,
+     "nvars": 1012,
+     "nclauses": 18852,
+     "cnf_sha256": "aa501dd0f9dfa4a627976bb44e750190a47c1e44073b4733699e7a73a06ff2cd",
+     "solver": "cadical195",
+     "solve_seconds": 0.064,
+     "stats": {
+      "restarts": 51,
+      "conflicts": 3566,
+      "decisions": 4871,
+      "propagations": 229188
+     },
+     "proof_bytes": 228089,
+     "proof_sha256": "44947007a003a95fa1976d516b60206d4ff88f868bc304003d1f8d693306960b",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 7,
+     "nvars": 1351,
+     "nclauses": 27257,
+     "cnf_sha256": "e99c4de46445f30d6241c3fec70901505a514627df3c349d1f9a18a3fc1da83f",
+     "solver": "cadical195",
+     "solve_seconds": 0.916,
+     "stats": {
+      "restarts": 1473,
+      "conflicts": 36348,
+      "decisions": 51776,
+      "propagations": 2303980
+     },
+     "proof_bytes": 2752501,
+     "proof_sha256": "91253fed5590eb540a56af9cbb2b0de7d2c28c11a66ef3152f314943b04cd395",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.9
+    },
+    {
+     "k": 8,
+     "nvars": 1744,
+     "nclauses": 37850,
+     "cnf_sha256": "8bf334a365f950a729ed44e12e4ce39da6ae5e1c8081c25b6b11849735124362",
+     "solver": "cadical195",
+     "solve_seconds": 18.526,
+     "stats": {
+      "restarts": 21768,
+      "conflicts": 507324,
+      "decisions": 702855,
+      "propagations": 35583277
+     },
+     "proof_bytes": 33084511,
+     "proof_sha256": "413449435999541d05ccb6114aa2de677922b24594a0b7a30a859f219e5f8a09",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 28.1
+    }
+   ]
+  },
+  {
+   "name": "THR2_5 (sum>=2)",
+   "basis": "B2",
+   "lower": 10,
+   "upper": 10,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g6 = AND(x1,x2); g7 = OR(x1,x2); g8 = XOR(x3,x4); g9 = XOR(x3,g7); g10 = XOR(x4,g9); g11 = OR(g8,g9); g12 = AND(x5,g11); g13 = XOR(g10,g11); g14 = OR(g6,g13); g15 = OR(g12,g14)",
+   "circuit_source": "circuit_sat.py",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 57,
+     "nclauses": 652,
+     "cnf_sha256": "2d9a5263b94f675e74641e93e13d9cae376367749e300a3375f2392b7c7c183c",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 1,
+      "decisions": 0,
+      "propagations": 28
+     },
+     "proof_bytes": 451,
+     "proof_sha256": "499d3789f439372c71eb7756513ff82e06bffecfdd3057dc158c6ef5c93ca444",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 2,
+     "nvars": 156,
+     "nclauses": 1952,
+     "cnf_sha256": "f702c81b18978187ead6b23f55e8e3efaec5dfa8418aec76acc432678521dde5",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 10,
+      "decisions": 19,
+      "propagations": 235
+     },
+     "proof_bytes": 1551,
+     "proof_sha256": "1ff77b28b5e423e5b02187779c751d4c86b1cc8609ec7452f40b366abd06bdf1",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 3,
+     "nvars": 299,
+     "nclauses": 4175,
+     "cnf_sha256": "8117b23e4758645454224f7dc3d48f0758fd08094a4f3c181d2e8de2e7f15218",
+     "solver": "cadical195",
+     "solve_seconds": 0.003,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 53,
+      "decisions": 78,
+      "propagations": 1688
+     },
+     "proof_bytes": 3219,
+     "proof_sha256": "b2e440865c6c5ac7642b40af0cabd8393bc6972a78605748756d8c73bc38369b",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 4,
+     "nvars": 488,
+     "nclauses": 7566,
+     "cnf_sha256": "f85189514164ea2bc5a41aef59a4c6c892b863483d4c74340dc4e522d8f3ef0a",
+     "solver": "cadical195",
+     "solve_seconds": 0.005,
+     "stats": {
+      "restarts": 1,
+      "conflicts": 191,
+      "decisions": 249,
+      "propagations": 8243
+     },
+     "proof_bytes": 7168,
+     "proof_sha256": "7b91da468e89a03020dfeec1bb4109bc150ae2d1744cebbff40fac7821522be1",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 5,
+     "nvars": 725,
+     "nclauses": 12374,
+     "cnf_sha256": "de25043610219a0a31fef36fd6e85c41847de755e279a89f77b4fe40eb4acccc",
+     "solver": "cadical195",
+     "solve_seconds": 0.011,
+     "stats": {
+      "restarts": 9,
+      "conflicts": 461,
+      "decisions": 758,
+      "propagations": 24124
+     },
+     "proof_bytes": 89710,
+     "proof_sha256": "f6be9470c57d5b01756c2ca61251f5d58625ce3b580d4709b34639ad1750b260",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 6,
+     "nvars": 1012,
+     "nclauses": 18852,
+     "cnf_sha256": "5c214f842becd279c7d1764b8771e2ff4b8ae231b04bbea6eb0539b9aec8f824",
+     "solver": "cadical195",
+     "solve_seconds": 0.088,
+     "stats": {
+      "restarts": 129,
+      "conflicts": 4924,
+      "decisions": 7019,
+      "propagations": 308604
+     },
+     "proof_bytes": 375585,
+     "proof_sha256": "213f1411a86cbb5e1a3da7861f014c019851b76de54f1693550007bdf4f9ddb3",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.2
+    },
+    {
+     "k": 7,
+     "nvars": 1351,
+     "nclauses": 27257,
+     "cnf_sha256": "ccf0aed47ed8cf5fcf911523e65530f2122413896be7cad4010aa90899391840",
+     "solver": "cadical195",
+     "solve_seconds": 0.818,
+     "stats": {
+      "restarts": 915,
+      "conflicts": 38577,
+      "decisions": 50141,
+      "propagations": 2356409
+     },
+     "proof_bytes": 2939778,
+     "proof_sha256": "0ef6bf47e42e4bc5c5783ba04ab9fd8b34da88f50b98b8e63ac54c1a645619c9",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 1.0
+    },
+    {
+     "k": 8,
+     "nvars": 1744,
+     "nclauses": 37850,
+     "cnf_sha256": "c4dbf7e08bed5e58b6c2a597b1988350713cb8f99982740bbef089783c4f47f2",
+     "solver": "cadical195",
+     "solve_seconds": 19.559,
+     "stats": {
+      "restarts": 20965,
+      "conflicts": 508540,
+      "decisions": 695276,
+      "propagations": 34957322
+     },
+     "proof_bytes": 33655000,
+     "proof_sha256": "a4e743aa66046154e67adfe94dc64d7373d5b711896bebd12dac9349d5c23b33",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 30.6
+    },
+    {
+     "k": 9,
+     "nvars": 2193,
+     "nclauses": 50896,
+     "cnf_sha256": "eb84472cbe5714ad01b495ffb5ca2db985e4b65d191ae3801cfd9fa4750d961d",
+     "solver": "cadical195",
+     "solve_seconds": 920.259,
+     "stats": {
+      "restarts": 382175,
+      "conflicts": 9720564,
+      "decisions": 13432407,
+      "propagations": 930212075
+     },
+     "proof_bytes": 796914085,
+     "proof_sha256": "83c31ae2b0e9199f7a20de7b6cf55f7074f4de355293b024ca88b2dac335301f",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 2951.8
+    }
+   ]
+  },
+  {
+   "name": "MAJ_3 xor x4 xor x5",
+   "basis": "B2",
+   "lower": 6,
+   "upper": 6,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g6 = XOR(x1,x2); g7 = XOR(x1,x3); g8 = x<y(g6,g7); g9 = XOR(x3,x4); g10 = XOR(x5,g9); g11 = XOR(g8,g10)",
+   "circuit_source": "results/explicit_costs.json",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 56,
+     "nclauses": 647,
+     "cnf_sha256": "d5f50d39885f3f2b9bd29989f9337eb48bd6963c7505cc3862c8b43ed7bb4320",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 1,
+      "decisions": 0,
+      "propagations": 23
+     },
+     "proof_bytes": 419,
+     "proof_sha256": "fb6cb497b6633b133ca642338dd825425533ece80fe148c3c6f7c174f2cc744f",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 2,
+     "nvars": 154,
+     "nclauses": 1941,
+     "cnf_sha256": "9439943443edac381ab3977d52e829bfa761dce40cfc78f62f4661f8adc7117b",
+     "solver": "cadical195",
+     "solve_seconds": 0.002,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 29,
+      "decisions": 34,
+      "propagations": 383
+     },
+     "proof_bytes": 1682,
+     "proof_sha256": "9fec3d2f4c87ab05d58709ce57e71232ae6c8cca2716da64e21aea6ce3ca146e",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 3,
+     "nvars": 296,
+     "nclauses": 4157,
+     "cnf_sha256": "89a479202b8d0ab291f160206207f55d37dec7fd84d4fa4807937067248d8a6a",
+     "solver": "cadical195",
+     "solve_seconds": 0.003,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 127,
+      "decisions": 145,
+      "propagations": 3596
+     },
+     "proof_bytes": 4060,
+     "proof_sha256": "0e1acd161caea7cf5c07db800862509c01fb6f876118e0c54e390487bcd4d2c2",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 4,
+     "nvars": 484,
+     "nclauses": 7540,
+     "cnf_sha256": "165ff0efcbcc58d5ac3a3ecb31519b03e7535c48d46d8218918a593e8c5a69de",
+     "solver": "cadical195",
+     "solve_seconds": 0.006,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 271,
+      "decisions": 363,
+      "propagations": 14002
+     },
+     "proof_bytes": 7931,
+     "proof_sha256": "dd83be04103e8fc888f331f762eb635923808cf22e853d3ac5ee96fc5815f2ef",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 5,
+     "nvars": 720,
+     "nclauses": 12339,
+     "cnf_sha256": "3e11e2a7ebb1bd9fec467dd4a186095c6f119693e9f14daa89653f1f5854ef13",
+     "solver": "cadical195",
+     "solve_seconds": 0.03,
+     "stats": {
+      "restarts": 38,
+      "conflicts": 1457,
+      "decisions": 2116,
+      "propagations": 91647
+     },
+     "proof_bytes": 107208,
+     "proof_sha256": "239d8df5b2943c4e69f98957f4597c52183bdd695d2d0105083c1af9cb648ba2",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    }
+   ]
+  },
+  {
+   "name": "ADD2 carry-out",
+   "basis": "B2",
+   "lower": 5,
+   "upper": 5,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g5 = AND(x1,x3); g6 = AND(x2,g5); g7 = XOR(x2,g5); g8 = AND(x4,g7); g9 = XOR(g6,g8)",
+   "circuit_source": "results/explicit_costs.json",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 29,
+     "nclauses": 210,
+     "cnf_sha256": "4d70ec496c9ff9438305776d96f41b1062e17f090bbc295c73edcd070ce69122",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 2,
+      "decisions": 1,
+      "propagations": 22
+     },
+     "proof_bytes": 132,
+     "proof_sha256": "dee04bb603e9ed1defd63393748a935c40722875ee3a9d3c0a98f6cafd9ec36a",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 2,
+     "nvars": 82,
+     "nclauses": 696,
+     "cnf_sha256": "39ce6b6c17c33808c5efd54087170b14b660b1074e5f7e5ca73b720c6e858f8d",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 28,
+      "decisions": 28,
+      "propagations": 454
+     },
+     "proof_bytes": 716,
+     "proof_sha256": "6aac6c3926918339aea67879e839cd43ce7cfbf2d40fb16c088d869f7b8c1001",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 3,
+     "nvars": 161,
+     "nclauses": 1600,
+     "cnf_sha256": "6841a708fec6ff82c2292f0d0d092d8e760e053a46655bfd2b27c218a62e65f3",
+     "solver": "cadical195",
+     "solve_seconds": 0.002,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 197,
+      "decisions": 245,
+      "propagations": 4825
+     },
+     "proof_bytes": 3069,
+     "proof_sha256": "cb148b56d0585e43a1fe07714eea40f2d93c0cc7c16e8faa6ce1500ffe88cf23",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 4,
+     "nvars": 268,
+     "nclauses": 3051,
+     "cnf_sha256": "683cc0118ea7f383b7fd693057ac923a9c65439e3ddb1a46df044e8df6fbcb4a",
+     "solver": "cadical195",
+     "solve_seconds": 0.011,
+     "stats": {
+      "restarts": 16,
+      "conflicts": 1021,
+      "decisions": 1360,
+      "propagations": 34886
+     },
+     "proof_bytes": 33760,
+     "proof_sha256": "853fdfb91ec2550140150fc50119e52a6e834c000903d4fc49da1389108a342a",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    }
+   ]
+  },
+  {
+   "name": "MUL2 bit3",
+   "basis": "B2",
+   "lower": 3,
+   "upper": 3,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g5 = AND(x1,x2); g6 = AND(x4,g5); g7 = AND(x3,g6)",
+   "circuit_source": "results/explicit_costs.json",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 32,
+     "nclauses": 222,
+     "cnf_sha256": "0b690a76c797da661db99f4bc105f1950bacac4869ecd30ec8515a8e0f9a11f4",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 3,
+      "decisions": 7,
+      "propagations": 31
+     },
+     "proof_bytes": 114,
+     "proof_sha256": "7ae6b97398a4307d3b40da8108153667259eaa4f4bc7b0cff0787917b64acccc",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 2,
+     "nvars": 88,
+     "nclauses": 723,
+     "cnf_sha256": "dd915cc40b1fd7c88d9c3dec8d5dc439a4a1ba4101bcee789a4ce76b5fb0a9bc",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 19,
+      "decisions": 29,
+      "propagations": 275
+     },
+     "proof_bytes": 583,
+     "proof_sha256": "46dbeb3737e8a5db929e189eec19692676c401e031fad1efbe81e192e65772e0",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    }
+   ]
+  },
+  {
+   "name": "MUL2 bit2",
+   "basis": "B2",
+   "lower": 3,
+   "upper": 3,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g5 = AND(x1,x3); g6 = AND(x2,x4); g7 = x<y(g5,g6)",
+   "circuit_source": "results/explicit_costs.json",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 29,
+     "nclauses": 210,
+     "cnf_sha256": "3e7053c395528f767f863d1fcb016e868ec65d7166edc094a58e867878783f37",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 2,
+      "decisions": 1,
+      "propagations": 22
+     },
+     "proof_bytes": 132,
+     "proof_sha256": "dee04bb603e9ed1defd63393748a935c40722875ee3a9d3c0a98f6cafd9ec36a",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 2,
+     "nvars": 82,
+     "nclauses": 696,
+     "cnf_sha256": "e04d718c0f96ed4c9c40e58b5faef46cfe7b6a3197335a3b045b9abd991ef687",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 38,
+      "decisions": 39,
+      "propagations": 531
+     },
+     "proof_bytes": 806,
+     "proof_sha256": "6b5e1b6fd14f6a5511bff031dd8cd7756ca29676966f17bebc4aac00d699e76b",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    }
+   ]
+  },
+  {
+   "name": "MUL2 bit1",
+   "basis": "B2",
+   "lower": 3,
+   "upper": 3,
+   "exact": true,
+   "all_refutations_drat_verified": true,
+   "circuit": "g5 = AND(x1,x4); g6 = AND(x2,x3); g7 = XOR(g5,g6)",
+   "circuit_source": "results/explicit_costs.json",
+   "refutations": [
+    {
+     "k": 1,
+     "nvars": 30,
+     "nclauses": 214,
+     "cnf_sha256": "e5b375b245566531da7e18e1c184a8f7bc953f2a1f22447900164008af083a53",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 2,
+      "decisions": 2,
+      "propagations": 24
+     },
+     "proof_bytes": 171,
+     "proof_sha256": "56a0ae1fb12e4264fad0cd3a72746c30c3d312c258add237267281c16fbf2b2e",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    },
+    {
+     "k": 2,
+     "nvars": 84,
+     "nclauses": 705,
+     "cnf_sha256": "07c21667b068b7f7dcb2b61af8e39dfbf408006bbb680ddbf65f4d97ab1428dc",
+     "solver": "cadical195",
+     "solve_seconds": 0.001,
+     "stats": {
+      "restarts": 0,
+      "conflicts": 29,
+      "decisions": 30,
+      "propagations": 403
+     },
+     "proof_bytes": 691,
+     "proof_sha256": "b911dedb1e0a61d054d228764fc9ff1d4c9c1734a9f0f0e115b7ac73da969948",
+     "drat_trim_verified": true,
+     "drat_trim_seconds": 0.1
+    }
+   ]
+  }
+ ]
+}

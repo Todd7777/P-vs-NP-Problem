@@ -62,8 +62,12 @@ verification of the stated venue or statement; check before relying on them. Ent
 - Kane, D., Williams, R. "Super-linear gate and super-quadratic wire lower bounds for depth-two and depth-three threshold circuits." STOC 2016.
 - ★ Chen, L., Tal, A., Wang, ?. "Superquadratic lower bounds for depth-2 linear threshold circuits." STOC 2026; ECCC TR26-039. **[third author U]**
 - Paul, W., Pippenger, N., Szemerédi, E., Trotter, W. "On determinism versus non-determinism and related problems." FOCS 1983.
-- Knuth, D. *The Art of Computer Programming*, Vol. 4A, §7.1.2 "Boolean evaluation." Addison-Wesley 2011. (Exact circuit complexity of all 4- and 5-variable functions.)
+- Knuth, D. *The Art of Computer Programming*, Vol. 4A, §7.1.2 "Boolean evaluation." Addison-Wesley 2011. (Exact circuit complexity of all 4- and 5-variable functions.) The text itself was not read in these sessions; its 5-variable results were consulted through optimal5 (below).
+- Knuth, D. *The Art of Computer Programming*, Vol. 4, Fascicle 6: *Satisfiability.* Addison-Wesley 2015; answer to exercise 7.2.2.2–480 (exact sizes of $\mathrm{MOD}_3$ functions for $n\le5$ found with SAT solvers). **Not read directly**: values as quoted by Kulikov–Pechenev–Slezkin (next entry).
+- Kulikov, A., Pechenev, D., Slezkin, N. "SAT-based circuit local improvement." MFCS 2022 (LIPIcs 241); arXiv 2102.12579. Version v3 read on 9 Nov 2026: §1.1 tabulates Knuth's $\mathrm{size}(\mathrm{MOD}_3^{n,r})$ for $3\le n\le5$, e.g. 7 for $(n,r)=(4,0)$ and 10 for $(5,0)$.
+- Goucher, A. P. *optimal5*, https://gitlab.com/apgoucher/optimal5 (database of Knuth's optimal chains for all 616,126 NPN classes of 5-input functions, file `knuthies.dat`). README, `checktab.py` and the data file read on 9 Nov 2026; the data is parsed independently by `experiments/compare_optimal5.py`.
 - Kojevnikov, A., Kulikov, A., Yaroslavtsev, G. "Finding efficient circuits using SAT-solvers." SAT 2009.
+- Tools used for the certified circuit costs: PySAT (`python-sat` 1.9.dev21) with its bundled CaDiCaL 1.9.5 (A. Biere et al.), and drat-trim (M. Heule et al.), https://github.com/marijnheule/drat-trim, commit 2e3b2dc.
 
 ## Range Avoidance and explicit constructions
 - Korten, O. "The hardest explicit construction." FOCS 2021; arXiv 2106.00875.

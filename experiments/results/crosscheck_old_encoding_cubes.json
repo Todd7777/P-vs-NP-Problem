@@ -1,0 +1,1813 @@
+{
+ "name": "MOD3_4 (sum=0 mod 3)",
+ "basis": "U2",
+ "k": 9,
+ "encoding": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+ "full_cnf_sha256": "26d641d36f7ed945ad96bd65cd7a045e6c08b87e68abc4cc2c890329b50f3631",
+ "coverage": "cubes over the at-least-one clauses of gates 4 and 5 (both in the CNF)",
+ "cubes": 60,
+ "all_unsat_and_verified": true,
+ "wall_seconds": 1560.2,
+ "records": [
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_01_01",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    1,
+    25
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "21604e2ec2ed46e7ef8df7beed0e20caeab26d233b2c5d50f466010952b8c17c",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 18.841,
+   "stats": {
+    "restarts": 15186,
+    "conflicts": 382433,
+    "decisions": 677602,
+    "propagations": 17194294
+   },
+   "proof_bytes": 34000443,
+   "proof_sha256": "b59897db3b9113a01c484b2db1022a206396d624af173259b882a0615fb7168f",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 28.4,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 14232 of 30085 clauses in core                            \n\nc 295774 of 442300 lemmas in core using 13326201 resolution steps\n\nc 0 RAT lemmas in core; 192620 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 28.420 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_01_02",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    1,
+    26
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "8556eac5a8429dfb60974165e0b4fca87717da359f17ae5dd29834512ed2f8dd",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 38.601,
+   "stats": {
+    "restarts": 29046,
+    "conflicts": 603023,
+    "decisions": 1032424,
+    "propagations": 29220186
+   },
+   "proof_bytes": 53172387,
+   "proof_sha256": "340981c874329f3d277cd1de81dc586583de8871f7f34c14d4573bf45d0c48a7",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 58.7,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15015 of 30085 clauses in core                            \n\nc 444942 of 683070 lemmas in core using 21038362 resolution steps\n\nc 0 RAT lemmas in core; 299507 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 58.718 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_01_03",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    1,
+    27
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "fb2223bdc987bccbd37bde4ab634d98a0e0873ac2e955378b2976476e9101d9a",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 31.173,
+   "stats": {
+    "restarts": 27932,
+    "conflicts": 528328,
+    "decisions": 963772,
+    "propagations": 25462916
+   },
+   "proof_bytes": 47676893,
+   "proof_sha256": "a9aada737046a859184129e5df5356619fd03ec3998ef96cad8c3041795b267e",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 46.7,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 14618 of 30085 clauses in core                            \n\nc 380151 of 611853 lemmas in core using 18198176 resolution steps\n\nc 0 RAT lemmas in core; 259460 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 46.670 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_01_04",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    1,
+    28
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "c33ccbf901197050ebb2c01353a195e71825819a956adf6e060c681108fc7802",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 6.799,
+   "stats": {
+    "restarts": 7341,
+    "conflicts": 171573,
+    "decisions": 313269,
+    "propagations": 7854497
+   },
+   "proof_bytes": 14376698,
+   "proof_sha256": "a8335a7cbd6c536b534824c000c9d691bf50c36321e73c55814e61ea07127ff8",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 8.9,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 12927 of 30085 clauses in core                            \n\nc 134290 of 213397 lemmas in core using 5035408 resolution steps\n\nc 0 RAT lemmas in core; 65842 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 8.780 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_01_12",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    1,
+    29
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "c9ddd4c475f1cff9aeedab61672a88afda60992df915d1a907c07869480fd85d",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 49.653,
+   "stats": {
+    "restarts": 29494,
+    "conflicts": 759983,
+    "decisions": 1338291,
+    "propagations": 34854079
+   },
+   "proof_bytes": 70829032,
+   "proof_sha256": "bec3a9c6b2ba26a0580d8e9374ab6ed3bc1833a1c275b1fc4b39b8519f3ed887",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 77.4,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15430 of 30085 clauses in core                            \n\nc 500431 of 837456 lemmas in core using 26280846 resolution steps\n\nc 0 RAT lemmas in core; 377477 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 77.430 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_01_13",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    1,
+    30
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "c92942b01c7d5a38dbd09342f78e07e897b30dc21285a36c5ff2710c30562d80",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 52.542,
+   "stats": {
+    "restarts": 30104,
+    "conflicts": 742931,
+    "decisions": 1317015,
+    "propagations": 33563277
+   },
+   "proof_bytes": 68703824,
+   "proof_sha256": "02b077ffd7523049cd0d7593d994619e7e65b97ef765730b418149f3e8a10fca",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 74.5,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15191 of 30085 clauses in core                            \n\nc 519548 of 832526 lemmas in core using 24682017 resolution steps\n\nc 0 RAT lemmas in core; 375058 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 74.477 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_01_14",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    1,
+    31
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "7ceba54aaa432969fabeac327dfec46cb2313fddf92309f297ae7f3cd6a93f61",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 8.333,
+   "stats": {
+    "restarts": 8191,
+    "conflicts": 186898,
+    "decisions": 365446,
+    "propagations": 8790300
+   },
+   "proof_bytes": 15826038,
+   "proof_sha256": "7bf60dd1d75247df18d313bc8117ea3aa3cf64a8061e921f780025ab74319392",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 8.9,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 13168 of 30085 clauses in core                            \n\nc 133459 of 224547 lemmas in core using 5149995 resolution steps\n\nc 0 RAT lemmas in core; 68538 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 8.856 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_01_23",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    1,
+    32
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "c6c377a1c0fa7cd2ea6e23589abf5443ca955621ca3a700e4e8b052a902592c8",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 62.594,
+   "stats": {
+    "restarts": 28369,
+    "conflicts": 919298,
+    "decisions": 1511479,
+    "propagations": 43193373
+   },
+   "proof_bytes": 90517493,
+   "proof_sha256": "d2037242e8ba42bedcdb897029cea661ad82363079a3798a36b6da23bf2e059c",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 103.8,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15068 of 30085 clauses in core                            \n\nc 677135 of 1022319 lemmas in core using 35944569 resolution steps\n\nc 0 RAT lemmas in core; 597225 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 103.831 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_01_24",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    1,
+    33
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "b8eebdeb3611d0c1e6e8358b8486fe20993d3e1b9f59b58c60de7e6dd3314aa5",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 59.763,
+   "stats": {
+    "restarts": 28580,
+    "conflicts": 866104,
+    "decisions": 1511595,
+    "propagations": 41942205
+   },
+   "proof_bytes": 83744480,
+   "proof_sha256": "02a595d3a67cc1d1fa25238e773dacf3890a553554451536caab43e7b05e2d02",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 89.4,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15608 of 30085 clauses in core                            \n\nc 602556 of 975367 lemmas in core using 31390527 resolution steps\n\nc 0 RAT lemmas in core; 515298 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 89.358 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_01_34",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    1,
+    34
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "a8b8b7ed74a6f5146dba28190dac47b0435acf0baac82fe0a0e8b9f4aa640e6e",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 47.572,
+   "stats": {
+    "restarts": 29449,
+    "conflicts": 728131,
+    "decisions": 1214541,
+    "propagations": 35153088
+   },
+   "proof_bytes": 65851093,
+   "proof_sha256": "5346ce8df0c94a6fa06660b48a05cffb193f6f3b9552cd1b07ae084bc7b5b255",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 78.1,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15103 of 30085 clauses in core                            \n\nc 563669 of 837476 lemmas in core using 29769253 resolution steps\n\nc 0 RAT lemmas in core; 405903 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 78.058 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_02_01",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    2,
+    25
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "ab391ee2b5df502ddfbe118931723e97343c5afea02527bea72da18cac80ab33",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 42.876,
+   "stats": {
+    "restarts": 27598,
+    "conflicts": 679821,
+    "decisions": 1186187,
+    "propagations": 31577948
+   },
+   "proof_bytes": 61334049,
+   "proof_sha256": "3c3bb7bd8bf4ebe4de9d62fc92622e7893ae57db651b8f7b38a0da40a527b1f2",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 66.8,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15093 of 30085 clauses in core                            \n\nc 499612 of 752223 lemmas in core using 26536703 resolution steps\n\nc 0 RAT lemmas in core; 370191 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 66.752 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_02_02",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    2,
+    26
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "08cb3aa32c283814bb3aa7ed959c84454d40fd3dbd12ab29d73d6dcfc26ccb23",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 7.572,
+   "stats": {
+    "restarts": 7950,
+    "conflicts": 182647,
+    "decisions": 334753,
+    "propagations": 8674258
+   },
+   "proof_bytes": 16033562,
+   "proof_sha256": "188ced9e3a9923d987ff0d273e62219457e45664eb0062d127e4a340cf5d987f",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 8.7,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 13255 of 30085 clauses in core                            \n\nc 138893 of 226729 lemmas in core using 5305848 resolution steps\n\nc 0 RAT lemmas in core; 69103 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 8.666 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_02_03",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    2,
+    27
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "15885f7764d9e6492c46292f04c9307014311b6e97b652cf9aaaa8b164feae0f",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 45.695,
+   "stats": {
+    "restarts": 26955,
+    "conflicts": 738291,
+    "decisions": 1252258,
+    "propagations": 34137307
+   },
+   "proof_bytes": 70084496,
+   "proof_sha256": "b9b77ac28a4468dd2f954fa567f758fb7557cedd4c24943736bff0cbb9d03ba8",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 73.1,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15455 of 30085 clauses in core                            \n\nc 524372 of 826237 lemmas in core using 27807449 resolution steps\n\nc 0 RAT lemmas in core; 403059 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 73.138 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_02_04",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    2,
+    28
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "7441c5de6d8ca382dab482773a09ce5a2321d8207e43938592b93d48e74314f0",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 30.449,
+   "stats": {
+    "restarts": 26561,
+    "conflicts": 514312,
+    "decisions": 927658,
+    "propagations": 24046678
+   },
+   "proof_bytes": 47707256,
+   "proof_sha256": "3160ff6c021531fd443f34024e0bcbbadd3a944a9d777e5647e51107dc29a785",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 43.1,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15140 of 30085 clauses in core                            \n\nc 388448 of 595447 lemmas in core using 18429885 resolution steps\n\nc 0 RAT lemmas in core; 254926 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 43.110 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_02_12",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    2,
+    29
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "9422e6a612a184023942e9191538a1fb904c82d14a36933b386b59a477cca0b3",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 46.088,
+   "stats": {
+    "restarts": 29906,
+    "conflicts": 726019,
+    "decisions": 1285825,
+    "propagations": 32718665
+   },
+   "proof_bytes": 69459108,
+   "proof_sha256": "47f8bfdd3758a78dde6bf57dcf3b703fd255739c4951db3c4cd1789751e75dbb",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 67.4,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15350 of 30085 clauses in core                            \n\nc 487562 of 810294 lemmas in core using 23228806 resolution steps\n\nc 0 RAT lemmas in core; 391111 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 67.374 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_02_13",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    2,
+    30
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "ea4162a15b5b8c33e9cd392b182fe71ff22fcb3a7710c8e426207a5d2e197288",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 72.299,
+   "stats": {
+    "restarts": 29939,
+    "conflicts": 996970,
+    "decisions": 1639666,
+    "propagations": 46074430
+   },
+   "proof_bytes": 96087208,
+   "proof_sha256": "4e481e8efccea1e3230a0e3be7d100ec861e70c92279b3ca7dfafc9be4d65499",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 115.5,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15122 of 30085 clauses in core                            \n\nc 702235 of 1108391 lemmas in core using 36889169 resolution steps\n\nc 0 RAT lemmas in core; 609075 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 115.485 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_02_14",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    2,
+    31
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "0979a68a0a290b6889bdd2c804057b9e28f4485b979868bde4257c6ef0af67f9",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 50.485,
+   "stats": {
+    "restarts": 28579,
+    "conflicts": 768515,
+    "decisions": 1225251,
+    "propagations": 38150662
+   },
+   "proof_bytes": 71340364,
+   "proof_sha256": "14e6f391e7a013031f948949d8a69ac388d73781277ff35d0dea2bd87b40651c",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 89.1,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15330 of 30085 clauses in core                            \n\nc 581646 of 858547 lemmas in core using 31115017 resolution steps\n\nc 0 RAT lemmas in core; 472839 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 89.093 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_02_23",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    2,
+    32
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "b607bc1e0c768fb225e733e9637586826b3c904a16753cfbb4ffc712db00a50a",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 44.435,
+   "stats": {
+    "restarts": 25579,
+    "conflicts": 725077,
+    "decisions": 1249046,
+    "propagations": 33383588
+   },
+   "proof_bytes": 71059928,
+   "proof_sha256": "7f3b65cd45cecfff8639a2d584a5ed83877cfddeb336d846763c2d2547969152",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 73.4,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15323 of 30085 clauses in core                            \n\nc 510605 of 829428 lemmas in core using 27537524 resolution steps\n\nc 0 RAT lemmas in core; 383148 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 73.386 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_02_24",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    2,
+    33
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "c47ba4666086d002dce83489759e46a6ab845d866599c19997e32414aed23a5d",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 5.841,
+   "stats": {
+    "restarts": 8133,
+    "conflicts": 164406,
+    "decisions": 308921,
+    "propagations": 7885878
+   },
+   "proof_bytes": 13116968,
+   "proof_sha256": "2e849e202666a1a2ace369548f3c1674ef9535809c021672a82c1863f467cb83",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 8.0,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 13012 of 30085 clauses in core                            \n\nc 131159 of 199656 lemmas in core using 4793412 resolution steps\n\nc 0 RAT lemmas in core; 60112 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 7.974 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_02_34",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    2,
+    34
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "8014a43d85e9d56dbfcfabac3ea527810680232c23422dd4bf2c248d3caa610a",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 52.815,
+   "stats": {
+    "restarts": 29023,
+    "conflicts": 810815,
+    "decisions": 1317632,
+    "propagations": 39834821
+   },
+   "proof_bytes": 73810978,
+   "proof_sha256": "2cb76e887c2911d2d3b2d3ae1b0a8e7d2990f36dfce234b777c084c8e5aaea20",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 84.8,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15304 of 30085 clauses in core                            \n\nc 595196 of 904215 lemmas in core using 31428142 resolution steps\n\nc 0 RAT lemmas in core; 468046 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 84.840 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_03_01",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    3,
+    25
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "1b91fa0e0615cf232907476a37ef38fa7dd4953056ce46f5a0b7f9ba8c557ff1",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 42.821,
+   "stats": {
+    "restarts": 26543,
+    "conflicts": 695585,
+    "decisions": 1201322,
+    "propagations": 32184065
+   },
+   "proof_bytes": 66959797,
+   "proof_sha256": "528bd69b49a5005b084e8d6b2649d6d6cc3deacfde3775922e3d49c2bec85069",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 68.8,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15294 of 30085 clauses in core                            \n\nc 494425 of 782218 lemmas in core using 26050692 resolution steps\n\nc 0 RAT lemmas in core; 377806 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 68.778 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_03_02",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    3,
+    26
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "fc8f68087e3dc7fec69e3629d6e0be8babfc563960368a251b150a66ccd0a32b",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 43.788,
+   "stats": {
+    "restarts": 26343,
+    "conflicts": 725541,
+    "decisions": 1223386,
+    "propagations": 32852967
+   },
+   "proof_bytes": 68205382,
+   "proof_sha256": "846a0a5c44db624f96a1bb4943a85e0d0375c612ec22e7e0b4894a28e4fd3869",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 75.8,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15436 of 30085 clauses in core                            \n\nc 544687 of 816805 lemmas in core using 28337285 resolution steps\n\nc 0 RAT lemmas in core; 404100 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 75.778 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_03_03",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    3,
+    27
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "f6abc142ba616db3d5dfb2cfba779058e2da84d3c9cb106e7da6e429103bde17",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 20.518,
+   "stats": {
+    "restarts": 17342,
+    "conflicts": 403658,
+    "decisions": 717251,
+    "propagations": 17992468
+   },
+   "proof_bytes": 37315224,
+   "proof_sha256": "b9b884e9d93dc0abf96ce58c23ea866578497d7b529202c59d994310b15707cb",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 28.9,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 14284 of 30085 clauses in core                            \n\nc 293946 of 462082 lemmas in core using 13436222 resolution steps\n\nc 0 RAT lemmas in core; 200044 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 28.919 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_03_04",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    3,
+    28
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "a135d667711a499664a3b61fb1c716a1428c0ede65d83017914c3b8ea43840ca",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 7.141,
+   "stats": {
+    "restarts": 7351,
+    "conflicts": 172185,
+    "decisions": 306570,
+    "propagations": 8180863
+   },
+   "proof_bytes": 14326330,
+   "proof_sha256": "4b93fa057e7de6841e177f42f4f6b761a2e22055a5172319f7191542a8225d4c",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 8.7,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 12858 of 30085 clauses in core                            \n\nc 125874 of 206733 lemmas in core using 4853064 resolution steps\n\nc 0 RAT lemmas in core; 64302 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 8.725 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_03_12",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    3,
+    29
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "fc8e3a061ae6e7bc2e2697e357a12261d19a37c97a1b1b86aff9887abb254ff1",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 74.236,
+   "stats": {
+    "restarts": 29086,
+    "conflicts": 1020168,
+    "decisions": 1635910,
+    "propagations": 48417275
+   },
+   "proof_bytes": 93763411,
+   "proof_sha256": "6264884f6cc6fe66f36980fd77fe523d597987fdd3e908fb4caf2807788c9075",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 130.7,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15205 of 30085 clauses in core                            \n\nc 774782 of 1112719 lemmas in core using 40764543 resolution steps\n\nc 0 RAT lemmas in core; 620249 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 130.693 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_03_13",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    3,
+    30
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "3e8bfe86423fe666165fa99693f56a25cc1a068f8c8b781d4096545100a67a9c",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 41.535,
+   "stats": {
+    "restarts": 28859,
+    "conflicts": 692739,
+    "decisions": 1228310,
+    "propagations": 32057412
+   },
+   "proof_bytes": 62606382,
+   "proof_sha256": "af6128c636dd5a805bf0cc3f862ba2f8c14f0e1a0b01c56b58c8e3fe318af5bf",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 67.0,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15014 of 30085 clauses in core                            \n\nc 493336 of 768584 lemmas in core using 24485772 resolution steps\n\nc 0 RAT lemmas in core; 339398 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 66.951 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_03_14",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    3,
+    31
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "6cd65e91532fe0a67e9c37992cdab95c7c3df7db13815cf93aa4706251ae3d35",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 50.775,
+   "stats": {
+    "restarts": 27483,
+    "conflicts": 774663,
+    "decisions": 1329180,
+    "propagations": 37418394
+   },
+   "proof_bytes": 74025269,
+   "proof_sha256": "67d3221c3286ab81f3332acf5978f47f0f0b9e8aee2207cbd622dc7a4ba36bf9",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 85.1,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15530 of 30085 clauses in core                            \n\nc 588533 of 871604 lemmas in core using 30606768 resolution steps\n\nc 0 RAT lemmas in core; 484062 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 85.079 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_03_23",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    3,
+    32
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "3a1c39b1b2bbd2d7281fd60fe53578523cf8b4456d112f6dd9a42deeee663e77",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 44.037,
+   "stats": {
+    "restarts": 27080,
+    "conflicts": 718344,
+    "decisions": 1227035,
+    "propagations": 32821446
+   },
+   "proof_bytes": 66545156,
+   "proof_sha256": "0720938213747ef32d7bade56158b51af0ff3814e235fe1674b8ddf4ec4100bb",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 69.2,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15352 of 30085 clauses in core                            \n\nc 496856 of 805772 lemmas in core using 25111521 resolution steps\n\nc 0 RAT lemmas in core; 351500 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 69.219 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_03_24",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    3,
+    33
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "413d4486724b745c45e84dfde116c0d698a0abebbd3c65d85604d8f82ed573db",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 44.165,
+   "stats": {
+    "restarts": 29402,
+    "conflicts": 695763,
+    "decisions": 1183353,
+    "propagations": 34570360
+   },
+   "proof_bytes": 64253162,
+   "proof_sha256": "14567effea100389042a609abd132d13456cfc7a1766c8d80bea5bd94fa8ca7b",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 73.8,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15511 of 30085 clauses in core                            \n\nc 533397 of 799047 lemmas in core using 27388173 resolution steps\n\nc 0 RAT lemmas in core; 408242 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 73.819 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_03_34",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    3,
+    34
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "c5805108f8e122b96f5ef180e77e2ae91fc48748e8793de4934ff0e1ea4d0b15",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 34.56,
+   "stats": {
+    "restarts": 25927,
+    "conflicts": 594715,
+    "decisions": 1059288,
+    "propagations": 27993543
+   },
+   "proof_bytes": 55378425,
+   "proof_sha256": "28b6bb77d861d2a73eb4694de919cbdd248ecb316941ee43425275e6e5072941",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 52.1,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 14970 of 30085 clauses in core                            \n\nc 414677 of 670300 lemmas in core using 21173152 resolution steps\n\nc 0 RAT lemmas in core; 288850 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 52.123 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_12_01",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    4,
+    25
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "34577999b654b4205d0ae6e839573b21d38b441037b6d2d9e7b5c3f7504392b1",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 48.74,
+   "stats": {
+    "restarts": 28897,
+    "conflicts": 752550,
+    "decisions": 1298883,
+    "propagations": 35012227
+   },
+   "proof_bytes": 72241501,
+   "proof_sha256": "871c4da72cf99d49142b2e8b3984035cbad4d3ab734a40b5bda847781ddc8f67",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 76.2,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15351 of 30085 clauses in core                            \n\nc 533198 of 842247 lemmas in core using 27735165 resolution steps\n\nc 0 RAT lemmas in core; 420762 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 76.163 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_12_02",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    4,
+    26
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "23c8e69aaadd0ad27668c2ba87887d73894e4ef66362c20e83c8c589355ab7d1",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 41.362,
+   "stats": {
+    "restarts": 27221,
+    "conflicts": 689507,
+    "decisions": 1211385,
+    "propagations": 31645776
+   },
+   "proof_bytes": 64503741,
+   "proof_sha256": "eedb3aa128c0e69f10059116f8a05c8ffd2aa204c5222e3261017b961a41668c",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 63.2,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 14997 of 30085 clauses in core                            \n\nc 488826 of 788211 lemmas in core using 24221009 resolution steps\n\nc 0 RAT lemmas in core; 338353 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 63.228 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_12_03",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    4,
+    27
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "1bc61a07a565c69ed59bba803756ec2015645476abac1d015a30431bc7b9e494",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 73.553,
+   "stats": {
+    "restarts": 29487,
+    "conflicts": 991854,
+    "decisions": 1640765,
+    "propagations": 46808847
+   },
+   "proof_bytes": 96715319,
+   "proof_sha256": "0b9700aaa9973acd0def617fb4900374c9ea19137d4671cf972f077ac811b1cb",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 120.3,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15160 of 30085 clauses in core                            \n\nc 755077 of 1121804 lemmas in core using 39397256 resolution steps\n\nc 0 RAT lemmas in core; 635296 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 120.316 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_12_04",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    4,
+    28
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "cdac5f6319cc75a7d3379d74e7a7de3322c66494ebece5d4b5ee6bdc14fb718f",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 52.22,
+   "stats": {
+    "restarts": 30822,
+    "conflicts": 778503,
+    "decisions": 1282230,
+    "propagations": 38493936
+   },
+   "proof_bytes": 72210234,
+   "proof_sha256": "8cf44ccd15bac7ad60d1187cd40afc5fbcafe94e7a92c3c5e783e91b2338cfca",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 87.7,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15394 of 30085 clauses in core                            \n\nc 608985 of 873427 lemmas in core using 31514399 resolution steps\n\nc 0 RAT lemmas in core; 495079 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 87.676 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_12_12",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    4,
+    29
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "148826c5b95cd3e5ae13a74ba2d2ec21582f55a1816344263ef8cb82a1ab4eb8",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 19.948,
+   "stats": {
+    "restarts": 14909,
+    "conflicts": 404702,
+    "decisions": 707190,
+    "propagations": 17692032
+   },
+   "proof_bytes": 37232108,
+   "proof_sha256": "9533f48b9ed7113d9f147313a7765be80981ebdb10ed18144756595f358fad19",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 27.6,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 14439 of 30085 clauses in core                            \n\nc 299676 of 479534 lemmas in core using 12887010 resolution steps\n\nc 0 RAT lemmas in core; 186538 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 27.543 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_12_13",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    4,
+    30
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "b67ff2b3f8fd71527f6c580db432a9d38f9f31f5a2c4bf11f57435baecd85699",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 39.086,
+   "stats": {
+    "restarts": 26440,
+    "conflicts": 652142,
+    "decisions": 1143312,
+    "propagations": 30128695
+   },
+   "proof_bytes": 61294482,
+   "proof_sha256": "b7b974a898c70fce697def243f411ec4e7bbbb851476faad05e09dc0688b90db",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 64.1,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15543 of 30085 clauses in core                            \n\nc 490088 of 738820 lemmas in core using 25734703 resolution steps\n\nc 0 RAT lemmas in core; 365012 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 64.043 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_12_14",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    4,
+    31
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "5f99f18261a82034ba174ab119edfdfbec089dc64df12d0cdf39dfa04e23eea0",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 29.809,
+   "stats": {
+    "restarts": 25979,
+    "conflicts": 532984,
+    "decisions": 932071,
+    "propagations": 25842138
+   },
+   "proof_bytes": 47430935,
+   "proof_sha256": "93614c8fd8821782da246115ad6a9b44e285e31a4ebe2a58d78bd3b25d6dc0d4",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 48.3,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 14890 of 30085 clauses in core                            \n\nc 407402 of 612967 lemmas in core using 21020116 resolution steps\n\nc 0 RAT lemmas in core; 256407 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 48.302 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_12_23",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    4,
+    32
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "96337a7fe0d9984ef45806e67ad9e48aab2343a53edbfbcd872fe3d5835f7d3d",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 40.574,
+   "stats": {
+    "restarts": 29078,
+    "conflicts": 629367,
+    "decisions": 1137671,
+    "propagations": 29555538
+   },
+   "proof_bytes": 58425548,
+   "proof_sha256": "993cf2a47637aa6b2a4a32952f9d501182c8f1f45c30b5d88c750d9928290f0a",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 55.9,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15377 of 30085 clauses in core                            \n\nc 424407 of 711092 lemmas in core using 20534205 resolution steps\n\nc 0 RAT lemmas in core; 306837 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 55.877 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_12_24",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    4,
+    33
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "70cbbdb3831d5fc8d97c0f58585eef7bc4e3ec600e1b1e92021b847362987631",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 26.454,
+   "stats": {
+    "restarts": 22126,
+    "conflicts": 469307,
+    "decisions": 836353,
+    "propagations": 21655298
+   },
+   "proof_bytes": 42699526,
+   "proof_sha256": "675c815fa082c8e2e8d21a9dcb2e5a737a1689f6bab76890f175bf9a7de93a2b",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 36.0,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 14651 of 30085 clauses in core                            \n\nc 340782 of 541374 lemmas in core using 16065656 resolution steps\n\nc 0 RAT lemmas in core; 225224 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 36.010 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_12_34",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    4,
+    34
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "eaa3c75380c747703069a254100dc0bd951b170a0f1161447e823951255b9898",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 44.736,
+   "stats": {
+    "restarts": 29609,
+    "conflicts": 680569,
+    "decisions": 1149337,
+    "propagations": 33727616
+   },
+   "proof_bytes": 62720133,
+   "proof_sha256": "f86aceeaa1c545495976c19325a9114da021d8da61e4b2766df6486f732ab56f",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 73.5,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15350 of 30085 clauses in core                            \n\nc 541425 of 791290 lemmas in core using 28137658 resolution steps\n\nc 0 RAT lemmas in core; 415928 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 73.538 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_13_01",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    5,
+    25
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "da72adf586d557e27deefa3ff6469c99b70da36c00d8edff33fb4d40295dd2b7",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 37.078,
+   "stats": {
+    "restarts": 27651,
+    "conflicts": 591372,
+    "decisions": 1032102,
+    "propagations": 28370353
+   },
+   "proof_bytes": 50960063,
+   "proof_sha256": "fa749cb24408dd9687b85f10b65c1085682194b3c7ce8c65fda3cb1bf68e11cc",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 54.4,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 14711 of 30085 clauses in core                            \n\nc 439193 of 660741 lemmas in core using 21451153 resolution steps\n\nc 0 RAT lemmas in core; 318596 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 54.395 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_13_02",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    5,
+    26
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "2cf07006445b37b8d92af911d779898c5c15daf296806ccf65bf229b619098c5",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 53.767,
+   "stats": {
+    "restarts": 29254,
+    "conflicts": 756813,
+    "decisions": 1281711,
+    "propagations": 36876239
+   },
+   "proof_bytes": 71383234,
+   "proof_sha256": "5341bc09cadb479141e68ad07d3378eda708aa45d0e8374c3d2c70bfe9c3f275",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 89.6,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15256 of 30085 clauses in core                            \n\nc 560384 of 843245 lemmas in core using 29094628 resolution steps\n\nc 0 RAT lemmas in core; 445645 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 89.632 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_13_03",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    5,
+    27
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "55f22091e469d015c686d587c26835c29e8fb6e4874120ac27cef33f898cb9af",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 48.691,
+   "stats": {
+    "restarts": 29252,
+    "conflicts": 724660,
+    "decisions": 1288395,
+    "propagations": 32635843
+   },
+   "proof_bytes": 66874756,
+   "proof_sha256": "7fd189ee2f026409839543f5ec865998ef06642e77cef9fc544ef637deecad2d",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 77.0,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15483 of 30085 clauses in core                            \n\nc 513168 of 808310 lemmas in core using 26452090 resolution steps\n\nc 0 RAT lemmas in core; 381308 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 77.001 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_13_04",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    5,
+    28
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "0818135ca04836754941cb9f6949cfa3695b14c922fe2accd16d915ccc07db73",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 49.745,
+   "stats": {
+    "restarts": 30429,
+    "conflicts": 744055,
+    "decisions": 1212346,
+    "propagations": 37389231
+   },
+   "proof_bytes": 68564481,
+   "proof_sha256": "a1b8aebbea2c561bc0b7020c1ef8b11dbd2a4843921b01d0876bca5c99d1813e",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 81.4,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15254 of 30085 clauses in core                            \n\nc 574657 of 843146 lemmas in core using 29591681 resolution steps\n\nc 0 RAT lemmas in core; 444287 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 81.436 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_13_12",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    5,
+    29
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "d68a85fb7770d91a57c8511adf25f1b46de75c0235ac0f07a8cf0309ed4107c9",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 47.017,
+   "stats": {
+    "restarts": 27152,
+    "conflicts": 712486,
+    "decisions": 1222542,
+    "propagations": 32815262
+   },
+   "proof_bytes": 68453904,
+   "proof_sha256": "6806bc54b38da72c60d564e1288e9f3f9482fdeb8b27661c47ac4c6487820898",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 74.3,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15407 of 30085 clauses in core                            \n\nc 515982 of 801641 lemmas in core using 27947209 resolution steps\n\nc 0 RAT lemmas in core; 408766 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 74.322 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_13_13",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    5,
+    30
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "288846009931469de867789a2e8196c6058289990a8f8006ed7b1b2f9dba6dfe",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 18.301,
+   "stats": {
+    "restarts": 16614,
+    "conflicts": 385456,
+    "decisions": 708424,
+    "propagations": 16955964
+   },
+   "proof_bytes": 36175245,
+   "proof_sha256": "a7c2601c2796376eac6c1be827a8f5109b0d9a25394bf9a93ba6a34240d31806",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 26.9,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 14474 of 30085 clauses in core                            \n\nc 283987 of 458681 lemmas in core using 12466180 resolution steps\n\nc 0 RAT lemmas in core; 190887 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 26.894 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_13_14",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    5,
+    31
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "e0c3b02a617faf97cd205a393cafc3fb48711ac2574fead26e2f523688c7a7cb",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 28.787,
+   "stats": {
+    "restarts": 25970,
+    "conflicts": 511445,
+    "decisions": 900394,
+    "propagations": 24976862
+   },
+   "proof_bytes": 46009010,
+   "proof_sha256": "ea68766942efcfbe465146e2ff9424ce10f75b20b58a4ea8cbcc82d7dd01c0ef",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 40.9,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 14594 of 30085 clauses in core                            \n\nc 375741 of 593109 lemmas in core using 18312604 resolution steps\n\nc 0 RAT lemmas in core; 240079 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 40.854 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_13_23",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    5,
+    32
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "c2ce9884dbcfac797f23de2fa48be15ad24496b7005d4cbf9d6aab5918e9844d",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 43.222,
+   "stats": {
+    "restarts": 27153,
+    "conflicts": 692767,
+    "decisions": 1183206,
+    "propagations": 31509091
+   },
+   "proof_bytes": 65092065,
+   "proof_sha256": "b3add50040a1bbe5ec072d01ecca4e164f6274eaf9cc52ee4f0962e07f92f2dc",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 68.6,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15378 of 30085 clauses in core                            \n\nc 483660 of 778386 lemmas in core using 24853609 resolution steps\n\nc 0 RAT lemmas in core; 355307 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 68.595 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_13_24",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    5,
+    33
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "b636fe5426fc0be29cb728914dcc2cdad5cf0a4fec5713026a5c14a6a6d68a4a",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 56.804,
+   "stats": {
+    "restarts": 29578,
+    "conflicts": 790277,
+    "decisions": 1376681,
+    "propagations": 38168880
+   },
+   "proof_bytes": 74586160,
+   "proof_sha256": "41564238db41fabcd99daf99a456710dd74008ec50a41ce9539396da87fbb83d",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 82.4,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15151 of 30085 clauses in core                            \n\nc 521269 of 879130 lemmas in core using 27153018 resolution steps\n\nc 0 RAT lemmas in core; 437750 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 82.361 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_13_34",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    5,
+    34
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "77a94e159748931a2171037cb61685ed5f01184a7ccf573c1c7f36711bd8b4ff",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 7.208,
+   "stats": {
+    "restarts": 7752,
+    "conflicts": 181515,
+    "decisions": 356067,
+    "propagations": 8556008
+   },
+   "proof_bytes": 15662176,
+   "proof_sha256": "9d3c9bbcf8608e26dd053ff287677c38e909bf5cdd44b55c6974a7fec8856d52",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 9.3,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 13340 of 30085 clauses in core                            \n\nc 138586 of 226579 lemmas in core using 4952788 resolution steps\n\nc 0 RAT lemmas in core; 69550 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 9.325 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_23_01",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    6,
+    25
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "7fb44e985b86850b3c875f500ade89448505270d1aab06fa67bb426f4a4cb4e9",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 59.124,
+   "stats": {
+    "restarts": 29168,
+    "conflicts": 837212,
+    "decisions": 1482833,
+    "propagations": 38694870
+   },
+   "proof_bytes": 81851818,
+   "proof_sha256": "0ea5912cd7ec09960f80abe995e4cf58ed1eddea8dbfb1384509cfa691702048",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 91.0,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15430 of 30085 clauses in core                            \n\nc 624325 of 942067 lemmas in core using 33576006 resolution steps\n\nc 0 RAT lemmas in core; 529715 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 90.980 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_23_02",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    6,
+    26
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "6fd581f5a156d32e8f1028878ce0d3126f67549a1fa7c9815b8fa802f987fc43",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 44.336,
+   "stats": {
+    "restarts": 27882,
+    "conflicts": 706158,
+    "decisions": 1208921,
+    "propagations": 32387514
+   },
+   "proof_bytes": 65426769,
+   "proof_sha256": "50681ab4d94f063b00513ec81f204819463f4fff77aa1e79ccd21d06fe5cb79f",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 70.3,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15222 of 30085 clauses in core                            \n\nc 487573 of 790462 lemmas in core using 25180986 resolution steps\n\nc 0 RAT lemmas in core; 348197 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 70.276 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_23_03",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    6,
+    27
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "e2f7ae14b59d246ab6a1c7f11a0a8e0fee182ec210cfb487ea8291c28f1ca2e7",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 47.555,
+   "stats": {
+    "restarts": 27943,
+    "conflicts": 723909,
+    "decisions": 1236018,
+    "propagations": 33054655
+   },
+   "proof_bytes": 68114251,
+   "proof_sha256": "2034ae60d0d20fcbde3e98fd79b09ea9dfd7ed339338300ed40a6fe436505b02",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 72.9,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15341 of 30085 clauses in core                            \n\nc 509004 of 801454 lemmas in core using 26821834 resolution steps\n\nc 0 RAT lemmas in core; 369924 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 72.889 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_23_04",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    6,
+    28
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "34fda794b83a54a8d302a60c4838d1a97e11b682b467978f3dfb7abf1c699c8a",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 52.389,
+   "stats": {
+    "restarts": 29406,
+    "conflicts": 769955,
+    "decisions": 1254579,
+    "propagations": 38146201
+   },
+   "proof_bytes": 69973093,
+   "proof_sha256": "2a09a15569caf40faaef3734f0818628456d5a0804edd297ed99324e1197d075",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 83.2,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15193 of 30085 clauses in core                            \n\nc 575504 of 872078 lemmas in core using 29812165 resolution steps\n\nc 0 RAT lemmas in core; 447351 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 83.213 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_23_12",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    6,
+    29
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "2e58d241d5cafd63fbaa3a510862b884cc5bc332c28d271eef688374768f0558",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 46.073,
+   "stats": {
+    "restarts": 26997,
+    "conflicts": 714838,
+    "decisions": 1229624,
+    "propagations": 32640389
+   },
+   "proof_bytes": 66958491,
+   "proof_sha256": "0fd3bc658789cf44cd494d0d358580823bf739365abe759e645bbac69328e8d8",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 72.3,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15218 of 30085 clauses in core                            \n\nc 508183 of 798040 lemmas in core using 25166237 resolution steps\n\nc 0 RAT lemmas in core; 383229 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 72.319 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_23_13",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    6,
+    30
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "9f2349dea80d0ffbb49b9da9ea055277008045fd0d9133a74480ab4dbf4f3ce7",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 43.452,
+   "stats": {
+    "restarts": 27884,
+    "conflicts": 709001,
+    "decisions": 1240921,
+    "propagations": 32378687
+   },
+   "proof_bytes": 67739185,
+   "proof_sha256": "3d8c54459225b841210a9380924a90334337a3d985f87121670217733edacfb7",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 72.4,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15488 of 30085 clauses in core                            \n\nc 514024 of 782222 lemmas in core using 27745322 resolution steps\n\nc 0 RAT lemmas in core; 389666 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 72.385 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_23_14",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    6,
+    31
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "39b4c6e374eefc741ee3ecb97a11ae6311adb9c26d36e55812ff708fb040f2a7",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 46.795,
+   "stats": {
+    "restarts": 28511,
+    "conflicts": 737236,
+    "decisions": 1198919,
+    "propagations": 35956830
+   },
+   "proof_bytes": 69206312,
+   "proof_sha256": "f89451de2bb3337e94e4d691d124f765489a776cfa0e50d7a991b1b3e0062f74",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 82.3,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15382 of 30085 clauses in core                            \n\nc 586111 of 840693 lemmas in core using 30348657 resolution steps\n\nc 0 RAT lemmas in core; 471390 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 82.311 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_23_23",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    6,
+    32
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "dbb2f5d9c887d79b6dda06c588f3e576e018b4d0e1682de2ca2fcc0e8967a88d",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 22.428,
+   "stats": {
+    "restarts": 19132,
+    "conflicts": 431438,
+    "decisions": 786330,
+    "propagations": 19630560
+   },
+   "proof_bytes": 40825241,
+   "proof_sha256": "0a36619d2577e0eb95436ad938fc2cd8ba9c59d0cfcfa53c85753763b8f7d698",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 33.0,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 15319 of 30085 clauses in core                            \n\nc 327991 of 517926 lemmas in core using 15399728 resolution steps\n\nc 0 RAT lemmas in core; 212702 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 33.010 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_23_24",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    6,
+    33
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "bba6d9b02465f9881fed733b27c96bc1dbea27d1f5cc00f720506f85729e53e5",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 31.377,
+   "stats": {
+    "restarts": 26294,
+    "conflicts": 531508,
+    "decisions": 929015,
+    "propagations": 25860978
+   },
+   "proof_bytes": 49362240,
+   "proof_sha256": "7d5f57ebe6ce8fccde2a075bbbfae9c3db8db7ac8513259b82661a75a8be3858",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 48.8,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 14832 of 30085 clauses in core                            \n\nc 403572 of 626585 lemmas in core using 20365630 resolution steps\n\nc 0 RAT lemmas in core; 260415 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 48.833 seconds"
+   }
+  },
+  {
+   "tag": "oldcube_MOD3_4_U2_k9_23_34",
+   "n": 4,
+   "k": 9,
+   "basis": "U2",
+   "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+   "units": [
+    6,
+    34
+   ],
+   "nvars": 444,
+   "nclauses": 30085,
+   "cnf_sha256": "f915fa87f73426e76982f12efd4f55eeb6250351c3351390c2f30c33ac3e3edd",
+   "solver": "cadical195",
+   "result": false,
+   "solve_seconds": 21.624,
+   "stats": {
+    "restarts": 17202,
+    "conflicts": 418889,
+    "decisions": 721370,
+    "propagations": 18731188
+   },
+   "proof_bytes": 36870075,
+   "proof_sha256": "3405adac743addb0b9ce71e48ab566e2bb731d95994a416da5c287593d323753",
+   "drat_trim": {
+    "verified": true,
+    "seconds": 32.6,
+    "output": "\nc detected empty clause; start verification via backward checking\n\nc 14107 of 30085 clauses in core                            \n\nc 316211 of 489917 lemmas in core using 13687938 resolution steps\n\nc 0 RAT lemmas in core; 184311 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 32.626 seconds"
+   }
+  }
+ ]
+}

@@ -1,0 +1,234 @@
+[
+ {
+  "tag": "old_MOD3_4_U2_k1",
+  "n": 4,
+  "k": 1,
+  "basis": "U2",
+  "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+  "units": [],
+  "nvars": 24,
+  "nclauses": 197,
+  "cnf_sha256": "a690efb4245f0c93106757e1f39156710ee2eabd8af1eae36e60e14031da8c14",
+  "solver": "cadical195",
+  "result": false,
+  "solve_seconds": 0.0,
+  "stats": {
+   "restarts": 0,
+   "conflicts": 0,
+   "decisions": 0,
+   "propagations": 24
+  },
+  "proof_bytes": 107,
+  "proof_sha256": "7e82abb9306d6d603946156f9d1f6513f685235346ae53493fc6987d9314ed07",
+  "drat_trim": {
+   "verified": true,
+   "seconds": 0.1,
+   "output": "\nc UNSAT via unit propagation on the input instance\n\nc 10 of 197 clauses in core                            \n\nc 1 of 24 lemmas in core using 10 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.096 seconds"
+  },
+  "name": "MOD3_4 (sum=0 mod 3)",
+  "wall_seconds": 0.1
+ },
+ {
+  "tag": "old_MOD3_4_U2_k2",
+  "n": 4,
+  "k": 2,
+  "basis": "U2",
+  "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+  "units": [],
+  "nvars": 52,
+  "nclauses": 676,
+  "cnf_sha256": "91cb7856b781f133b9f4b7bed2aa5dfd615dfe31f332f752df191ebedc7969fb",
+  "solver": "cadical195",
+  "result": false,
+  "solve_seconds": 0.001,
+  "stats": {
+   "restarts": 0,
+   "conflicts": 12,
+   "decisions": 12,
+   "propagations": 65
+  },
+  "proof_bytes": 624,
+  "proof_sha256": "754e3e16f72a17834795b3ffc790c610b76c2692adee6ead61e805d42636c5e4",
+  "drat_trim": {
+   "verified": true,
+   "seconds": 0.1,
+   "output": "\nc detected empty clause; start verification via backward checking\n\nc 33 of 676 clauses in core                            \n\nc 12 of 25 lemmas in core using 67 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.111 seconds"
+  },
+  "name": "MOD3_4 (sum=0 mod 3)",
+  "wall_seconds": 0.1
+ },
+ {
+  "tag": "old_MOD3_4_U2_k3",
+  "n": 4,
+  "k": 3,
+  "basis": "U2",
+  "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+  "units": [],
+  "nvars": 85,
+  "nclauses": 1622,
+  "cnf_sha256": "ce4d2ede45fdf24d3c6b92c0438eeb927568b0bfae13ee2901da3229635e5ad4",
+  "solver": "cadical195",
+  "result": false,
+  "solve_seconds": 0.001,
+  "stats": {
+   "restarts": 0,
+   "conflicts": 77,
+   "decisions": 83,
+   "propagations": 613
+  },
+  "proof_bytes": 2340,
+  "proof_sha256": "d9427d81857edff163ae1b341b2bf2baeaa109dbd570be5cee3df2f673eeee5c",
+  "drat_trim": {
+   "verified": true,
+   "seconds": 0.1,
+   "output": "\nc detected empty clause; start verification via backward checking\n\nc 211 of 1622 clauses in core                            \n\nc 73 of 94 lemmas in core using 582 resolution steps\n\nc 0 RAT lemmas in core; 7 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.094 seconds"
+  },
+  "name": "MOD3_4 (sum=0 mod 3)",
+  "wall_seconds": 0.1
+ },
+ {
+  "tag": "old_MOD3_4_U2_k4",
+  "n": 4,
+  "k": 4,
+  "basis": "U2",
+  "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+  "units": [],
+  "nvars": 124,
+  "nclauses": 3230,
+  "cnf_sha256": "68238cbdffda06cc6901456cc559dda5c6e2600f4aa5e37dd4cac5e1ed352c32",
+  "solver": "cadical195",
+  "result": false,
+  "solve_seconds": 0.009,
+  "stats": {
+   "restarts": 7,
+   "conflicts": 524,
+   "decisions": 685,
+   "propagations": 7401
+  },
+  "proof_bytes": 25028,
+  "proof_sha256": "8e44522c10700ea8e6f58724ccec44ba16fd9b4986d61f844dfa1c9c6e7e2596",
+  "drat_trim": {
+   "verified": true,
+   "seconds": 0.1,
+   "output": "\nc detected empty clause; start verification via backward checking\n\nc 767 of 3230 clauses in core                            \n\nc 546 of 1092 lemmas in core using 5753 resolution steps\n\nc 0 RAT lemmas in core; 79 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.144 seconds"
+  },
+  "name": "MOD3_4 (sum=0 mod 3)",
+  "wall_seconds": 0.2
+ },
+ {
+  "tag": "old_MOD3_4_U2_k5",
+  "n": 4,
+  "k": 5,
+  "basis": "U2",
+  "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+  "units": [],
+  "nvars": 170,
+  "nclauses": 5722,
+  "cnf_sha256": "9ae7f303b61cc888997e1875451a645b2e3a88fc5eadb870d6b8398c14f9375d",
+  "solver": "cadical195",
+  "result": false,
+  "solve_seconds": 0.065,
+  "stats": {
+   "restarts": 20,
+   "conflicts": 2377,
+   "decisions": 3135,
+   "propagations": 46205
+  },
+  "proof_bytes": 94484,
+  "proof_sha256": "0ad562e5b7f2ab77f514d5322624e7057d0bfe69d9dade27dfbc05237ddc79fe",
+  "drat_trim": {
+   "verified": true,
+   "seconds": 0.1,
+   "output": "\nc detected empty clause; start verification via backward checking\n\nc 1727 of 5722 clauses in core                            \n\nc 2090 of 3321 lemmas in core using 35424 resolution steps\n\nc 0 RAT lemmas in core; 427 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.131 seconds"
+  },
+  "name": "MOD3_4 (sum=0 mod 3)",
+  "wall_seconds": 0.2
+ },
+ {
+  "tag": "old_MOD3_4_U2_k6",
+  "n": 4,
+  "k": 6,
+  "basis": "U2",
+  "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+  "units": [],
+  "nvars": 224,
+  "nclauses": 9350,
+  "cnf_sha256": "be3e50d3f4b64419b47e75939bc75076e544a8a0851f2626291e112b48ac37e7",
+  "solver": "cadical195",
+  "result": false,
+  "solve_seconds": 0.389,
+  "stats": {
+   "restarts": 915,
+   "conflicts": 19613,
+   "decisions": 33574,
+   "propagations": 585444
+  },
+  "proof_bytes": 1070381,
+  "proof_sha256": "897cb0e5946292e2e5c4d34b53fe03b473c896982cf6112c1753b51e6213de8e",
+  "drat_trim": {
+   "verified": true,
+   "seconds": 0.4,
+   "output": "\nc detected empty clause; start verification via backward checking\n\nc 3999 of 9350 clauses in core                            \n\nc 17617 of 27076 lemmas in core using 417249 resolution steps\n\nc 0 RAT lemmas in core; 5514 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.365 seconds"
+  },
+  "name": "MOD3_4 (sum=0 mod 3)",
+  "wall_seconds": 0.8
+ },
+ {
+  "tag": "old_MOD3_4_U2_k7",
+  "n": 4,
+  "k": 7,
+  "basis": "U2",
+  "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+  "units": [],
+  "nvars": 287,
+  "nclauses": 14399,
+  "cnf_sha256": "55382087455b7d42c533e54e2233147fffc9cd4bb004b25c4a562030254f76ad",
+  "solver": "cadical195",
+  "result": false,
+  "solve_seconds": 4.86,
+  "stats": {
+   "restarts": 7695,
+   "conflicts": 146495,
+   "decisions": 252861,
+   "propagations": 5129160
+  },
+  "proof_bytes": 10355531,
+  "proof_sha256": "e82b1b583444193cef2afaa0d4b230aaa5e9d934468c353c32e9bfed4c674af9",
+  "drat_trim": {
+   "verified": true,
+   "seconds": 5.3,
+   "output": "\nc detected empty clause; start verification via backward checking\n\nc 6890 of 14399 clauses in core                            \n\nc 111572 of 174312 lemmas in core using 3713473 resolution steps\n\nc 0 RAT lemmas in core; 56704 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 5.318 seconds"
+  },
+  "name": "MOD3_4 (sum=0 mod 3)",
+  "wall_seconds": 10.2
+ },
+ {
+  "tag": "old_MOD3_4_U2_k8",
+  "n": 4,
+  "k": 8,
+  "basis": "U2",
+  "rules": "first encoding (exact_circuit_complexity.encode, symmetry=True)",
+  "units": [],
+  "nvars": 360,
+  "nclauses": 21190,
+  "cnf_sha256": "13cba0bf79301438007a5b8547ce86f1687ced3068d4cfc33f903517f7109c42",
+  "solver": "cadical195",
+  "result": false,
+  "solve_seconds": 99.172,
+  "stats": {
+   "restarts": 57080,
+   "conflicts": 1486967,
+   "decisions": 2390708,
+   "propagations": 62829717
+  },
+  "proof_bytes": 122535061,
+  "proof_sha256": "90b0fe66595d7f35d9de840381ebd8559d3432f1e48b030557bdf93d0843ab6a",
+  "drat_trim": {
+   "verified": true,
+   "seconds": 158.6,
+   "output": "\nc detected empty clause; start verification via backward checking\n\nc 11895 of 21190 clauses in core                            \n\nc 1045262 of 1637267 lemmas in core using 50676559 resolution steps\n\nc 0 RAT lemmas in core; 734184 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 158.542 seconds"
+  },
+  "name": "MOD3_4 (sum=0 mod 3)",
+  "wall_seconds": 258.0
+ }
+]

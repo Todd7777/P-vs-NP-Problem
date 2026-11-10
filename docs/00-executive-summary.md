@@ -59,9 +59,13 @@ months, and a ranked list of the next lemmas.
 - Found and dissected a tempting false derivation of "$\mathsf{NP}\not\subseteq\mathrm{SIZE}(n^k)$ for all $k$" from
   Kannan's theorem; the error is that $\mathrm{SIZE}(n^k)$ is not closed under polynomial blow-up of
   witness length (`06-attempts.md`, §6.3). Proved the folklore dichotomy "P ≠ NP or EXP ⊄ P/poly" (§6.4).
-- Built a SAT-based exact circuit synthesizer, validated it against Knuth's exhaustive table of the
-  circuit complexity of all 65,536 four-variable functions, and used it to confirm Schnorr's bound at
-  $n=2,3,4$ and to compute exact or bracketed complexities of explicit five-variable functions
+- Built a SAT-based exact circuit synthesizer and validated it against Knuth's exhaustive tables:
+  all 222 classes of 4-variable functions, and every 5-variable function in its suite. With a
+  symmetry-reduced encoding whose lower bounds come with DRAT proofs checked by drat-trim, it
+  determined the exact circuit size of every explicit function in the suite, including the six the
+  first runs could only bracket (for example $C_{B_2}(\mathrm{MAJ}_5)=9$, $C_{B_2}(\mathrm{MOD}_3^5)=10$,
+  $C_{U_2}(\mathrm{MOD}_3^4)=10$), all agreeing with Knuth where he has a value (table in `README.md`).
+  Schnorr's bound is machine-checked at $n=2,3,4$, and $C_{U_2}(\oplus_5)=12$ follows from the theorem
   (`experiments/`). Measured the exponential growth of CDCL on pigeonhole formulas against polynomial
   behavior on the ordering principle, the empirical face of Haken's theorem.
 - Ranked nine attack vectors by the next lemma each needs (`04-attack-vectors.md`) and listed 24

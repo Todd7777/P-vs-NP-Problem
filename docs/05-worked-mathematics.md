@@ -48,7 +48,9 @@ boundary between what counting gives for free and what the natural-proofs barrie
 **Small-$n$ reality check (experiment `exact_circuit_complexity.py`).** For $n=4$ the asymptotic
 value $2^n/n=4$ is far from the truth: the exact distribution of $C(f)$ over all 65,536 functions
 of 4 variables (computed here by SAT-based exact synthesis, matching Knuth, TAOCP 4A §7.1.2) has
-maximum 7. For $n=5$ Knuth's exhaustive computation gives maximum 12 versus $2^5/5=6.4$. The
+maximum 7. For $n=5$ Knuth's exhaustive computation gives maximum 12 versus $2^5/5=6.4$ (a single
+NPN class of 1,920 functions; checked here against Knuth's own table of optimal chains as packaged in
+optimal5, `experiments/compare_optimal5.py`). The
 $o(1)$ terms in Shannon–Lupanov are large at small $n$; the asymptotics are trustworthy only for
 $n$ in the dozens, where exhaustive computation is impossible ($2^{2^n}$ functions).
 
@@ -104,10 +106,18 @@ output depends on $n$ variables needs $n-1$ gates (each gate joins at most two c
 of the wiring graph). So the same function is "hard" in one basis and trivially easy in another;
 every circuit lower bound is a statement about a *basis*.
 
-**Experimental confirmation.** SAT-based exact synthesis (`exact_circuit_complexity.py`) finds
-$C_{U_2}(\oplus_2)=3$, $C_{U_2}(\oplus_3)=6$, $C_{U_2}(\oplus_4)=9$, and $C_{B_2}(\oplus_n)=n-1$ for $n\le5$; for
-$\oplus_5$ over $U_2$ it proved the lower bound $\ge 9$ by exhaustive unsatisfiability before the conflict
-budget stopped it (see `results/explicit_costs.json` for the exact status), consistent with $12$.
+**Experimental confirmation.** SAT-based exact synthesis finds $C_{U_2}(\oplus_2)=3$,
+$C_{U_2}(\oplus_3)=6$, $C_{U_2}(\oplus_4)=9$, with every smaller gate count refuted by a DRAT proof that
+drat-trim checked (`experiments/circuit_sat.py`, `experiments/results/certificates.json`), and
+$C_{B_2}(\oplus_n)=n-1$ for $n\le5$. For $\oplus_5$ over $U_2$ the first run found a 12-gate circuit
+(re-evaluated on all 32 inputs) and refuted up to 8 gates before its conflict budget ran out. No
+further search is needed. The synthesizer's cost model is the one used here: its chains use
+normal $U_2$ operators, which are $U_2$ gates, and every $U_2$ chain can be made normal without adding
+gates (`experiments/ENCODING.md`, Lemma 1). So Theorem 5.3 supplies the matching lower bound:
+
+> $C_{U_2}(\oplus_5)=12$. **Theorem**: the lower bound is Theorem 5.3, and the upper bound is the
+> construction above or the explicit 12-gate circuit in `experiments/results/explicit_costs.json`
+> (also listed in `experiments/results/explicit_final.json`).
 
 **Why gate elimination stops at $\approx3n$.** The argument removes a constant number of gates per
 eliminated variable. Li–Yang (2022) push the constant to $3.1$ with an elaborate case analysis and

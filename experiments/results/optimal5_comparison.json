@@ -1,0 +1,119 @@
+{
+ "source": "https://gitlab.com/apgoucher/optimal5 knuthies.dat (Knuth's optimal 5-input chains)",
+ "knuthies_sha256": "0cac5ce6aba0ce348b1d4b98845206333fe8c3d9a1b783271ac18e8bfa6a1c0f",
+ "classes_per_cost": {
+  "0": 2,
+  "1": 2,
+  "2": 5,
+  "3": 20,
+  "4": 93,
+  "5": 389,
+  "6": 1988,
+  "7": 11382,
+  "8": 60713,
+  "9": 221541,
+  "10": 293455,
+  "11": 26535,
+  "12": 1
+ },
+ "matches_knuth_table2": true,
+ "readme_example_0x169ae443": 12,
+ "functions": [
+  {
+   "name": "parity_2",
+   "n": 2,
+   "knuth_B2_cost": 1,
+   "class_representative": "0xffff00"
+  },
+  {
+   "name": "parity_3",
+   "n": 3,
+   "knuth_B2_cost": 2,
+   "class_representative": "0xff0f00f"
+  },
+  {
+   "name": "parity_4",
+   "n": 4,
+   "knuth_B2_cost": 3,
+   "class_representative": "0x3cc3c33c"
+  },
+  {
+   "name": "parity_5",
+   "n": 5,
+   "knuth_B2_cost": 4,
+   "class_representative": "0x69969669"
+  },
+  {
+   "name": "MAJ_5",
+   "n": 5,
+   "knuth_B2_cost": 9,
+   "class_representative": "0x117177f"
+  },
+  {
+   "name": "MOD3_5 (sum=0 mod 3)",
+   "n": 5,
+   "knuth_B2_cost": 10,
+   "class_representative": "0x16686881"
+  },
+  {
+   "name": "MOD3_4 (sum=0 mod 3)",
+   "n": 4,
+   "knuth_B2_cost": 7,
+   "class_representative": "0x33cc003"
+  },
+  {
+   "name": "EXACTLY2_5",
+   "n": 5,
+   "knuth_B2_cost": 9,
+   "class_representative": "0x1161668"
+  },
+  {
+   "name": "THR2_5 (sum>=2)",
+   "n": 5,
+   "knuth_B2_cost": 10,
+   "class_representative": "0x10117"
+  },
+  {
+   "name": "MAJ_3 xor x4 xor x5",
+   "n": 5,
+   "knuth_B2_cost": 6,
+   "class_representative": "0x17e8e817"
+  },
+  {
+   "name": "ADD2 carry-out",
+   "n": 4,
+   "knuth_B2_cost": 5,
+   "class_representative": "0x303ff"
+  },
+  {
+   "name": "MUL2 bit3",
+   "n": 4,
+   "knuth_B2_cost": 3,
+   "class_representative": "0x3"
+  },
+  {
+   "name": "MUL2 bit2",
+   "n": 4,
+   "knuth_B2_cost": 3,
+   "class_representative": "0x3f"
+  },
+  {
+   "name": "MUL2 bit1",
+   "n": 4,
+   "knuth_B2_cost": 3,
+   "class_representative": "0xf333c"
+  }
+ ],
+ "n4_classes_compared": 222,
+ "n4_disagreements": [],
+ "n4_distribution_from_optimal5": {
+  "0": 10,
+  "1": 60,
+  "2": 456,
+  "3": 2474,
+  "4": 10624,
+  "5": 24184,
+  "6": 25008,
+  "7": 2720
+ }
+}
