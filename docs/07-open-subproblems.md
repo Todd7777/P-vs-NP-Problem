@@ -39,7 +39,9 @@ research group on first.
    2025 transfer); dag-like Res($\oplus$) first (the Sept 2026 bit-PHP claim, if it holds); Razborov's
    NW-generator conjecture one level up from $\mathsf{AC}^0$-Frege. *Barrier:* feasible interpolation fails
    under factoring; Pich–Santhanam 2023: EF bounds for natural meta-formulas are $\mathsf P\ne\mathsf{NP}$-hard.
-7. **Beat $3.5n$ / $n^3$.** A $4n$ (or any $\omega(n)$) $B_2$ circuit lower bound, or an $n^{3+\varepsilon}$ De Morgan
+7. **Beat $4n$ / $n^3$.** Check the Nov 2026 revision of Mishra–Santhanam (ECCC TR26-260), which claims
+   $4n-O(\log n)$ over $B_2$ (unrefereed; refereed record $3.1n$), then go past it: a $(4+\varepsilon)n$ (or any
+   $\omega(n)$) $B_2$ circuit lower bound, or an $n^{3+\varepsilon}$ De Morgan
    formula bound (KRW composition conjecture), for an explicit function. *Barrier:* GHKK gate-elimination
    limits; the KRW conjecture itself.
 8. **$2^{\omega(\sqrt n)}$ depth-3 lower bound** for an explicit function, toward Valiant's

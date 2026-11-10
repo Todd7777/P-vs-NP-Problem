@@ -5,9 +5,10 @@ session (one per front), each of which tagged its claims by verification status,
 cross-checked against my own knowledge (training cutoff June 2026). The session's network
 policy blocked direct fetches of arXiv, ECCC, ACM DL and the complexity blogs; surveys verified
 citations through search-engine extracts of those pages and through GitHub, which was reachable.
-Conventions: ★ marks results after June 2026; **[U]** marks items whose statement or venue could not
-be verified online in this session and should be checked before being cited; everything else was
-verified to the level of title, authors, venue and abstract. Numbers in parentheses after an item
+Conventions: ★ marks results after June 2026; **[U]** marked items whose statement or venue could not
+be verified online in that session; everything else was verified to the level of title, authors,
+venue and abstract. On 10 Nov 2026 every [U] item was checked at its source and the text corrected
+where needed (`bibliography.md`, verification log); no [U] marker remains. Numbers in parentheses after an item
 are the sub-problems in `07-open-subproblems.md` it bears on.
 
 ## 3.0 Headline status
@@ -36,12 +37,12 @@ are the sub-problems in `07-open-subproblems.md` it bears on.
 
 | Model | Best explicit bound | Reference | Status |
 |---|---|---|---|
-| General circuits ($B_2$) | $3.5n-o(n)$ ★ **[preprint]**; previously $3.1n-o(n)$ | Mishra–Santhanam, ECCC TR26-260 (Oct 2026); Li–Yang STOC 2022 | gate elimination by "reparameterisation"; whether it escapes the Golovnev–Hirsch–Knop–Kulikov limits is open (4) |
-| $U_2$ circuits | $5n-o(n)$ | Iwama–Morizumi 2002 | unchanged **[U]** |
+| General circuits ($B_2$) | $4n-O(\log n)$ ★ **[preprint]** (revision of 3 Nov 2026; the 19 Oct version claimed $3.5n-o(n)$); refereed: $3.1n-o(n)$ | Mishra–Santhanam, ECCC TR26-260; Li–Yang STOC 2022 | gate elimination by "reparameterisation"; whether it escapes the Golovnev–Hirsch–Knop–Kulikov limits is open (4) |
+| $U_2$ circuits | $5n-o(n)$ | Iwama–Morizumi MFCS 2002 | unchanged (still the best known per Carmosino–Dang–Jackman, arXiv 2602.17942, Feb 2026) |
 | De Morgan formulas | $n^{3-o(1)}$ | Håstad 1998; Tal 2014 | cubic barrier unchanged since 2014; KRW conjecture is the bottleneck (4) |
 | $B_2$ formulas | $\Omega(n^2/\log n)$ | Nechiporuk 1966 | unchanged |
 | Depth-3 $\mathsf{AC}^0$ | $2^{\Omega(\sqrt n)}$ (parity) | Håstad 1986 | no $2^{\omega(\sqrt n)}$ for any explicit function; Valiant's $2^{\omega(n/\log\log n)}$ threshold for log-depth consequences untouched (5) |
-| $\mathsf{AC}^0$ depth $d$ | $2^{\Omega(n^{1/(d-1)})}$ | Håstad 1986 | ★ Loff–Sherif–Talebanfard–Ugazio (arXiv 2606.12631): *unconditional* barrier, switching-lemma / $\mathsf{AC}^0$-natural proofs cannot improve the exponent significantly |
+| $\mathsf{AC}^0$ depth $d$ | $2^{\Omega(n^{1/(d-1)})}$ | Håstad 1986 | ★ Loff–Sherif–Talebanfard–Ugazio (arXiv 2606.12631): *unconditional* barrier: no $\mathsf{AC}^0$-natural proof (switching-lemma proofs included) gives more than $2^{n^{7/(d-5)}}$ at depth $d$, the same regime as Håstad's exponent |
 | $\mathsf{ACC}^0$, $\mathsf{ACC}^0\circ\mathsf{THR}$ | superpolynomial for $\mathsf{NQP}$ | Williams 2011/2014; Murray–Williams STOC 2018; Chen FOCS 2019; Chen–Ren STOC 2020; Chen–Lyu–Williams FOCS 2020 | $\mathsf{NP}\not\subseteq\mathsf{ACC}^0$ and $\mathsf E^{\mathsf{NP}}\not\subseteq\mathsf{ACC}^0$ open (2) |
 | $\mathsf{TC}^0$ | nothing superpolynomial, even depth 2, even for $\mathsf{NEXP}$ | — | depth-2 threshold: $\tilde\Omega(n^{1.5})$ gates for a P function (Kane–Williams STOC 2016); ★ $n^{2.5-\varepsilon}$ gates for a function in $\mathsf E^{\mathsf{NP}}$ (Chen–Tal–Wang STOC 2026) via a CAPP algorithm for XORs of two circuits + the algorithmic method |
 | Monotone circuits | $2^{n^{1/2-o(1)}}$ | Cavalar–Kumar–Rossman 2020 (robust sunflowers) | monotone formulas/span programs $2^{\Omega(n)}$ (Pitassi–Robere STOC 2017) |
@@ -152,14 +153,16 @@ natural proofs, is the live obstruction. No non-local technique exists (3).
   $\mathsf{AC}^0[p]$-Frege ("open for almost three decades"), Frege, Extended Frege. Progress is one
   level down: Res($\oplus$) regular / bounded-depth / near-quadratic-depth exponential bounds
   (STOC 2024, STOC 2025, STOC 2026, CCC 2026); dag-like Res($\oplus$) open as of Apr 2026, with a ★
-  Sept 2026 preprint (arXiv 2609.23015) claiming an exponential bit-PHP bound **[U]**. Sideways:
+  Sept 2026 preprint (Braun, arXiv 2609.23015; unrefereed, Lean-formalized, developed with substantial
+  AI assistance) claiming that every DAG-like Res($\oplus$) refutation of the bit pigeonhole principle
+  has $2^{\Omega(n/\log^2 n)}$ clauses. Sideways:
   constant-depth IPS lower bounds over $\mathbb F_p$ for CNFs would give $\mathsf{AC}^0[p]$-Frege bounds
   (Elbaz–Govindasamy–Lu–Tzameret 2025); ★ Hakoniemi–Limaye–Tzameret (FOCS 2026) give hard CNFs for
   ROABP-IPS; ★ Garlík–Gryaznov–Ren–Tzameret (STOC 2026) tie the weak rank principle to $\mathsf{NC}^2$ and
   $\mathsf{AC}^0[p]$ lower bounds (3).
 - **Automatability.** Resolution not automatable unless $\mathsf P=\mathsf{NP}$ (Atserias–Müller 2019/2020);
   likewise regular Resolution, Res($k$), Cutting Planes (Göös–Koroth–Mertz–Pitassi 2020), NS/PC
-  (de Rezende–Göös–Nordström–Pitassi–Robere–Sokolov 2021), bounded-depth Frege (Papamakarios **[U]**);
+  (de Rezende–Göös–Nordström–Pitassi–Robere–Sokolov 2021), depth-$d$ Frege for every $d$ (Papamakarios, CCC 2024);
   Frege/EF under factoring/RSA; SoS open. Automatability of Resolution is thus a *second
   equivalent formulation* of P vs NP.
 - **Unprovability.** Pich–Santhanam (STOC 2021): PV does not prove average-case
@@ -255,8 +258,10 @@ natural proofs, is the live obstruction. No non-local technique exists (3).
   2021). Lean 4: Mathlib has Turing machines but no complexity classes; **complexitylib**
   (cslib-community) claims Cook–Levin, time hierarchy, Savitch, Barrington, PCP, Williams 2025 and
   more, AI-assisted and with "coverage and source audits incomplete"; ★ descriptive complexity in
-  Lean (Senellart–Gnatenko, Sept 2026, 212k lines, 73 completeness results, mostly written with
-  Claude); ★ Håstad's switching lemma and Razborov–Smolensky in Lean (Wesonga, Sept 2026).
+  Lean (Senellart–Gnatenko, Sept 2026: 212k lines, 73 completeness results, most proofs written with
+  the assistance of Claude); ★ Håstad's switching-lemma lower bound for PARITY in Lean (Wesonga,
+  Sept 2026; an earlier version of this line also credited it with Razborov–Smolensky, which the
+  paper does not contain).
   Problem statements: `LeanMillenniumPrizeProblems` (a Sept 2026 fix repaired a certificate-encoding
   bug under which every language was in NP — a cautionary example), DeepMind `formal-conjectures`.
 - **AI results.** AlphaEvolve gadgets for MAX-4-CUT inapproximability (Nagda–Raghavan–Thakurta 2025)

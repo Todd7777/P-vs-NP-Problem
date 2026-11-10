@@ -112,8 +112,9 @@ each CNF and proof is in `results/certificates.json`) and runs drat-trim on it a
 - Written in one session on 5 November 2026 by Claude (Anthropic), with six parallel research
   sub-agents for the literature. The session's network policy blocked direct fetches of arXiv, ECCC
   and ACM DL; citations were verified through search-engine extracts of those pages and through
-  GitHub. Items that could not be verified are marked **[U]** in the documents; results after June
-  2026 are marked ★.
+  GitHub. Items that could not be verified were marked **[U]**; on 10 Nov 2026 each of them was
+  checked at its source (arXiv, ECCC, Dagstuhl LIPIcs, STOC lists) and corrected where needed, see the
+  verification log in `docs/bibliography.md`. Results after June 2026 are marked ★.
 - All mathematics in `docs/02` and `docs/05` is standard; the proofs were written from scratch and
   should be checked like any other proof. `docs/06` contains one deliberately preserved false
   derivation with its error identified (§6.3).

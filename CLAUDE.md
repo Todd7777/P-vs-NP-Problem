@@ -47,9 +47,13 @@ full runs take much longer.
 - The U2 cost of all 65,536 functions of 4 variables is now complete (`results/n4_u2_complete.json`):
   the four NPN classes the earlier runs left open all cost 10 (`certify_n4_u2.py`, checked proofs).
   `summarize_u2_n4.py` cannot be rerun, because its input `results/n4_u2_closure.json` was never committed.
-- The session that wrote the docs could not fetch arXiv, ECCC or the ACM DL. Citations it could not verify
-  are marked **[U]** and still need checking. On 2026-11-09 arXiv and gitlab.com were reachable through
-  the proxy; Knuth's Stanford pages failed TLS verification, so TAOCP itself was not consulted.
+- Every citation the first session marked **[U]** was checked at its source on 2026-11-10 (verification
+  log at the end of `docs/bibliography.md`); no [U] marker remains. Corrections included the
+  Mishra–Santhanam preprint (ECCC TR26-260), whose 3 Nov 2026 revision claims a 4n − O(log n) B2 bound,
+  and the Wesonga Lean paper, which does not cover Razborov–Smolensky. Reachable through the proxy:
+  arXiv (pages and API), gitlab.com, Dagstuhl LIPIcs, acm-stoc.org, and ECCC through the WebFetch tool
+  (curl gets empty replies). Not reachable: DBLP (bot check), the ACM DL, and Knuth's Stanford pages
+  (TLS failure), so TAOCP itself was not consulted.
 
 ## Where the next steps are
 

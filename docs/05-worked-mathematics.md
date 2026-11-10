@@ -28,8 +28,9 @@ Lupanov (1958) proved the matching upper bound $C(f)\le(1+o(1))2^n/n$ for *every
 maximum circuit complexity on $n$ variables is $(1+o(1))\,2^n/n$.
 
 **Why this says nothing about SAT.** The proof never looks at a function; it only counts. SAT on
-$n$-bit inputs is one specific function $\mathrm{SAT}_n$, and the best we can prove about it is
-$C(\mathrm{SAT}_n)\ge 3.1n-o(n)$ (Li–Yang 2022, for a function in P). Worse: one *cannot* fix the
+$n$-bit inputs is one specific function $\mathrm{SAT}_n$, and no explicit function in NP, $\mathrm{SAT}_n$
+included, is known to need more than $3.1n-o(n)$ gates (Li–Yang 2022 prove this bound for a function
+in P; a Nov 2026 preprint claims $4n-O(\log n)$). Worse: one *cannot* fix the
 proof by adding "and here is how to check that $\mathrm{SAT}_n$ is one of the hard ones":
 
 > **Proposition 5.2 (Kabanets–Cai 2000, via Razborov–Rudich).** If $2^{m^\varepsilon}$-secure PRFs exist
@@ -121,7 +122,8 @@ gates (`experiments/ENCODING.md`, Lemma 1). So Theorem 5.3 supplies the matching
 
 **Why gate elimination stops at $\approx3n$.** The argument removes a constant number of gates per
 eliminated variable. Li–Yang (2022) push the constant to $3.1$ with an elaborate case analysis and
-a cleverly chosen function; Golovnev–Hirsch–Knop–Kulikov (2016) show that the method, formalized as
+a cleverly chosen function (an unrefereed Nov 2026 revision of Mishra–Santhanam, ECCC TR26-260,
+claims $4n-O(\log n)$); Golovnev–Hirsch–Knop–Kulikov (2016) show that the method, formalized as
 a measure argument, cannot give superlinear bounds. There is no known way to remove $\omega(1)$ gates
 per variable for an explicit function. This is the entire state of the art for unrestricted
 circuits, after fifty years.
