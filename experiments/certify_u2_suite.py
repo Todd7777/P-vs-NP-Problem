@@ -31,10 +31,10 @@ def tag_for(name, k):
 
 
 def run_one(args):
-    name, proofs, budget, kmax = args
+    name, proofs, budget, kmax, kmin = args
     full, n, tt = C.suite_function(name)
-    per_k, lower, t0 = [], 1, time.time()
-    for k in range(1, kmax + 1):
+    per_k, lower, t0 = [], kmin, time.time()      # with kmin > 1, k < kmin must be certified by another run
+    for k in range(kmin, kmax + 1):
         enc = C.Encoding(n, tt, k, "U2")
         if proofs:
             rec = C.certify(enc, proofs, tag_for(full, k), budget=budget)
@@ -56,22 +56,24 @@ def run_one(args):
         if res is True:
             assert E.verify(n, tt, gates), "decoded circuit does not compute the target"
             certified = bool(proofs) and all(s.get("drat_trim_verified") for s in per_k if s["result"] is False)
-            return {"name": full, "n": n, "basis": "U2", "lower": lower, "upper": k, "exact": lower == k,
+            return {"name": full, "n": n, "basis": "U2", "kmin": kmin, "lower": lower, "upper": k, "exact": lower == k,
                     "label": ("Machine-checked" if certified else "Numerical") if lower == k else "Open",
                     "circuit": E.gates_to_str(n, gates), "gates": [list(g[:3]) + [list(g[3])] for g in gates],
                     "per_k": per_k, "seconds": round(time.time() - t0, 1)}
         if res is False and lower == k:
             lower = k + 1
-    return {"name": full, "n": n, "basis": "U2", "lower": lower, "upper": None, "exact": False, "label": "Open",
+    return {"name": full, "n": n, "basis": "U2", "kmin": kmin, "lower": lower, "upper": None, "exact": False, "label": "Open",
             "per_k": per_k, "seconds": round(time.time() - t0, 1)}
 
 
 def main(a):
+    global OUT
+    OUT = a.out or OUT
     names = a.only.split(",") if a.only else TARGETS
     done = json.load(open(OUT)) if os.path.exists(OUT) else []
     if a.proofs:
         os.makedirs(a.proofs, exist_ok=True)
-    jobs = [(nm, a.proofs, a.budget, a.kmax) for nm in names]
+    jobs = [(nm, a.proofs, a.budget, a.kmax, a.kmin) for nm in names]
     with Pool(a.workers, maxtasksperchild=1) as pool:
         for rec in pool.imap_unordered(run_one, jobs):
             done = json.load(open(OUT)) if os.path.exists(OUT) else []     # re-read: another run may have written
@@ -94,8 +96,12 @@ def table():
     print("| function | n | B2 cost | U2 cost | label |")
     print("|---|---|---|---|---|")
     for d in rows:
-        u2 = str(d["upper"]) if d["exact"] else f"[{d['lower']}, {d['upper']}]"
-        print(f"| {d['name']} | {d['n']} | {b2.get(d['name'], '—')} | {u2} | {d['label']} |")
+        if d["exact"]:
+            u2, label = str(d["upper"]), d["label"]
+        else:
+            u2 = f"≥ {d['lower']}" if d["upper"] is None else f"[{d['lower']}, {d['upper']}]"
+            label = "Open; lower bound Machine-checked" if d.get("lower_bound_machine_checked") else "Open"
+        print(f"| {d['name']} | {d['n']} | {b2.get(d['name'], '—')} | {u2} | {label} |")
 
 
 if __name__ == "__main__":
@@ -109,4 +115,6 @@ if __name__ == "__main__":
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--only")
     ap.add_argument("--kmax", type=int, default=16)
+    ap.add_argument("--kmin", type=int, default=1, help="start at this k (smaller k certified elsewhere)")
+    ap.add_argument("--out", help="results file (default results/u2_suite.json)")
     main(ap.parse_args())
