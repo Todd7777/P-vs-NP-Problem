@@ -262,3 +262,31 @@ def test_recorded_old_encoding_crosscheck():
     c = json.load(open(cubes))
     assert (c["k"], c["basis"], c["cubes"], c["all_unsat_and_verified"]) == (9, "U2", 60, True)
     assert len({tuple(r["units"]) for r in c["records"]}) == 60           # 6 x 10 distinct cubes
+
+
+def test_recorded_u2_suite():
+    """U2 costs of the other suite functions: every circuit computes its function without XOR gates,
+    and a Machine-checked value has a drat-trim-verified refutation for every smaller k."""
+    path = os.path.join(RESULTS, "u2_suite.json")
+    if not os.path.exists(path):
+        pytest.skip("results/u2_suite.json not written yet")
+    for e in json.load(open(path)):
+        full, n, tt = C.suite_function(e["name"])
+        assert e["basis"] == "U2"
+        if e["upper"] is None:
+            continue
+        gates = [(g[0], g[1], g[2], tuple(g[3])) for g in e["gates"]]
+        assert len(gates) == e["upper"] and E.verify(n, tt, gates), e["name"]
+        assert all(g[3] != (0, 1, 1, 0) for g in gates), e["name"] + " uses XOR"
+        if e["label"] == "Machine-checked":
+            refuted = [s for s in e["per_k"] if s["result"] is False]
+            assert [s["k"] for s in refuted] == list(range(1, e["upper"])), e["name"]
+            assert all(s["drat_trim_verified"] for s in refuted), e["name"]
+        assert e["label"] in ("Machine-checked", "Numerical", "Open")
+
+
+def test_u2_suite_file_tags_are_unique():
+    """Regression: MUL2 bit1/bit2/bit3 once shared CNF/proof file names and overwrote each other."""
+    import certify_u2_suite as U
+    tags = [U.tag_for(C.suite_function(n)[0], k) for n in U.TARGETS for k in range(1, 17)]
+    assert len(tags) == len(set(tags))
