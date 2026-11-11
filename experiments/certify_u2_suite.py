@@ -11,6 +11,7 @@ Functions run in parallel, one process each; results go to results/u2_suite.json
 
 Usage: python3 certify_u2_suite.py [--proofs DIR] [--budget CONFLICTS] [--workers 4] [--only NAME,...]
        python3 certify_u2_suite.py --table        (Markdown table of the recorded results)
+       python3 certify_u2_suite.py --upper-from-b2 NAME | --upper RECORD.json   (record a verified upper bound)
 """
 import argparse, json, os, re, time
 from multiprocessing import Pool
@@ -87,6 +88,57 @@ def main(a):
             print(f"{rec['name']:24s} U2 cost {rng} ({rec['label']}, {rec['seconds']}s)", flush=True)
 
 
+def xor_expanded_b2(name):
+    """A U2 circuit from the B2-optimal circuit in results/explicit_final.json: each XOR(a,b) becomes
+    OR(a AND NOT b, NOT a AND b), three U2 gates. Returns verified gates."""
+    full, n, tt = C.suite_function(name)
+    fin = {(e["name"], e["basis"]): e for e in json.load(open(os.path.join(R, "explicit_final.json")))["functions"]}
+    remap, out, nxt = {i: i for i in range(n)}, [], n
+    for (i, j, l, op) in [(g[0], g[1], g[2], tuple(g[3])) for g in fin[(full, "B2")]["gates"]]:
+        a, b = remap[j], remap[l]
+        if op == (0, 1, 1, 0):
+            out += [(nxt, a, b, (0, 0, 1, 0)), (nxt + 1, a, b, (0, 1, 0, 0)), (nxt + 2, nxt, nxt + 1, (0, 1, 1, 1))]
+            remap[i], nxt = nxt + 2, nxt + 3
+        else:
+            out.append((nxt, a, b, op))
+            remap[i], nxt = nxt, nxt + 1
+    assert E.verify(n, tt, out) and all(g[3] != (0, 1, 1, 0) for g in out)
+    return out
+
+
+def prune(n, gates):
+    """Drop gates the output (last gate) does not depend on, and renumber the rest."""
+    by_id = {g[0]: g for g in gates}
+    live, stack = set(), [gates[-1][0]]
+    while stack:
+        i = stack.pop()
+        if i >= n and i not in live:
+            live.add(i)
+            stack += [by_id[i][1], by_id[i][2]]
+    kept = [g for g in gates if g[0] in live]
+    new_id = {i: i for i in range(n)}
+    for pos, g in enumerate(kept):
+        new_id[g[0]] = n + pos
+    return [(new_id[i], new_id[j], new_id[l], op) for (i, j, l, op) in kept]
+
+
+def record_upper(name, gates, source):
+    """Attach a verified U2 circuit as the upper bound of an entry if it improves on the current one."""
+    full, n, tt = C.suite_function(name)
+    gates = prune(n, [(g[0], g[1], g[2], tuple(g[3])) for g in gates])
+    assert E.verify(n, tt, gates) and all(g[3] != (0, 1, 1, 0) for g in gates), "not a U2 circuit for " + full
+    done = json.load(open(OUT))
+    rec = [d for d in done if d["name"] == full][0]
+    if rec["upper"] is not None and rec["upper"] <= len(gates):
+        print(f"{full}: keeping upper bound {rec['upper']} (offered {len(gates)})")
+        return
+    rec.update(upper=len(gates), circuit=E.gates_to_str(n, gates), upper_source=source,
+               gates=[list(g[:3]) + [list(g[3])] for g in gates])
+    rec["exact"] = rec["lower"] == rec["upper"]
+    json.dump(done, open(OUT, "w"), indent=1)
+    print(f"{full}: U2 cost in [{rec['lower']}, {rec['upper']}] ({source})")
+
+
 def table():
     """Markdown table of results/u2_suite.json next to the B2 costs of results/explicit_final.json."""
     b2 = {e["name"]: e["upper"] for e in json.load(open(os.path.join(R, "explicit_final.json")))["functions"]
@@ -108,6 +160,14 @@ if __name__ == "__main__":
     import sys
     if sys.argv[1:] == ["--table"]:
         table()
+        sys.exit()
+    if len(sys.argv) == 3 and sys.argv[1] == "--upper-from-b2":
+        record_upper(sys.argv[2], xor_expanded_b2(sys.argv[2]), "XOR expansion of the B2-optimal circuit")
+        sys.exit()
+    if len(sys.argv) == 3 and sys.argv[1] == "--upper":        # a record written by upper_bound_search.py --out
+        r = json.load(open(sys.argv[2]))
+        assert r["basis"] == "U2" and r["result"] is True
+        record_upper(r["name"], r["gates"], f"upper_bound_search.py at k = {r['k']} ({r['solver']})")
         sys.exit()
     ap = argparse.ArgumentParser()
     ap.add_argument("--proofs")
