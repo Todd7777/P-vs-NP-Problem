@@ -46,12 +46,14 @@ full runs take much longer.
   not committed (about 2 GB); `certify_costs.py recheck` regenerates them bit for bit and checks them again.
 - U2 costs for the rest of the explicit suite (`experiments/certify_u2_suite.py`, `results/u2_suite.json`):
   Machine-checked MUL2 bit3 = 3, MUL2 bit2 = 3, ADD2 carry-out = 5, MUL2 bit1 = 5, MAJ_3 xor x4 xor x5 = 10,
-  MAJ_5 = 10, THR2_5 = 10. Open: EXACTLY2_5 in [11, 15] and MOD3_5 in [11, 22] (lower bounds Machine-checked;
-  upper bounds are verified circuits: Kissat at k = 15 with only base constraints, and the XOR expansion of
-  the B2-optimal circuit). Tried without success: k = 11 with a 20M-conflict budget (about 65 min each);
-  k = 12 and 13 with all rules, 40 min; Kissat with base constraints at k = 13, 14 (EXACTLY2_5) and
-  k = 15, 17 (MOD3_5), 20 min. Next: cube-split the k = 11 refutations (`certify_cubes.py`), and search
-  for upper bounds at k = 16-20 for MOD3_5.
+  MAJ_5 = 10, THR2_5 = 10. Open: EXACTLY2_5 in [12, 15] and MOD3_5 in [12, 22]. The bound 11 is
+  Machine-checked; k = 11 is refuted on every cube by `cube_gauge.py` without proofs (Numerical: 15 cubes
+  for MOD3_5; for EXACTLY2_5 the cube where gate 6 reads (x3,x4) needed a second split over gate 7), about
+  2.4 and 1.6 CPU-hours. Certified runs of the same cubes (`certify_cubes.py`, two-level with
+  `--refine 5:7` for EXACTLY2_5) take several hours. Upper bounds are verified circuits: Kissat at k = 15
+  with only base constraints, and the XOR expansion of the B2-optimal circuit. Without result so far:
+  relaxed U2 searches for MOD3_5 at k = 15-19, and B2 searches with an XOR budget (11 gates, at most 2 XORs,
+  which would give U2 <= 15).
 - The U2 cost of all 65,536 functions of 4 variables is now complete (`results/n4_u2_complete.json`):
   the four NPN classes the earlier runs left open all cost 10 (`certify_n4_u2.py`, checked proofs).
   `summarize_u2_n4.py` cannot be rerun, because its input `results/n4_u2_closure.json` was never committed.

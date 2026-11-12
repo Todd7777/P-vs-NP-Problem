@@ -319,3 +319,26 @@ def test_xor_budgeted_b2_search_expands_to_u2(tmp_path):
     assert rec["result"] is True and sum(tuple(g[3]) == (0, 1, 1, 0) for g in rec["gates"]) <= 2
     u2 = U.expand_xors(rec["name"], rec["gates"])          # verified inside; 6 gates + 2 per XOR
     assert len(u2) <= 10 and all(g[3] != (0, 1, 1, 0) for g in u2)
+
+
+def test_recorded_numerical_lower_bounds_cover_every_cube():
+    """A Numerical lower bound from cube_gauge.py must refute a complete set of cubes."""
+    path = os.path.join(RESULTS, "u2_suite.json")
+    if not os.path.exists(path):
+        pytest.skip("results/u2_suite.json not written yet")
+    for e in json.load(open(path)):
+        ev = e.get("lower_numerical_evidence")
+        if not ev:
+            continue
+        full, n, tt = C.suite_function(e["name"])
+        enc = C.Encoding(n, tt, ev["k"], "U2")
+        assert e["lower_numerical"] == ev["k"] + 1 and e["lower"] >= ev["k"]   # smaller k Machine-checked
+        assert all(c["result"] is False for c in ev["cubes"])
+        first = {}
+        for c in ev["cubes"]:
+            first.setdefault(c["cube"][0][1], []).append(c["cube"])
+        assert sorted(first) == list(range(len(enc.s[n + 1]))), e["name"]
+        for q, cubes in first.items():
+            if len(cubes) > 1 or len(cubes[0]) > 1:               # refined: every pair of the second gate
+                g2 = cubes[0][1][0]
+                assert sorted(cb[1][1] for cb in cubes) == list(range(len(enc.s[g2]))), (e["name"], q)

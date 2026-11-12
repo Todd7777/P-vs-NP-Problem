@@ -182,8 +182,11 @@ def table():
         if d["exact"]:
             u2, label = str(d["upper"]), d["label"]
         else:
-            u2 = f"≥ {d['lower']}" if d["upper"] is None else f"[{d['lower']}, {d['upper']}]"
+            lo = max(d["lower"], d.get("lower_numerical", 0))
+            u2 = f"≥ {lo}" if d["upper"] is None else f"[{lo}, {d['upper']}]"
             label = "Open; lower bound Machine-checked" if d.get("lower_bound_machine_checked") else "Open"
+            if lo > d["lower"]:
+                label = f"Open; ≥ {d['lower']} Machine-checked, ≥ {lo} Numerical"
         print(f"| {d['name']} | {d['n']} | {b2.get(d['name'], '—')} | {u2} | {label} |")
 
 

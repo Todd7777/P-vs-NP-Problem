@@ -660,7 +660,709 @@
      0
     ]
    ]
-  ]
+  ],
+  "lower_numerical": 12,
+  "lower_numerical_evidence": {
+   "k": 11,
+   "method": "experiments/cube_gauge.py: CaDiCaL 1.9.5 on every cube, no proofs",
+   "coverage": "one cube per pair gate 6 can read; the cube where gate 6 reads (x3,x4) undecided in 30M conflicts, split again over the pairs gate 7 can read",
+   "cpu_seconds": 8755,
+   "cubes": [
+    {
+     "cube": [
+      [
+       6,
+       0,
+       [
+        0,
+        1
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 416.6,
+     "conflicts": 4845016
+    },
+    {
+     "cube": [
+      [
+       6,
+       1,
+       [
+        0,
+        2
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 1537.8,
+     "conflicts": 12267383
+    },
+    {
+     "cube": [
+      [
+       6,
+       2,
+       [
+        1,
+        2
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 1580.8,
+     "conflicts": 12393819
+    },
+    {
+     "cube": [
+      [
+       6,
+       3,
+       [
+        0,
+        3
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 99
+    },
+    {
+     "cube": [
+      [
+       6,
+       4,
+       [
+        1,
+        3
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 98
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       0,
+       [
+        0,
+        1
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.1,
+     "conflicts": 0
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       1,
+       [
+        0,
+        2
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 0
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       2,
+       [
+        1,
+        2
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 0
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       3,
+       [
+        0,
+        3
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 0
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       4,
+       [
+        1,
+        3
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 0
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       5,
+       [
+        2,
+        3
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 264.4,
+     "conflicts": 3386102
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       6,
+       [
+        0,
+        4
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 327.1,
+     "conflicts": 3959690
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       7,
+       [
+        1,
+        4
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 318.6,
+     "conflicts": 3783143
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       8,
+       [
+        2,
+        4
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 290.7,
+     "conflicts": 3816982
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       9,
+       [
+        3,
+        4
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 335.1,
+     "conflicts": 4073027
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       10,
+       [
+        0,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 1
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       11,
+       [
+        1,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 1
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       12,
+       [
+        2,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 276.4,
+     "conflicts": 3595728
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       13,
+       [
+        3,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 252.8,
+     "conflicts": 3336589
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       14,
+       [
+        4,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 811.5,
+     "conflicts": 7114397
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       15,
+       [
+        0,
+        6
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 54.3,
+     "conflicts": 1064807
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       16,
+       [
+        1,
+        6
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 227.0,
+     "conflicts": 2865058
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       17,
+       [
+        2,
+        6
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 0
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       18,
+       [
+        3,
+        6
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 0
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       19,
+       [
+        4,
+        6
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 844.1,
+     "conflicts": 7683612
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ],
+      [
+       7,
+       20,
+       [
+        5,
+        6
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 286.1,
+     "conflicts": 3379509
+    },
+    {
+     "cube": [
+      [
+       6,
+       6,
+       [
+        0,
+        4
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 108
+    },
+    {
+     "cube": [
+      [
+       6,
+       7,
+       [
+        1,
+        4
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 106
+    },
+    {
+     "cube": [
+      [
+       6,
+       8,
+       [
+        2,
+        4
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 108
+    },
+    {
+     "cube": [
+      [
+       6,
+       9,
+       [
+        3,
+        4
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 114
+    },
+    {
+     "cube": [
+      [
+       6,
+       10,
+       [
+        0,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 1
+    },
+    {
+     "cube": [
+      [
+       6,
+       11,
+       [
+        1,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 1
+    },
+    {
+     "cube": [
+      [
+       6,
+       12,
+       [
+        2,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 931.9,
+     "conflicts": 7885389
+    },
+    {
+     "cube": [
+      [
+       6,
+       13,
+       [
+        3,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 126
+    },
+    {
+     "cube": [
+      [
+       6,
+       14,
+       [
+        4,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 126
+    }
+   ]
+  }
  },
  {
   "name": "MAJ_3 xor x4 xor x5",
@@ -1462,7 +2164,241 @@
      1
     ]
    ]
-  ]
+  ],
+  "lower_numerical": 12,
+  "lower_numerical_evidence": {
+   "k": 11,
+   "method": "experiments/cube_gauge.py: CaDiCaL 1.9.5 on every cube, no proofs",
+   "coverage": "one cube per pair gate 6 can read",
+   "cpu_seconds": 5868,
+   "cubes": [
+    {
+     "cube": [
+      [
+       6,
+       0,
+       [
+        0,
+        1
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 303.1,
+     "conflicts": 3281108
+    },
+    {
+     "cube": [
+      [
+       6,
+       1,
+       [
+        0,
+        2
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 1531.5,
+     "conflicts": 11535963
+    },
+    {
+     "cube": [
+      [
+       6,
+       2,
+       [
+        1,
+        2
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 1461.7,
+     "conflicts": 11477155
+    },
+    {
+     "cube": [
+      [
+       6,
+       3,
+       [
+        0,
+        3
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 17
+    },
+    {
+     "cube": [
+      [
+       6,
+       4,
+       [
+        1,
+        3
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 147
+    },
+    {
+     "cube": [
+      [
+       6,
+       5,
+       [
+        2,
+        3
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 2254.9,
+     "conflicts": 14907640
+    },
+    {
+     "cube": [
+      [
+       6,
+       6,
+       [
+        0,
+        4
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 19
+    },
+    {
+     "cube": [
+      [
+       6,
+       7,
+       [
+        1,
+        4
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 141
+    },
+    {
+     "cube": [
+      [
+       6,
+       8,
+       [
+        2,
+        4
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 18
+    },
+    {
+     "cube": [
+      [
+       6,
+       9,
+       [
+        3,
+        4
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 19
+    },
+    {
+     "cube": [
+      [
+       6,
+       10,
+       [
+        0,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 1
+    },
+    {
+     "cube": [
+      [
+       6,
+       11,
+       [
+        1,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 1
+    },
+    {
+     "cube": [
+      [
+       6,
+       12,
+       [
+        2,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 316.6,
+     "conflicts": 3613561
+    },
+    {
+     "cube": [
+      [
+       6,
+       13,
+       [
+        3,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 19
+    },
+    {
+     "cube": [
+      [
+       6,
+       14,
+       [
+        4,
+        5
+       ]
+      ]
+     ],
+     "result": false,
+     "seconds": 0.0,
+     "conflicts": 24
+    }
+   ]
+  }
  },
  {
   "name": "THR2_5 (sum>=2)",
