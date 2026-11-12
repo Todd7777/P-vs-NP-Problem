@@ -11,7 +11,9 @@ Functions run in parallel, one process each; results go to results/u2_suite.json
 
 Usage: python3 certify_u2_suite.py [--proofs DIR] [--budget CONFLICTS] [--workers 4] [--only NAME,...]
        python3 certify_u2_suite.py --table        (Markdown table of the recorded results)
-       python3 certify_u2_suite.py --upper-from-b2 NAME | --upper RECORD.json   (record a verified upper bound)
+       python3 certify_u2_suite.py --upper-from-b2 NAME | --upper RECORD.json | --upper-from-b2-record RECORD.json
+           (record a verified upper bound)
+       python3 certify_u2_suite.py --lower-from-cubes NAME K   (record a cube-certified refutation of K)
 """
 import argparse, json, os, re, time
 from multiprocessing import Pool
@@ -89,12 +91,18 @@ def main(a):
 
 
 def xor_expanded_b2(name):
-    """A U2 circuit from the B2-optimal circuit in results/explicit_final.json: each XOR(a,b) becomes
-    OR(a AND NOT b, NOT a AND b), three U2 gates. Returns verified gates."""
+    """A U2 circuit from the B2-optimal circuit in results/explicit_final.json (see expand_xors)."""
     full, n, tt = C.suite_function(name)
     fin = {(e["name"], e["basis"]): e for e in json.load(open(os.path.join(R, "explicit_final.json")))["functions"]}
+    return expand_xors(name, fin[(full, "B2")]["gates"])
+
+
+def expand_xors(name, b2_gates):
+    """Each XOR(a,b) of a B2 chain becomes OR(a AND NOT b, NOT a AND b), three U2 gates.
+    Returns the verified U2 gates."""
+    full, n, tt = C.suite_function(name)
     remap, out, nxt = {i: i for i in range(n)}, [], n
-    for (i, j, l, op) in [(g[0], g[1], g[2], tuple(g[3])) for g in fin[(full, "B2")]["gates"]]:
+    for (i, j, l, op) in [(g[0], g[1], g[2], tuple(g[3])) for g in b2_gates]:
         a, b = remap[j], remap[l]
         if op == (0, 1, 1, 0):
             out += [(nxt, a, b, (0, 0, 1, 0)), (nxt + 1, a, b, (0, 1, 0, 0)), (nxt + 2, nxt, nxt + 1, (0, 1, 1, 1))]
@@ -139,6 +147,29 @@ def record_upper(name, gates, source):
     print(f"{full}: U2 cost in [{rec['lower']}, {rec['upper']}] ({source})")
 
 
+def lower_from_cubes(name, k):
+    """Record a refutation of k obtained cube by cube (certify_cubes.py, results/cube_certificates.json).
+    The lower bound becomes k + 1 only if every smaller k already has a drat-trim-verified refutation."""
+    full = C.suite_function(name)[0]
+    certs = [c for c in json.load(open(os.path.join(R, "cube_certificates.json")))
+             if (c["name"], c["basis"], c["k"]) == (full, "U2", k)]
+    assert certs and certs[0]["all_unsat_and_verified"], f"no verified cube refutation of k = {k} for {full}"
+    done = json.load(open(OUT))
+    rec = [d for d in done if d["name"] == full][0]
+    refuted = sorted(st["k"] for st in rec["per_k"] if st["result"] is False and st.get("drat_trim_verified"))
+    assert refuted == list(range(1, k)), f"{full}: refutations below k = {k} are not all verified"
+    rec["per_k"] = [st for st in rec["per_k"] if st["k"] != k] + [
+        {"k": k, "result": False, "drat_trim_verified": True, "via": "cube_certificates.json",
+         "cubes": len(certs[0]["cubes"]), "full_cnf_sha256": certs[0]["full_cnf_sha256"]}]
+    rec["per_k"].sort(key=lambda st: st["k"])
+    rec["lower"], rec["lower_bound_machine_checked"] = k + 1, True
+    rec["exact"] = rec["upper"] == rec["lower"]
+    if rec["exact"]:
+        rec["label"] = "Machine-checked"
+    json.dump(done, open(OUT, "w"), indent=1)
+    print(f"{full}: U2 cost in [{rec['lower']}, {rec['upper']}], lower bound Machine-checked")
+
+
 def table():
     """Markdown table of results/u2_suite.json next to the B2 costs of results/explicit_final.json."""
     b2 = {e["name"]: e["upper"] for e in json.load(open(os.path.join(R, "explicit_final.json")))["functions"]
@@ -163,6 +194,16 @@ if __name__ == "__main__":
         sys.exit()
     if len(sys.argv) == 3 and sys.argv[1] == "--upper-from-b2":
         record_upper(sys.argv[2], xor_expanded_b2(sys.argv[2]), "XOR expansion of the B2-optimal circuit")
+        sys.exit()
+    if len(sys.argv) == 4 and sys.argv[1] == "--lower-from-cubes":
+        lower_from_cubes(sys.argv[2], int(sys.argv[3]))
+        sys.exit()
+    if len(sys.argv) == 3 and sys.argv[1] == "--upper-from-b2-record":   # a B2 record from upper_bound_search.py
+        r = json.load(open(sys.argv[2]))
+        assert r["basis"] == "B2" and r["result"] is True
+        record_upper(r["name"], expand_xors(r["name"], r["gates"]),
+                     f"XOR expansion of a {r['k']}-gate B2 circuit with at most {r.get('max_xor')} XORs "
+                     f"(upper_bound_search.py --max-xor, {r['solver']})")
         sys.exit()
     if len(sys.argv) == 3 and sys.argv[1] == "--upper":        # a record written by upper_bound_search.py --out
         r = json.load(open(sys.argv[2]))

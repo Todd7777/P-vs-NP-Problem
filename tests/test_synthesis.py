@@ -290,3 +290,32 @@ def test_u2_suite_file_tags_are_unique():
     import certify_u2_suite as U
     tags = [U.tag_for(C.suite_function(n)[0], k) for n in U.TARGETS for k in range(1, 17)]
     assert len(tags) == len(set(tags))
+
+
+@needs_drat
+def test_two_level_cube_refutation(tmp_path, monkeypatch):
+    """--refine splits one first-level cube again; the cube set must still cover every model."""
+    import argparse
+    import certify_cubes as Q
+    monkeypatch.setattr(Q, "R", str(tmp_path))
+    Q.main(argparse.Namespace(name="MOD3_4", basis="B2", k=6, proofs=str(tmp_path), gate=None, workers=1,
+                              refine="0:6"))
+    entry = json.load(open(tmp_path / "cube_certificates.json"))[0]
+    assert entry["all_unsat_and_verified"]
+    # gate 5 can read 10 pairs; cube 0 is replaced by the 15 pairs gate 6 can read
+    assert len(entry["cubes"]) == 9 + 15
+    assert sorted(len(c["cube"]) for c in entry["cubes"]) == [1] * 9 + [2] * 15
+
+
+def test_xor_budgeted_b2_search_expands_to_u2(tmp_path):
+    import subprocess
+    import sys
+    import certify_u2_suite as U
+    out = tmp_path / "rec.json"
+    exp = os.path.dirname(os.path.abspath(C.__file__))
+    subprocess.run([sys.executable, os.path.join(exp, "upper_bound_search.py"), "MAJ_3 xor x4 xor x5", "B2", "6",
+                    "--max-xor", "2", "--rules", "", "--out", str(out)], check=True, capture_output=True)
+    rec = json.load(open(out))
+    assert rec["result"] is True and sum(tuple(g[3]) == (0, 1, 1, 0) for g in rec["gates"]) <= 2
+    u2 = U.expand_xors(rec["name"], rec["gates"])          # verified inside; 6 gates + 2 per XOR
+    assert len(u2) <= 10 and all(g[3] != (0, 1, 1, 0) for g in u2)
