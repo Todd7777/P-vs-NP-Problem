@@ -114,7 +114,7 @@ Machine-checked. No published U2 table for these functions was found (Knuth's ta
 | MAJ_5 | 5 | 9 | 10 | Machine-checked |
 | EXACTLY2_5 | 5 | 9 | [12, 15] | Open; ≥ 11 Machine-checked, ≥ 12 Numerical |
 | THR2_5 (sum>=2) | 5 | 10 | 10 | Machine-checked |
-| MOD3_5 (sum=0 mod 3) | 5 | 10 | [12, 22] | Open; ≥ 11 Machine-checked, ≥ 12 Numerical |
+| MOD3_5 (sum=0 mod 3) | 5 | 10 | [12, 18] | Open; lower bound Machine-checked |
 <!-- U2 TABLE END -->
 
 The same method completes the U2 table for 4 variables: the four NPN classes that the earlier runs

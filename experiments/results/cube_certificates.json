@@ -1,0 +1,553 @@
+[
+ {
+  "name": "MOD3_5 (sum=0 mod 3)",
+  "basis": "U2",
+  "k": 11,
+  "gate": 6,
+  "full_cnf_sha256": "c85790c31762181df90da8363c630d52d072e0b85385f928a0ea0d19a6aadb81",
+  "coverage": "clause s[6][0..14] is in the CNF; one cube per literal",
+  "all_unsat_and_verified": true,
+  "cubes": [
+   {
+    "tag": "MOD3_5_U2_k11_g6_q0",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "5d56ccf9f26beb8a8df32a73fa3a4348859491b6745b60528866008d1a34612c",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 299.266,
+    "stats": {
+     "restarts": 102389,
+     "conflicts": 3281108,
+     "decisions": 5092590,
+     "propagations": 383886721
+    },
+    "proof_bytes": 367100194,
+    "proof_sha256": "e0154a864480dee04c5e2e0d0f93216fa9dafee8e0b91e57b3296c3136f1d949",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 534.4,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 38161 of 85439 clauses in core                            \n\nc 2238121 of 3783044 lemmas in core using 189743919 resolution steps\n\nc 0 RAT lemmas in core; 2646558 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 534.387 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     0,
+     1
+    ],
+    "cube_literal": 11
+   },
+   {
+    "tag": "MOD3_5_U2_k11_g6_q1",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "e7448c5dbc8102bd68f412831bcf94c895f7f5218905d9c26a778b50c102c6f4",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 1631.693,
+    "stats": {
+     "restarts": 394299,
+     "conflicts": 11535963,
+     "decisions": 17892595,
+     "propagations": 1172385750
+    },
+    "proof_bytes": 1126328331,
+    "proof_sha256": "38d54edab4c4fde935c3b0f18dd097a94b860ca00b5bbc4cbc6734ce6d437797",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 3690.9,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 38807 of 85439 clauses in core                            \n\nc 7265515 of 12221972 lemmas in core using 480447631 resolution steps\n\nc 0 RAT lemmas in core; 6949068 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 3690.895 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     0,
+     2
+    ],
+    "cube_literal": 12
+   },
+   {
+    "tag": "MOD3_5_U2_k11_g6_q2",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "cbfe96cf8f6e546a3260c052eb123559772a800b4ddd2657009c990bbb4ac97c",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 1936.669,
+    "stats": {
+     "restarts": 395502,
+     "conflicts": 11477155,
+     "decisions": 17684782,
+     "propagations": 1245240198
+    },
+    "proof_bytes": 1149829768,
+    "proof_sha256": "3123dfac358415849e0eb289e7bd2bd90607008352fef170d5280e7a7143e0c3",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 3416.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 38430 of 85439 clauses in core                            \n\nc 7024825 of 12098930 lemmas in core using 496582568 resolution steps\n\nc 0 RAT lemmas in core; 6847183 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 3416.101 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     1,
+     2
+    ],
+    "cube_literal": 13
+   },
+   {
+    "tag": "MOD3_5_U2_k11_g6_q3",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     14
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "f531a333214d56c1376cb3581955ed7eaaa1570636f4999b0cbd425bab07f909",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.036,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 17,
+     "decisions": 339,
+     "propagations": 2380
+    },
+    "proof_bytes": 12863,
+    "proof_sha256": "3642f0c860a9c7e7bd888c9a746ae77c9c8ed53754dfc581067e4a59b4793733",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 42 of 85439 clauses in core                            \n\nc 5 of 506 lemmas in core using 108 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.104 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     0,
+     3
+    ],
+    "cube_literal": 14
+   },
+   {
+    "tag": "MOD3_5_U2_k11_g6_q4",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     15
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "229ba391161da92f31ed1a1a5949cfc05939558df9ff38d892813616c037c306",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.04,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 147,
+     "decisions": 912,
+     "propagations": 13811
+    },
+    "proof_bytes": 15513,
+    "proof_sha256": "e2529278bb37c5aad7c53e4203875f15c80f362965f4150eba15f0f65315dfaf",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 48 of 85439 clauses in core                            \n\nc 4 of 640 lemmas in core using 117 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.101 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     1,
+     3
+    ],
+    "cube_literal": 15
+   },
+   {
+    "tag": "MOD3_5_U2_k11_g6_q5",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "7fa9056b773306ef11931983a5d207fd4e5d8f7677fb96ca6d6cef97902c3a29",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 2584.988,
+    "stats": {
+     "restarts": 402435,
+     "conflicts": 14907640,
+     "decisions": 21698051,
+     "propagations": 1747485517
+    },
+    "proof_bytes": 1575905174,
+    "proof_sha256": "c0298ca0e27d2b1f8c7412b87cbcfecf644ed7ed8f07481d957b4a6c5ec373b4",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 5678.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 38327 of 85439 clauses in core                            \n\nc 9412790 of 15433849 lemmas in core using 740754511 resolution steps\n\nc 0 RAT lemmas in core; 10158915 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 5678.044 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     2,
+     3
+    ],
+    "cube_literal": 16
+   },
+   {
+    "tag": "MOD3_5_U2_k11_g6_q6",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     17
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "093efc2e537e6f98de49ea2add7deb01bad15fc89792de0747b15207839c732c",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.036,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 19,
+     "decisions": 331,
+     "propagations": 2534
+    },
+    "proof_bytes": 12990,
+    "proof_sha256": "3ba3bb48f4d5366c3da6d1fd9e89b18749778937ed9ffa0cb401d666f386f689",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 54 of 85439 clauses in core                            \n\nc 9 of 526 lemmas in core using 108 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.115 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     0,
+     4
+    ],
+    "cube_literal": 17
+   },
+   {
+    "tag": "MOD3_5_U2_k11_g6_q7",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     18
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "61092c256d6425ee07cd1928c1be2a56a6b5b5b145f6c4fb7e39d48b64f64317",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.039,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 141,
+     "decisions": 882,
+     "propagations": 13525
+    },
+    "proof_bytes": 15552,
+    "proof_sha256": "e3e4674ac88eb0b41a66b5afb42933c3abe3b9b675a0187af7d3fcfce18f235a",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 74 of 85439 clauses in core                            \n\nc 9 of 669 lemmas in core using 223 resolution steps\n\nc 0 RAT lemmas in core; 1 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.111 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     1,
+     4
+    ],
+    "cube_literal": 18
+   },
+   {
+    "tag": "MOD3_5_U2_k11_g6_q8",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     19
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "38e2089c00940e0419b83adc9720a7b8ac5a8cf74982488758fb9da2bafd01a9",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.036,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 18,
+     "decisions": 330,
+     "propagations": 2579
+    },
+    "proof_bytes": 13124,
+    "proof_sha256": "c5d08674a314b58d8fd348cc5adab76e778ad70d2f2220ebfe16efd411041302",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 52 of 85439 clauses in core                            \n\nc 7 of 566 lemmas in core using 148 resolution steps\n\nc 0 RAT lemmas in core; 2 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.136 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     2,
+     4
+    ],
+    "cube_literal": 19
+   },
+   {
+    "tag": "MOD3_5_U2_k11_g6_q9",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     20
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "54791dc7f85ec7f75bbd0016b1167d17e808d4b619ff2db77d2580ba23d4207c",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.035,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 19,
+     "decisions": 330,
+     "propagations": 2645
+    },
+    "proof_bytes": 13117,
+    "proof_sha256": "11844d591f8c76e2b50b7dc2310af58abf1eca4425153d4bc49c5158b4eb010d",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 51 of 85439 clauses in core                            \n\nc 7 of 569 lemmas in core using 97 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.106 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     3,
+     4
+    ],
+    "cube_literal": 20
+   },
+   {
+    "tag": "MOD3_5_U2_k11_g6_q10",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     21
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "e6160545ab8bde291953533334f35fc855cc51ab9b2bc9d3ba1442fbb69d1e73",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.034,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 210
+    },
+    "proof_bytes": 11397,
+    "proof_sha256": "744bfa45c2d63fed3f51af6fd75ab59e12683b9797244b9134684879ee18bc80",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 15 of 85439 clauses in core                            \n\nc 1 of 519 lemmas in core using 15 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.108 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     0,
+     5
+    ],
+    "cube_literal": 21
+   },
+   {
+    "tag": "MOD3_5_U2_k11_g6_q11",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     22
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "2f8c4a10967e2f53e1d48e53b514b9de30bdc1701db4b18c0333080f6d87ce19",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.033,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 192
+    },
+    "proof_bytes": 11374,
+    "proof_sha256": "d9865dc555b529138cdaf0960be0de48921f0de8915ada9e4d342b3ac7a13a3c",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 15 of 85439 clauses in core                            \n\nc 1 of 513 lemmas in core using 15 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.108 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     1,
+     5
+    ],
+    "cube_literal": 22
+   },
+   {
+    "tag": "MOD3_5_U2_k11_g6_q12",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "5119407d8a471ac11b033b2c3543731a9161e9159b1358493cac21bd9ccd34d8",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 360.571,
+    "stats": {
+     "restarts": 107767,
+     "conflicts": 3613561,
+     "decisions": 5428138,
+     "propagations": 414305193
+    },
+    "proof_bytes": 365355769,
+    "proof_sha256": "3e7d187bbe7b764c30b92f63f4f6aae1a844537bf36ea9ac6245dbb6aa3e36f9",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 770.9,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 34505 of 85439 clauses in core                            \n\nc 2612330 of 3960628 lemmas in core using 186690416 resolution steps\n\nc 0 RAT lemmas in core; 2774732 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 770.907 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     2,
+     5
+    ],
+    "cube_literal": 23
+   },
+   {
+    "tag": "MOD3_5_U2_k11_g6_q13",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     24
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "d980a3f0e08249a2b833874237a520b70e079d5b2ec65e591d908db7791a7029",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.035,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 19,
+     "decisions": 367,
+     "propagations": 2499
+    },
+    "proof_bytes": 13896,
+    "proof_sha256": "069b20dbade6c42e5f9de5c4152ab402573e36c0e12f1217467c96e91d3ec636",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 38 of 85439 clauses in core                            \n\nc 4 of 646 lemmas in core using 76 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.114 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     3,
+     5
+    ],
+    "cube_literal": 24
+   },
+   {
+    "tag": "MOD3_5_U2_k11_g6_q14",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     25
+    ],
+    "nvars": 3267,
+    "nclauses": 85439,
+    "cnf_sha256": "defbc7282ad628148997010d591d854c97b7d432253e42c69923d9eb352541e3",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.036,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 24,
+     "decisions": 370,
+     "propagations": 3075
+    },
+    "proof_bytes": 13972,
+    "proof_sha256": "6cc4e5c9afae579b00d61534e1b9e5538a2f09d9236c75a477ddd484f5b68a12",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 43 of 85439 clauses in core                            \n\nc 6 of 657 lemmas in core using 83 resolution steps\n\nc 0 RAT lemmas in core; 1 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.111 seconds"
+    },
+    "name": "MOD3_5 (sum=0 mod 3)",
+    "gate": 6,
+    "pair": [
+     4,
+     5
+    ],
+    "cube_literal": 25
+   }
+  ]
+ }
+]
