@@ -1,7 +1,9 @@
 # Bibliography (curated)
 
 Grouped by front. Entries marked **[U]** were cited by a survey in this session without full online
-verification of the stated venue or statement; check before relying on them. Entries after June
+verification of the stated venue or statement; check before relying on them. On 10 Nov 2026 every
+entry then marked [U] was checked against its primary source and corrected where needed; see the
+verification log at the end. Entries after June
 2026 are marked ★. Where possible, standard identifiers are given.
 
 ## Foundations and surveys
@@ -36,7 +38,7 @@ verification of the stated venue or statement; check before relying on them. Ent
 - Golovnev, A., Hirsch, E., Knop, A., Kulikov, A. "On the limits of gate elimination." MFCS 2016; JCSS 96, 2018.
 - Buss, S., Williams, R. "Limits on alternation-trading proofs for time-space lower bounds." CCC 2012; Comput. Complexity 24, 2015.
 - Hirahara, S., Lu, Z., Ren, H. "Bounded relativization." CCC 2023.
-- ★ Loff, B., Sherif, S., Talebanfard, N., Ugazio, ?. "The Switching Lemma shows what the Switching Lemma cannot prove: an unconditional natural-proofs barrier." arXiv 2606.12631, June 2026. **[coauthor list U]**
+- ★ Loff, B., Sherif, S., Talebanfard, N., Ugazio, F. "The Switching Lemma shows what the Switching Lemma cannot prove: an unconditional natural-proofs barrier." arXiv 2606.12631, June 2026.
 - Razborov, A. "Unprovability of lower bounds on circuit size in certain fragments of bounded arithmetic." Izvestiya Math. 59(1), 1995.
 - Feigenbaum, J., Fortnow, L. "Random-self-reducibility of complete sets." SICOMP 22(5), 1993. Bogdanov, A., Trevisan, L. "On worst-case to average-case reductions for NP problems." SICOMP 36(4), 2006.
 
@@ -46,7 +48,9 @@ verification of the stated venue or statement; check before relying on them. Ent
 - Blum, N. "A Boolean function requiring 3n network size." TCS 28, 1984.
 - Find, M., Golovnev, A., Hirsch, E., Kulikov, A. "A better-than-3n lower bound for the circuit complexity of an explicit function." FOCS 2016.
 - Li, J., Yang, T. "3.1n − o(n) circuit lower bounds for explicit functions." STOC 2022; ECCC TR21-023.
-- ★ Mishra, ?., Santhanam, R. "An explicit 3.5n − o(n) size lower bound against general Boolean circuits." ECCC TR26-260, Oct 2026. **[preprint; first author U]**
+- ★ Mishra, O. S., Santhanam, R. "An explicit 4n − O(log n) size lower bound against general Boolean circuits." ECCC TR26-260, revision 1, 3 Nov 2026; the first version (19 Oct 2026) was titled "An explicit 3.5n − o(n) size lower bound …". Unrefereed preprint; the bound is over $B_2$ for an explicit function in P.
+- Iwama, K., Morizumi, H. "An explicit lower bound of 5n − o(n) for Boolean circuits." MFCS 2002 (the $U_2$/De Morgan record).
+- ★ Carmosino, M., Dang, N., Jackman, T. "Convergent gate elimination and constructive circuit lower bounds." arXiv 2602.17942, Feb 2026. States (§1) that the best known bounds remain about 5n for De Morgan/$U_2$ and 3.1n for $B_2$.
 - Håstad, J. "The shrinkage exponent of De Morgan formulas is 2." SICOMP 27(1), 1998. Tal, A. "Shrinkage of De Morgan formulae by spectral techniques." FOCS 2014.
 - Håstad, J. "Almost optimal lower bounds for small depth circuits." STOC 1986. Razborov (1987), Smolensky (1987) for AC0[p].
 - Razborov, A. "Lower bounds on the monotone complexity of some Boolean functions." 1985. Alon, N., Boppana, R. (1987). Tardos, É. "The gap between monotone and non-monotone circuit complexity is exponential." Combinatorica 8, 1988.
@@ -60,7 +64,7 @@ verification of the stated venue or statement; check before relying on them. Ent
 - Chen, L., Williams, R. "Stronger connections between circuit analysis and circuit lower bounds, via PCPs of proximity." CCC 2019.
 - Chen, L. (FOCS 2019); Chen, L., Ren, H. (STOC 2020); Chen, L., Lyu, X., Williams, R. (FOCS 2020): average-case and almost-everywhere ACC0 lower bounds.
 - Kane, D., Williams, R. "Super-linear gate and super-quadratic wire lower bounds for depth-two and depth-three threshold circuits." STOC 2016.
-- ★ Chen, L., Tal, A., Wang, ?. "Superquadratic lower bounds for depth-2 linear threshold circuits." STOC 2026; ECCC TR26-039. **[third author U]**
+- ★ Chen, L., Tal, A., Wang, Y. "Superquadratic lower bounds for depth-2 linear threshold circuits." STOC 2026; ECCC TR26-039.
 - Paul, W., Pippenger, N., Szemerédi, E., Trotter, W. "On determinism versus non-determinism and related problems." FOCS 1983.
 - Knuth, D. *The Art of Computer Programming*, Vol. 4A, §7.1.2 "Boolean evaluation." Addison-Wesley 2011. (Exact circuit complexity of all 4- and 5-variable functions.) The text itself was not read in these sessions; its 5-variable results were consulted through optimal5 (below).
 - Knuth, D. *The Art of Computer Programming*, Vol. 4, Fascicle 6: *Satisfiability.* Addison-Wesley 2015; answer to exercise 7.2.2.2–480 (exact sizes of $\mathrm{MOD}_3$ functions for $n\le5$ found with SAT solvers). **Not read directly**: values as quoted by Kulikov–Pechenev–Slezkin (next entry).
@@ -80,14 +84,14 @@ verification of the stated venue or statement; check before relying on them. Ent
 - Ilango, R., Li, J., Williams, R. "Indistinguishability obfuscation, range avoidance, and bounded arithmetic." STOC 2023; ECCC TR23-038.
 - Chen, Y., Li, J. "Hardness of range avoidance and remote point for restricted circuits via cryptography." STOC 2024.
 - Vyas, N., Williams, R. "On oracles and algorithmic methods for proving lower bounds." ITCS 2023.
-- Chen, L., Li, J., Liang, ?. "Near-maximum circuit lower bounds for exponential-time Arthur–Merlin with subexponential advice." STOC 2025; ECCC TR24-182. **[title paraphrased; U]**
+- Chen, L., Li, J., Liang, J. "Maximum circuit lower bounds for exponential-time Arthur Merlin." STOC 2025; ECCC TR24-182 (revised Sept 2025 and June 2026).
 - ★ Ren, H., Williams, R. "Near-maximum circuit lower bounds for exponential time with Merlin–Arthur queries." FOCS 2026; arXiv 2607.09963; ECCC TR26-118.
 - ★ Ghentiyala, S., Li, Z., Stephens-Davidowitz, N. "Range avoidance, Arthur–Merlin, and TFNP." STOC 2026; ECCC TR25-210.
 - ★ Li, Z. "Derandomizing (fragments of) Arthur–Merlin with range avoidance." ECCC TR26-270, Oct 2026.
 - ★ Korten, O. "Tight depth lower bounds for stretch amplification." ECCC TR26-302, Nov 2026.
 - Hirsch, E., Volkovich, I. "Upper and lower bounds for the linear ordering principle." STACS 2026; arXiv 2503.19188. "A note on Avoid vs MCSP." arXiv 2512.21764.
-- Huang, X., Li, Y., Zhong, ?. "Range avoidance and remote point: new algorithms and hardness." ITCS 2026; ECCC TR25-049. **[authors U]**
-- Ren, H., Wang, ?., Zhong, ?. "Hardness of range avoidance and proof complexity generators from demi-bits." ITCS 2026; arXiv 2511.14061. **[authors U]**
+- Huang, S., Li, X., Zhong, Y. "Range avoidance and remote point: new algorithms and hardness." ITCS 2026; ECCC TR25-049.
+- Ren, H., Wang, Y., Zhong, Y. "Hardness of range avoidance and proof complexity generators from demi-bits." ITCS 2026; arXiv 2511.14061.
 - Gajulapalli, K., Li, Z., Volkovich, I. "Oblivious complexity classes revisited: lower bounds and hierarchy theorems." FSTTCS 2024; ECCC TR24-049.
 
 ## Hardness magnification
@@ -119,7 +123,7 @@ verification of the stated venue or statement; check before relying on them. Ent
 - Mazor, N., Pass, R. "Gap MCSP is not (Levin) NP-complete in Obfustopia." CCC 2024; ePrint 2024/420.
 - Liu, Y., Pass, R. "On one-way functions and Kolmogorov complexity." FOCS 2020. "On one-way functions from NP-complete problems." CCC 2022; ECCC TR21-059. "Characterizing derandomization through hardness of Levin–Kolmogorov complexity." CCC 2022. "Leakage-resilient hardness vs randomness." CCC 2023. "On one-way functions, the worst-case hardness of time-bounded Kolmogorov complexity, and computational depth." TCC 2024. "Hardness along the boundary." CRYPTO 2025. "One-way functions and boundary hardness of randomized time-bounded Kolmogorov complexity." ITCS 2026; ECCC TR25-202.
 - Hirahara, S., Lu, Z., Oliveira, I. "One-way functions and pKt complexity." TCC 2024; ECCC TR24-136.
-- ★ Hu, ?., Lu, Z., Oliveira, I. "Hardness of computing nondeterministic Kolmogorov complexity." CCC 2026; ECCC TR25-203. **[first author U]**
+- ★ Hu, J., Lu, Z., Oliveira, I. "Hardness of computing nondeterministic Kolmogorov complexity." CCC 2026; ECCC TR25-203.
 - ★ Kabanets, V., Kolokolova, A. "Kolmogorov's approach to P vs. NP: chain rules for time-bounded Kolmogorov complexity." STOC 2026; ECCC TR25-089.
 - Carmosino, M., Impagliazzo, R., Kabanets, V., Kolokolova, A. "Learning algorithms from natural proofs." CCC 2016.
 - Saks, M., Santhanam, R. "Circuit lower bounds from NP-hardness of MCSP under Turing reductions." CCC 2020.
@@ -134,7 +138,9 @@ verification of the stated venue or statement; check before relying on them. Ent
 - Pudlák, P. "Lower bounds for resolution and cutting plane proofs and monotone computations." JSL 62(3), 1997. Krajíček, J. "Interpolation theorems, lower bounds for proof systems, and independence results for bounded arithmetic." JSL 62(2), 1997.
 - Krajíček, J., Pudlák, P. "Some consequences of cryptographical conjectures for S^1_2 and EF." Inf. & Comput. 140(1), 1998. Bonet, M., Pitassi, T., Raz, R. "On interpolation and automatization for Frege systems." SICOMP 29(6), 2000.
 - Fleming, N., Pankratov, D., Pitassi, T., Robere, R. "Random Θ(log n)-CNFs are hard for cutting planes." FOCS 2017; JACM 2022. Hrubeš, P., Pudlák, P. (FOCS 2017).
-- Beame, P., Whitmeyer, ?. Cutting planes lower bounds for bit-PHP. ICALP 2025; ECCC TR25-057. **[second author U]**
+- Beame, P., Whitmeyer, M. "Multiparty communication complexity of collision-finding and cutting planes proofs of concise pigeonhole principles." ICALP 2025; ECCC TR25-057.
+- ★ Braun, K. "An exponential lower bound for the bit pigeonhole principle in resolution over parities." arXiv 2609.23015, Sept 2026. Unrefereed; claims $2^{\Omega(n/\log^2 n)}$ for DAG-like Res($\oplus$), formalized in Lean 4, developed with substantial AI assistance.
+- Papamakarios, T. "Depth-d Frege systems are not automatable unless P = NP." CCC 2024; ECCC TR23-121.
 - Atserias, A., Müller, M. "Automating resolution is NP-hard." FOCS 2019; JACM 67(5), 2020.
 - Göös, M., Koroth, S., Mertz, I., Pitassi, T. "Automating cutting planes is NP-hard." STOC 2020. de Rezende, Göös, Nordström, Pitassi, Robere, Sokolov. "Automating algebraic proof systems is NP-hard." STOC 2021.
 - Krajíček, J. *Forcing with Random Variables and Proof Complexity.* LMS 382, CUP 2011. *Proof Complexity.* CUP 2019. *Proof Complexity Generators.* LMS Lecture Note Series 497, CUP 2025.
@@ -146,7 +152,7 @@ verification of the stated venue or statement; check before relying on them. Ent
 - Krajíček, J., Oliveira, I. "Unprovability of circuit upper bounds in Cook's theory PV." LMCS 13(1), 2017.
 - Atserias, A., Buss, S., Müller, M. "On the consistency of circuit lower bounds for non-deterministic time." STOC 2023; J. Math. Logic 2024.
 - Oliveira, I. "Meta-mathematics of computational complexity theory." SIGACT News Complexity Column 118; arXiv 2504.04416, 2025 (survey).
-- Elbaz, ?., Govindasamy, N., Lu, ?., Tzameret, I. "Constant-depth IPS lower bounds over finite fields and AC0[p]-Frege." ECCC TR25-080; arXiv 2506.17210, 2025. **[title paraphrased; authors U]**
+- Elbaz, T., Govindasamy, N., Lu, J., Tzameret, I. "Lower bounds against the Ideal Proof System in finite fields." ECCC TR25-080; arXiv 2506.17210, 2025.
 - ★ Garlík, M., Gryaznov, S., Ren, H., Tzameret, I. Weak rank principle: PCR/F2 and Sherali–Adams lower bounds and provability bridges. STOC 2026; ECCC TR26-133. **[title paraphrased]**
 - ★ Hakoniemi, T., Limaye, N., Tzameret, I. "Hard CNFs for ROABP-IPS." FOCS 2026; arXiv 2605.04544. **[title paraphrased]**
 - ★ Lu, Z., Santhanam, R., Tzameret, I. Unprovability in AC0[p]-Frege of IPS-based permanent lower bounds. ITCS 2026; arXiv 2509.16824. **[title paraphrased]**
@@ -166,7 +172,7 @@ verification of the stated venue or statement; check before relying on them. Ent
 - Williams, R. "Simulating time with square-root space." STOC 2025 (best paper); JACM 2026; arXiv 2502.17779.
 - Hopcroft, J., Paul, W., Valiant, L. "On time versus space." JACM 24(2), 1977.
 - Fortnow, L. (CCC 1997); Lipton, Viglas (FOCS 1999); Fortnow, van Melkebeek (FOCS 2000); Williams, R. "Time-space tradeoffs for counting NP solutions modulo integers." Comput. Complexity 17, 2008 (the 2cos(π/7) bound).
-- Wehar, M. "Unconditional time and space complexity lower bounds for intersection non-emptiness." arXiv 2512.00297, 2025. **[U]**
+- Wehar, M. "Unconditional time and space complexity lower bounds for intersection non-emptiness." arXiv 2512.00297, 2025.
 
 ## Algebraic complexity (see §3.8)
 - Valiant, L. "Completeness classes in algebra." STOC 1979.
@@ -184,21 +190,49 @@ verification of the stated venue or statement; check before relying on them. Ent
 - Kush, D., Saraf, S. "Improved low-depth set-multilinear circuit lower bounds." CCC 2022. "Near-optimal set-multilinear formula lower bounds." CCC 2023.
 - Chatterjee, P., Kumar, M., Ramya, C., Saptharishi, R., Tengse, A. "On the existence of algebraically natural proofs." FOCS 2020; merged with Kumar, Ramya, Saptharishi, Tengse (STACS 2022), arXiv 2004.14147v4, 2025.
 - Dutta, P., Gesmundo, F., Ikenmeyer, C., Jindal, G., Lysikov, V. "Geometric complexity theory for product-plus-power." arXiv 2211.07055, rev. 2025.
-- ★ Grochow, J., Urisman, ?. "Geometric complexity theory and graph isomorphism." ECCC TR26-106; arXiv 2606.26244, June 2026. **[second author U]**
+- ★ Grochow, J., Urisman, J. "Geometric complexity theory and graph isomorphism." ECCC TR26-106 (first titled "Graph isomorphism and representation theory"); arXiv 2606.26244, June 2026.
 - Bläser, M., Ikenmeyer, C. "Introduction to geometric complexity theory." Theory of Computing Graduate Surveys 10, 2025.
 - Carmosino, M., Impagliazzo, R., Kabanets, V., Kolokolova, A. "Tighter connections between derandomization and circuit lower bounds." APPROX/RANDOM 2015. Grochow, J., Kumar, M., Saks, M., Saraf, S. "Towards an algebraic natural proofs barrier via polynomial identity testing." 2017.
 
 ## Formalization and AI (2021–2026)
 - Gäher, L., Kunze, F. "Mechanising complexity theory: the Cook–Levin theorem in Coq." ITP 2021.
 - Balbach, F. "The Cook–Levin theorem." Archive of Formal Proofs (Isabelle), 2023.
-- ★ Senellart, P., Gnatenko, ?. Descriptive complexity in Lean. arXiv 2609.18261, Sept 2026. **[second author U]**
-- ★ Wesonga, ?. Håstad's switching lemma and Razborov–Smolensky in Lean. arXiv 2609.24188, Sept 2026. **[U]**
+- ★ Senellart, P., Gnatenko, A. "Descriptive complexity in Lean: completeness by first-order reductions." arXiv 2609.18261, Sept 2026.
+- ★ Wesonga, S. "Formalizing PARITY circuit lower bounds in Lean." arXiv 2609.24188, Sept 2026. (Håstad's switching-lemma bound for PARITY; the paper does not treat Razborov–Smolensky, contrary to an earlier version of this entry.)
 - ★ OpenAI. "The Exponential Time Hypothesis is False." github.com/openai/math, family 378, Oct 2026 (under review).
 - ★ Anthropic (author "Claude"). "A 2^{o(n)} time algorithm for 3-SAT." github.com/anthropics/formal-math/eth, Oct 2026 (under review).
-- Nagda, A., Raghavan, M., Thakurta, A. AlphaEvolve gadgets for MAX-4-CUT inapproximability. arXiv 2509.18057, 2025. **[author list U]**
+- Nagda, A., Raghavan, P., Thakurta, A. "Reinforced generation of combinatorial structures: hardness of approximation." arXiv 2509.18057, 2025 (AlphaEvolve-found gadgets for MAX-4-CUT, MAX-3-CUT and metric TSP inapproximability).
 
 ## Failed claims (for the record)
 - Blum, N. "A solution of the P versus NP problem." arXiv 1708.03486, 2017 (withdrawn).
 - Xu, K., Zhou, G. "SAT requires exhaustive search." arXiv 2302.09512; Frontiers of Computer Science 19(12), 2025. Responses: Chavrimootoo et al., arXiv 2312.02071; Allender, E., Williams, R., FCS 20(1), 2026.
 - Deng, ?. "P = NP" (2025); refutation: Humphreys et al., arXiv 2507.09018.
 - Arthanari, T. "Lean 4 machine-verified proof of P = NP via pedigree polytopes." arXiv 2606.03194, 2026 (main theorem proves `True`/an axiom).
+
+## Verification log (10 Nov 2026)
+
+Every entry that carried a **[U]** marker was checked against its primary source: the arXiv abstract
+page or API (and the full text where a claim went beyond the abstract), the ECCC report page, the
+Dagstuhl LIPIcs record, or the STOC accepted-paper list. ECCC was read through a web fetch because
+direct downloads were refused; DBLP and the ACM DL were not reachable.
+
+| Item | Checked at | Outcome |
+|---|---|---|
+| Loff–Sherif–Talebanfard–Ugazio | arXiv 2606.12631 | fourth author is Francesca Ugazio; statement as cited (no AC0-natural proof beats $2^{n^{7/(d-5)}}$ at depth $d$) |
+| Mishra–Santhanam | ECCC TR26-260 | first author Om Swostik Mishra; **revision 1 (3 Nov 2026) claims $4n-O(\log n)$**, up from $3.5n-o(n)$; docs updated |
+| Chen–Tal–Wang | ECCC TR26-039, STOC 2026 list | third author Yichuan Wang; $n^{2.5-\varepsilon}$-size THR∘THR bound for $\mathsf E^{\mathsf{NP}}$ confirmed |
+| Chen–Li–Liang | ECCC TR24-182, STOC 2025 list | title corrected; third author Jingxun Liang |
+| Huang–Li–Zhong | ECCC TR25-049, LIPIcs ITCS 2026 | authors corrected (Shengtang Huang, Xin Li, Yan Zhong) |
+| Ren–Wang–Zhong | arXiv 2511.14061, LIPIcs ITCS 2026 | authors Yichuan Wang, Yan Zhong |
+| Hu–Lu–Oliveira | ECCC TR25-203, LIPIcs CCC 2026 | first author Jinqiao Hu |
+| Beame–Whitmeyer | ECCC TR25-057, LIPIcs ICALP 2025 | second author Michael Whitmeyer; title added; $2^{\Omega(n^{1/4})}$ bit-PHP bound for cutting planes confirmed |
+| Elbaz–Govindasamy–Lu–Tzameret | arXiv 2506.17210, ECCC TR25-080 | title and first names corrected; the AC0[p]-Frege consequence is in the abstract |
+| Wehar | arXiv 2512.00297 | as cited |
+| Grochow–Urisman | arXiv 2606.26244, ECCC TR26-106 | second author Jacob Urisman; "multiplicity obstructions are stronger than occurrence obstructions" is in the abstract |
+| Senellart–Gnatenko | arXiv 2609.18261 (full text) | second author Anton Gnatenko; 212k lines of Lean and "most proofs … written with the assistance of … Claude" both in the paper |
+| Wesonga | arXiv 2609.24188 (full text) | **corrected**: the paper formalizes Håstad's PARITY bound only; "Smolensky" does not occur in it |
+| Nagda–Raghavan–Thakurta | arXiv 2509.18057 | second author is Prabhakar Raghavan; title added |
+| bit-PHP in Res(⊕) (docs/03) | arXiv 2609.23015 | author Kamil Braun; claim as stated in the abstract; unrefereed |
+| Papamakarios (docs/03) | LIPIcs CCC 2024 | "Depth-d Frege systems are not automatable unless P = NP" |
+| $U_2$ record 5n − o(n) (docs/03) | arXiv 2602.17942 §1 | still the best known as of Feb 2026 (Iwama–Morizumi, MFCS 2002) |
+

@@ -26,8 +26,8 @@ months, and a ranked list of the next lemmas.
    either an exponential time budget or a spare quantifier ($\Sigma_2$, $\mathsf S_2$, MA). Nothing is
    known to work at polynomial scale without that resource. In `06-attempts.md` nine independent
    attack lines are pushed until each dies, and each dies at this bridge.
-4. **The best explicit lower bounds for functions in NP** remain linear for circuits ($3.5n$, Oct 2026
-   preprint; $3.1n$ refereed), cubic for formulas, and nothing superpolynomial against $\mathsf{TC}^0$;
+4. **The best explicit lower bounds for functions in NP** remain linear for circuits ($4n-O(\log n)$
+   claimed in a Nov 2026 preprint revision, $3.1n$ refereed), cubic for formulas, and nothing superpolynomial against $\mathsf{TC}^0$;
    $\mathsf{NP}\not\subseteq\mathrm{SIZE}(n^k)$ is open for every fixed $k$, including superlinear.
 
 ## What changed recently (verified to the extent the session's network allowed)
