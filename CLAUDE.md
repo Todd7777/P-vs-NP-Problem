@@ -46,14 +46,16 @@ full runs take much longer.
   not committed (about 2 GB); `certify_costs.py recheck` regenerates them bit for bit and checks them again.
 - U2 costs for the rest of the explicit suite (`experiments/certify_u2_suite.py`, `results/u2_suite.json`):
   Machine-checked MUL2 bit3 = 3, MUL2 bit2 = 3, ADD2 carry-out = 5, MUL2 bit1 = 5, MAJ_3 xor x4 xor x5 = 10,
-  MAJ_5 = 10, THR2_5 = 10. Open: MOD3_5 in [12, 18], lower bound Machine-checked (k = 11 refuted as 15
-  cubes with drat-trim-verified proofs, `results/cube_certificates.json`; about 4 h on 2 cores, proofs
-  4.6 GB, not committed). EXACTLY2_5 in [12, 15]: 11 Machine-checked, 12 Numerical (`cube_gauge.py`; the
-  cube where gate 6 reads (x3,x4) needed a second split over gate 7); its certified two-level run
-  (`certify_cubes.py --refine 5:7`) was in progress. Upper bounds are verified circuits: Kissat at k = 15
-  with base constraints (EXACTLY2_5); a 10-gate B2 circuit with 4 XORs, expanded to 18 U2 gates (MOD3_5,
-  `upper_bound_search.py --max-xor`). Without result: relaxed U2 searches for MOD3_5 at k = 15-19, and
-  XOR-budgeted B2 searches with (11 gates, <= 2 XORs) and (12, <= 1).
+  MAJ_5 = 10, THR2_5 = 10. Open: EXACTLY2_5 and MOD3_5, both in [12, 15] with Machine-checked lower
+  bounds. k = 11 was refuted cube by cube with drat-trim-verified proofs (`certify_cubes.py`,
+  `results/cube_certificates.json`): 35 cubes for EXACTLY2_5 (its cube where gate 6 reads (x3,x4) needed
+  a second split, `--refine 5:7`) and 15 for MOD3_5; about 8.4 and 5.8 CPU-hours including drat-trim;
+  proofs 8.2 and 4.6 GB, not committed. The upper bounds of 15 are verified circuits: Kissat at k = 15
+  with base constraints (EXACTLY2_5), and the XOR expansion of a 12-gate B2 circuit with 2 XORs, one dead
+  gate pruned (MOD3_5; `upper_bound_search.py --max-xor`). Without result in 30-60 min: EXACTLY2_5 B2 with
+  (10 gates, <= 2 XORs) and (11, <= 1); MOD3_5 B2 with (12, <= 1) and (10, <= 3); relaxed U2 searches at
+  k = 13-19. Next: refute k = 12 (expect much harder than k = 11; split two levels from the start), or
+  rerun the XOR-budgeted searches with longer caps.
 - The U2 cost of all 65,536 functions of 4 variables is now complete (`results/n4_u2_complete.json`):
   the four NPN classes the earlier runs left open all cost 10 (`certify_n4_u2.py`, checked proofs).
   `summarize_u2_n4.py` cannot be rerun, because its input `results/n4_u2_closure.json` was never committed.
