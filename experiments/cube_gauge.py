@@ -9,6 +9,7 @@ that takes too long into "None" (undecided). Prints one JSON line per cube.
 
 Usage: python3 cube_gauge.py NAME BASIS K [--gate G] [--refine Q:G2,...] [--budget CONFLICTS] [--workers 4] [--elim]
   --elim adds the gate-elimination constraints (elimination.py; restriction costs from results/restriction_costs.json).
+  --undecided-from FILE reruns only the cubes that FILE (earlier output of this script) left undecided.
 """
 import argparse, json, time
 from multiprocessing import Pool
@@ -57,7 +58,14 @@ if __name__ == "__main__":
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--elim", action="store_true")
     ap.add_argument("--elim-level", type=int, default=1)
+    ap.add_argument("--undecided-from")
     A = ap.parse_args()
+    cubes = cubes_of(A)
+    if A.undecided_from:
+        prev = [json.loads(l) for l in open(A.undecided_from) if l.startswith("{")]
+        left = {tuple((g, q) for g, q, _ in r["cube"]) for r in prev if r["result"] is None}
+        cubes = [c for c in cubes if tuple(c) in left]
+        assert len(cubes) == len(left), "some undecided cubes are not cubes of this split"
     with Pool(A.workers) as pool:
-        for rec in pool.imap_unordered(job, cubes_of(A)):
+        for rec in pool.imap_unordered(job, cubes):
             print(json.dumps(rec), flush=True)
