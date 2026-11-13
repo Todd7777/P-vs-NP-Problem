@@ -85,6 +85,21 @@ def test_plateau_moves_preserve_the_function(monkeypatch):
     assert any(c is not None for c in calls)                        # plateau moves were attempted
 
 
+def test_resubstitution_reuses_gates_outside_the_window():
+    """With resub, a small window may read any node that does not depend on it; on this circuit that
+    beats windows restricted to their own inputs (found by a search over random seeds)."""
+    rng = random.Random(79)
+    allowed = [t for t in L._ALL if t not in L.FORBIDDEN["U2"]]
+    G = {i: [i - 1, rng.randrange(i - 1), rng.choice(allowed)] for i in range(5, 12)}
+    G[4] = [0, 1, AND]
+    chain = L.to_chain(4, G, 11, 0)
+    v = value(4, chain)
+    tt = E.normalize([(v >> t) & 1 for t in range(16)])
+    plain = L.improve(4, tt, chain, "U2", max_window=2, log=lambda s: None)
+    resub = L.improve(4, tt, chain, "U2", max_window=2, resub=2, log=lambda s: None)
+    assert E.verify(4, tt, resub) and len(resub) < len(plain)
+
+
 def test_improvement_preserves_random_functions():
     rng = random.Random(3)
     allowed = [t for t in L._ALL if t not in L.FORBIDDEN["U2"]]

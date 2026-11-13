@@ -17,8 +17,8 @@ Every accepted replacement is re-evaluated on the full truth table, and the fina
 checked with exact_circuit_complexity.verify (and, for U2, for the absence of XOR gates).
 
 Usage: python3 local_improve.py NAME BASIS [--start suite|b2opt|FILE.json] [--max-window 7]
-           [--max-inputs 9] [--budget CONFLICTS] [--minutes M] [--plateau N --seed S] [--solver cadical195]
-           [--record]
+           [--max-inputs 9] [--budget CONFLICTS] [--minutes M] [--plateau N --seed S] [--resub R]
+           [--solver cadical195] [--record]
   --start suite   the circuit recorded in results/u2_suite.json (U2) or explicit_final.json (B2)
   --start b2opt   (U2) the XOR expansion of the optimal B2 circuit in results/explicit_final.json
   --start FILE    a JSON object with "gates" ([[i, j, l, [tt]], ...]) and "basis"; a B2 circuit is
@@ -153,7 +153,8 @@ def rewire(G, out, out_pol, repl):
 
 # ------------------------------------------------------------------ windows
 def windows(G, order, n, out, max_size):
-    """Connected (as an undirected graph) convex gate sets with 2..max_size gates, smallest first."""
+    """Connected (as an undirected graph) convex gate sets with 2..max_size gates, smallest first.
+    Yields (W, inputs, outputs, descendants of W outside W)."""
     adj = {g: set() for g in order}
     cons = {g: set() for g in order}
     for g in order:
@@ -182,7 +183,7 @@ def windows(G, order, n, out, max_size):
             if ins & desc:
                 continue                                   # not convex
             outs = sorted(g for g in W if g == out or cons[g] - W)
-            yield W, sorted(ins), outs
+            yield W, sorted(ins), outs, desc
 
 
 # ------------------------------------------------------------------ multi-output synthesis on a care set
@@ -290,10 +291,13 @@ def replace(n, G, out, out_pol, W, ins, outs, sol, next_id):
 
 
 def improve(n, target, gates, basis, max_window=7, max_inputs=9, solver="cadical195", log=print, deadline=None,
-            budget=None, plateau=0, seed=0):
+            budget=None, plateau=0, seed=0, resub=0):
     """Greedy local improvement: replace a window by a strictly smaller one while possible. With
     plateau > 0, when no window shrinks, up to that many times replace a random window by one of the
     same size that changes the set of gate functions (randomized solver phases), then continue.
+    With resub = r > 0, the replacement of a window of at most r gates may read every node that is not
+    a descendant of the window (resubstitution), not only the window's own inputs; the circuit stays
+    acyclic because none of those nodes depends on the window.
     Returns a verified chain."""
     import random
     rng = random.Random(seed)
@@ -317,11 +321,15 @@ def improve(n, target, gates, basis, max_window=7, max_inputs=9, solver="cadical
         order = topo(G, out, n)
         val = evaluate(n, G, order)
         check(G, out, out_pol)
-        cands = [w for w in windows(G, order, n, out, max_window) if len(w[1]) <= max_inputs]
+        cands = list(windows(G, order, n, out, max_window))
         best = None
-        for W, ins, outs in cands:
+        for W, ins, outs, desc in cands:
             if deadline and time.time() > deadline:
                 break
+            if len(W) <= resub:
+                ins = sorted((set(range(n)) | set(order)) - W - desc)
+            elif len(ins) > max_inputs:
+                continue
             rows = care_rows(n, val, ins, outs)
             k, sol = len(W) - 1, None
             while k >= 0:
@@ -344,9 +352,7 @@ def improve(n, target, gates, basis, max_window=7, max_inputs=9, solver="cadical
         if best is None and moves < plateau:
             sig = signature(G, out)
             rng.shuffle(cands)
-            for W, ins, outs in cands[:60]:
-                if len(W) < 2:
-                    continue
+            for W, ins, outs, desc in [c for c in cands if len(c[1]) <= max_inputs][:60]:
                 sol = synthesize(len(ins), care_rows(n, val, ins, outs), len(outs), len(W), basis, solver, budget,
                                  phases_seed=rng.random())
                 if sol is None:
@@ -404,6 +410,8 @@ if __name__ == "__main__":
     ap.add_argument("--budget", type=int, help="conflict budget per SAT call (unknown counts as no improvement)")
     ap.add_argument("--plateau", type=int, default=0, help="allow this many same-size random replacements")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--resub", type=int, default=0,
+                    help="windows of at most this many gates may read every non-descendant node")
     ap.add_argument("--record", action="store_true")
     a = ap.parse_args()
     full, n, tt = C.suite_function(a.name)
@@ -414,7 +422,7 @@ if __name__ == "__main__":
     t0 = time.time()
     chain = improve(n, tt, gates, a.basis, a.max_window, a.max_inputs, a.solver,
                     log=lambda s: print(s, flush=True), deadline=t0 + 60 * a.minutes if a.minutes else None,
-                    budget=a.budget, plateau=a.plateau, seed=a.seed)
+                    budget=a.budget, plateau=a.plateau, seed=a.seed, resub=a.resub)
     print(f"result: {len(chain)} gates in {time.time() - t0:.0f}s: {E.gates_to_str(n, chain)}")
     print(json.dumps({"name": full, "basis": a.basis, "gates": [list(g[:3]) + [list(g[3])] for g in chain]}))
     if a.record and a.basis == "U2" and len(chain) < len(gates):
