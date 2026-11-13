@@ -158,9 +158,12 @@ def lower_from_cubes(name, k):
     rec = [d for d in done if d["name"] == full][0]
     refuted = sorted(st["k"] for st in rec["per_k"] if st["result"] is False and st.get("drat_trim_verified"))
     assert refuted == list(range(1, k)), f"{full}: refutations below k = {k} are not all verified"
-    rec["per_k"] = [st for st in rec["per_k"] if st["k"] != k] + [
-        {"k": k, "result": False, "drat_trim_verified": True, "via": "cube_certificates.json",
-         "cubes": len(certs[0]["cubes"]), "full_cnf_sha256": certs[0]["full_cnf_sha256"]}]
+    st = {"k": k, "result": False, "drat_trim_verified": True, "via": "cube_certificates.json",
+          "cubes": len(certs[0]["cubes"]), "full_cnf_sha256": certs[0]["full_cnf_sha256"]}
+    if "elimination" in certs[0]:            # CNF with the gate-elimination constraints (ENCODING.md §5)
+        st["via"] += " (with gate-elimination constraints, ENCODING.md §5)"
+        st["elimination"] = certs[0]["elimination"]
+    rec["per_k"] = [x for x in rec["per_k"] if x["k"] != k] + [st]
     rec["per_k"].sort(key=lambda st: st["k"])
     rec["lower"], rec["lower_bound_machine_checked"] = k + 1, True
     rec["exact"] = rec["upper"] == rec["lower"]

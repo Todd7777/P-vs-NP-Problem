@@ -1808,7 +1808,7 @@
   "n": 5,
   "basis": "U2",
   "kmin": 1,
-  "lower": 12,
+  "lower": 13,
   "upper": 15,
   "exact": false,
   "label": "Open",
@@ -1920,6 +1920,44 @@
     "via": "cube_certificates.json",
     "cubes": 15,
     "full_cnf_sha256": "c85790c31762181df90da8363c630d52d072e0b85385f928a0ea0d19a6aadb81"
+   },
+   {
+    "k": 12,
+    "result": false,
+    "drat_trim_verified": true,
+    "via": "cube_certificates.json (with gate-elimination constraints, ENCODING.md \u00a75)",
+    "cubes": 115,
+    "full_cnf_sha256": "bfb3110b00733c19f331799003d0c175095c69d076a2a71fb6bedd0431301efb",
+    "elimination": {
+     "L": [
+      [
+       10,
+       9
+      ],
+      [
+       10,
+       9
+      ],
+      [
+       10,
+       9
+      ],
+      [
+       10,
+       9
+      ],
+      [
+       10,
+       9
+      ]
+     ],
+     "restriction_costs": {
+      "0x977e": 10,
+      "0x1668": 9
+     },
+     "source": "results/restriction_costs.json",
+     "soundness": "ENCODING.md \u00a75"
+    }
    }
   ],
   "seconds": 839.1,

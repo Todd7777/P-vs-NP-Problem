@@ -46,7 +46,7 @@ full runs take much longer.
   not committed (about 2 GB); `certify_costs.py recheck` regenerates them bit for bit and checks them again.
 - U2 costs for the rest of the explicit suite (`experiments/certify_u2_suite.py`, `results/u2_suite.json`):
   Machine-checked MUL2 bit3 = 3, MUL2 bit2 = 3, ADD2 carry-out = 5, MUL2 bit1 = 5, MAJ_3 xor x4 xor x5 = 10,
-  MAJ_5 = 10, THR2_5 = 10. Open: EXACTLY2_5 in [12, 14] and MOD3_5 in [12, 15], with Machine-checked lower
+  MAJ_5 = 10, THR2_5 = 10. Open: EXACTLY2_5 in [12, 14] and MOD3_5 in [13, 15], with Machine-checked lower
   bounds. k = 11 was refuted cube by cube with drat-trim-verified proofs (`certify_cubes.py`,
   `results/cube_certificates.json`): 35 cubes for EXACTLY2_5 (its cube where gate 6 reads (x3,x4) needed
   a second split, `--refine 5:7`) and 15 for MOD3_5; about 8.4 and 5.8 CPU-hours including drat-trim;
@@ -61,9 +61,18 @@ full runs take much longer.
   Without result in 30-60 min: EXACTLY2_5 B2 with (10 gates, <= 2 XORs) and (11, <= 1); MOD3_5 B2 with
   (12, <= 1) and (10, <= 3); relaxed U2 searches at k = 13-19. k = 12 for MOD3_5, gauged without proofs
   (Numerical): split on gate 6, and the five hard cubes again on gate 7, gives 115 cubes; 74 are refuted
-  (71 within seconds), 41 are undecided at 6M conflicts each (about 14 min), and none has a circuit. A
-  certified refutation of k = 12 would take tens of CPU-hours. Next: plateau moves in local improvement
-  (`--plateau`) and more varied starting circuits for the upper bounds.
+  (71 within seconds), 41 are undecided at 6M conflicts each (about 14 min), and none has a circuit.
+- MOD3_5 >= 13 in U2 is Machine-checked with gate-elimination constraints (`elimination.py`,
+  ENCODING.md §5: Lemma 5, Theorem 2). Fixing x_v = c deletes every gate reading x_v, and the readers of
+  a gate that c makes constant, so a k-gate chain has |N(v)| <= k - C(f|x_v=c) and |N(v) u S(g)| <=
+  k - C(f|x_v=c) when c kills g. Restriction costs certified by `certify_restrictions.py`
+  (`results/restriction_costs.json`): MOD3_4 = 10, EXACTLY2_4 = 9, EXACTLY1_4 = 9. `certify_cubes.py
+  MOD3_5 U2 12 --refine 0:7,1:7,2:7,5:7,12:7 --elim`: 115 cubes, 606 s solving + 800 s drat-trim, 1.1 GB
+  of proofs (not committed), hardest cube 97 s. Validation: the constrained CNF stays satisfiable at
+  k = C(f) for all 218 relevant 3-input functions (in tests) and 89 4-input ones (scratch run). Local
+  improvement with plateau moves and resubstitution (`--plateau`, `--resub`) found nothing below 15
+  for MOD3_5 (four starting circuits) or 14 for EXACTLY2_5 (two). Next: EXACTLY2_5 at k = 12 and MOD3_5 at
+  k = 13 with `--elim` (weaker bounds: restriction costs 9/9, and k - 10 = 3).
 - The U2 cost of all 65,536 functions of 4 variables is now complete (`results/n4_u2_complete.json`):
   the four NPN classes the earlier runs left open all cost 10 (`certify_n4_u2.py`, checked proofs).
   `summarize_u2_n4.py` cannot be rerun, because its input `results/n4_u2_closure.json` was never committed.

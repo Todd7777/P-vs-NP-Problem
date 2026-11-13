@@ -127,3 +127,37 @@ def test_cube_certificate_with_elimination(tmp_path, monkeypatch):
     entry = json.load(open(tmp_path / "cube_certificates.json"))[0]
     assert entry["all_unsat_and_verified"] and entry["elimination"]["L"] == [[3, 3]] * 3
     assert all("_elim_" in c["tag"] for c in entry["cubes"])
+
+
+def test_recorded_cube_certificates_cover_every_model():
+    """Every entry of results/cube_certificates.json: all cubes refuted with verified proofs, the
+    first-level cubes cover every pair of the split gate, every refined cube is covered by all pairs
+    of its second gate, and an entry with elimination constraints used the certified bounds."""
+    path = os.path.join(RESULTS, "cube_certificates.json")
+    if not os.path.exists(path):
+        pytest.skip("results/cube_certificates.json not written yet")
+    for e in json.load(open(path)):
+        full, n, tt = C.suite_function(e["name"])
+        assert e["all_unsat_and_verified"]
+        assert all(c["result"] is False and c["drat_trim"]["verified"] for c in e["cubes"])
+        enc = C.Encoding(n, tt, e["k"], e["basis"])
+        refine = {int(q): g2 for q, g2 in e.get("refine", {}).items()}    # older entries: no refinement
+        first = {}
+        for c in e["cubes"]:
+            if "cube" in c:
+                cube = c["cube"]
+            else:                                   # older format: one first-level cube per record
+                q = enc.pairs[c["gate"]].index(tuple(c["pair"]))
+                assert enc.s[c["gate"]][q] == c["cube_literal"] and c["units"] == [c["cube_literal"]]
+                cube = [[c["gate"], q, list(c["pair"])]]
+            assert cube[0][0] == e["gate"]
+            first.setdefault(cube[0][1], []).append(cube)
+        assert sorted(first) == list(range(len(enc.s[e["gate"]]))), e["name"]
+        for q, cubes in first.items():
+            if q in refine:
+                assert sorted(c[1][1] for c in cubes) == list(range(len(enc.s[refine[q]])))
+                assert all(c[1][0] == refine[q] for c in cubes)
+            else:
+                assert cubes == [[[e["gate"], q, list(enc.pairs[e["gate"]][q])]]]
+        if "elimination" in e:
+            assert e["elimination"]["L"] == EL.certified_bounds(n, tt)[0]

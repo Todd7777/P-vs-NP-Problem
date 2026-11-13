@@ -114,8 +114,18 @@ Machine-checked. No published U2 table for these functions was found (Knuth's ta
 | MAJ_5 | 5 | 9 | 10 | Machine-checked |
 | EXACTLY2_5 | 5 | 9 | [12, 14] | Open; lower bound Machine-checked |
 | THR2_5 (sum>=2) | 5 | 10 | 10 | Machine-checked |
-| MOD3_5 (sum=0 mod 3) | 5 | 10 | [12, 15] | Open; lower bound Machine-checked |
+| MOD3_5 (sum=0 mod 3) | 5 | 10 | [13, 15] | Open; lower bound Machine-checked |
 <!-- U2 TABLE END -->
+
+MOD3_5's lower bound of 13 adds gate elimination to the SAT encoding. Setting an input to a
+constant deletes every gate that reads it, and every reader of a gate that the constant makes
+constant. MOD3_5's restrictions MOD3_4 and EXACTLY2_4 cost 10 and 9 in U2 (Machine-checked,
+`experiments/results/restriction_costs.json`), so in a 12-gate circuit for MOD3_5 every input has
+fan-out at most 2, with similar bounds around each gate that reads an input
+(`experiments/ENCODING.md` §5 proves that adding them keeps a minimum circuit). With these
+constraints the 12-gate instance, split into 115 cubes, is refuted in 10 CPU-minutes, every proof
+checked by drat-trim (13 CPU-minutes, 1.1 GB of proofs, not committed); without them 41 of the
+same cubes were still undecided after 6 million conflicts each.
 
 The upper bounds of the two open entries are verified circuits. EXACTLY2_5's 14 comes from
 `experiments/local_improve.py`, which re-synthesizes small windows of a circuit with SAT (local
