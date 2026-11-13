@@ -132,9 +132,11 @@ def test_cube_certificate_with_elimination(tmp_path, monkeypatch):
 
 
 def test_recorded_cube_certificates_cover_every_model():
-    """Every entry of results/cube_certificates.json: all cubes refuted with verified proofs, the
-    first-level cubes cover every pair of the split gate, every refined cube is covered by all pairs
-    of its second gate, and an entry with elimination constraints used the certified bounds."""
+    """Every entry of results/cube_certificates.json: all cubes refuted with verified proofs, and the
+    recorded cubes are exactly the split that the entry's gate and refinement define (which covers
+    every model, since each split uses an at-least-one clause of the CNF); an entry with elimination
+    constraints used the certified bounds."""
+    import certify_cubes as Q
     path = os.path.join(RESULTS, "cube_certificates.json")
     if not os.path.exists(path):
         pytest.skip("results/cube_certificates.json not written yet")
@@ -143,23 +145,30 @@ def test_recorded_cube_certificates_cover_every_model():
         assert e["all_unsat_and_verified"]
         assert all(c["result"] is False and c["drat_trim"]["verified"] for c in e["cubes"])
         enc = C.Encoding(n, tt, e["k"], e["basis"])
-        refine = {int(q): g2 for q, g2 in e.get("refine", {}).items()}    # older entries: no refinement
-        first = {}
+        refine = Q.parse_refine(",".join(f"{p}:{g}" for p, g in e.get("refine", {}).items()))  # older: none
+        expected = sorted(tuple(cube) for cube in Q.split_cubes(enc, e["gate"], refine))
+        recorded = []
         for c in e["cubes"]:
             if "cube" in c:
-                cube = c["cube"]
+                assert all(list(enc.pairs[g][q]) == pair for g, q, pair in c["cube"])
+                recorded.append(tuple((g, q) for g, q, _ in c["cube"]))
             else:                                   # older format: one first-level cube per record
                 q = enc.pairs[c["gate"]].index(tuple(c["pair"]))
                 assert enc.s[c["gate"]][q] == c["cube_literal"] and c["units"] == [c["cube_literal"]]
-                cube = [[c["gate"], q, list(c["pair"])]]
-            assert cube[0][0] == e["gate"]
-            first.setdefault(cube[0][1], []).append(cube)
-        assert sorted(first) == list(range(len(enc.s[e["gate"]]))), e["name"]
-        for q, cubes in first.items():
-            if q in refine:
-                assert sorted(c[1][1] for c in cubes) == list(range(len(enc.s[refine[q]])))
-                assert all(c[1][0] == refine[q] for c in cubes)
-            else:
-                assert cubes == [[[e["gate"], q, list(enc.pairs[e["gate"]][q])]]]
+                recorded.append(((c["gate"], q),))
+        assert sorted(recorded) == expected, e["name"]
         if "elimination" in e:
             assert e["elimination"]["L"] == EL.certified_bounds(n, tt)[0]
+
+
+def test_multi_level_split():
+    """'0:6,0/3:7' splits first-level cube 0 over gate 6, and its sub-cube 3 again over gate 7."""
+    import certify_cubes as Q
+    full, n, tt = C.suite_function("MOD3_4")
+    enc = C.Encoding(n, tt, 6, "B2")
+    refine = Q.parse_refine("0:6,0/3:7")
+    assert refine == {(0,): 6, (0, 3): 7}
+    cubes = Q.split_cubes(enc, 5, refine)
+    # gate 5 reads one of 10 pairs, gate 6 one of 15, gate 7 one of 21
+    assert len(cubes) == 9 + 14 + 21 and len(set(map(tuple, cubes))) == len(cubes)
+    assert sorted(len(c) for c in cubes) == [1] * 9 + [2] * 14 + [3] * 21

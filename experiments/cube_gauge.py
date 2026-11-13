@@ -32,19 +32,11 @@ def job(cube):
 
 
 def cubes_of(a):
+    from certify_cubes import parse_refine, split_cubes
     full, n, tt = C.suite_function(a.name)
     enc = C.Encoding(n, tt, a.k, a.basis)
     gate = a.gate if a.gate is not None else n + 1
-    assert list(enc.s[gate]) in enc.clauses
-    refine = {int(x.split(":")[0]): int(x.split(":")[1]) for x in a.refine.split(",") if x}
-    out = []
-    for q in range(len(enc.s[gate])):
-        if q in refine:
-            assert list(enc.s[refine[q]]) in enc.clauses
-            out += [[(gate, q), (refine[q], q2)] for q2 in range(len(enc.s[refine[q]]))]
-        else:
-            out.append([(gate, q)])
-    return out
+    return split_cubes(enc, gate, parse_refine(a.refine))
 
 
 if __name__ == "__main__":

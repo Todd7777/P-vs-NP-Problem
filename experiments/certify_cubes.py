@@ -9,7 +9,8 @@ F & s[i][q] for a chosen gate i (default: the second gate, i = n + 1) in paralle
 and checks it with drat-trim. Smaller proofs are much faster to check than one large proof.
 
 Usage: python3 certify_cubes.py NAME BASIS K --proofs DIR [--gate I] [--workers 4] [--refine Q:GATE,...] [--elim]
-  --refine splits first-level cube Q again over the pairs that GATE can read (two-level cubes).
+  --refine splits first-level cube Q again over the pairs that GATE can read (two-level cubes);
+           Q1/Q2:GATE splits the two-level cube (Q1, Q2) again, and so on.
   --elim   (U2) adds the gate-elimination constraints of elimination.py, with the restriction costs
            certified in results/restriction_costs.json (soundness: ENCODING.md §5).
 Writes results/cube_certificates.json (one entry per instance, one record per cube).
@@ -44,6 +45,37 @@ def cube_job(args):
     return rec
 
 
+def parse_refine(text):
+    """'5:7,5/12:8' -> {(5,): 7, (5, 12): 8}: the cube reached by the path of pair indices (first level,
+    second level, ...) is split again over the pairs that the given gate can read."""
+    out = {}
+    for item in text.split(","):
+        if item:
+            path, g = item.split(":")
+            out[tuple(int(x) for x in path.split("/"))] = int(g)
+    return out
+
+
+def split_cubes(enc, gate, refine):
+    """All cubes: one per pair of `gate`, each refined recursively as `refine` says. Every split uses the
+    at-least-one clause of a gate, which is in the CNF, so the cubes cover every model."""
+    out = []
+
+    def rec(path, cube):
+        g2 = refine.get(path)
+        if g2 is None:
+            out.append(cube)
+            return
+        assert list(enc.s[g2]) in enc.clauses
+        for q2 in range(len(enc.s[g2])):
+            rec(path + (q2,), cube + [(g2, q2)])
+
+    assert list(enc.s[gate]) in enc.clauses, "the at-least-one clause of this gate must be in the CNF"
+    for q in range(len(enc.s[gate])):
+        rec((q,), [(gate, q)])
+    return out
+
+
 def main(a):
     full, n, tt = C.suite_function(a.name)
     gate = a.gate if a.gate is not None else n + 1
@@ -51,19 +83,8 @@ def main(a):
     level = getattr(a, "elim_level", 1)
     enc = encoding(a.name, a.basis, a.k, L, level)
     alo = list(enc.s[gate])
-    assert alo in enc.clauses, "the at-least-one clause of this gate must be in the CNF"
-    refine = {}                                         # q -> second gate whose pairs split cube q further
-    for item in (getattr(a, "refine", None) or "").split(","):
-        if item:
-            q, g2 = map(int, item.split(":"))
-            assert list(enc.s[g2]) in enc.clauses
-            refine[q] = g2
-    cubes = []
-    for q in range(len(alo)):
-        if q in refine:
-            cubes += [[(gate, q), (refine[q], q2)] for q2 in range(len(enc.s[refine[q]]))]
-        else:
-            cubes.append([(gate, q)])
+    refine = parse_refine(getattr(a, "refine", None) or "")
+    cubes = split_cubes(enc, gate, refine)
     jobs = [(a.name, a.basis, a.k, cube, a.proofs, L, level) for cube in cubes]
     os.makedirs(a.proofs, exist_ok=True)
     t0, recs = time.time(), []
@@ -74,11 +95,13 @@ def main(a):
             print(f"[{time.time() - t0:6.0f}s] cube {[tuple(c[2]) for c in rec['cube']]}: {rec['result']} "
                   f"solve {rec['solve_seconds']}s, drat-trim {d.get('verified')} {d.get('seconds')}s", flush=True)
     recs.sort(key=lambda r: r["cube_literals"])
-    entry = {"name": full, "basis": a.basis, "k": a.k, "gate": gate, "refine": refine,
+    entry = {"name": full, "basis": a.basis, "k": a.k, "gate": gate,
+             "refine": {"/".join(map(str, p)): g2 for p, g2 in refine.items()},
              "full_cnf_sha256": C.sha256(enc.dimacs()),
              "coverage": (f"clause s[{gate}][0..{len(alo) - 1}] is in the CNF; one cube per literal"
-                          + (f"; cubes {sorted(refine)} are split again over the at-least-one clause of gate(s) "
-                             f"{sorted(set(refine.values()))}, also in the CNF" if refine else "")),
+                          + (f"; cubes {['/'.join(map(str, p)) for p in sorted(refine)]} are split again over the "
+                             f"at-least-one clause of gate(s) {sorted(set(refine.values()))}, also in the CNF"
+                             if refine else "")),
              "all_unsat_and_verified": all(r["result"] is False and r.get("drat_trim", {}).get("verified") for r in recs),
              "cubes": recs}
     if L is not None:
