@@ -46,7 +46,7 @@ full runs take much longer.
   not committed (about 2 GB); `certify_costs.py recheck` regenerates them bit for bit and checks them again.
 - U2 costs for the rest of the explicit suite (`experiments/certify_u2_suite.py`, `results/u2_suite.json`):
   Machine-checked MUL2 bit3 = 3, MUL2 bit2 = 3, ADD2 carry-out = 5, MUL2 bit1 = 5, MAJ_3 xor x4 xor x5 = 10,
-  MAJ_5 = 10, THR2_5 = 10. Open: EXACTLY2_5 in [12, 14] and MOD3_5 in [13, 15], with Machine-checked lower
+  MAJ_5 = 10, THR2_5 = 10. Open: EXACTLY2_5 in [13, 14] and MOD3_5 in [13, 15], with Machine-checked lower
   bounds. k = 11 was refuted cube by cube with drat-trim-verified proofs (`certify_cubes.py`,
   `results/cube_certificates.json`): 35 cubes for EXACTLY2_5 (its cube where gate 6 reads (x3,x4) needed
   a second split, `--refine 5:7`) and 15 for MOD3_5; about 8.4 and 5.8 CPU-hours including drat-trim;
@@ -72,12 +72,13 @@ full runs take much longer.
   k = C(f) for all 218 relevant 3-input functions (in tests) and 89 4-input ones (scratch run). Local
   improvement with plateau moves and resubstitution (`--plateau`, `--resub`) found nothing below 15
   for MOD3_5 (four starting circuits) or 14 for EXACTLY2_5 (two).
-- EXACTLY2_5 at k = 12 with elimination constraints, gauged without proofs (Numerical; `cube_gauge.py
-  --elim`, same two-level split as MOD3_5): level 1 refutes 86 of 115 cubes within 1M conflicts; level 2
-  (`--elim-level 2`, the union constraint E3) refutes 17 of the other 29 within 3M; the last 12 are being
-  run at 12M conflicts (one refuted at 5.3M). If they fall, certify with `certify_cubes.py EXACTLY2_5 U2 12
-  --refine 0:7,1:7,2:7,5:7,12:7 --elim --elim-level 2` (several CPU-hours with drat-trim); a third split
-  level would need `--refine` to support it. Then MOD3_5 at k = 13 (bounds 3 and 4).
+- EXACTLY2_5 >= 13 in U2 is Machine-checked the same way, with restriction costs EXACTLY2_4 = 9 and
+  EXACTLY1_4 = 9 and the union constraint (E3, `--elim-level 2`): `certify_cubes.py EXACTLY2_5 U2 12
+  --refine 0:7,1:7,2:7,5:7,12:7 --elim --elim-level 2 --delete-proofs`, 115 cubes, 2.5 CPU-hours of
+  solving and 4.7 of drat-trim, 9.7 GB of proofs (deleted after checking; hashes recorded), hardest
+  cube 690 s. Gauges before that: level 1 refuted 86 cubes within 1M conflicts, level 2 another 17
+  within 3M, the last 12 needed 3.4M to 6.4M. Next: MOD3_5 at k = 13 (bounds 3 and 4; much harder), or
+  better upper bounds (both upper bounds come from local search that converged from several starts).
 - The U2 cost of all 65,536 functions of 4 variables is now complete (`results/n4_u2_complete.json`):
   the four NPN classes the earlier runs left open all cost 10 (`certify_n4_u2.py`, checked proofs).
   `summarize_u2_n4.py` cannot be rerun, because its input `results/n4_u2_closure.json` was never committed.

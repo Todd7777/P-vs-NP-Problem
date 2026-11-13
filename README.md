@@ -112,20 +112,24 @@ Machine-checked. No published U2 table for these functions was found (Knuth's ta
 | MUL2 bit1 | 4 | 3 | 5 | Machine-checked |
 | MAJ_3 xor x4 xor x5 | 5 | 6 | 10 | Machine-checked |
 | MAJ_5 | 5 | 9 | 10 | Machine-checked |
-| EXACTLY2_5 | 5 | 9 | [12, 14] | Open; lower bound Machine-checked |
+| EXACTLY2_5 | 5 | 9 | [13, 14] | Open; lower bound Machine-checked |
 | THR2_5 (sum>=2) | 5 | 10 | 10 | Machine-checked |
 | MOD3_5 (sum=0 mod 3) | 5 | 10 | [13, 15] | Open; lower bound Machine-checked |
 <!-- U2 TABLE END -->
 
-MOD3_5's lower bound of 13 adds gate elimination to the SAT encoding. Setting an input to a
-constant deletes every gate that reads it, and every reader of a gate that the constant makes
+The lower bounds of 13 for MOD3_5 and EXACTLY2_5 add gate elimination to the SAT encoding.
+Setting an input to a constant deletes every gate that reads it, and every reader of a gate that the constant makes
 constant. MOD3_5's restrictions MOD3_4 and EXACTLY2_4 cost 10 and 9 in U2 (Machine-checked,
 `experiments/results/restriction_costs.json`), so in a 12-gate circuit for MOD3_5 every input has
 fan-out at most 2, with similar bounds around each gate that reads an input
 (`experiments/ENCODING.md` §5 proves that adding them keeps a minimum circuit). With these
 constraints the 12-gate instance, split into 115 cubes, is refuted in 10 CPU-minutes, every proof
 checked by drat-trim (13 CPU-minutes, 1.1 GB of proofs, not committed); without them 41 of the
-same cubes were still undecided after 6 million conflicts each.
+same cubes were still undecided after 6 million conflicts each. EXACTLY2_5's restrictions EXACTLY2_4
+and EXACTLY1_4 both cost 9, which bounds fan-out only by 3; with the stronger union form of the
+constraint (fixing x_v = c also deletes the readers of every gate that c makes constant) the same
+115 cubes are refuted in 2.5 CPU-hours, checked by drat-trim in 4.7 (9.7 GB of proofs, each
+deleted after its check; the hashes are recorded).
 
 The upper bounds of the two open entries are verified circuits. EXACTLY2_5's 14 comes from
 `experiments/local_improve.py`, which re-synthesizes small windows of a circuit with SAT (local

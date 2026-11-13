@@ -230,4 +230,5 @@ formalised) and on the encoder for (E1) and (E2), which is tested: `tests/test_e
 checks the deletion count of Lemma 5 on random chains and the satisfiability claimed by Theorem 2
 for all 218 functions of 3 inputs that depend on every input. For $\mathrm{MOD3}_5$ the restrictions
 are $\mathrm{MOD3}_4$ ($x_v=0$, $U_2$ cost 10) and $\mathrm{EXACTLY2}_4$ ($x_v=1$, $U_2$ cost 9), so in a
-12-gate chain every input has fan-out at most 2.
+12-gate chain every input has fan-out at most 2. For $\mathrm{EXACTLY2}_5$ they are $\mathrm{EXACTLY2}_4$ and
+$\mathrm{EXACTLY1}_4$ (both cost 9); its 12-gate refutation uses level 2.

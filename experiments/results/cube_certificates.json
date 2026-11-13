@@ -8322,5 +8322,6164 @@
    "source": "results/restriction_costs.json",
    "soundness": "ENCODING.md \u00a75"
   }
+ },
+ {
+  "name": "EXACTLY2_5",
+  "basis": "U2",
+  "k": 12,
+  "gate": 6,
+  "refine": {
+   "0": 7,
+   "1": 7,
+   "2": 7,
+   "5": 7,
+   "12": 7
+  },
+  "full_cnf_sha256": "efbe1ae226d7c0fa9556b8af1baf7813a3a1681f3e8d2442a35311c4072307f6",
+  "coverage": "clause s[6][0..14] is in the CNF; one cube per literal; cubes ['0', '1', '2', '5', '12'] are split again over the at-least-one clause of gate(s) [7], also in the CNF",
+  "all_unsat_and_verified": true,
+  "cubes": [
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q0",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     26
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "f1f0a4f5905daf2cb59f1b02c8d2e00c6fc11ab465512ef535cb6d67734edfba",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.087,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 42,
+     "decisions": 7770,
+     "propagations": 16572
+    },
+    "proof_bytes": 18112,
+    "proof_sha256": "5135546e0ddac1111e013f09573bd60807709ecc291ada4ff86e870c921a7041",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 220 of 120396 clauses in core                            \n\nc 17 of 1464 lemmas in core using 622 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.164 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      0,
+      [
+       0,
+       1
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     26
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q1",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     27
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "9afcd78278965721b0388c9ac5e14f5d307bfae80b9c3d19ad2ec772aefe511b",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.077,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 52,
+     "decisions": 1519,
+     "propagations": 8629
+    },
+    "proof_bytes": 17181,
+    "proof_sha256": "95b284e12820f4d48cea6314d7d6fb0b0e1db840f35d48ad41dbb64db62aa0ca",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 230 of 120396 clauses in core                            \n\nc 13 of 1073 lemmas in core using 525 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.149 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      1,
+      [
+       0,
+       2
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     27
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q2",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     28
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "caced61f6ba3118d58ef2f6321d176c255ee610f25138d1089698c1641bf181f",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.06,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 57,
+     "decisions": 1526,
+     "propagations": 8168
+    },
+    "proof_bytes": 17329,
+    "proof_sha256": "bac33304f8fc16daf1eb87e5e6451632109a06918273b97e9c8e65d695caee72",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 225 of 120396 clauses in core                            \n\nc 13 of 1089 lemmas in core using 500 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.145 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      2,
+      [
+       1,
+       2
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     28
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q3",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     29
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "35eba2b08a475ad939f18ce985ce63135736ce636bc192e239ff4d6b486edcac",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.06,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 661
+    },
+    "proof_bytes": 15257,
+    "proof_sha256": "edaa038c954e4b8148747b1c573d6ea887818dd40b815abcbeef5ec4f2ed2b7b",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 55 of 120396 clauses in core                            \n\nc 1 of 1031 lemmas in core using 55 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.144 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      3,
+      [
+       0,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     29
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q4",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     30
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "938f45e19693497cf52b3deda73c131d0c5d056f4e606db840f6c50b32458b53",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.068,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 663
+    },
+    "proof_bytes": 15288,
+    "proof_sha256": "0cb01eb6dcd9f6c0a2a4835c7dd699a6113516000bae77827361471dc00699e4",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 53 of 120396 clauses in core                            \n\nc 1 of 1037 lemmas in core using 53 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.133 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      4,
+      [
+       1,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     30
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q5",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     31
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "ef7627723ea3bc86bd855262ed920c590d2a5ba963f75606d46fc5bd1f9e6969",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 203.645,
+    "stats": {
+     "restarts": 101492,
+     "conflicts": 2434903,
+     "decisions": 3890203,
+     "propagations": 318898721
+    },
+    "proof_bytes": 245371841,
+    "proof_sha256": "20ad4bf30a9d79ca6031de62beb72ede31aa3eb1b5156bdab5e0153786795258",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 359.5,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 35466 of 120396 clauses in core                            \n\nc 1744269 of 2813108 lemmas in core using 128344802 resolution steps\n\nc 0 RAT lemmas in core; 1787939 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 359.520 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      5,
+      [
+       2,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     31
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q6",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     32
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "2748544ef94cca8c78a50d9dc4d9878ef28b221e173a4b78545e408fde48d90a",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.06,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 644
+    },
+    "proof_bytes": 15204,
+    "proof_sha256": "e1357010e9260df5fbca549f3cc2e659abe33a6398a9c412de4837d32c93a000",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 56 of 120396 clauses in core                            \n\nc 1 of 1020 lemmas in core using 56 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.136 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      6,
+      [
+       0,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     32
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q7",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     33
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "bc1ec81495c42b4397beb739282a0b6d57faf70583e9b105d917a1a1adb1cc80",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.059,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 629
+    },
+    "proof_bytes": 15155,
+    "proof_sha256": "b82ca881c4acc56a89a9da5097b79361f51c05c6846f9971cdd5ded60b16eb7a",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 54 of 120396 clauses in core                            \n\nc 1 of 1007 lemmas in core using 54 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.173 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      7,
+      [
+       1,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     33
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q8",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     34
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "b380f801a26c00a0f244a62c9caadb5ba7602c1287f7c93796fd159749e9ecf9",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.061,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 572
+    },
+    "proof_bytes": 14953,
+    "proof_sha256": "06e7b34da2c84a4f61f91c0f5e6f6c6274fd619561dcb480047e2ea5340bc719",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 52 of 120396 clauses in core                            \n\nc 1 of 960 lemmas in core using 52 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.134 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      8,
+      [
+       2,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     34
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q9",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     35
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "52e1763f360d4667172fc13fd9e8893dbe674f455875561eb0a86fc471fbf494",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.059,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 549
+    },
+    "proof_bytes": 14680,
+    "proof_sha256": "1e81c43bc1f959ee736c1c4ef9dee3db316926b6921449bb283786d987fd9411",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 56 of 120396 clauses in core                            \n\nc 1 of 891 lemmas in core using 56 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.137 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      9,
+      [
+       3,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     35
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q10",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     36
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "337047bc11c0e4bdcde2231313a9f648311ac0266ce72c9cc28e33d43b2c9c32",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.058,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 357
+    },
+    "proof_bytes": 13817,
+    "proof_sha256": "f0677ff4214abf085f0ee18e9f6b31b4848542a0ddc4239359c759f04a7c09a0",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 5 of 120396 clauses in core                            \n\nc 1 of 677 lemmas in core using 5 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.131 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      10,
+      [
+       0,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     36
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q11",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     37
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "3a35f487f64fa54077508d13ae934e64a336e36063339313f76bae43591294fb",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.061,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 357
+    },
+    "proof_bytes": 13817,
+    "proof_sha256": "50ff884c5cc48ab833581fbd23035f4b1a224049391547a9ddbedbb98296f0b6",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 5 of 120396 clauses in core                            \n\nc 1 of 677 lemmas in core using 5 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.155 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      11,
+      [
+       1,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     37
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q12",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     38
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "b7ddc94a088e13839fadb36253807b0bae5cfecafb1ac4cd627b7d77280e5ecf",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 43.691,
+    "stats": {
+     "restarts": 28163,
+     "conflicts": 765233,
+     "decisions": 1166357,
+     "propagations": 87112257
+    },
+    "proof_bytes": 72518536,
+    "proof_sha256": "870660d5e2c8333245c990d9f2ef4c761d7affd2a19c2cbb927abda68bd63023",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 63.0,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 24847 of 120396 clauses in core                            \n\nc 591374 of 1028867 lemmas in core using 32440601 resolution steps\n\nc 0 RAT lemmas in core; 426444 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 62.960 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      12,
+      [
+       2,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     38
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q13",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     39
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "322b6fb265f8c725c26ffe2f49ee51ceff3f8b2387fcadc487b9e035651e2e5d",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.079,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 530
+    },
+    "proof_bytes": 14565,
+    "proof_sha256": "dff9218bac19274077d664fd2d4df8f86e9593cfbda3a7c19a3c5425a0e22e95",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 55 of 120396 clauses in core                            \n\nc 1 of 867 lemmas in core using 55 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.133 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      13,
+      [
+       3,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     39
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q14",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     40
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "1a877383d082380d5577afc1298275e94b7d7c24aa179c6e0473b04880aec79c",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.058,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 518
+    },
+    "proof_bytes": 14520,
+    "proof_sha256": "a4ef7f09368c38179a7949afc0828ae47d62e239d57bc6960965e0d077a1849c",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 54 of 120396 clauses in core                            \n\nc 1 of 855 lemmas in core using 54 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.134 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      14,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     40
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q15",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     41
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "b48b6d77edba78a23b42dad39571fe7f987b3c3d85c377eee79cbe5e1517a102",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.057,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 357
+    },
+    "proof_bytes": 13817,
+    "proof_sha256": "f74bc97f7ac3ac891605ecd6995d0b931adb561c70e4cd06cf431400d16b2b48",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 3 of 120396 clauses in core                            \n\nc 1 of 677 lemmas in core using 3 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.134 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      15,
+      [
+       0,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     41
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q16",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     42
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "749747c9af06dcf6d703a58b8ea1f40a358f3a20844904b709b2a43f62d152a2",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.057,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 357
+    },
+    "proof_bytes": 13817,
+    "proof_sha256": "47b15380f9dd72240e164706ed4ded7a0541216d9f8e77b0bcf433cc8674e12d",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 3 of 120396 clauses in core                            \n\nc 1 of 677 lemmas in core using 3 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.150 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      16,
+      [
+       1,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     42
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q17",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     43
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "3cc81a82ee564afd661a83c54e0d388e4dead0744a8fe915faf3be06510cd46a",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 4.151,
+    "stats": {
+     "restarts": 3867,
+     "conflicts": 91289,
+     "decisions": 184197,
+     "propagations": 11278643
+    },
+    "proof_bytes": 11371350,
+    "proof_sha256": "616620f07415e4763f82620bfc0efcd2b7367b643394159573972800832345a2",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 3.3,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 19938 of 120396 clauses in core                            \n\nc 64755 of 185760 lemmas in core using 2766319 resolution steps\n\nc 0 RAT lemmas in core; 35811 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 3.248 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      17,
+      [
+       2,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     43
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q18",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     44
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "2f00b9badc54f64c53ea9ec4b2bbed8a944e2ba19d6ac395c9cec8abf091d9b7",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.06,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 555
+    },
+    "proof_bytes": 14663,
+    "proof_sha256": "d14f4ff54f23e6064d1edb99c6564a2e72e5173e0facef2b1c4a03f5c7c2a867",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 58 of 120396 clauses in core                            \n\nc 1 of 892 lemmas in core using 58 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.135 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      18,
+      [
+       3,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     44
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q19",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     45
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "42a8fd8620401cd43535352bd66707916bd0930ef7abd55797ff4c0277ede96c",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.067,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 543
+    },
+    "proof_bytes": 14619,
+    "proof_sha256": "10efca9c155558227a58d70ab4e3178743a0136608d7b8f297b4a18ea71ec402",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 59 of 120396 clauses in core                            \n\nc 1 of 880 lemmas in core using 59 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.186 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      19,
+      [
+       4,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     45
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q0_g7q20",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11,
+     46
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "a1fd5b67736d256d9e58f2b0971bf08335160f2200adbf2920b7fafe14380bd4",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 6.607,
+    "stats": {
+     "restarts": 6792,
+     "conflicts": 160816,
+     "decisions": 309377,
+     "propagations": 14639901
+    },
+    "proof_bytes": 15039466,
+    "proof_sha256": "0409dcaecffcdd4f7ea06ccf81a6ce720bd76518f8107cb765c338ca5156b947",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 3.8,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 11696 of 120396 clauses in core                            \n\nc 73329 of 247727 lemmas in core using 3265996 resolution steps\n\nc 0 RAT lemmas in core; 37539 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 3.784 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      7,
+      20,
+      [
+       5,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11,
+     46
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q0",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     26
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "ac62ea4220b35f89f79e4c863fc198664ed3e9e9229dbf3da399f984300b2b3c",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.061,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 367
+    },
+    "proof_bytes": 13854,
+    "proof_sha256": "0c54cc98777c0c618d6a0155f9cc0d9b1b501a390135899d757f3e246cd59a1a",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 4 of 120396 clauses in core                            \n\nc 1 of 687 lemmas in core using 4 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.130 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      0,
+      [
+       0,
+       1
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     26
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q1",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     27
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "cc9360c2eed3da3646963267c67db69404abaee4efcb638906f3b70a2954fba7",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.06,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 54,
+     "decisions": 1514,
+     "propagations": 7925
+    },
+    "proof_bytes": 16867,
+    "proof_sha256": "84382f6b14cdf2f2bb9a742d7f6700d48c4cc99a0a8d5ae8d46d4c90594ff2d8",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 242 of 120396 clauses in core                            \n\nc 13 of 1070 lemmas in core using 829 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.131 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      1,
+      [
+       0,
+       2
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     27
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q2",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     28
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "e2d4d34cc763b7bb20fb9d887eabe8b6bb4c63195f461df3e7b5e199dfd49e14",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 120.072,
+    "stats": {
+     "restarts": 74319,
+     "conflicts": 1719177,
+     "decisions": 2717160,
+     "propagations": 211530954
+    },
+    "proof_bytes": 164501121,
+    "proof_sha256": "291d7e0852bf97b45a81b2251dfb5868482b50fc778e8704610e4a52f4496799",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 187.6,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 34511 of 120396 clauses in core                            \n\nc 1220697 of 2059782 lemmas in core using 76271516 resolution steps\n\nc 0 RAT lemmas in core; 907480 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 187.617 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      2,
+      [
+       1,
+       2
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     28
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q3",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     29
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "2d4e108f2aebbf29464baab1fcc70ebadb49d97ca284e90cb7811668862981dc",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.064,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 43,
+     "decisions": 6252,
+     "propagations": 11883
+    },
+    "proof_bytes": 16215,
+    "proof_sha256": "8d378efa8e1897fdb484d930e5ddaebf407dc176284c492b8e941fcd1b034fa1",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 238 of 120396 clauses in core                            \n\nc 13 of 1075 lemmas in core using 803 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.139 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      3,
+      [
+       0,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     29
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q4",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     30
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "52446f7aa4e23b5c4586c4fbf3ff855ee5577ffc2f7c7f7dd23e4b7121ed965e",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 610.733,
+    "stats": {
+     "restarts": 237525,
+     "conflicts": 6100434,
+     "decisions": 8915917,
+     "propagations": 852329257
+    },
+    "proof_bytes": 608275023,
+    "proof_sha256": "8fed0240e888a3916b67633e00f30a0af471003ea0134ab6c33dca1b4f473fa0",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 1218.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 39161 of 120396 clauses in core                            \n\nc 4242078 of 6580472 lemmas in core using 332454758 resolution steps\n\nc 0 RAT lemmas in core; 4492081 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1218.056 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      4,
+      [
+       1,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     30
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q5",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     31
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "4cb890540ce5d00b434c378bc74ccf634fc13590ada544ae8f18b2194ed48620",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 541.295,
+    "stats": {
+     "restarts": 180045,
+     "conflicts": 5304108,
+     "decisions": 7687948,
+     "propagations": 760574586
+    },
+    "proof_bytes": 565511740,
+    "proof_sha256": "7c1083aee41f8616b306cb7d69d6ddfe21a11a7b489f9e6fd9ce13eb44a9f95c",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 1053.4,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 39254 of 120396 clauses in core                            \n\nc 3662777 of 5760109 lemmas in core using 298918580 resolution steps\n\nc 0 RAT lemmas in core; 4578244 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1053.346 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      5,
+      [
+       2,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     31
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q6",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     32
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "20687012aaf5dcb5479af045cdac649dac475a0320ef1be8964c543cd3e80777",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.062,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 653
+    },
+    "proof_bytes": 15257,
+    "proof_sha256": "c54de57b524dfef1c90b5e69add235d8b3e754627aeeb97ee2611613a0c88226",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 54 of 120396 clauses in core                            \n\nc 1 of 1033 lemmas in core using 54 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.137 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      6,
+      [
+       0,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     32
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q7",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     33
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "1a5a04159ac8949edbf05b5314ba9a38cbadeea6f9c7634dc8f621c892bfb53c",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.056,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 600
+    },
+    "proof_bytes": 15017,
+    "proof_sha256": "bcfd30d7a1d2c445dff21ea84832dee8c062f9797f4ccb78c0547364589fca85",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 52 of 120396 clauses in core                            \n\nc 1 of 975 lemmas in core using 52 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.133 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      7,
+      [
+       1,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     33
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q8",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     34
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "7e0735bd2002efe9dfca69855f5f2da34b6fae4e85625c5496b85500859057cc",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.058,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 581
+    },
+    "proof_bytes": 14928,
+    "proof_sha256": "0c69d9593531eb5491341137f846a3b5baac16be6e66eb4c9c42f6822471c2cd",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 50 of 120396 clauses in core                            \n\nc 1 of 954 lemmas in core using 50 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.134 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      8,
+      [
+       2,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     34
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q9",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     35
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "47ff6988e6a1a74fa458559d9e631cfadeb39db12e33b6729e0266fc1d0a4dbf",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 613.959,
+    "stats": {
+     "restarts": 232046,
+     "conflicts": 6035474,
+     "decisions": 9011107,
+     "propagations": 840725681
+    },
+    "proof_bytes": 656268521,
+    "proof_sha256": "4eaefc002076984907e8817f338ce0654ec4e74700fcb95f4b6962b2deca1f27",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 1163.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 40778 of 120396 clauses in core                            \n\nc 3988990 of 6529797 lemmas in core using 331660604 resolution steps\n\nc 0 RAT lemmas in core; 4442391 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1163.110 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      9,
+      [
+       3,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     35
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q10",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     36
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "fb185b487b5049faecf0a2938d333b8e6f69ebcbc7cdc8b89f86d0fbd4d8ee43",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.059,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 367
+    },
+    "proof_bytes": 13854,
+    "proof_sha256": "9ed97664f0cfbf9540ef5bdfd0a0626eee0e54b041045e848f7b57affe1e7e6c",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 7 of 120396 clauses in core                            \n\nc 1 of 687 lemmas in core using 7 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.182 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      10,
+      [
+       0,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     36
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q11",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     37
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "468da7c08b114edace87d661aea98a6bfa68cc6e7278dfd0d7acf0957188187d",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.119,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 367
+    },
+    "proof_bytes": 13854,
+    "proof_sha256": "07329afb07b7cdb9ebfa5a1e4b02ea3164c423733ea69548f5fa0400e47604ee",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 11 of 120396 clauses in core                            \n\nc 1 of 687 lemmas in core using 11 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.138 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      11,
+      [
+       1,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     37
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q12",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     38
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "01cbfe3af580cbf5069163b72cc5f0d0a198c313f4bb6c091b093abd1e1a63c6",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 11.043,
+    "stats": {
+     "restarts": 6338,
+     "conflicts": 228554,
+     "decisions": 363829,
+     "propagations": 26430203
+    },
+    "proof_bytes": 23469299,
+    "proof_sha256": "6b448e8012dfb9861b3d7f7e229daa3a75dd07231dad3dc83622db6a737565f6",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 12.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 21120 of 120396 clauses in core                            \n\nc 180353 of 359053 lemmas in core using 8741246 resolution steps\n\nc 0 RAT lemmas in core; 137144 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 12.191 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      12,
+      [
+       2,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     38
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q13",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     39
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "423b5af530a3fb56244ae2a3099d5634c40a5e323bee9c3fffb2f8a5fda443ba",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 154.755,
+    "stats": {
+     "restarts": 103152,
+     "conflicts": 2156031,
+     "decisions": 3409828,
+     "propagations": 285324690
+    },
+    "proof_bytes": 175839448,
+    "proof_sha256": "3245ae5f3489bc78ab4af91025ca368197ecb4e1cccf23cfbaf10b6c49314dd4",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 259.6,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 31497 of 120396 clauses in core                            \n\nc 1548069 of 2411785 lemmas in core using 104572599 resolution steps\n\nc 0 RAT lemmas in core; 1054915 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 259.548 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      13,
+      [
+       3,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     39
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q14",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     40
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "94c3c7357c1b4fb27cc72a816807cfbcf4ed3a01abff856337a4fcb6c317e172",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.059,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 525
+    },
+    "proof_bytes": 14545,
+    "proof_sha256": "fcdad311e6f16f86f77dd864be86de7e5bfac02cc109f4dc84550ef3e56ba500",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 52 of 120396 clauses in core                            \n\nc 1 of 862 lemmas in core using 52 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.134 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      14,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     40
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q15",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     41
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "05efa69e9e5ce9a539772630114e4553c080cf393184a32ad00ca90497aabbda",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.061,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 367
+    },
+    "proof_bytes": 13854,
+    "proof_sha256": "e56d50b9f0db3db96a1b48b5c6f6c2642d9d607c9ffee98a9b104a6929671f54",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 3 of 120396 clauses in core                            \n\nc 1 of 687 lemmas in core using 3 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.135 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      15,
+      [
+       0,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     41
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q16",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     42
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "d3027e7f0941d29d81de89fe5e42e3eb83ebd6e642fa29bada4f58b4679a6137",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 5.259,
+    "stats": {
+     "restarts": 5406,
+     "conflicts": 127426,
+     "decisions": 205716,
+     "propagations": 13702286
+    },
+    "proof_bytes": 12160007,
+    "proof_sha256": "fcdcafacff54026bddf05342935b291caadd0aa1d1ef38175f135ec02115b9bd",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 5.0,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 16388 of 120396 clauses in core                            \n\nc 99325 of 222122 lemmas in core using 4055638 resolution steps\n\nc 0 RAT lemmas in core; 44959 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 5.008 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      16,
+      [
+       1,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     42
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q17",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     43
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "00734a21c5d8dc6ca9951ee06dc3c0ed2ba24e82b5fd2a643f592c109e83dd21",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.059,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 367
+    },
+    "proof_bytes": 13854,
+    "proof_sha256": "ec09e8b0381f869753f5fd151d060d3931f9755c939a8e92e21f6627c0783dfc",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 3 of 120396 clauses in core                            \n\nc 1 of 687 lemmas in core using 3 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.136 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      17,
+      [
+       2,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     43
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q18",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     44
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "4cb7c9a0f1085d02aded8baa9ef2ccec6f74defc1ad1ce827cf68da34b045046",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 126.274,
+    "stats": {
+     "restarts": 80184,
+     "conflicts": 1727851,
+     "decisions": 2748977,
+     "propagations": 247950080
+    },
+    "proof_bytes": 145418487,
+    "proof_sha256": "13e76ed29fd167d9d6b155371ffb9bb26c9112211de7cb7b90851530ef76e006",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 186.5,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 30358 of 120396 clauses in core                            \n\nc 1189941 of 1945792 lemmas in core using 77883208 resolution steps\n\nc 0 RAT lemmas in core; 930169 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 186.528 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      18,
+      [
+       3,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     44
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q19",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     45
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "a7cc85199297ee0296f6ddbe87d2984cc50afd3bb83f1a09db93c689f5cf716c",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.086,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 549
+    },
+    "proof_bytes": 14639,
+    "proof_sha256": "b3dec07298bb501dc7ef49bc030269c3ca057c47c576f9e6c0f2cf15a58fe9ba",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 57 of 120396 clauses in core                            \n\nc 1 of 886 lemmas in core using 57 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.134 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      19,
+      [
+       4,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     45
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q1_g7q20",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12,
+     46
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "f02ae25a8271e4eb5b09610adda5097abb3d69814160dcc287698c9eee28891d",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 107.235,
+    "stats": {
+     "restarts": 62036,
+     "conflicts": 1584325,
+     "decisions": 2382820,
+     "propagations": 155542276
+    },
+    "proof_bytes": 144860676,
+    "proof_sha256": "70bdad4082dda723c56b62a14a92f54a0396b64d6c628549e02bcdfe27a6adc7",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 178.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 26656 of 120396 clauses in core                            \n\nc 1195376 of 1869338 lemmas in core using 70611008 resolution steps\n\nc 0 RAT lemmas in core; 844846 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 178.106 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ],
+     [
+      7,
+      20,
+      [
+       5,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12,
+     46
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q0",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     26
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "d2a6d98269ac073d88be841ad8a0783abab2abccd886b843cafa380c5840ec8a",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.059,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 245
+    },
+    "proof_bytes": 13333,
+    "proof_sha256": "3cfa287864369069df700cf4facf246437f8f2ebeb927b21598c40c5c7ddd6e5",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 5 of 120396 clauses in core                            \n\nc 1 of 565 lemmas in core using 5 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.133 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      0,
+      [
+       0,
+       1
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     26
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q1",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     27
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "424807384319d595a6c1bb7e42552ac33b8f2e7a7aa113c4fe0c714c379f4d3f",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.06,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 245
+    },
+    "proof_bytes": 13333,
+    "proof_sha256": "df2ca025d918bdb812f62653aa865f78fd80fa1bf6f59c0056fe5cc98f24f005",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 4 of 120396 clauses in core                            \n\nc 1 of 565 lemmas in core using 4 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.141 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      1,
+      [
+       0,
+       2
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     27
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q2",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     28
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "0436f2417025effd2f95626c851408038e4d9e9312949113d84b5fd566f1cd4f",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.071,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 49,
+     "decisions": 1611,
+     "propagations": 9132
+    },
+    "proof_bytes": 17090,
+    "proof_sha256": "e013a35982b8417e09ef48200c2bb057e908ed5b3660bb25693ef4a883323920",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 265 of 120396 clauses in core                            \n\nc 16 of 1070 lemmas in core using 785 resolution steps\n\nc 0 RAT lemmas in core; 6 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.147 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      2,
+      [
+       1,
+       2
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     28
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q3",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     29
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "a0381e7dd8a4beb94edd344e8a1064162b71f9d17b3b72f9ab56a4f1777274f1",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 635.233,
+    "stats": {
+     "restarts": 221395,
+     "conflicts": 5859794,
+     "decisions": 8570704,
+     "propagations": 821824454
+    },
+    "proof_bytes": 647450773,
+    "proof_sha256": "f989b25c733c71131dd9e12fc897074d980f071744eb7ec51a79056e6c58bc59",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 1253.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 39051 of 120396 clauses in core                            \n\nc 4147531 of 6407558 lemmas in core using 339304980 resolution steps\n\nc 0 RAT lemmas in core; 5135355 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1253.175 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      3,
+      [
+       0,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     29
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q4",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     30
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "9a4e3a055b155fa288bcb8a1742cdf01816f518a4c84b10e2e400bdc3c730d65",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.06,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 55,
+     "decisions": 3230,
+     "propagations": 10988
+    },
+    "proof_bytes": 15965,
+    "proof_sha256": "a2efb8ecc09aa31dc3fcf40099401f087454af8990c62ad9cbf40a9ea6bbb478",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 199 of 120396 clauses in core                            \n\nc 21 of 1050 lemmas in core using 727 resolution steps\n\nc 0 RAT lemmas in core; 1 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.149 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      4,
+      [
+       1,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     30
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q5",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     31
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "546943651dc6e86539cc032698260f1d7bc08154e396669ee6ce870a8b8e38a9",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 589.543,
+    "stats": {
+     "restarts": 189627,
+     "conflicts": 5453367,
+     "decisions": 7854760,
+     "propagations": 788404803
+    },
+    "proof_bytes": 575278175,
+    "proof_sha256": "f49fa36ee69d9339029eed9c7e26406f36eb59a0d5977c1297b347114a2481ad",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 1173.4,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 39579 of 120396 clauses in core                            \n\nc 4099974 of 5880710 lemmas in core using 336623343 resolution steps\n\nc 0 RAT lemmas in core; 5128427 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1173.380 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      5,
+      [
+       2,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     31
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q6",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     32
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "651b14c2519747ab2f15f1d2526f516b366700c9276ab7afb0829ed40f216cf1",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.064,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 471
+    },
+    "proof_bytes": 14400,
+    "proof_sha256": "af4ae6080abbb70fb2ec911dc3cd9f1417e8721c2d07bfb26827431b73cd5c12",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 52 of 120396 clauses in core                            \n\nc 1 of 829 lemmas in core using 52 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.137 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      6,
+      [
+       0,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     32
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q7",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     33
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "a8d22fee2c042bea74eb91a9233c52213bdbf174c07cadd8836fe0cdda71f1de",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.062,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 468
+    },
+    "proof_bytes": 14432,
+    "proof_sha256": "8930d035638d5655e1a525917d57231e9ec99f9d8b936932b954bfa197007bbd",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 50 of 120396 clauses in core                            \n\nc 1 of 837 lemmas in core using 50 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.140 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      7,
+      [
+       1,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     33
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q8",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     34
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "51f81e47adc6b5b47468646c30f415d46807dbca8c56e0bdcc94ae608319dd45",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.059,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 454
+    },
+    "proof_bytes": 14371,
+    "proof_sha256": "aa1e8979a0a760728615e218037d65e1565b6d67a075453eaa895006ab021c3f",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 48 of 120396 clauses in core                            \n\nc 1 of 823 lemmas in core using 48 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.142 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      8,
+      [
+       2,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     34
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q9",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     35
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "fae88c66deb58035d6d08bfc9bbaa8c34966045816601c9d9f9c7b5463817073",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 639.797,
+    "stats": {
+     "restarts": 236703,
+     "conflicts": 6066127,
+     "decisions": 9058110,
+     "propagations": 804677191
+    },
+    "proof_bytes": 638556258,
+    "proof_sha256": "0b7d4db38609a39716c012ad3de56b5551e6c401f08d75f815eeb6f88576f55c",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 1279.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 40971 of 120396 clauses in core                            \n\nc 4254147 of 6566890 lemmas in core using 347881640 resolution steps\n\nc 0 RAT lemmas in core; 4358181 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1279.102 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      9,
+      [
+       3,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     35
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q10",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     36
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "79bfd999dfd97be8556fea3df210e7fbabc6e38aadc6c7fa0673140cad924767",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.058,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 249
+    },
+    "proof_bytes": 13473,
+    "proof_sha256": "34c91baa92f40e9a0577e731db65be9b6589fc2be37c5e32dfdeae292c252121",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 12 of 120396 clauses in core                            \n\nc 1 of 602 lemmas in core using 12 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.137 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      10,
+      [
+       0,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     36
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q11",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     37
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "e78d7033ac25191cff2cac769adf46c73c149c2119e0e779a5678252859f7d41",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.061,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 285
+    },
+    "proof_bytes": 13686,
+    "proof_sha256": "b0ee4bd82cee98ef895aa976afff2f5c7ae11e0806757be38fa573001881a430",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 12 of 120396 clauses in core                            \n\nc 1 of 656 lemmas in core using 12 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.141 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      11,
+      [
+       1,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     37
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q12",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     38
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "25b126f8fdb00fee4db71126cad638ee5873da59cb00ca4e1913d26471cb1055",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 16.82,
+    "stats": {
+     "restarts": 14042,
+     "conflicts": 360125,
+     "decisions": 566425,
+     "propagations": 43670720
+    },
+    "proof_bytes": 29901494,
+    "proof_sha256": "e1fe3c9fcaf37c8956e74e32a3f4c46024d180d0a9e99f2f444059db6bee579d",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 21.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 21913 of 120396 clauses in core                            \n\nc 257482 of 482201 lemmas in core using 13076552 resolution steps\n\nc 0 RAT lemmas in core; 145674 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 21.059 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      12,
+      [
+       2,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     38
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q13",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     39
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "10af7f8d0c0857219aa6b4d6e73b1580b493aa3546da84094c34da294c1a451f",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 132.015,
+    "stats": {
+     "restarts": 84432,
+     "conflicts": 1801144,
+     "decisions": 2843819,
+     "propagations": 239157934
+    },
+    "proof_bytes": 159761829,
+    "proof_sha256": "2bab4a0b74222dff757bddb119fab9f87d22b95201c7acae66970e6336bf5423",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 201.0,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 31644 of 120396 clauses in core                            \n\nc 1242744 of 2082258 lemmas in core using 81748646 resolution steps\n\nc 0 RAT lemmas in core; 897933 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 201.033 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      13,
+      [
+       3,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     39
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q14",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     40
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "442892c5679181f024031a157fa85c48ded3e6b258c8bb4a1bf02de18f2b73de",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.063,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 416
+    },
+    "proof_bytes": 14072,
+    "proof_sha256": "dd8af0134b91d07431138119a1870e9721423464c46518c2b0bee91216b0718f",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 50 of 120396 clauses in core                            \n\nc 1 of 753 lemmas in core using 50 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.139 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      14,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     40
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q15",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     41
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "d866b25db491a22a372ede111e8245184608b46164f7002b4edb68d6013b547b",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 11.506,
+    "stats": {
+     "restarts": 6920,
+     "conflicts": 257467,
+     "decisions": 390415,
+     "propagations": 30570199
+    },
+    "proof_bytes": 23202323,
+    "proof_sha256": "a4bae468c6d0bbd6997d80a51c02642f12e87399a8eb14d427156c3581a2135c",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 14.9,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 20297 of 120396 clauses in core                            \n\nc 204970 of 356473 lemmas in core using 10189691 resolution steps\n\nc 0 RAT lemmas in core; 140226 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 14.893 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      15,
+      [
+       0,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     41
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q16",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     42
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "4b75ba30d937a0360bdf95e8f953c8c491b15a577784ccf242c456b985ada71f",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.06,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 245
+    },
+    "proof_bytes": 13333,
+    "proof_sha256": "9d7e27f1446df4812f5e8aa1f4cebb2238560a4f16d11f4e1f6ed1a5a98b0727",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 3 of 120396 clauses in core                            \n\nc 1 of 565 lemmas in core using 3 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.147 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      16,
+      [
+       1,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     42
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q17",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     43
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "4632220f841c2ae08c5a6ee282756966e298fd1c0738db6a0e80ea89bb8792f8",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.059,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 245
+    },
+    "proof_bytes": 13333,
+    "proof_sha256": "770763d944e30654037ec722e6642ce3c569365e27c4c1ebde445b765c1c6e68",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 3 of 120396 clauses in core                            \n\nc 1 of 565 lemmas in core using 3 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.138 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      17,
+      [
+       2,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     43
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q18",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     44
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "60e0bf0d73a7a8c4e54c1c28ff074add4bf07b5c2b13bf83cad47c7d97ee2a62",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 110.086,
+    "stats": {
+     "restarts": 65658,
+     "conflicts": 1544929,
+     "decisions": 2383413,
+     "propagations": 199820667
+    },
+    "proof_bytes": 133729411,
+    "proof_sha256": "b3877659a5434d3ca06b308789c9d303ffc51b7d88d92eba324359b4dd536258",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 173.3,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 29845 of 120396 clauses in core                            \n\nc 1115477 of 1743375 lemmas in core using 69799230 resolution steps\n\nc 0 RAT lemmas in core; 881560 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 173.262 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      18,
+      [
+       3,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     44
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q19",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     45
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "e6b5f2d129ab3e50fb1728def3b4b6e063cd4b2f1c0ffa36f1254f746302df46",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.096,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 453
+    },
+    "proof_bytes": 14222,
+    "proof_sha256": "e5e62316fcbe78468a2f4e4093ad521adc123b396ca4ca4b0b8731aaba1e8517",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 55 of 120396 clauses in core                            \n\nc 1 of 791 lemmas in core using 55 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.140 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      19,
+      [
+       4,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     45
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q2_g7q20",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13,
+     46
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "e3ce055b3dc27bc6236dbecc78e9f649e39677fff00338b1b680aad99f7d45bf",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 39.153,
+    "stats": {
+     "restarts": 25552,
+     "conflicts": 688166,
+     "decisions": 1132656,
+     "propagations": 78824026
+    },
+    "proof_bytes": 64352588,
+    "proof_sha256": "440f1d8d15e1545e0bfe4bf06e9a61090ba92d56fdbf82dd9cdd62a74182fb85",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 50.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 25301 of 120396 clauses in core                            \n\nc 470464 of 891696 lemmas in core using 25784975 resolution steps\n\nc 0 RAT lemmas in core; 335237 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 50.087 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ],
+     [
+      7,
+      20,
+      [
+       5,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13,
+     46
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q3",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     14
+    ],
+    "nvars": 8567,
+    "nclauses": 120395,
+    "cnf_sha256": "3a4e17ddf84094968ed67e872c5210e86017a9ad9c50c0444691ce931aefbd8f",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.061,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 11,
+     "decisions": 6701,
+     "propagations": 8454
+    },
+    "proof_bytes": 13702,
+    "proof_sha256": "cacec5df6753ef1c9894ae2486d9d9f5e5ea2435db5c4a1dac0fde1e86cd3b58",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 41 of 120395 clauses in core                            \n\nc 2 of 638 lemmas in core using 47 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.181 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      3,
+      [
+       0,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     14
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q4",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     15
+    ],
+    "nvars": 8567,
+    "nclauses": 120395,
+    "cnf_sha256": "ebc243f688309f4bb7bdd077772510ef0c9bb32dd63ac2808534d7af553a3bdc",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.058,
+    "stats": {
+     "restarts": 2,
+     "conflicts": 37,
+     "decisions": 6204,
+     "propagations": 11829
+    },
+    "proof_bytes": 15338,
+    "proof_sha256": "3e4d7722b95e4b9e7d64bac442d848f6bc99aa32fea9497a60e3f29398350e55",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 80 of 120395 clauses in core                            \n\nc 4 of 828 lemmas in core using 163 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.133 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      4,
+      [
+       1,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     15
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q0",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     26
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "c51f65323441295f29cf90ca95c67cf591a569d25aa5be7fba3ed51eaeca442c",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.133,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 291
+    },
+    "proof_bytes": 13515,
+    "proof_sha256": "c45a61189f680131f6f9e200a1f5a78e5dccba46e2ca9064a7e690c4940afaa0",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 8 of 120396 clauses in core                            \n\nc 1 of 611 lemmas in core using 8 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.135 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      0,
+      [
+       0,
+       1
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     26
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q1",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     27
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "58952c88a4a8035418a7bb95b34e9950cb99e6777a6ce1002ced269fe771dc50",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.056,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 291
+    },
+    "proof_bytes": 13515,
+    "proof_sha256": "574aa46f54cfba096408ec9f72f9a68eb8049a8015616066c149d0c163c79918",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 7 of 120396 clauses in core                            \n\nc 1 of 611 lemmas in core using 7 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.189 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      1,
+      [
+       0,
+       2
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     27
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q2",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     28
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "e8a4cba5be34215f271746ef83ee0af579395471c86c106c1255ed8927b812a8",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.072,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 291
+    },
+    "proof_bytes": 13515,
+    "proof_sha256": "393716828dae5202c164d95b66268e7572b7ec0076321ae46d0960ba70dc8003",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 6 of 120396 clauses in core                            \n\nc 1 of 611 lemmas in core using 6 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.145 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      2,
+      [
+       1,
+       2
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     28
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q3",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     29
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "734a6dab0bcc075415b2ca16d95a3b796f480d477a33ff3073c2512b554816af",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.058,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 291
+    },
+    "proof_bytes": 13515,
+    "proof_sha256": "42ca8757ee9929602789fcf5d7effee1bd0780138a1230b2b9faa1f47e8f92d2",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 5 of 120396 clauses in core                            \n\nc 1 of 611 lemmas in core using 5 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.140 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      3,
+      [
+       0,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     29
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q4",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     30
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "3510080bf31c09048e5c3719752c7ad7f9febced8c7ec576550d15b344f1194e",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.064,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 291
+    },
+    "proof_bytes": 13515,
+    "proof_sha256": "c04649d703ffbfe5f976550103e08d1f982b26713c7f3026d6e6a7578210ef97",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 4 of 120396 clauses in core                            \n\nc 1 of 611 lemmas in core using 4 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.140 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      4,
+      [
+       1,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     30
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q5",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     31
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "a31d5265644a4fa72783b309b197ac617cffd34f1be039ab30cab269afcd3bd0",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 189.873,
+    "stats": {
+     "restarts": 102435,
+     "conflicts": 2343990,
+     "decisions": 3743609,
+     "propagations": 297381017
+    },
+    "proof_bytes": 238213631,
+    "proof_sha256": "189b4df0d0f885fac142f401d511e26a17f06955cfd2546e97e3de8c7ab88423",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 338.0,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 34698 of 120396 clauses in core                            \n\nc 1707043 of 2859368 lemmas in core using 123507359 resolution steps\n\nc 0 RAT lemmas in core; 1488745 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 338.016 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      5,
+      [
+       2,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     31
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q6",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     32
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "4dddadc66d325f51531cdd48f9a7954633ccb320af5b2efbb383a3fe79499e4a",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 623.398,
+    "stats": {
+     "restarts": 224129,
+     "conflicts": 5947876,
+     "decisions": 8829660,
+     "propagations": 742250695
+    },
+    "proof_bytes": 669572881,
+    "proof_sha256": "c12bcc31ffdab11a2549640d1329e68ad61df52049fc7ae46d7ab93cf944ea60",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 1362.0,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 41839 of 120396 clauses in core                            \n\nc 4289282 of 6503049 lemmas in core using 353432088 resolution steps\n\nc 0 RAT lemmas in core; 4793948 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1361.930 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      6,
+      [
+       0,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     32
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q7",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     33
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "5b4317097f2853cc761ac17b9f6cedcac5619bc9a95fff86e56666c643976f35",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 569.417,
+    "stats": {
+     "restarts": 173225,
+     "conflicts": 5153316,
+     "decisions": 7706486,
+     "propagations": 736443134
+    },
+    "proof_bytes": 581256611,
+    "proof_sha256": "b2c0490ea293f87f3b8be489df311ee7070d89b0a98b9e22c5e06953515c1004",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 1246.9,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 41377 of 120396 clauses in core                            \n\nc 3809115 of 5668625 lemmas in core using 322949304 resolution steps\n\nc 0 RAT lemmas in core; 4568683 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1246.887 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      7,
+      [
+       1,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     33
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q8",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     34
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "6bda9bc6003c8aa1194dacf41315693663ff92a2f2539f6122d4bad4d5ec1813",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 689.78,
+    "stats": {
+     "restarts": 254808,
+     "conflicts": 6412550,
+     "decisions": 9569075,
+     "propagations": 801203907
+    },
+    "proof_bytes": 682843206,
+    "proof_sha256": "0efe99b8fc2ef29be5769d1b96470c3a6b9f2a6aa16bb60b14fae7003fd3c325",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 1541.5,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 41176 of 120396 clauses in core                            \n\nc 4714370 of 6894985 lemmas in core using 374190156 resolution steps\n\nc 0 RAT lemmas in core; 4831642 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1541.504 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      8,
+      [
+       2,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     34
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q9",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     35
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "1d0068fedc76924a2361d965d29b9cf5715488a508ca35f4e1e72c9a15540f6e",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 606.298,
+    "stats": {
+     "restarts": 200423,
+     "conflicts": 5574978,
+     "decisions": 8273228,
+     "propagations": 844186426
+    },
+    "proof_bytes": 611715761,
+    "proof_sha256": "5cfe6465b786ddaa5268eed29d3a00be250021a159d033c3eec8eafdb4436b7a",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 1244.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 40809 of 120396 clauses in core                            \n\nc 3907588 of 5958438 lemmas in core using 367749585 resolution steps\n\nc 0 RAT lemmas in core; 4776366 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1244.009 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      9,
+      [
+       3,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     35
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q10",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     36
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "326d904ea9a6243773a81d9b7cfced2a1e3adbcfa6ce44c08f312c0819dad63a",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.073,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 363
+    },
+    "proof_bytes": 13857,
+    "proof_sha256": "c016622653fb4a5dd67ebba0dac8b75430022501b097a47911de2228f425916e",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 27 of 120396 clauses in core                            \n\nc 1 of 700 lemmas in core using 27 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.201 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      10,
+      [
+       0,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     36
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q11",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     37
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "d2b49ec5029862a1cb253fc593d98c54d45069ef177f5fd96c57e479bcedac06",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.079,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 295
+    },
+    "proof_bytes": 13666,
+    "proof_sha256": "1439d3de0b1241c9c940a0e8068bfa1e9d42259065e1d67ed81170c7ef9f8741",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 24 of 120396 clauses in core                            \n\nc 1 of 651 lemmas in core using 24 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.190 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      11,
+      [
+       1,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     37
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q12",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     38
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "29f72135cd17465883553800f6c4104d10f8f3a4989a2f3fe147e01f7efb7f64",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 83.413,
+    "stats": {
+     "restarts": 32724,
+     "conflicts": 1125008,
+     "decisions": 1684690,
+     "propagations": 150322123
+    },
+    "proof_bytes": 110598797,
+    "proof_sha256": "3a50cba8cc1dfd0b0e704b843f7ea3616e455f0837e7276820fddb2aff01644a",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 121.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 33538 of 120396 clauses in core                            \n\nc 823022 of 1378671 lemmas in core using 56303238 resolution steps\n\nc 0 RAT lemmas in core; 704189 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 121.153 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      12,
+      [
+       2,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     38
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q13",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     39
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "6f1bdb224a919f2031abc596578d203700c5ec14ee87c720017341bac43c8f7b",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 98.684,
+    "stats": {
+     "restarts": 43427,
+     "conflicts": 1296660,
+     "decisions": 1935045,
+     "propagations": 178125407
+    },
+    "proof_bytes": 123439028,
+    "proof_sha256": "b85bcfb48fdabc63690cdff459f2d93afd99e0694e91a5afb2aab205619b628c",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 148.8,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 32705 of 120396 clauses in core                            \n\nc 931051 of 1533053 lemmas in core using 63740426 resolution steps\n\nc 0 RAT lemmas in core; 767034 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 148.774 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      13,
+      [
+       3,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     39
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q14",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     40
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "687598cc47c9fc013de7430cf3d49ebaae8e90928df03582421df89611d258c7",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 353.922,
+    "stats": {
+     "restarts": 102786,
+     "conflicts": 3366411,
+     "decisions": 5205340,
+     "propagations": 512286132
+    },
+    "proof_bytes": 395304512,
+    "proof_sha256": "a5b92d85f0501fb44ed763474aae52c2670da9ab3a5662fb61f4a97f06c7a6a2",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 605.8,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 40762 of 120396 clauses in core                            \n\nc 2286365 of 3765989 lemmas in core using 199681258 resolution steps\n\nc 0 RAT lemmas in core; 2877714 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 605.732 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      14,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     40
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q15",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     41
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "de28604d92e88dc11184d554534915ee4f28c37a0d509864e625b55c58278838",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 70.466,
+    "stats": {
+     "restarts": 26393,
+     "conflicts": 996462,
+     "decisions": 1487114,
+     "propagations": 138852068
+    },
+    "proof_bytes": 96894390,
+    "proof_sha256": "6f17661d0a75cb2a348ed56a4131feae03d8a45c66d466824deef760d77cbaec",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 103.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 31762 of 120396 clauses in core                            \n\nc 696977 of 1188550 lemmas in core using 46046729 resolution steps\n\nc 0 RAT lemmas in core; 627370 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 103.059 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      15,
+      [
+       0,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     41
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q16",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     42
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "1e3b2f36b3b38d23d565219f1c054737eaf6519b3eb639d0bedaedee28445f1b",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 51.497,
+    "stats": {
+     "restarts": 26615,
+     "conflicts": 792186,
+     "decisions": 1261162,
+     "propagations": 108125866
+    },
+    "proof_bytes": 78606424,
+    "proof_sha256": "cef481e29fe3bd34e5926d9162ce4c497590b688dbfc1b55448b97dd07c02f5d",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 73.5,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 31915 of 120396 clauses in core                            \n\nc 602867 of 1004708 lemmas in core using 40336538 resolution steps\n\nc 0 RAT lemmas in core; 539308 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 73.512 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      16,
+      [
+       1,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     42
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q17",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     43
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "8c6a127f4bda3686b766631fe9df1c2a1dd2b855e149a2c74a7483455b26bd84",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.061,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 291
+    },
+    "proof_bytes": 13515,
+    "proof_sha256": "bed11a99a760d6393ebb222aef843a95e3285a5aacca91d6a7dda3a33ce36632",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 3 of 120396 clauses in core                            \n\nc 1 of 611 lemmas in core using 3 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.144 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      17,
+      [
+       2,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     43
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q18",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     44
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "795806b6aa6ef35159365e197cdc3d0983cd2ba95a90063570324b00e78f60f8",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.058,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 291
+    },
+    "proof_bytes": 13515,
+    "proof_sha256": "fd2f7df8013d09bde4e8fa2809fd53f75ebc2545ea09519ab95ff9389787f4bd",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 3 of 120396 clauses in core                            \n\nc 1 of 611 lemmas in core using 3 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.141 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      18,
+      [
+       3,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     44
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q19",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     45
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "b02498ad863e07e410e35f6688f3c47892827436720bb4a99cb29c02f5cb7f35",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 237.035,
+    "stats": {
+     "restarts": 99196,
+     "conflicts": 2452435,
+     "decisions": 3923275,
+     "propagations": 364404222
+    },
+    "proof_bytes": 270508765,
+    "proof_sha256": "64e2202985dbf0d6755121672b78e356e896a8757527882b1d938d3e0ae51ffc",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 368.5,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 37869 of 120396 clauses in core                            \n\nc 1642016 of 2765973 lemmas in core using 141169018 resolution steps\n\nc 0 RAT lemmas in core; 1658946 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 368.469 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      19,
+      [
+       4,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     45
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q5_g7q20",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     46
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "0c41cff839d7a16f5fc84816bbe7b7cacaf301424c9b9596e300c1a08c4155da",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 401.256,
+    "stats": {
+     "restarts": 101795,
+     "conflicts": 3814173,
+     "decisions": 5746924,
+     "propagations": 506860506
+    },
+    "proof_bytes": 426775343,
+    "proof_sha256": "b70be4ef294329ba2ebf89643ac6555677fd08b58ab683ca36dc99f931297a29",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 701.5,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 39518 of 120396 clauses in core                            \n\nc 2621920 of 4245329 lemmas in core using 221800727 resolution steps\n\nc 0 RAT lemmas in core; 2799621 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 701.450 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      20,
+      [
+       5,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     46
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q6",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     17
+    ],
+    "nvars": 8567,
+    "nclauses": 120395,
+    "cnf_sha256": "bfc6c84e6bd4abf29c6bd6e203fb349edb3b23e1852f4473346ab215b8168818",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.063,
+    "stats": {
+     "restarts": 2,
+     "conflicts": 36,
+     "decisions": 7813,
+     "propagations": 12148
+    },
+    "proof_bytes": 14681,
+    "proof_sha256": "51fad8dccc0b45457615f0653805b32381286c08a865318a6253bddf6c0ca026",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 45 of 120395 clauses in core                            \n\nc 5 of 725 lemmas in core using 88 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.144 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      6,
+      [
+       0,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     17
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q7",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     18
+    ],
+    "nvars": 8567,
+    "nclauses": 120395,
+    "cnf_sha256": "66d06935535b9aee715e2c941ab7e2257dcb90b3534b9de490437b64927d6780",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.063,
+    "stats": {
+     "restarts": 2,
+     "conflicts": 32,
+     "decisions": 6880,
+     "propagations": 10792
+    },
+    "proof_bytes": 15002,
+    "proof_sha256": "b4bab481dca3abf52cb656012b3f1189037b6e04a999b3bb91a62ac3918b18d8",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 50 of 120395 clauses in core                            \n\nc 4 of 758 lemmas in core using 108 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.143 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      7,
+      [
+       1,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     18
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q8",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     19
+    ],
+    "nvars": 8567,
+    "nclauses": 120395,
+    "cnf_sha256": "b792e40a98ea1f877d13c5f32687df9a37c14344d0c74096500932d59cabe56a",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.066,
+    "stats": {
+     "restarts": 2,
+     "conflicts": 31,
+     "decisions": 6074,
+     "propagations": 9692
+    },
+    "proof_bytes": 15153,
+    "proof_sha256": "454b906deadb49deebccc4236caf9bedc675157e987ea80b45095e4320dde05a",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 52 of 120395 clauses in core                            \n\nc 4 of 817 lemmas in core using 97 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.142 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      8,
+      [
+       2,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     19
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q9",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     20
+    ],
+    "nvars": 8567,
+    "nclauses": 120395,
+    "cnf_sha256": "a614687840631f0915337d4304ff2cd0c7cd06a81358b055b986685af9cc9eef",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.066,
+    "stats": {
+     "restarts": 4,
+     "conflicts": 39,
+     "decisions": 5324,
+     "propagations": 9619
+    },
+    "proof_bytes": 15168,
+    "proof_sha256": "29ab07594bfd4fcf45e9411ab7f224401e94e6ca9b065a2b6336aaf18ddf730d",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 48 of 120395 clauses in core                            \n\nc 8 of 740 lemmas in core using 161 resolution steps\n\nc 0 RAT lemmas in core; 1 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.146 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      9,
+      [
+       3,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     20
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q10",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     21
+    ],
+    "nvars": 8567,
+    "nclauses": 120395,
+    "cnf_sha256": "5dd89436d72cc886e3b7cfed280c228f86603ed710d406e59a56969bd709f525",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.06,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 253
+    },
+    "proof_bytes": 13415,
+    "proof_sha256": "82f74b82da7713cf0c01b2b5fa4f514451e0847ae4f7ddf1ac5378efd01523a1",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 15 of 120395 clauses in core                            \n\nc 1 of 598 lemmas in core using 15 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.212 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      10,
+      [
+       0,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     21
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q11",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     22
+    ],
+    "nvars": 8567,
+    "nclauses": 120395,
+    "cnf_sha256": "3caf15a17ae50c97e4a6ab4aa236f2c826b115755b4b15a8b091dc6913c62479",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.088,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 233
+    },
+    "proof_bytes": 13390,
+    "proof_sha256": "c5514173264d2836e3f1381197226c26d2823e8bb045f874bff7a58f214467e9",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 15 of 120395 clauses in core                            \n\nc 1 of 591 lemmas in core using 15 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.158 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      11,
+      [
+       1,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     22
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q0",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     26
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "a84696d148e4b7b6eb46622a8785ccd2a9090f996eee95329d0898f5cecc7579",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.063,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 501
+    },
+    "proof_bytes": 14354,
+    "proof_sha256": "fdece479fbc7d3d7bfa03df38a353bb3113b6c877d8f89603dec6e46322a2464",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 15 of 120396 clauses in core                            \n\nc 1 of 821 lemmas in core using 15 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.185 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      0,
+      [
+       0,
+       1
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     26
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q1",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     27
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "56d9345b9df560d26ec2dc4b47a21799268838a85cf7abd840ca090a1467a64d",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.075,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 501
+    },
+    "proof_bytes": 14354,
+    "proof_sha256": "0b7a094460987b2c8e4305cd1f34e98ea31314fdcd3cd7ef7ffe82b58ee2dca7",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 14 of 120396 clauses in core                            \n\nc 1 of 821 lemmas in core using 14 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.137 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      1,
+      [
+       0,
+       2
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     27
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q2",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     28
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "43c6d67ad96698d3219afaa2d7a8ac85c66e66576b64c4992bb951b4b49708f3",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.06,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 501
+    },
+    "proof_bytes": 14354,
+    "proof_sha256": "7516d4e981298433c390cbbfd861bfd4a86cb1c3ec295005633f345da01a9ff0",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 13 of 120396 clauses in core                            \n\nc 1 of 821 lemmas in core using 13 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.143 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      2,
+      [
+       1,
+       2
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     28
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q3",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     29
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "66224a5a12d7c056905440b404df2e98cfdf5c3c8a90d7d6e3d5d2f26a3b6206",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.063,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 501
+    },
+    "proof_bytes": 14354,
+    "proof_sha256": "82e65f3c840bf355d418a1779d6a1483c6c72591ffb49dd9e0edfad931e185a5",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 12 of 120396 clauses in core                            \n\nc 1 of 821 lemmas in core using 12 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.148 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      3,
+      [
+       0,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     29
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q4",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     30
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "be902f9a28a756a3d98907a584e4557a7b3cd279fd703d2592daf4c6b6a07081",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.061,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 501
+    },
+    "proof_bytes": 14354,
+    "proof_sha256": "812d702ef3d2d4c1515b550d41a6de7d46753b540419e420f2e15051bc49b791",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 11 of 120396 clauses in core                            \n\nc 1 of 821 lemmas in core using 11 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.146 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      4,
+      [
+       1,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     30
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q5",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     31
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "f6b7440a94681ff5432cf3e514e6d99c184221a04f7b5e3ac9b75a19a5d298a5",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.087,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 501
+    },
+    "proof_bytes": 14354,
+    "proof_sha256": "0f7905c5ffabca32c6896d296f925eea78d55b45e1a3f4c79b2ac3241b95d498",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 10 of 120396 clauses in core                            \n\nc 1 of 821 lemmas in core using 10 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.139 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      5,
+      [
+       2,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     31
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q6",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     32
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "f4d2537122b0e13607c27aa0993a6cae0c4033852492b19888bcae13d342f8c4",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.066,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 501
+    },
+    "proof_bytes": 14354,
+    "proof_sha256": "8b4df3f70d3bdd54329a50f559c5087b5b907d20c494735cef692b7803f7c27e",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 9 of 120396 clauses in core                            \n\nc 1 of 821 lemmas in core using 9 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.143 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      6,
+      [
+       0,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     32
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q7",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     33
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "4d7f3b9c61b750d98dc49560ce7164391b2689b2d02eb3e689fc52d57ec39126",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.077,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 501
+    },
+    "proof_bytes": 14354,
+    "proof_sha256": "84a67363cf2af438d5362ad1379e9c23fbfa2f8fb5d06973de7b2ccf6c57a400",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 8 of 120396 clauses in core                            \n\nc 1 of 821 lemmas in core using 8 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.143 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      7,
+      [
+       1,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     33
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q8",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     34
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "2215d2e3a2bf286e218551b82a5aa37057ee333d11a83eb084f83208229c0ecf",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.063,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 501
+    },
+    "proof_bytes": 14354,
+    "proof_sha256": "3a978d3e8ab13210a0c22ed4c4b0ce7bb0c86de933b30969a9ee81b2bc139f8d",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 7 of 120396 clauses in core                            \n\nc 1 of 821 lemmas in core using 7 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.140 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      8,
+      [
+       2,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     34
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q9",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     35
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "151e310fcce783e165968adc07949b2a94dba286f4e0f89b9e5aa2932bf702af",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.059,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 501
+    },
+    "proof_bytes": 14354,
+    "proof_sha256": "e520920901b408dcb600cf337aaf8e0db793de7b82f456246cdc0a5e9d0fccb7",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 6 of 120396 clauses in core                            \n\nc 1 of 821 lemmas in core using 6 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.141 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      9,
+      [
+       3,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     35
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q10",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     36
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "a31576ad9f543ab8ec056a029252b70117b2ed9454d528a9be1fb58dda703cec",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.063,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 501
+    },
+    "proof_bytes": 14354,
+    "proof_sha256": "c0f6a757ff3186e2839b07db69503422ee93d10fd6c409de9e5a4d65442212c8",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 5 of 120396 clauses in core                            \n\nc 1 of 821 lemmas in core using 5 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.143 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      10,
+      [
+       0,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     36
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q11",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     37
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "5388c161d4191c8def1d2e10eb110173870d253f8d7235716d9106e24a6fe2cb",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.061,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 501
+    },
+    "proof_bytes": 14354,
+    "proof_sha256": "b86574fcc717571b014b4998d87ca10a1b9fce0c8be4d4d50f2a85b07a20e9bf",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 4 of 120396 clauses in core                            \n\nc 1 of 821 lemmas in core using 4 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.145 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      11,
+      [
+       1,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     37
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q12",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     38
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "6276d8d69d0d26e4240fe274a63aabbe76b1bcc3a4df9cc15d7a9245f67ba8ba",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 1.645,
+    "stats": {
+     "restarts": 1194,
+     "conflicts": 39629,
+     "decisions": 77252,
+     "propagations": 4344983
+    },
+    "proof_bytes": 5621965,
+    "proof_sha256": "d45df07e8ca2a118d7c2a0b16087ce1c03529573e4de7bd9d821cca60a75fdae",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 1.5,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 11219 of 120396 clauses in core                            \n\nc 35524 of 117140 lemmas in core using 1176688 resolution steps\n\nc 0 RAT lemmas in core; 12074 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1.458 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      12,
+      [
+       2,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     38
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q13",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     39
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "56398abccff0920c27c8e3846e2b4962dd3edb5483bde90039bdb0da6d2cc5ae",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 1.645,
+    "stats": {
+     "restarts": 1147,
+     "conflicts": 39933,
+     "decisions": 97458,
+     "propagations": 4373111
+    },
+    "proof_bytes": 6546274,
+    "proof_sha256": "246af1d8375223db91aa4cfe9396fe2d78d52f3f1fdd5fcf1eda3949611f8374",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 1.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 12080 of 120396 clauses in core                            \n\nc 24321 of 128356 lemmas in core using 607786 resolution steps\n\nc 0 RAT lemmas in core; 4862 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 1.166 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      13,
+      [
+       3,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     39
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q14",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     40
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "309d8117b01f26959559e5ac454656ab7bc5df849442bbb272014eec6467e7c9",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.062,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 578
+    },
+    "proof_bytes": 14800,
+    "proof_sha256": "b01d3c57acb880f89ce29ca1c77e6a41214858003c03bc8edfe9f8c3a1a47f55",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 40 of 120396 clauses in core                            \n\nc 1 of 934 lemmas in core using 40 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.141 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      14,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     40
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q15",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     41
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "bf08aa3a95ed9ae4480de096d4859886ba2d20a42d66f4b85814b3efe2b9e465",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 14.14,
+    "stats": {
+     "restarts": 6051,
+     "conflicts": 256129,
+     "decisions": 382854,
+     "propagations": 32745634
+    },
+    "proof_bytes": 24634340,
+    "proof_sha256": "45fa410811d05de78ac1c1d45a66ced53d05004295c58f1cf21b74768cf77db7",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 19.0,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 22315 of 120396 clauses in core                            \n\nc 214301 of 388443 lemmas in core using 10444879 resolution steps\n\nc 0 RAT lemmas in core; 143441 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 18.990 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      15,
+      [
+       0,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     41
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q16",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     42
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "55e05eb846639ede2396faf0b1adab2c2df09c16cb5390729eff93f32be47923",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 12.803,
+    "stats": {
+     "restarts": 7124,
+     "conflicts": 235607,
+     "decisions": 364713,
+     "propagations": 30490290
+    },
+    "proof_bytes": 21131638,
+    "proof_sha256": "b62fe1579bfe86f1dd39b7b31b83503b9b616a2cf72943d3a2fceea65cfcbe26",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 15.4,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 21061 of 120396 clauses in core                            \n\nc 192261 of 357082 lemmas in core using 9655570 resolution steps\n\nc 0 RAT lemmas in core; 120105 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 15.373 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      16,
+      [
+       1,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     42
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q17",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     43
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "b87b6dc2ebd00348a2a823c47017da4d338eeae210c1a1f5a64b30406bd5f6d4",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.06,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 501
+    },
+    "proof_bytes": 14354,
+    "proof_sha256": "767a3dbcc99678cd6efdfbaa9cc49bf9ee1224c706bb6423ed08f3154cf8f95c",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 3 of 120396 clauses in core                            \n\nc 1 of 821 lemmas in core using 3 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.142 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      17,
+      [
+       2,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     43
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q18",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     44
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "89c33f941a6a862f4a4db2a2929cfaf138e6ab8962d9426d4028e2a485791f21",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 191.542,
+    "stats": {
+     "restarts": 105293,
+     "conflicts": 2206962,
+     "decisions": 3648560,
+     "propagations": 291916586
+    },
+    "proof_bytes": 203164980,
+    "proof_sha256": "022d6aded1999e65eb9d31d6ab83c3951f8fa8baaa7f4b96342186ed3a44f2e6",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 303.0,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 35351 of 120396 clauses in core                            \n\nc 1458525 of 2512216 lemmas in core using 107617209 resolution steps\n\nc 0 RAT lemmas in core; 1168108 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 302.981 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      18,
+      [
+       3,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     44
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q19",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     45
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "05c4a0092fa2fc0c4bc37adeb22792f444a215c3d9d258e1bec2a3b49f197217",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.103,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 595
+    },
+    "proof_bytes": 14944,
+    "proof_sha256": "d180a9379664a740854e2c021edd8aa52fa5db8e3d526f7a87a7854d6d7e78df",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 41 of 120396 clauses in core                            \n\nc 1 of 969 lemmas in core using 41 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.159 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      19,
+      [
+       4,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     45
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q12_g7q20",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23,
+     46
+    ],
+    "nvars": 8567,
+    "nclauses": 120396,
+    "cnf_sha256": "6eb05d3f33e990e80b236297037f71809cc54affb7559501b5d0234337389acf",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.061,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 501
+    },
+    "proof_bytes": 14354,
+    "proof_sha256": "b415ff0f60773cf9574ddf34b53616117c7ad89787df1200718b610d61a5abbb",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 3 of 120396 clauses in core                            \n\nc 1 of 821 lemmas in core using 3 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.213 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      7,
+      20,
+      [
+       5,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23,
+     46
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q13",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     24
+    ],
+    "nvars": 8567,
+    "nclauses": 120395,
+    "cnf_sha256": "6d33e38367cbf74674633a952edb5b3e408eeca03f04f4cbf019dfa253dd7521",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.065,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 101,
+     "decisions": 4904,
+     "propagations": 17775
+    },
+    "proof_bytes": 24146,
+    "proof_sha256": "276fbfc34e08abbf57956a289d13b8de15246fd9e1b3bb07ec0befc5cb43ae80",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 38 of 120395 clauses in core                            \n\nc 3 of 817 lemmas in core using 75 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.141 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      13,
+      [
+       3,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     24
+    ]
+   },
+   {
+    "tag": "EXACTLY2_5_U2_k12_elim2_g6q14",
+    "n": 5,
+    "k": 12,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     25
+    ],
+    "nvars": 8567,
+    "nclauses": 120395,
+    "cnf_sha256": "dc6d0c678b1243b6411a4798a51d788fbeb016224fe98ecd53399abebbbf11a2",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.063,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 47,
+     "decisions": 4882,
+     "propagations": 9817
+    },
+    "proof_bytes": 18381,
+    "proof_sha256": "93e3a40218ebce0044439922b38eb2090bbf02a296e72efde24955f887c2bc6c",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 40 of 120395 clauses in core                            \n\nc 5 of 793 lemmas in core using 58 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.145 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "EXACTLY2_5",
+    "cube": [
+     [
+      6,
+      14,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     25
+    ]
+   }
+  ],
+  "elimination": {
+   "L": [
+    [
+     9,
+     9
+    ],
+    [
+     9,
+     9
+    ],
+    [
+     9,
+     9
+    ],
+    [
+     9,
+     9
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "level": 2,
+   "restriction_costs": {
+    "0x1668": 9,
+    "0x116": 9
+   },
+   "source": "results/restriction_costs.json",
+   "soundness": "ENCODING.md \u00a75"
+  }
  }
 ]
