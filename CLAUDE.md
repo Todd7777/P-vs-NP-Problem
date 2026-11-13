@@ -71,8 +71,13 @@ full runs take much longer.
   of proofs (not committed), hardest cube 97 s. Validation: the constrained CNF stays satisfiable at
   k = C(f) for all 218 relevant 3-input functions (in tests) and 89 4-input ones (scratch run). Local
   improvement with plateau moves and resubstitution (`--plateau`, `--resub`) found nothing below 15
-  for MOD3_5 (four starting circuits) or 14 for EXACTLY2_5 (two). Next: EXACTLY2_5 at k = 12 and MOD3_5 at
-  k = 13 with `--elim` (weaker bounds: restriction costs 9/9, and k - 10 = 3).
+  for MOD3_5 (four starting circuits) or 14 for EXACTLY2_5 (two).
+- EXACTLY2_5 at k = 12 with elimination constraints, gauged without proofs (Numerical; `cube_gauge.py
+  --elim`, same two-level split as MOD3_5): level 1 refutes 86 of 115 cubes within 1M conflicts; level 2
+  (`--elim-level 2`, the union constraint E3) refutes 17 of the other 29 within 3M; the last 12 are being
+  run at 12M conflicts (one refuted at 5.3M). If they fall, certify with `certify_cubes.py EXACTLY2_5 U2 12
+  --refine 0:7,1:7,2:7,5:7,12:7 --elim --elim-level 2` (several CPU-hours with drat-trim); a third split
+  level would need `--refine` to support it. Then MOD3_5 at k = 13 (bounds 3 and 4).
 - The U2 cost of all 65,536 functions of 4 variables is now complete (`results/n4_u2_complete.json`):
   the four NPN classes the earlier runs left open all cost 10 (`certify_n4_u2.py`, checked proofs).
   `summarize_u2_n4.py` cannot be rerun, because its input `results/n4_u2_closure.json` was never committed.
