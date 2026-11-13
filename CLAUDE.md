@@ -46,16 +46,24 @@ full runs take much longer.
   not committed (about 2 GB); `certify_costs.py recheck` regenerates them bit for bit and checks them again.
 - U2 costs for the rest of the explicit suite (`experiments/certify_u2_suite.py`, `results/u2_suite.json`):
   Machine-checked MUL2 bit3 = 3, MUL2 bit2 = 3, ADD2 carry-out = 5, MUL2 bit1 = 5, MAJ_3 xor x4 xor x5 = 10,
-  MAJ_5 = 10, THR2_5 = 10. Open: EXACTLY2_5 and MOD3_5, both in [12, 15] with Machine-checked lower
+  MAJ_5 = 10, THR2_5 = 10. Open: EXACTLY2_5 in [12, 14] and MOD3_5 in [12, 15], with Machine-checked lower
   bounds. k = 11 was refuted cube by cube with drat-trim-verified proofs (`certify_cubes.py`,
   `results/cube_certificates.json`): 35 cubes for EXACTLY2_5 (its cube where gate 6 reads (x3,x4) needed
   a second split, `--refine 5:7`) and 15 for MOD3_5; about 8.4 and 5.8 CPU-hours including drat-trim;
-  proofs 8.2 and 4.6 GB, not committed. The upper bounds of 15 are verified circuits: Kissat at k = 15
-  with base constraints (EXACTLY2_5), and the XOR expansion of a 12-gate B2 circuit with 2 XORs, one dead
-  gate pruned (MOD3_5; `upper_bound_search.py --max-xor`). Without result in 30-60 min: EXACTLY2_5 B2 with
-  (10 gates, <= 2 XORs) and (11, <= 1); MOD3_5 B2 with (12, <= 1) and (10, <= 3); relaxed U2 searches at
-  k = 13-19. Next: refute k = 12 (expect much harder than k = 11; split two levels from the start), or
-  rerun the XOR-budgeted searches with longer caps.
+  proofs 8.2 and 4.6 GB, not committed. The upper bounds are verified circuits. EXACTLY2_5: Kissat's
+  15-gate circuit (k = 15, base constraints) shrunk to 14 by `local_improve.py` (SAT-based local
+  improvement; a window's replacement only has to agree on the input combinations that occur). MOD3_5:
+  the XOR expansion of a 12-gate B2 circuit with 2 XORs, one dead gate pruned (`upper_bound_search.py
+  --max-xor`). Local improvement over every window of up to 10 gates (<= 11 inputs, 200k conflicts per
+  call) improves neither circuit; windows of up to 9 gates do not improve MOD3_5's other 15-gate
+  circuit (expansion of a 13-gate B2 circuit with one XOR), and windows of up to 8 take the expansion of
+  EXACTLY2_5's optimal B2 circuit only from 21 to 17.
+  Without result in 30-60 min: EXACTLY2_5 B2 with (10 gates, <= 2 XORs) and (11, <= 1); MOD3_5 B2 with
+  (12, <= 1) and (10, <= 3); relaxed U2 searches at k = 13-19. k = 12 for MOD3_5, gauged without proofs
+  (Numerical): split on gate 6, and the five hard cubes again on gate 7, gives 115 cubes; 74 are refuted
+  (71 within seconds), 41 are undecided at 6M conflicts each (about 14 min), and none has a circuit. A
+  certified refutation of k = 12 would take tens of CPU-hours. Next: plateau moves in local improvement
+  (`--plateau`) and more varied starting circuits for the upper bounds.
 - The U2 cost of all 65,536 functions of 4 variables is now complete (`results/n4_u2_complete.json`):
   the four NPN classes the earlier runs left open all cost 10 (`certify_n4_u2.py`, checked proofs).
   `summarize_u2_n4.py` cannot be rerun, because its input `results/n4_u2_closure.json` was never committed.

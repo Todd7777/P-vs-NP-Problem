@@ -112,10 +112,18 @@ Machine-checked. No published U2 table for these functions was found (Knuth's ta
 | MUL2 bit1 | 4 | 3 | 5 | Machine-checked |
 | MAJ_3 xor x4 xor x5 | 5 | 6 | 10 | Machine-checked |
 | MAJ_5 | 5 | 9 | 10 | Machine-checked |
-| EXACTLY2_5 | 5 | 9 | [12, 15] | Open; lower bound Machine-checked |
+| EXACTLY2_5 | 5 | 9 | [12, 14] | Open; lower bound Machine-checked |
 | THR2_5 (sum>=2) | 5 | 10 | 10 | Machine-checked |
 | MOD3_5 (sum=0 mod 3) | 5 | 10 | [12, 15] | Open; lower bound Machine-checked |
 <!-- U2 TABLE END -->
+
+The upper bounds of the two open entries are verified circuits. EXACTLY2_5's 14 comes from
+`experiments/local_improve.py`, which re-synthesizes small windows of a circuit with SAT (local
+improvement after Kulikov, Pechenev and Slezkin, with the relaxation that a replacement only has to
+agree on the window-input combinations that occur): in the 15-gate circuit found by Kissat, the gates
+x1 ∨ x3 and (x2 ∨ x3) ∨ (x1 ∨ x3) collapse into x1 ∨ (x2 ∨ x3). MOD3_5's 15 is the XOR expansion of a
+12-gate B2 circuit with two XORs, one dead gate pruned. Local improvement finds nothing further in either circuit over
+every window of up to 10 gates (at most 11 inputs, 200,000 conflicts per SAT call).
 
 The same method completes the U2 table for 4 variables: the four NPN classes that the earlier runs
 left open all have U2 cost 10, so over all 65,536 functions of 4 variables the U2 cost is
