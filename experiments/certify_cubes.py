@@ -9,6 +9,7 @@ F & s[i][q] for a chosen gate i (default: the second gate, i = n + 1) in paralle
 and checks it with drat-trim. Smaller proofs are much faster to check than one large proof.
 
 Usage: python3 certify_cubes.py NAME BASIS K --proofs DIR [--gate I] [--workers 4] [--refine Q:GATE,...] [--elim]
+           [--elim-level 1|2] [--delete-proofs]
   --refine splits first-level cube Q again over the pairs that GATE can read (two-level cubes);
            Q1/Q2:GATE splits the two-level cube (Q1, Q2) again, and so on.
   --elim   (U2) adds the gate-elimination constraints of elimination.py, with the restriction costs
@@ -33,7 +34,7 @@ def encoding(name, basis, k, L=None, level=1):
 
 
 def cube_job(args):
-    name, basis, k, cube, proofs, L, level = args        # cube: list of (gate, q); L: elimination bounds or None
+    name, basis, k, cube, proofs, L, level, delete = args   # cube: list of (gate, q); L: elimination bounds or None
     full, n, tt = C.suite_function(name)
     enc = encoding(name, basis, k, L, level)
     units = [enc.s[g][q] for g, q in cube]
@@ -41,6 +42,10 @@ def cube_job(args):
            + "_".join(f"g{g}q{q}" for g, q in cube))
     rec = C.certify(enc, proofs, tag, extra_units=units)
     rec.pop("gates", None)
+    if delete and rec["result"] is False and rec.get("drat_trim", {}).get("verified"):
+        for ext in (".drat", ".cnf"):                    # hashes are recorded; CaDiCaL regenerates them
+            os.remove(os.path.join(proofs, tag + ext))
+        rec["files_deleted_after_check"] = True
     rec.update(name=full, cube=[[g, q, list(enc.pairs[g][q])] for g, q in cube], cube_literals=units)
     return rec
 
@@ -85,7 +90,7 @@ def main(a):
     alo = list(enc.s[gate])
     refine = parse_refine(getattr(a, "refine", None) or "")
     cubes = split_cubes(enc, gate, refine)
-    jobs = [(a.name, a.basis, a.k, cube, a.proofs, L, level) for cube in cubes]
+    jobs = [(a.name, a.basis, a.k, cube, a.proofs, L, level, getattr(a, "delete_proofs", False)) for cube in cubes]
     os.makedirs(a.proofs, exist_ok=True)
     t0, recs = time.time(), []
     with Pool(a.workers, maxtasksperchild=1) as pool:
@@ -109,7 +114,8 @@ def main(a):
                                 "source": "results/restriction_costs.json", "soundness": "ENCODING.md §5"}
     path = os.path.join(R, "cube_certificates.json")
     data = json.load(open(path)) if os.path.exists(path) else []
-    data = [d for d in data if (d["name"], d["basis"], d["k"], "elimination" in d) != (full, a.basis, a.k, L is not None)]
+    key = lambda d: (d["name"], d["basis"], d["k"], d["elimination"].get("level", 1) if "elimination" in d else None)
+    data = [d for d in data if key(d) != key(entry)]
     data.append(entry)
     json.dump(data, open(path, "w"), indent=1)
     print(full, a.basis, "k =", a.k, "refuted by cubes:", entry["all_unsat_and_verified"])
@@ -126,4 +132,6 @@ if __name__ == "__main__":
     ap.add_argument("--refine", default="", help="Q:GATE[,...]: split cube Q again over the pairs of GATE")
     ap.add_argument("--elim", action="store_true", help="add the gate-elimination constraints (U2)")
     ap.add_argument("--elim-level", type=int, default=1, help="1: (E1), (E2); 2: also (E3) (ENCODING.md §5)")
+    ap.add_argument("--delete-proofs", action="store_true",
+                    help="delete each CNF and proof once drat-trim has verified it (their hashes stay recorded)")
     main(ap.parse_args())
