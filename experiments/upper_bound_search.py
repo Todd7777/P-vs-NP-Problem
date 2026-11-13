@@ -7,7 +7,9 @@ re-evaluated on the whole truth table before it is reported; nothing is conclude
 from a timeout. (The symmetry-breaking rules are only claimed sound at k = C(f), so an UNSAT answer
 at k > C(f) would not even be a lower bound; for an upper bound only SAT matters.)
 
-Usage: python3 upper_bound_search.py NAME BASIS K [--solver cadical195] [--rules ADLRV] [--out FILE.json]
+Usage: python3 upper_bound_search.py NAME BASIS K [--solver cadical195] [--rules ADLRV] [--max-xor X] [--out FILE.json]
+  --max-xor (B2 only) bounds the number of XOR gates; such a circuit gives a U2 circuit with
+  K + 2X gates (certify_u2_suite.py --upper-from-b2-record expands and records it).
 """
 import argparse, json, time
 
@@ -23,19 +25,34 @@ def main():
     ap.add_argument("--solver", default="cadical195")
     ap.add_argument("--rules", default=C.DEFAULT_RULES,
                     help="symmetry-breaking rules; above C(f) they may exclude every circuit, so fewer can help")
+    ap.add_argument("--max-xor", type=int, help="B2 only: at most this many XOR gates (each costs 3 gates in U2)")
     ap.add_argument("--out")
     a = ap.parse_args()
     full, n, tt = C.suite_function(a.name)
     enc = C.Encoding(n, tt, a.k, a.basis, rules=a.rules)
+    if a.max_xor is not None:
+        assert a.basis == "B2"
+        from pysat.card import CardEnc, EncType
+        z = []
+        for i in range(n, n + a.k):                      # z_i is forced true when gate i is XOR (f = 0,1,1,0)
+            f01, f10, f11 = enc.f[i]
+            enc.nvars += 1
+            z.append(enc.nvars)
+            enc.clauses.append([-f01, -f10, f11, enc.nvars])
+        card = CardEnc.atmost(lits=z, bound=a.max_xor, top_id=enc.nvars, encoding=EncType.seqcounter)
+        enc.clauses.extend(card.clauses)
+        enc.nvars = max(enc.nvars, card.nv)
     t0 = time.time()
     r = C.run_solver(enc, a.solver)
     rec = {"name": full, "basis": a.basis, "k": a.k, "result": r["result"], "seconds": round(time.time() - t0, 1),
-           "solver": a.solver, "rules": a.rules}
+           "solver": a.solver, "rules": a.rules, "max_xor": a.max_xor}
     if r["result"] is True:
         gates = enc.decode(r["model"])
         assert E.verify(n, tt, gates), "decoded circuit does not compute the target"
         if a.basis == "U2":
             assert all(g[3] != (0, 1, 1, 0) for g in gates), "XOR gate in a U2 circuit"
+        if a.max_xor is not None:
+            assert sum(g[3] == (0, 1, 1, 0) for g in gates) <= a.max_xor
         rec["circuit"] = E.gates_to_str(n, gates)
         rec["gates"] = [list(g[:3]) + [list(g[3])] for g in gates]
     print(json.dumps({x: rec.get(x) for x in ("name", "basis", "k", "result", "seconds", "circuit")}), flush=True)

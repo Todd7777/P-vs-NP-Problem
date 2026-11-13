@@ -112,9 +112,9 @@ Machine-checked. No published U2 table for these functions was found (Knuth's ta
 | MUL2 bit1 | 4 | 3 | 5 | Machine-checked |
 | MAJ_3 xor x4 xor x5 | 5 | 6 | 10 | Machine-checked |
 | MAJ_5 | 5 | 9 | 10 | Machine-checked |
-| EXACTLY2_5 | 5 | 9 | [11, 15] | Open; lower bound Machine-checked |
+| EXACTLY2_5 | 5 | 9 | [12, 15] | Open; lower bound Machine-checked |
 | THR2_5 (sum>=2) | 5 | 10 | 10 | Machine-checked |
-| MOD3_5 (sum=0 mod 3) | 5 | 10 | [11, 22] | Open; lower bound Machine-checked |
+| MOD3_5 (sum=0 mod 3) | 5 | 10 | [12, 15] | Open; lower bound Machine-checked |
 <!-- U2 TABLE END -->
 
 The same method completes the U2 table for 4 variables: the four NPN classes that the earlier runs

@@ -17,7 +17,8 @@ proof are in `ENCODING.md`.
 | `compare_optimal5.py` | Parses Knuth's optimal 5-input chains (optimal5 `knuthies.dat`) and compares every B2 value. |
 | `crosscheck_old_encoding.py` | Re-derives refutations with the first encoding, as an independent check (`--cubes` splits a hard instance on the first two gates' input pairs). |
 | `certify_n4_u2.py` | Settles the 4-input NPN classes whose U2 cost the first runs left open; writes the complete U2 distribution. |
-| `certify_cubes.py` | Fallback for very large refutations: splits one instance into cubes on a gate's input pair, each with its own checked proof. |
+| `certify_cubes.py` | Fallback for very large refutations: splits one instance into cubes on a gate's input pair (`--refine` for a second level), each with its own checked proof. |
+| `cube_gauge.py` | The same cubes solved without proofs (exploration; results are Numerical). |
 | `certify_u2_suite.py` | U2 costs of the explicit functions that had only a B2 cost (`--proofs` for checked refutations, `--table` for the README table). |
 | `upper_bound_search.py` | Looks for a circuit with exactly k gates (upper bounds only; the circuit is re-evaluated before it is reported). |
 | `close_u2_n4.py`, `close_u2_n4_k8.py`, `summarize_u2_n4.py` | Earlier attempts at the n = 4 U2 distribution (budgeted first encoding). `summarize_u2_n4.py` cannot be rerun: one of its inputs was never committed. |

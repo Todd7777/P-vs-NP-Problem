@@ -8,10 +8,11 @@ a model of F satisfies that clause, so it satisfies one of the cubes. This scrip
 F & s[i][q] for a chosen gate i (default: the second gate, i = n + 1) in parallel, keeps each proof,
 and checks it with drat-trim. Smaller proofs are much faster to check than one large proof.
 
-Usage: python3 certify_cubes.py NAME BASIS K --proofs DIR [--gate I] [--workers 4]
+Usage: python3 certify_cubes.py NAME BASIS K --proofs DIR [--gate I] [--workers 4] [--refine Q:GATE,...]
+  --refine splits first-level cube Q again over the pairs that GATE can read (two-level cubes).
 Writes results/cube_certificates.json (one entry per instance, one record per cube).
 """
-import argparse, json, os, time
+import argparse, json, os, re, time
 from multiprocessing import Pool
 
 import circuit_sat as C
@@ -20,13 +21,14 @@ R = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 
 
 def cube_job(args):
-    name, basis, k, gate, q, proofs = args
+    name, basis, k, cube, proofs = args                  # cube: list of (gate, q)
     full, n, tt = C.suite_function(name)
     enc = C.Encoding(n, tt, k, basis)
-    unit = enc.s[gate][q]
-    rec = C.certify(enc, proofs, f"{full.split(' ')[0]}_{basis}_k{k}_g{gate}_q{q}", extra_units=[unit])
+    units = [enc.s[g][q] for g, q in cube]
+    tag = f"{re.sub(r'[^A-Za-z0-9]+', '_', full).strip('_')}_{basis}_k{k}_" + "_".join(f"g{g}q{q}" for g, q in cube)
+    rec = C.certify(enc, proofs, tag, extra_units=units)
     rec.pop("gates", None)
-    rec.update(name=full, gate=gate, pair=list(enc.pairs[gate][q]), cube_literal=unit)
+    rec.update(name=full, cube=[[g, q, list(enc.pairs[g][q])] for g, q in cube], cube_literals=units)
     return rec
 
 
@@ -36,18 +38,33 @@ def main(a):
     enc = C.Encoding(n, tt, a.k, a.basis)
     alo = list(enc.s[gate])
     assert alo in enc.clauses, "the at-least-one clause of this gate must be in the CNF"
-    jobs = [(a.name, a.basis, a.k, gate, q, a.proofs) for q in range(len(alo))]
+    refine = {}                                         # q -> second gate whose pairs split cube q further
+    for item in (getattr(a, "refine", None) or "").split(","):
+        if item:
+            q, g2 = map(int, item.split(":"))
+            assert list(enc.s[g2]) in enc.clauses
+            refine[q] = g2
+    cubes = []
+    for q in range(len(alo)):
+        if q in refine:
+            cubes += [[(gate, q), (refine[q], q2)] for q2 in range(len(enc.s[refine[q]]))]
+        else:
+            cubes.append([(gate, q)])
+    jobs = [(a.name, a.basis, a.k, cube, a.proofs) for cube in cubes]
     os.makedirs(a.proofs, exist_ok=True)
     t0, recs = time.time(), []
     with Pool(a.workers, maxtasksperchild=1) as pool:
         for rec in pool.imap_unordered(cube_job, jobs):
             recs.append(rec)
             d = rec.get("drat_trim", {})
-            print(f"[{time.time() - t0:6.0f}s] cube s[{gate}]{tuple(rec['pair'])}: {rec['result']} "
+            print(f"[{time.time() - t0:6.0f}s] cube {[tuple(c[2]) for c in rec['cube']]}: {rec['result']} "
                   f"solve {rec['solve_seconds']}s, drat-trim {d.get('verified')} {d.get('seconds')}s", flush=True)
-    recs.sort(key=lambda r: r["cube_literal"])
-    entry = {"name": full, "basis": a.basis, "k": a.k, "gate": gate, "full_cnf_sha256": C.sha256(enc.dimacs()),
-             "coverage": f"clause s[{gate}][0..{len(alo) - 1}] is in the CNF; one cube per literal",
+    recs.sort(key=lambda r: r["cube_literals"])
+    entry = {"name": full, "basis": a.basis, "k": a.k, "gate": gate, "refine": refine,
+             "full_cnf_sha256": C.sha256(enc.dimacs()),
+             "coverage": (f"clause s[{gate}][0..{len(alo) - 1}] is in the CNF; one cube per literal"
+                          + (f"; cubes {sorted(refine)} are split again over the at-least-one clause of gate(s) "
+                             f"{sorted(set(refine.values()))}, also in the CNF" if refine else "")),
              "all_unsat_and_verified": all(r["result"] is False and r.get("drat_trim", {}).get("verified") for r in recs),
              "cubes": recs}
     path = os.path.join(R, "cube_certificates.json")
@@ -65,4 +82,5 @@ if __name__ == "__main__":
     ap.add_argument("--proofs", required=True)
     ap.add_argument("--gate", type=int)
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--refine", default="", help="Q:GATE[,...]: split cube Q again over the pairs of GATE")
     main(ap.parse_args())
