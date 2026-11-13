@@ -132,8 +132,10 @@ def test_cube_certificate_with_elimination(tmp_path, monkeypatch):
     # level 2, deleting each proof after drat-trim has verified it
     Q.main(argparse.Namespace(name="parity_3", basis="U2", k=5, proofs=str(tmp_path), gate=None, workers=1,
                               refine="", elim=True, elim_level=2, delete_proofs=True))
-    entry = json.load(open(tmp_path / "cube_certificates.json"))[0]
-    assert entry["all_unsat_and_verified"] and entry["elimination"]["level"] == 2
+    entries = json.load(open(tmp_path / "cube_certificates.json"))
+    assert sorted(e["elimination"]["level"] for e in entries) == [1, 2]       # one certificate per level
+    entry = [e for e in entries if e["elimination"]["level"] == 2][0]
+    assert entry["all_unsat_and_verified"]
     assert all(c["files_deleted_after_check"] and "_elim2_" in c["tag"] for c in entry["cubes"])
     assert not list(tmp_path.glob("*elim2*.drat"))
 
