@@ -21,6 +21,7 @@ proof are in `ENCODING.md`.
 | `cube_gauge.py` | The same cubes solved without proofs (exploration; results are Numerical). |
 | `certify_u2_suite.py` | U2 costs of the explicit functions that had only a B2 cost (`--proofs` for checked refutations, `--table` for the README table). |
 | `upper_bound_search.py` | Looks for a circuit with exactly k gates (upper bounds only; the circuit is re-evaluated before it is reported). |
+| `local_improve.py` | Shrinks a circuit by re-synthesizing small convex windows with SAT; a replacement only has to agree on the window-input combinations that occur (care set). Upper bounds only; every step is re-verified. |
 | `close_u2_n4.py`, `close_u2_n4_k8.py`, `summarize_u2_n4.py` | Earlier attempts at the n = 4 U2 distribution (budgeted first encoding). `summarize_u2_n4.py` cannot be rerun: one of its inputs was never committed. |
 | `proof_complexity_php.py` | CDCL on pigeonhole formulas (exponential) vs the ordering principle (polynomial). |
 
