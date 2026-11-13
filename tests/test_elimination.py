@@ -64,7 +64,8 @@ def test_substitution_deletes_what_the_lemma_says():
                 assert got == want
 
 
-def test_constraints_keep_an_optimal_circuit_for_every_3_input_function():
+@pytest.mark.parametrize("level", [1, 2])
+def test_constraints_keep_an_optimal_circuit_for_every_3_input_function(level):
     """At k = C(f), with the exact restriction costs, the CNF plus the elimination constraints is
     satisfiable for every function of 3 inputs that depends on all of them."""
     cost2 = {}
@@ -84,7 +85,7 @@ def test_constraints_keep_an_optimal_circuit_for_every_3_input_function():
                 row.append(cost2[r])
             L.append(row)
         enc = C.Encoding(3, tt, c, "U2")
-        EL.add_elimination_constraints(enc, L)
+        EL.add_elimination_constraints(enc, L, level)
         r = C.run_solver(enc)
         assert r["result"] is True, (tt, c, L)
         assert E.verify(3, tt, enc.decode(r["model"]))
@@ -92,12 +93,13 @@ def test_constraints_keep_an_optimal_circuit_for_every_3_input_function():
     assert count == 218
 
 
-def test_constraints_bind():
+@pytest.mark.parametrize("level", [1, 2])
+def test_constraints_bind(level):
     """The constraints are not vacuous: with an (unjustified) bound that forbids any fan-out above 1,
     a function whose every circuit needs an input of fan-out 2 becomes unsatisfiable."""
     full, n, tt = C.suite_function("parity_3")             # U2 cost 6; each XOR reads its inputs twice
     enc = C.Encoding(n, tt, 6, "U2")
-    EL.add_elimination_constraints(enc, [[5, 5]] * 3)      # claims |N(v)| <= 1
+    EL.add_elimination_constraints(enc, [[5, 5]] * 3, level)      # claims |N(v)| <= 1
     assert C.run_solver(enc)["result"] is False
 
 

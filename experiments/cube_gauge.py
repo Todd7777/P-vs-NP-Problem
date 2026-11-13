@@ -7,12 +7,14 @@ Same cubes as certify_cubes.py: one per pair that gate GATE (default n + 1) can 
 the CNF, so if every cube is UNSAT the instance is UNSAT. A per-call conflict budget turns a cube
 that takes too long into "None" (undecided). Prints one JSON line per cube.
 
-Usage: python3 cube_gauge.py NAME BASIS K [--gate G] [--refine Q:G2,...] [--budget CONFLICTS] [--workers 4]
+Usage: python3 cube_gauge.py NAME BASIS K [--gate G] [--refine Q:G2,...] [--budget CONFLICTS] [--workers 4] [--elim]
+  --elim adds the gate-elimination constraints (elimination.py; restriction costs from results/restriction_costs.json).
 """
 import argparse, json, time
 from multiprocessing import Pool
 
 import circuit_sat as C
+import elimination as EL
 
 A = None
 
@@ -20,6 +22,8 @@ A = None
 def job(cube):
     full, n, tt = C.suite_function(A.name)
     enc = C.Encoding(n, tt, A.k, A.basis)
+    if A.elim:
+        EL.add_elimination_constraints(enc, EL.certified_bounds(n, tt)[0], A.elim_level)
     t0 = time.time()
     r = C.run_solver(enc, extra_units=[enc.s[g][q] for g, q in cube], budget=A.budget)
     return {"cube": [[g, q, list(enc.pairs[g][q])] for g, q in cube], "result": r["result"],
@@ -51,6 +55,8 @@ if __name__ == "__main__":
     ap.add_argument("--refine", default="")
     ap.add_argument("--budget", type=int)
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--elim", action="store_true")
+    ap.add_argument("--elim-level", type=int, default=1)
     A = ap.parse_args()
     with Pool(A.workers) as pool:
         for rec in pool.imap_unordered(job, cubes_of(A)):

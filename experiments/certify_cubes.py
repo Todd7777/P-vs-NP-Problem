@@ -23,20 +23,20 @@ import elimination as EL
 R = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 
 
-def encoding(name, basis, k, L=None):
+def encoding(name, basis, k, L=None, level=1):
     full, n, tt = C.suite_function(name)
     enc = C.Encoding(n, tt, k, basis)
     if L is not None:
-        EL.add_elimination_constraints(enc, L)
+        EL.add_elimination_constraints(enc, L, level)
     return enc
 
 
 def cube_job(args):
-    name, basis, k, cube, proofs, L = args               # cube: list of (gate, q); L: elimination bounds or None
+    name, basis, k, cube, proofs, L, level = args        # cube: list of (gate, q); L: elimination bounds or None
     full, n, tt = C.suite_function(name)
-    enc = encoding(name, basis, k, L)
+    enc = encoding(name, basis, k, L, level)
     units = [enc.s[g][q] for g, q in cube]
-    tag = (f"{re.sub(r'[^A-Za-z0-9]+', '_', full).strip('_')}_{basis}_k{k}_" + ("elim_" if L else "")
+    tag = (f"{re.sub(r'[^A-Za-z0-9]+', '_', full).strip('_')}_{basis}_k{k}_" + ("" if not L else "elim_" if level == 1 else f"elim{level}_")
            + "_".join(f"g{g}q{q}" for g, q in cube))
     rec = C.certify(enc, proofs, tag, extra_units=units)
     rec.pop("gates", None)
@@ -48,7 +48,8 @@ def main(a):
     full, n, tt = C.suite_function(a.name)
     gate = a.gate if a.gate is not None else n + 1
     L, used = EL.certified_bounds(n, tt) if getattr(a, "elim", False) else (None, None)
-    enc = encoding(a.name, a.basis, a.k, L)
+    level = getattr(a, "elim_level", 1)
+    enc = encoding(a.name, a.basis, a.k, L, level)
     alo = list(enc.s[gate])
     assert alo in enc.clauses, "the at-least-one clause of this gate must be in the CNF"
     refine = {}                                         # q -> second gate whose pairs split cube q further
@@ -63,7 +64,7 @@ def main(a):
             cubes += [[(gate, q), (refine[q], q2)] for q2 in range(len(enc.s[refine[q]]))]
         else:
             cubes.append([(gate, q)])
-    jobs = [(a.name, a.basis, a.k, cube, a.proofs, L) for cube in cubes]
+    jobs = [(a.name, a.basis, a.k, cube, a.proofs, L, level) for cube in cubes]
     os.makedirs(a.proofs, exist_ok=True)
     t0, recs = time.time(), []
     with Pool(a.workers, maxtasksperchild=1) as pool:
@@ -81,8 +82,8 @@ def main(a):
              "all_unsat_and_verified": all(r["result"] is False and r.get("drat_trim", {}).get("verified") for r in recs),
              "cubes": recs}
     if L is not None:
-        entry["elimination"] = {"L": L, "restriction_costs": used, "source": "results/restriction_costs.json",
-                                "soundness": "ENCODING.md §5"}
+        entry["elimination"] = {"L": L, "level": level, "restriction_costs": used,
+                                "source": "results/restriction_costs.json", "soundness": "ENCODING.md §5"}
     path = os.path.join(R, "cube_certificates.json")
     data = json.load(open(path)) if os.path.exists(path) else []
     data = [d for d in data if (d["name"], d["basis"], d["k"], "elimination" in d) != (full, a.basis, a.k, L is not None)]
@@ -101,4 +102,5 @@ if __name__ == "__main__":
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--refine", default="", help="Q:GATE[,...]: split cube Q again over the pairs of GATE")
     ap.add_argument("--elim", action="store_true", help="add the gate-elimination constraints (U2)")
+    ap.add_argument("--elim-level", type=int, default=1, help="1: (E1), (E2); 2: also (E3) (ENCODING.md §5)")
     main(ap.parse_args())

@@ -30,9 +30,10 @@ def restriction(n, tt, v, c):
     return out
 
 
-def add_elimination_constraints(enc, L):
+def add_elimination_constraints(enc, L, level=1):
     """Append the constraints of the lemma to enc (in place). L[v][c] is a lower bound on C(f|x_v=c).
-    Returns the number of clauses added."""
+    level 1: (E1) and (E2) of ENCODING.md §5; level 2 adds (E3), the union over all gates that x_v = c
+    makes constant. Returns the number of clauses added."""
     from pysat.card import CardEnc, EncType
     from pysat.formula import IDPool
     assert enc.basis == "U2"
@@ -94,6 +95,19 @@ def add_elimination_constraints(enc, L):
                 u.append(w)
             for c in (0, 1):
                 atmost(u, k - L[v][c], enable=kill[c])
+    if level >= 2:
+        # (E3) |N(v) u U{S(g) : g in N(v), x_v = c makes g constant}| <= k - L[v][c]
+        for v in range(n):
+            for c in (0, 1):
+                u = []
+                for h in G:
+                    w = new(("e3", v, c, h))
+                    cls.append([-rd[(h, v)], w])
+                    for g in G:
+                        if g < h:
+                            cls.append([-rg[(h, g)], -pool.id(("k%d" % c, g, v)), w])
+                    u.append(w)
+                atmost(u, k - L[v][c])
     enc.clauses.extend(cls)
     enc.nvars = max(enc.nvars, pool.top)
     return len(enc.clauses) - before

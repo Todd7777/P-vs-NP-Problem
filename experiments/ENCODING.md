@@ -175,8 +175,9 @@ that depends on both arguments has the form $(a^{\alpha}\wedge b^{\beta})^{\gamm
 its arguments exactly one value makes the gate constant.
 
 **Lemma 5 (elimination).** Let a $U_2$ chain with $k$ gates compute $f$, let $x_v$ be an input and
-$c\in\{0,1\}$. Then $C_{U_2}(f|_{x_v=c})\le k-|N(v)|$. If moreover $g\in N(v)$ and $x_v=c$ makes $g$
-constant, then $C_{U_2}(f|_{x_v=c})\le k-|N(v)\cup S(g)|$.
+$c\in\{0,1\}$, and let $K_c(v)\subseteq N(v)$ be the set of gates that $x_v=c$ makes constant. Then
+$C_{U_2}(f|_{x_v=c})\le k-\bigl|N(v)\cup\bigcup_{g\in K_c(v)}S(g)\bigr|$; in particular
+$C_{U_2}(f|_{x_v=c})\le k-|N(v)|$, and $C_{U_2}(f|_{x_v=c})\le k-|N(v)\cup S(g)|$ for each $g\in K_c(v)$.
 
 *Proof.* Substitute $x_v=c$ and go through the gates in order, giving every node a representative:
 a constant, or a node with a polarity. The input $x_v$ is represented by the constant $c$, every
@@ -188,9 +189,9 @@ represented by that. By induction on the gates, each kept gate computes on every
 other inputs the same value as in the original chain, and each deleted gate's value is given by its
 representative; so the kept gates, followed by a free negation if needed, compute $f|_{x_v=c}$ (or it
 is a constant or a literal, of cost 0). Every gate of $N(v)$ has the constant $c$ as an argument and
-is deleted. If $x_v=c$ makes $g$ constant, $g$ is represented by a constant, so every gate of $S(g)$
-has a constant argument and is deleted. Hence at most $k-|N(v)|$, respectively
-$k-|N(v)\cup S(g)|$, gates remain. $\square$
+is deleted. Every $g\in K_c(v)$ is represented by a constant, so every gate of $S(g)$ has a constant
+argument and is deleted. Hence at most $k-\bigl|N(v)\cup\bigcup_{g\in K_c(v)}S(g)\bigr|$ gates
+remain. $\square$
 
 **Theorem 2.** Let $f$ be normal and depend on all $n$ inputs, $k=C_{U_2}(f)$, and
 $L_{v,c}\le C_{U_2}(f|_{x_v=c})$ for all $v,c$. Then $\Phi_{U_2}(f,k)$ with rules A, D, R, L, V and the
@@ -198,13 +199,14 @@ constraints
 
 - (E1) $|N(v)|\le k-\max_c L_{v,c}$ for every input $x_v$, and
 - (E2) $|N(v)\cup S(g)|\le k-L_{v,c}$ for every input $x_v$, every gate $g\in N(v)$, and the value $c$
-  of $x_v$ that makes $g$ constant,
+  of $x_v$ that makes $g$ constant, and optionally (`level=2` in the code)
+- (E3) $\bigl|N(v)\cup\bigcup_{g\in K_c(v)}S(g)\bigr|\le k-L_{v,c}$ for every input $x_v$ and every $c$,
 
-is satisfiable.
+is satisfiable. ((E3) implies (E1) and (E2); certificates record which level they used.)
 
 *Proof.* Theorem 1 gives a chain with $k$ gates that computes $f$ and obeys the rules. By Lemma 5,
-$L_{v,c}\le C_{U_2}(f|_{x_v=c})\le k-|N(v)|$ for both $c$, and $L_{v,c}\le k-|N(v)\cup S(g)|$ when $x_v=c$
-makes $g$ constant. Setting the auxiliary variables below to their intended values in this chain
+$L_{v,c}\le C_{U_2}(f|_{x_v=c})\le k-\bigl|N(v)\cup\bigcup_{g\in K_c(v)}S(g)\bigr|$ for both $c$, which
+gives (E1), (E2) and (E3). Setting the auxiliary variables below to their intended values in this chain
 satisfies every added clause. $\square$
 
 **Corollary 2.** If $C_{U_2}(f)\ge K$ is known and $\Phi_{U_2}(f,K)$ with the rules and (E1), (E2) is
@@ -214,9 +216,10 @@ unsatisfiable, then $C_{U_2}(f)\ge K+1$.
 gate $g$"), implied by the pair variables $s_{h,q}$; $\kappa^c_{g,v}$ ("$g$ reads $x_v$ and $x_v=c$
 makes $g$ constant"), implied by $s_{g,q}$ and the operator bits (if $x_v$ is the first argument of
 $g$: $c=0$ iff $f_g^{01}=0$, $c=1$ iff $f_g^{10}=f_g^{11}$; if it is the second: $c=0$ iff
-$f_g^{10}=0$, $c=1$ iff $f_g^{01}=f_g^{11}$); and $u_{g,v,h}$, implied by $r_{h,v}\vee r'_{h,g}$. (E1)
-is a sequential-counter at-most constraint on the $r_{h,v}$; (E2) is one on the $u_{g,v,h}$ with
-$\neg\kappa^c_{g,v}$ added to each of its clauses. All constraints bound counts from above, so only
+$f_g^{10}=0$, $c=1$ iff $f_g^{01}=f_g^{11}$); $u_{g,v,h}$, implied by $r_{h,v}\vee r'_{h,g}$; and
+$e_{v,c,h}$, implied by $r_{h,v}$ and by $r'_{h,g}\wedge\kappa^c_{g,v}$ for every gate $g<h$. (E1) is a
+sequential-counter at-most constraint on the $r_{h,v}$; (E2) is one on the $u_{g,v,h}$ with
+$\neg\kappa^c_{g,v}$ added to each of its clauses; (E3) is one on the $e_{v,c,h}$. All constraints bound counts from above, so only
 the implications "structure $\Rightarrow$ auxiliary" are needed.
 
 *Use.* A lower bound obtained this way is labelled **Machine-checked** when, besides the conditions
