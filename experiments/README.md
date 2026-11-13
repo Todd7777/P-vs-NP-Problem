@@ -17,7 +17,9 @@ proof are in `ENCODING.md`.
 | `compare_optimal5.py` | Parses Knuth's optimal 5-input chains (optimal5 `knuthies.dat`) and compares every B2 value. |
 | `crosscheck_old_encoding.py` | Re-derives refutations with the first encoding, as an independent check (`--cubes` splits a hard instance on the first two gates' input pairs). |
 | `certify_n4_u2.py` | Settles the 4-input NPN classes whose U2 cost the first runs left open; writes the complete U2 distribution. |
-| `certify_cubes.py` | Fallback for very large refutations: splits one instance into cubes on a gate's input pair (`--refine` for a second level), each with its own checked proof. |
+| `certify_cubes.py` | Fallback for very large refutations: splits one instance into cubes on a gate's input pair (`--refine` for a second level), each with its own checked proof; `--elim` adds the gate-elimination constraints. |
+| `elimination.py` | Gate-elimination constraints for U2 (fan-out bounds from the costs of the one-variable restrictions; `ENCODING.md` §5), and the substitution of the lemma's proof. |
+| `certify_restrictions.py` | Machine-checked U2 costs of a function's one-variable restrictions, the inputs of `--elim`. |
 | `cube_gauge.py` | The same cubes solved without proofs (exploration; results are Numerical). |
 | `certify_u2_suite.py` | U2 costs of the explicit functions that had only a B2 cost (`--proofs` for checked refutations, `--table` for the README table). |
 | `upper_bound_search.py` | Looks for a circuit with exactly k gates (upper bounds only; the circuit is re-evaluated before it is reported). |
@@ -35,6 +37,7 @@ proof are in `ENCODING.md`.
 | `n4_exact_costs.json`, `n4_run.log` | First run over the 222 NPN classes of 4-input functions. |
 | `n4_u2_complete.json`, `n4_u2_open_classes.json` | Complete U2 distribution for n = 4; certificates for the four classes that were open. |
 | `u2_suite.json` | U2 costs of the other explicit functions, with per-k refutation records (hashes, drat-trim verdicts). |
+| `restriction_costs.json` | Machine-checked U2 costs of the restrictions used by the elimination constraints (MOD3_4, EXACTLY2_4, EXACTLY1_4). |
 | `n4_u2_summary.json`, `n4_u2_closure_k8.json` | Earlier U2 distribution for n = 4 with four classes open. |
 | `validation_encoding.json` | Output of `validate_encoding.py`. |
 | `optimal5_comparison.json` | Output of `compare_optimal5.py`. |
