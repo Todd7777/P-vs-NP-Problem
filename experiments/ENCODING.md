@@ -200,13 +200,26 @@ constraints
 - (E1) $|N(v)|\le k-\max_c L_{v,c}$ for every input $x_v$, and
 - (E2) $|N(v)\cup S(g)|\le k-L_{v,c}$ for every input $x_v$, every gate $g\in N(v)$, and the value $c$
   of $x_v$ that makes $g$ constant, and optionally (`level=2` in the code)
-- (E3) $\bigl|N(v)\cup\bigcup_{g\in K_c(v)}S(g)\bigr|\le k-L_{v,c}$ for every input $x_v$ and every $c$,
+- (E3) $\bigl|N(v)\cup\bigcup_{g\in K_c(v)}S(g)\bigr|\le k-L_{v,c}$ for every input $x_v$ and every $c$, and
+  optionally (`level=3`)
+- (E4) $|D_c(v)|\le k-L_{v,c}$ for every input $x_v$ and every $c$, where $D_c(v)$ is defined in the
+  remark below,
 
-is satisfiable. ((E3) implies (E1) and (E2); certificates record which level they used.)
+is satisfiable. ((E3) implies (E1) and (E2), and (E4) implies (E3); certificates record which level
+they used.)
+
+*Remark (constant propagation).* Let $Q_c(v)$ be the least set of nodes that contains $x_v$ (with value
+$c$) and every gate $g$ that has an argument $a\in Q_c(v)$ whose value makes $g$ constant (the value of
+$g$ is then that constant). Let $D_c(v)$ be the set of gates that read a node of $Q_c(v)$. In the proof
+of Lemma 5 every node of $Q_c(v)$ is represented by its constant (induction along the chain) and every
+gate of $D_c(v)$ has a constant argument and is deleted, so $C_{U_2}(f|_{x_v=c})\le k-|D_c(v)|$. Since
+$N(v)\cup\bigcup_{g\in K_c(v)}S(g)\subseteq D_c(v)$, this is the strongest of the four bounds; it also
+counts readers of gates that become constant further down the chain.
 
 *Proof.* Theorem 1 gives a chain with $k$ gates that computes $f$ and obeys the rules. By Lemma 5,
 $L_{v,c}\le C_{U_2}(f|_{x_v=c})\le k-\bigl|N(v)\cup\bigcup_{g\in K_c(v)}S(g)\bigr|$ for both $c$, which
-gives (E1), (E2) and (E3). Setting the auxiliary variables below to their intended values in this chain
+gives (E1), (E2) and (E3), and the remark gives (E4). Setting the auxiliary variables below to their
+intended values in this chain
 satisfies every added clause. $\square$
 
 **Corollary 2.** If $C_{U_2}(f)\ge K$ is known and $\Phi_{U_2}(f,K)$ with the rules and (E1), (E2) is
@@ -219,7 +232,12 @@ $g$: $c=0$ iff $f_g^{01}=0$, $c=1$ iff $f_g^{10}=f_g^{11}$; if it is the second:
 $f_g^{10}=0$, $c=1$ iff $f_g^{01}=f_g^{11}$); $u_{g,v,h}$, implied by $r_{h,v}\vee r'_{h,g}$; and
 $e_{v,c,h}$, implied by $r_{h,v}$ and by $r'_{h,g}\wedge\kappa^c_{g,v}$ for every gate $g<h$. (E1) is a
 sequential-counter at-most constraint on the $r_{h,v}$; (E2) is one on the $u_{g,v,h}$ with
-$\neg\kappa^c_{g,v}$ added to each of its clauses; (E3) is one on the $e_{v,c,h}$. All constraints bound counts from above, so only
+$\neg\kappa^c_{g,v}$ added to each of its clauses; (E3) is one on the $e_{v,c,h}$. For (E4), variables
+$q^{\gamma}_{v,c,g}$ ("$g\in Q_c(v)$ with value $\gamma$") and $d_{v,c,h}$ ("$h\in D_c(v)$") are implied by
+$s_{h,q}$, by $q^{\gamma}$ of the argument (or by $x_v$ itself), and by the operator bits that make the row or
+column of the gate constant; (E4) is an at-most constraint on the $d_{v,c,h}$. (A gate both of whose
+arguments are constant is not propagated unless one of them alone makes it constant; that only
+weakens the constraint.) All constraints bound counts from above, so only
 the implications "structure $\Rightarrow$ auxiliary" are needed.
 
 *Use.* A lower bound obtained this way is labelled **Machine-checked** when, besides the conditions

@@ -77,8 +77,31 @@ full runs take much longer.
   --refine 0:7,1:7,2:7,5:7,12:7 --elim --elim-level 2 --delete-proofs`, 115 cubes, 2.5 CPU-hours of
   solving and 4.7 of drat-trim, 9.7 GB of proofs (deleted after checking; hashes recorded), hardest
   cube 690 s. Gauges before that: level 1 refuted 86 cubes within 1M conflicts, level 2 another 17
-  within 3M, the last 12 needed 3.4M to 6.4M. Next: MOD3_5 at k = 13 (bounds 3 and 4; much harder), or
-  better upper bounds (both upper bounds come from local search that converged from several starts).
+  within 3M, the last 12 needed 3.4M to 6.4M.
+- Level 3 (`--elim-level 3`, E4: constants propagated down the chain; ENCODING.md §5 remark) is sound
+  on all 3-input functions (tests) and 69 4-input ones (scratch run), and halves the conflicts of the
+  hardest EXACTLY2_5 k = 12 cubes (about 2.9M instead of 5.3M-6.1M). k = 13 is much harder (Numerical
+  probe): first-level cubes of both EXACTLY2_5 and MOD3_5 stay undecided at 2M conflicts, and splitting
+  EXACTLY2_5's cube (x1,x2) over gate 7 leaves 6 of 21 sub-cubes undecided at 2M with level 3; a
+  certified k = 13 refutation looks like tens of CPU-hours or more. Symmetric functions can be named
+  'SYM<n>:<bits>' in every script (bits[w] = value on inputs of weight w; SYM5:001000 is EXACTLY2_5).
+- Symmetric functions of 5 inputs in U2 (`symmetric5_u2.py`, `results/symmetric5_u2.json`, README
+  table): 19 classes. Exact: AND5 = 4 and parity = 12 (Theorem), THR2 = 10, MAJ = 10, NAE5 = 9 and
+  EXACTLY1_5 = 12 (class 000010; Machine-checked: k = 11 refuted as 75 cubes with level-3 constraints,
+  `certify_cubes.py SYM5:000010 U2 11 --refine 1:7,2:7,5:7 --elim --elim-level 3 --delete-proofs`, 28
+  CPU-min + 43 drat-trim). Class 000110 (weights {3,4}) rose to [12, 15] the same way (k = 11 as 35 cubes,
+  4 min); its k = 12 (Numerical gauge, level 3, two-level split) leaves 36 of 115 cubes undecided at 3M
+  conflicts and finds no circuit. Upper bounds improved by Shannon decomposition on x5 (`symmetric5_u2.py
+  --shannon`: the pair (f|x5=0, f|x5=1) synthesized jointly with SAT on 16 rows, or the certified optimal
+  circuits of the two restrictions side by side, plus a 3-gate multiplexer, then local improvement):
+  {2,3,4} 20 -> 13, {1,5} 17 -> 14, {2,3} 18 -> 15, {3,5} 15 -> 14, {3,4} 15 -> 13, {2,3,5} 19 -> 17.
+  {2,3,4} at k = 11 (Numerical gauge, level 3, two-level split): 88 of 115 cubes refuted, 27 undecided at
+  2M conflicts, no circuit; about 1.6 CPU-hours spent.
+  The other 12 are intervals with Machine-checked lower bounds of 11-13 (Lemma 5(a)
+  with all 16 restriction costs certified, then `certify_u2_suite.py --elim 3`: refutations with
+  elimination constraints, 3M conflicts per k) and upper bounds 13-17 (`symmetric5_upper.json`;
+  XOR-budgeted B2 searches found nothing within 6 min). The elimination scan is fast: most k up to 12 fall in seconds. Next: better upper bounds
+  (the gaps are mostly on that side), e.g. cube gauges at k = lower with `--elim` (they print circuits).
 - The U2 cost of all 65,536 functions of 4 variables is now complete (`results/n4_u2_complete.json`):
   the four NPN classes the earlier runs left open all cost 10 (`certify_n4_u2.py`, checked proofs).
   `summarize_u2_n4.py` cannot be rerun, because its input `results/n4_u2_closure.json` was never committed.

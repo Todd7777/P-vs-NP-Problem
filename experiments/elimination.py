@@ -33,7 +33,8 @@ def restriction(n, tt, v, c):
 def add_elimination_constraints(enc, L, level=1):
     """Append the constraints of the lemma to enc (in place). L[v][c] is a lower bound on C(f|x_v=c).
     level 1: (E1) and (E2) of ENCODING.md §5; level 2 adds (E3), the union over all gates that x_v = c
-    makes constant. Returns the number of clauses added."""
+    makes constant; level 3 adds (E4), constants propagated through the chain. Returns the number of
+    clauses added."""
     from pysat.card import CardEnc, EncType
     from pysat.formula import IDPool
     assert enc.basis == "U2"
@@ -108,6 +109,44 @@ def add_elimination_constraints(enc, L, level=1):
                             cls.append([-rg[(h, g)], -pool.id(("k%d" % c, g, v)), w])
                     u.append(w)
                 atmost(u, k - L[v][c])
+    if level >= 3:
+        # (E4) constant propagation: Const(v, c) contains x_v (value c) and every gate with an argument in
+        # Const whose value makes the gate constant; every gate reading a node of Const is deleted, so
+        # |Deleted(v, c)| <= k - L[v][c]. Rows of a gate (f00 = 0): first argument fixed to 0 gives
+        # (0, f01), to 1 gives (f10, f11); second argument fixed to 0 gives (0, f10), to 1 (f01, f11).
+        for v in range(n):
+            for c in (0, 1):
+                K = {g: (new(("c0", v, c, g)), new(("c1", v, c, g))) for g in G}
+
+                def const_lits(node, gamma):
+                    """literal 'node is constant with value gamma', True, or None (never)"""
+                    if node == v:
+                        return True if gamma == c else None
+                    return K[node][gamma] if node >= n else None
+
+                D = {h: new(("d", v, c, h)) for h in G}
+                for h in G:
+                    f01, f10, f11 = enc.f[h]
+                    for q, (j, l) in enumerate(enc.pairs[h]):
+                        sq = enc.s[h][q]
+                        for pos, node in ((0, j), (1, l)):
+                            for gamma in (0, 1):
+                                lit = const_lits(node, gamma)
+                                if lit is None:
+                                    continue
+                                pre = [-sq] + ([] if lit is True else [-lit])
+                                cls.append(pre + [D[h]])                       # h reads a constant: deleted
+                                if pos == 0 and gamma == 0:                   # row (0, f01)
+                                    cls.append(pre + [f01, K[h][0]])
+                                elif pos == 0:                                # row (f10, f11)
+                                    cls.append(pre + [-f10, -f11, K[h][1]])
+                                    cls.append(pre + [f10, f11, K[h][0]])
+                                elif gamma == 0:                              # row (0, f10)
+                                    cls.append(pre + [f10, K[h][0]])
+                                else:                                         # row (f01, f11)
+                                    cls.append(pre + [-f01, -f11, K[h][1]])
+                                    cls.append(pre + [f01, f11, K[h][0]])
+                atmost([D[h] for h in G], k - L[v][c])
     enc.clauses.extend(cls)
     enc.nvars = max(enc.nvars, pool.top)
     return len(enc.clauses) - before

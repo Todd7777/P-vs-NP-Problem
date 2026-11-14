@@ -34,15 +34,26 @@ def tag_for(name, k):
 
 
 def run_one(args):
-    name, proofs, budget, kmax, kmin = args
+    name, proofs, budget, kmax, kmin = args[:5]
+    elim = args[5] if len(args) > 5 else 0          # elimination level (0: none; ENCODING.md §5)
     full, n, tt = C.suite_function(name)
     per_k, lower, t0 = [], kmin, time.time()      # with kmin > 1, k < kmin must be certified by another run
+    if elim:
+        import elimination as EL
+        L = EL.certified_bounds(n, tt)[0]
+        kmin = max(kmin, max(max(row) for row in L) + 1)   # Lemma 5(a): C(f) >= C(f|x_v=c) + 1
+        per_k.append({"k": f"1..{kmin - 1}", "result": False, "via": "Lemma 5(a) with results/restriction_costs.json"})
+        lower = kmin
     for k in range(kmin, kmax + 1):
         enc = C.Encoding(n, tt, k, "U2")
+        if elim:
+            EL.add_elimination_constraints(enc, L, elim)
         if proofs:
-            rec = C.certify(enc, proofs, tag_for(full, k), budget=budget)
+            rec = C.certify(enc, proofs, tag_for(full, k) + (f"_elim{elim}" if elim else ""), budget=budget)
             res = rec["result"]
             step = {"k": k, "result": res, "solve_seconds": rec["solve_seconds"], "cnf_sha256": rec["cnf_sha256"]}
+            if elim:
+                step["elimination_level"] = elim
             if res is False:
                 step.update(proof_sha256=rec["proof_sha256"], proof_bytes=rec["proof_bytes"],
                             drat_trim_verified=rec["drat_trim"]["verified"], drat_trim_seconds=rec["drat_trim"]["seconds"])
@@ -58,7 +69,7 @@ def run_one(args):
               + ")", flush=True)
         if res is True:
             assert E.verify(n, tt, gates), "decoded circuit does not compute the target"
-            certified = bool(proofs) and all(s.get("drat_trim_verified") for s in per_k if s["result"] is False)
+            certified = bool(proofs) and all(s.get("drat_trim_verified") or "via" in s for s in per_k if s["result"] is False)
             return {"name": full, "n": n, "basis": "U2", "kmin": kmin, "lower": lower, "upper": k, "exact": lower == k,
                     "label": ("Machine-checked" if certified else "Numerical") if lower == k else "Open",
                     "circuit": E.gates_to_str(n, gates), "gates": [list(g[:3]) + [list(g[3])] for g in gates],
@@ -76,7 +87,7 @@ def main(a):
     done = json.load(open(OUT)) if os.path.exists(OUT) else []
     if a.proofs:
         os.makedirs(a.proofs, exist_ok=True)
-    jobs = [(nm, a.proofs, a.budget, a.kmax, a.kmin) for nm in names]
+    jobs = [(nm, a.proofs, a.budget, a.kmax, a.kmin, a.elim) for nm in names]
     with Pool(a.workers, maxtasksperchild=1) as pool:
         for rec in pool.imap_unordered(run_one, jobs):
             done = json.load(open(OUT)) if os.path.exists(OUT) else []     # re-read: another run may have written
@@ -224,4 +235,6 @@ if __name__ == "__main__":
     ap.add_argument("--kmax", type=int, default=16)
     ap.add_argument("--kmin", type=int, default=1, help="start at this k (smaller k certified elsewhere)")
     ap.add_argument("--out", help="results file (default results/u2_suite.json)")
+    ap.add_argument("--elim", type=int, default=0,
+                    help="elimination level 1-3: start at the restriction bound and add the constraints of ENCODING.md §5")
     main(ap.parse_args())

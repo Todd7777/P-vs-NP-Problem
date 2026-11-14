@@ -5,7 +5,8 @@ cube_gauge.py -- solve the cubes of one instance WITHOUT proofs (exploration; re
 Same cubes as certify_cubes.py: one per pair that gate GATE (default n + 1) can read, and with
 --refine Q:G2 cube Q is split again over the pairs gate G2 can read. Both at-least-one clauses are in
 the CNF, so if every cube is UNSAT the instance is UNSAT. A per-call conflict budget turns a cube
-that takes too long into "None" (undecided). Prints one JSON line per cube.
+that takes too long into "None" (undecided). Prints one JSON line per cube; a satisfiable cube's
+circuit is re-evaluated on the truth table and printed with it.
 
 Usage: python3 cube_gauge.py NAME BASIS K [--gate G] [--refine Q:G2,...] [--budget CONFLICTS] [--workers 4] [--elim]
   --elim adds the gate-elimination constraints (elimination.py; restriction costs from results/restriction_costs.json).
@@ -16,6 +17,7 @@ from multiprocessing import Pool
 
 import circuit_sat as C
 import elimination as EL
+import exact_circuit_complexity as E
 
 A = None
 
@@ -27,8 +29,13 @@ def job(cube):
         EL.add_elimination_constraints(enc, EL.certified_bounds(n, tt)[0], A.elim_level)
     t0 = time.time()
     r = C.run_solver(enc, extra_units=[enc.s[g][q] for g, q in cube], budget=A.budget)
-    return {"cube": [[g, q, list(enc.pairs[g][q])] for g, q in cube], "result": r["result"],
-            "seconds": round(time.time() - t0, 1), "conflicts": r["stats"].get("conflicts")}
+    rec = {"cube": [[g, q, list(enc.pairs[g][q])] for g, q in cube], "result": r["result"],
+           "seconds": round(time.time() - t0, 1), "conflicts": r["stats"].get("conflicts")}
+    if r["result"] is True:                         # a circuit: re-evaluate it and print it
+        gates = enc.decode(r["model"])
+        assert E.verify(n, tt, gates), "decoded circuit does not compute the target"
+        rec.update(circuit=E.gates_to_str(n, gates), gates=[list(g[:3]) + [list(g[3])] for g in gates])
+    return rec
 
 
 def cubes_of(a):

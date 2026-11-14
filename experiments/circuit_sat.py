@@ -375,6 +375,12 @@ def cost(n, tt, basis="B2", kmax=20, solver="cadical195", rules=DEFAULT_RULES, b
 
 
 def suite_function(name):
+    """(full name, n, normal truth table) of an explicit-suite function, or of the symmetric function
+    'SYM<n>:<b_0...b_n>' whose value on inputs of weight w is b_w (e.g. 'SYM5:001000' is EXACTLY2_5)."""
+    if name.startswith("SYM") and ":" in name:
+        n, bits = int(name[3:name.index(":")]), name[name.index(":") + 1:]
+        assert len(bits) == n + 1 and set(bits) <= {"0", "1"}, name
+        return name, n, E.normalize([int(bits[bin(t).count("1")]) for t in range(1 << n)])
     for nm, n, fn, bases in E.explicit_suite():
         if nm == name or nm.split(" ")[0] == name:
             return nm, n, E.normalize(E.tt_from_fn(n, fn))

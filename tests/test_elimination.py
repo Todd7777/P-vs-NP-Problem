@@ -64,7 +64,7 @@ def test_substitution_deletes_what_the_lemma_says():
                 assert got == want
 
 
-@pytest.mark.parametrize("level", [1, 2])
+@pytest.mark.parametrize("level", [1, 2, 3])
 def test_constraints_keep_an_optimal_circuit_for_every_3_input_function(level):
     """At k = C(f), with the exact restriction costs, the CNF plus the elimination constraints is
     satisfiable for every function of 3 inputs that depends on all of them."""
@@ -93,7 +93,7 @@ def test_constraints_keep_an_optimal_circuit_for_every_3_input_function(level):
     assert count == 218
 
 
-@pytest.mark.parametrize("level", [1, 2])
+@pytest.mark.parametrize("level", [1, 2, 3])
 def test_constraints_bind(level):
     """The constraints are not vacuous: with an (unjustified) bound that forbids any fan-out above 1,
     a function whose every circuit needs an input of fan-out 2 becomes unsatisfiable."""
@@ -181,3 +181,12 @@ def test_multi_level_split():
     # gate 5 reads one of 10 pairs, gate 6 one of 15, gate 7 one of 21
     assert len(cubes) == 9 + 14 + 21 and len(set(map(tuple, cubes))) == len(cubes)
     assert sorted(len(c) for c in cubes) == [1] * 9 + [2] * 14 + [3] * 21
+
+
+def test_symmetric_functions_by_name():
+    """'SYM<n>:<bits>' names the symmetric function with value bits[w] on inputs of weight w."""
+    for sym, name in [("SYM5:001000", "EXACTLY2_5"), ("SYM5:100100", "MOD3_5"), ("SYM5:010101", "parity_5"),
+                      ("SYM5:000111", "MAJ_5"), ("SYM5:001111", "THR2_5")]:
+        assert C.suite_function(sym)[2] == C.suite_function(name)[2]
+    full, n, tt = C.suite_function("SYM3:0110")
+    assert (full, n) == ("SYM3:0110", 3) and tt == [0, 1, 1, 1, 1, 1, 1, 0]

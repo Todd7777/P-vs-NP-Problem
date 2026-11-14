@@ -1,0 +1,1024 @@
+[
+ {
+  "name": "SYM5:000010",
+  "n": 5,
+  "basis": "U2",
+  "kmin": 10,
+  "lower": 11,
+  "upper": 12,
+  "exact": false,
+  "label": "Open",
+  "circuit": "g6 = AND(x1,x2); g7 = OR(x1,x2); g8 = AND(x3,x4); g9 = OR(x3,x4); g10 = AND(x5,g9); g11 = AND(g7,g10); g12 = AND(g6,g11); g13 = OR(g6,g11); g14 = AND(g8,g12); g15 = OR(g8,g12); g16 = x<y(g14,g15); g17 = AND(g13,g16)",
+  "gates": [
+   [
+    5,
+    0,
+    1,
+    [
+     0,
+     0,
+     0,
+     1
+    ]
+   ],
+   [
+    6,
+    0,
+    1,
+    [
+     0,
+     1,
+     1,
+     1
+    ]
+   ],
+   [
+    7,
+    2,
+    3,
+    [
+     0,
+     0,
+     0,
+     1
+    ]
+   ],
+   [
+    8,
+    2,
+    3,
+    [
+     0,
+     1,
+     1,
+     1
+    ]
+   ],
+   [
+    9,
+    4,
+    8,
+    [
+     0,
+     0,
+     0,
+     1
+    ]
+   ],
+   [
+    10,
+    6,
+    9,
+    [
+     0,
+     0,
+     0,
+     1
+    ]
+   ],
+   [
+    11,
+    5,
+    10,
+    [
+     0,
+     0,
+     0,
+     1
+    ]
+   ],
+   [
+    12,
+    5,
+    10,
+    [
+     0,
+     1,
+     1,
+     1
+    ]
+   ],
+   [
+    13,
+    7,
+    11,
+    [
+     0,
+     0,
+     0,
+     1
+    ]
+   ],
+   [
+    14,
+    7,
+    11,
+    [
+     0,
+     1,
+     1,
+     1
+    ]
+   ],
+   [
+    15,
+    13,
+    14,
+    [
+     0,
+     1,
+     0,
+     0
+    ]
+   ],
+   [
+    16,
+    12,
+    15,
+    [
+     0,
+     0,
+     0,
+     1
+    ]
+   ]
+  ],
+  "per_k": [
+   {
+    "k": "1..9",
+    "result": false,
+    "via": "Lemma 5(a) with results/restriction_costs.json"
+   },
+   {
+    "k": 10,
+    "result": false,
+    "solve_seconds": 1.944,
+    "cnf_sha256": "619d4ef48685ab2be4912b0f9b5d216ccf36e9fe1990d06ff0f5971bfd6c5099",
+    "elimination_level": 3,
+    "proof_sha256": "9dc18e55d25bc4dbaed043f4f5691397c7c1de4a2672167194fa160c76703465",
+    "proof_bytes": 4301009,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 1.4
+   },
+   {
+    "k": 11,
+    "result": null,
+    "solve_seconds": 376.167,
+    "cnf_sha256": "13334fdfd0b6a2d247d5979c47bb7951155e14642b89172416f9804cdeb64cdf",
+    "elimination_level": 3
+   },
+   {
+    "k": 12,
+    "result": true,
+    "solve_seconds": 59.139,
+    "cnf_sha256": "9722fabc564d8544ec21f10c6ddaab64d50a2411dcf9e336da8a67cbfa4328a6",
+    "elimination_level": 3
+   }
+  ],
+  "seconds": 439.4
+ },
+ {
+  "name": "SYM5:000101",
+  "n": 5,
+  "basis": "U2",
+  "kmin": 11,
+  "lower": 13,
+  "upper": null,
+  "exact": false,
+  "label": "Open",
+  "per_k": [
+   {
+    "k": "1..10",
+    "result": false,
+    "via": "Lemma 5(a) with results/restriction_costs.json"
+   },
+   {
+    "k": 11,
+    "result": false,
+    "solve_seconds": 0.139,
+    "cnf_sha256": "7c91fc0bcd603537eea8b83a91a00ba738550d44e0239d11bedde7211329e7bb",
+    "elimination_level": 3,
+    "proof_sha256": "50964232aadca11f7522dee725ba8dd8a8ea6e60a23876aba907913345fd1a5c",
+    "proof_bytes": 15125,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.2
+   },
+   {
+    "k": 12,
+    "result": false,
+    "solve_seconds": 5.356,
+    "cnf_sha256": "bc87f0927f8e82de0bbc6b7db79e57d1a77fc3a822475e59b3e639457c9d15d2",
+    "elimination_level": 3,
+    "proof_sha256": "3696731d7dbefba8af6c7fbeaa7cc8048ad54d35bf548de63513fb500d255ef4",
+    "proof_bytes": 16375321,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 5.6
+   },
+   {
+    "k": 13,
+    "result": null,
+    "solve_seconds": 438.433,
+    "cnf_sha256": "726e97c2619fb9052f1b9eab205b9fcab101810c77b9f75103b2a0dce5a00ca5",
+    "elimination_level": 3
+   },
+   {
+    "k": 14,
+    "result": null,
+    "solve_seconds": 425.047,
+    "cnf_sha256": "3966966282c5ebdf20de2667db25c91c9ddc028100d04542a25f30e533bf58fb",
+    "elimination_level": 3
+   }
+  ],
+  "seconds": 876.3
+ },
+ {
+  "name": "SYM5:000110",
+  "n": 5,
+  "basis": "U2",
+  "kmin": 10,
+  "lower": 11,
+  "upper": null,
+  "exact": false,
+  "label": "Open",
+  "per_k": [
+   {
+    "k": "1..9",
+    "result": false,
+    "via": "Lemma 5(a) with results/restriction_costs.json"
+   },
+   {
+    "k": 10,
+    "result": false,
+    "solve_seconds": 0.488,
+    "cnf_sha256": "8f066ce5cb559d482844862b63d5bc9deb85d20cce98615484b721b778add201",
+    "elimination_level": 3,
+    "proof_sha256": "fcabb6ffd43ae8cc03516e3eaaae552e8bccc2f78747ec5c1d3f409daed9abfb",
+    "proof_bytes": 1272986,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.6
+   },
+   {
+    "k": 11,
+    "result": null,
+    "solve_seconds": 379.217,
+    "cnf_sha256": "da0ff5ea683c5e4535239b28cd558849964eaa230f93ce4e28fa3a609542f22d",
+    "elimination_level": 3
+   },
+   {
+    "k": 12,
+    "result": null,
+    "solve_seconds": 441.087,
+    "cnf_sha256": "c58f154d65306fae50654252c084c52676449375ba24ed9ecfea5fa3ce54aa18",
+    "elimination_level": 3
+   },
+   {
+    "k": 13,
+    "result": null,
+    "solve_seconds": 403.044,
+    "cnf_sha256": "89ad6db74a3dea62627c9cac7b8feef966cedb5b41472f64698f0d48e11c4239",
+    "elimination_level": 3
+   },
+   {
+    "k": 14,
+    "result": null,
+    "solve_seconds": 425.184,
+    "cnf_sha256": "ae79c46ff651e19420d6f4bea6a8fef3b52e606b75ecfb7288ff76d6b4e8b942",
+    "elimination_level": 3
+   }
+  ],
+  "seconds": 1652.1
+ },
+ {
+  "name": "SYM5:001010",
+  "n": 5,
+  "basis": "U2",
+  "kmin": 11,
+  "lower": 13,
+  "upper": null,
+  "exact": false,
+  "label": "Open",
+  "per_k": [
+   {
+    "k": "1..10",
+    "result": false,
+    "via": "Lemma 5(a) with results/restriction_costs.json"
+   },
+   {
+    "k": 11,
+    "result": false,
+    "solve_seconds": 0.087,
+    "cnf_sha256": "bb731f9864259d2a412de07d8a38c6ea2d1cae5860a6e408fd58638ac1b8e44c",
+    "elimination_level": 3,
+    "proof_sha256": "87e818049d911b4c66fb80c516327ccbc876ce1f976cb043a12c0b37b26f5c9f",
+    "proof_bytes": 18964,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.3
+   },
+   {
+    "k": 12,
+    "result": false,
+    "solve_seconds": 4.574,
+    "cnf_sha256": "a3ae46a8e978ebf06a983c4ebaccbb05b0737a38f29d0edd93e40aec3b1165c2",
+    "elimination_level": 3,
+    "proof_sha256": "0ca739fd02a216895a0705423511e67c623aeaa305b15d659f6dc2b4a10586e6",
+    "proof_bytes": 10250240,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 3.2
+   },
+   {
+    "k": 13,
+    "result": null,
+    "solve_seconds": 462.969,
+    "cnf_sha256": "23c37383661f75d51283eda064445e6f08afe6319a8c67ee616fc87e93460e7d",
+    "elimination_level": 3
+   },
+   {
+    "k": 14,
+    "result": null,
+    "solve_seconds": 471.89,
+    "cnf_sha256": "cfa1bef1b615e32fdda3055441f6f61292a7f5439184e3e60b1c952229201cd3",
+    "elimination_level": 3
+   }
+  ],
+  "seconds": 944.6
+ },
+ {
+  "name": "SYM5:001011",
+  "n": 5,
+  "basis": "U2",
+  "kmin": 11,
+  "lower": 13,
+  "upper": null,
+  "exact": false,
+  "label": "Open",
+  "per_k": [
+   {
+    "k": "1..10",
+    "result": false,
+    "via": "Lemma 5(a) with results/restriction_costs.json"
+   },
+   {
+    "k": 11,
+    "result": false,
+    "solve_seconds": 0.109,
+    "cnf_sha256": "a21a52992089c480fcbbeeea499bd10e212c86cacafe3315429127098d8410aa",
+    "elimination_level": 3,
+    "proof_sha256": "906f780833196cb0b164c3a8e30ccdbbdbed765d5a823539c5c194956275799a",
+    "proof_bytes": 19076,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.3
+   },
+   {
+    "k": 12,
+    "result": false,
+    "solve_seconds": 0.153,
+    "cnf_sha256": "539d6b3649ab170f0457e53cb3e31caf8174106abd127e538a22c2308a22ad51",
+    "elimination_level": 3,
+    "proof_sha256": "d565a2e440e0a898a7c671050421293043b00bf8b179e2124dec8315522b00ca",
+    "proof_bytes": 786326,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.2
+   },
+   {
+    "k": 13,
+    "result": null,
+    "solve_seconds": 454.845,
+    "cnf_sha256": "3f19ab065831feefebb6f29a6547724aea6c7158ea3191d30240576aabcf162c",
+    "elimination_level": 3
+   },
+   {
+    "k": 14,
+    "result": null,
+    "solve_seconds": 376.188,
+    "cnf_sha256": "d3bd3a87f50c95002b1685f9b5860617fa494cde8a7d64dc9af9007fae31d2cb",
+    "elimination_level": 3
+   }
+  ],
+  "seconds": 833.4
+ },
+ {
+  "name": "SYM5:001100",
+  "n": 5,
+  "basis": "U2",
+  "kmin": 10,
+  "lower": 12,
+  "upper": null,
+  "exact": false,
+  "label": "Open",
+  "per_k": [
+   {
+    "k": "1..9",
+    "result": false,
+    "via": "Lemma 5(a) with results/restriction_costs.json"
+   },
+   {
+    "k": 10,
+    "result": false,
+    "solve_seconds": 0.099,
+    "cnf_sha256": "0c271bc25a5240da100f6d492870ec13657b25fc47152bb2927dd7b6a3287190",
+    "elimination_level": 3,
+    "proof_sha256": "ca3ad0396a00a67b1c078b7f0103e5b3b2cf8adbc3b7b057c160b9ab9d3be8cc",
+    "proof_bytes": 16770,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.1
+   },
+   {
+    "k": 11,
+    "result": false,
+    "solve_seconds": 0.119,
+    "cnf_sha256": "c8f5f6ceda0792349fa8741268497940e127f81230b8668f86186509d2a07484",
+    "elimination_level": 3,
+    "proof_sha256": "b506ef30a357a0127dafaef20f6cad87350c6f4bbb2bed72d23b9ebe4e29c262",
+    "proof_bytes": 518801,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.4
+   },
+   {
+    "k": 12,
+    "result": null,
+    "solve_seconds": 433.199,
+    "cnf_sha256": "38d0eb79314c41977e5a0dd8fbd9143ed6b1978a7dcdf688e3bec87e19eba590",
+    "elimination_level": 3
+   },
+   {
+    "k": 13,
+    "result": null,
+    "solve_seconds": 433.665,
+    "cnf_sha256": "10c01e0693d38daad912c768dae4fbfd04919883ee377405d5f9ad4f141c0dd8",
+    "elimination_level": 3
+   },
+   {
+    "k": 14,
+    "result": null,
+    "solve_seconds": 399.819,
+    "cnf_sha256": "ed1534d8f5658b79bcb77823049887c29b95607160653802290a38e81ae21e60",
+    "elimination_level": 3
+   }
+  ],
+  "seconds": 1269.5
+ },
+ {
+  "name": "SYM5:001101",
+  "n": 5,
+  "basis": "U2",
+  "kmin": 11,
+  "lower": 13,
+  "upper": null,
+  "exact": false,
+  "label": "Open",
+  "per_k": [
+   {
+    "k": "1..10",
+    "result": false,
+    "via": "Lemma 5(a) with results/restriction_costs.json"
+   },
+   {
+    "k": 11,
+    "result": false,
+    "solve_seconds": 0.069,
+    "cnf_sha256": "77815c86e9146ee5593cf1d6c1bfc695284cb71ba2fc210937821bec506956f3",
+    "elimination_level": 3,
+    "proof_sha256": "e31ce59394e2f9a2a6bcffaec02f8d233ce0df903eb67490926c2872da8721d5",
+    "proof_bytes": 15125,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.2
+   },
+   {
+    "k": 12,
+    "result": false,
+    "solve_seconds": 3.614,
+    "cnf_sha256": "c6cb43a061ba8fc9c8cdae4fc504330545cfb9eed2162ca6baa590c9bfb083b9",
+    "elimination_level": 3,
+    "proof_sha256": "bb32027b6102c434a13378d8980fbdd10d945839e2d9f15a47c8db2410b76ef5",
+    "proof_bytes": 10544327,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 2.1
+   },
+   {
+    "k": 13,
+    "result": null,
+    "solve_seconds": 394.833,
+    "cnf_sha256": "6000fc9d671cec9d90627336dc5208e3129bbd57e2b38342b3b58abe776ac8c7",
+    "elimination_level": 3
+   },
+   {
+    "k": 14,
+    "result": null,
+    "solve_seconds": 416.332,
+    "cnf_sha256": "7516bbd677724a1976169157cb7213a6cfbd53ab056aca8819272156b3b9b26d",
+    "elimination_level": 3
+   }
+  ],
+  "seconds": 818.7
+ },
+ {
+  "name": "SYM5:001110",
+  "n": 5,
+  "basis": "U2",
+  "kmin": 8,
+  "lower": 11,
+  "upper": null,
+  "exact": false,
+  "label": "Open",
+  "per_k": [
+   {
+    "k": "1..7",
+    "result": false,
+    "via": "Lemma 5(a) with results/restriction_costs.json"
+   },
+   {
+    "k": 8,
+    "result": false,
+    "solve_seconds": 0.039,
+    "cnf_sha256": "96e21294ae8e9bed26924a78179f8ccbbec3575a0fa0a1d1b56c34dc28c099b9",
+    "elimination_level": 3,
+    "proof_sha256": "4a8d08fe1f44eff7e892344529de2d247acf8f5305e2834608271db477d96e0f",
+    "proof_bytes": 12688,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.2
+   },
+   {
+    "k": 9,
+    "result": false,
+    "solve_seconds": 0.095,
+    "cnf_sha256": "861161cd62d8bec711ff05c3f43d719572bc847fda76f2b1885af77931b5b4dd",
+    "elimination_level": 3,
+    "proof_sha256": "7b5c0d133ee3dceaeefc83eaf8ff02894782ff42f9e50ef5dc88f00d55b52392",
+    "proof_bytes": 303530,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.1
+   },
+   {
+    "k": 10,
+    "result": false,
+    "solve_seconds": 189.695,
+    "cnf_sha256": "131cdcecf3849debe68ae90bc47810ef4ed70247a507f25c9f70052cec1f4dca",
+    "elimination_level": 3,
+    "proof_sha256": "3f10d515a16a8ed034a33522709687cebd4d0d95917f41995094425f8c89c67b",
+    "proof_bytes": 166803233,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 281.4
+   },
+   {
+    "k": 11,
+    "result": null,
+    "solve_seconds": 354.475,
+    "cnf_sha256": "ef350f9cc6fd0feef986df0b78e9043928c326fe2589986bae8d380006e7133d",
+    "elimination_level": 3
+   },
+   {
+    "k": 12,
+    "result": null,
+    "solve_seconds": 350.007,
+    "cnf_sha256": "ffb32b1bf44a97d14e6d7687c5347cdb110511b854808951753b68c9404d5be9",
+    "elimination_level": 3
+   },
+   {
+    "k": 13,
+    "result": null,
+    "solve_seconds": 368.001,
+    "cnf_sha256": "aee7e59b71ae00e55724ee941737f6580c2d4f5df8ac795e6a1befbe0934018c",
+    "elimination_level": 3
+   },
+   {
+    "k": 14,
+    "result": null,
+    "solve_seconds": 389.596,
+    "cnf_sha256": "432a16a404b87e24c50f6f478f4fee427d0f640b9d465de6bb1f5f37343ff8bf",
+    "elimination_level": 3
+   }
+  ],
+  "seconds": 1936.2
+ },
+ {
+  "name": "SYM5:010001",
+  "n": 5,
+  "basis": "U2",
+  "kmin": 10,
+  "lower": 12,
+  "upper": null,
+  "exact": false,
+  "label": "Open",
+  "per_k": [
+   {
+    "k": "1..9",
+    "result": false,
+    "via": "Lemma 5(a) with results/restriction_costs.json"
+   },
+   {
+    "k": 10,
+    "result": false,
+    "solve_seconds": 0.181,
+    "cnf_sha256": "9de7990ce4944eadf74bea6161cfab91dacb8fa72863c2ecbcda36222432bed2",
+    "elimination_level": 3,
+    "proof_sha256": "8aca1f838cc58dea17fad6b34ca5257c86bc816da99cf47b1fc00b2d1517237c",
+    "proof_bytes": 536992,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.3
+   },
+   {
+    "k": 11,
+    "result": false,
+    "solve_seconds": 193.608,
+    "cnf_sha256": "92e4715960c4fc5b1a375555de47df622141c87bb2df35ab18d3dc58078d1b87",
+    "elimination_level": 3,
+    "proof_sha256": "3a165a68bd8a32f907a64fd8dbaba47d3d14a4911e095d8ee7df3bd9fa49eaa2",
+    "proof_bytes": 218896501,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 289.5
+   },
+   {
+    "k": 12,
+    "result": null,
+    "solve_seconds": 372.41,
+    "cnf_sha256": "4ac542d55e5dea2826342cf6effc2284cff587a2d0aee858651b8392dcc32b24",
+    "elimination_level": 3
+   },
+   {
+    "k": 13,
+    "result": null,
+    "solve_seconds": 382.925,
+    "cnf_sha256": "e822c5f84f3a06e0bedaa8dab076bc151301b1d3205749408c0bc118b97fae2b",
+    "elimination_level": 3
+   },
+   {
+    "k": 14,
+    "result": null,
+    "solve_seconds": 421.351,
+    "cnf_sha256": "6ae06fdc54daab1e85626f52c369dcd367dd712eef51cdf0cb00f79ab5db4bcb",
+    "elimination_level": 3
+   }
+  ],
+  "seconds": 1662.9
+ },
+ {
+  "name": "SYM5:010010",
+  "n": 5,
+  "basis": "U2",
+  "kmin": 11,
+  "lower": 13,
+  "upper": null,
+  "exact": false,
+  "label": "Open",
+  "per_k": [
+   {
+    "k": "1..10",
+    "result": false,
+    "via": "Lemma 5(a) with results/restriction_costs.json"
+   },
+   {
+    "k": 11,
+    "result": false,
+    "solve_seconds": 0.065,
+    "cnf_sha256": "c8aa7cbbeb52d9d46311a8c55da4b22f85fe43a2ad46a80d104ff4c02cd5ba54",
+    "elimination_level": 3,
+    "proof_sha256": "3b917999fb15a701640677ddb4aeddf0458b085963ea70cf164217ddbcf4267e",
+    "proof_bytes": 19076,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.2
+   },
+   {
+    "k": 12,
+    "result": false,
+    "solve_seconds": 0.159,
+    "cnf_sha256": "fe4690c46005bdba6708492d645ea2a35f9cae8c3ea6c69f81aa0d63587a7e70",
+    "elimination_level": 3,
+    "proof_sha256": "f8515263cdbc7c3679454a888cf309501fa2e8a5e22eb688721c607131544450",
+    "proof_bytes": 659639,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.2
+   },
+   {
+    "k": 13,
+    "result": null,
+    "solve_seconds": 455.153,
+    "cnf_sha256": "e78260baed1580e37a0f6439faab9ccb9a77a7603a31961f7161bf8000339a37",
+    "elimination_level": 3
+   },
+   {
+    "k": 14,
+    "result": null,
+    "solve_seconds": 379.446,
+    "cnf_sha256": "aff69d19a6391789d804d9162a1753b44234059a0d602815b94553ec12ae0d63",
+    "elimination_level": 3
+   }
+  ],
+  "seconds": 836.7
+ },
+ {
+  "name": "SYM5:010110",
+  "n": 5,
+  "basis": "U2",
+  "kmin": 11,
+  "lower": 13,
+  "upper": null,
+  "exact": false,
+  "label": "Open",
+  "per_k": [
+   {
+    "k": "1..10",
+    "result": false,
+    "via": "Lemma 5(a) with results/restriction_costs.json"
+   },
+   {
+    "k": 11,
+    "result": false,
+    "solve_seconds": 0.082,
+    "cnf_sha256": "1d6e5f3f02fe62e822567bb8ca9861024b301a253cb4e60bc1bdaf90d836dae1",
+    "elimination_level": 3,
+    "proof_sha256": "2dfbeac59def9801e0a211dfb1c514ef28a072419975b5a45f381e65d11053f8",
+    "proof_bytes": 19072,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.2
+   },
+   {
+    "k": 12,
+    "result": false,
+    "solve_seconds": 0.15,
+    "cnf_sha256": "d073d657b6da66c80432941823f4924f9c7c8840af02c2e090ba70bb81fefb3e",
+    "elimination_level": 3,
+    "proof_sha256": "fe3d1470f24e7486c63af2de0f8acb90d22b13d9fcff9745dde05c490eee4661",
+    "proof_bytes": 662785,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.2
+   },
+   {
+    "k": 13,
+    "result": null,
+    "solve_seconds": 454.382,
+    "cnf_sha256": "e0fb91eaa5ff75b97747cf5d6420ec85b7de73527683ad8836f7c8dc2083399b",
+    "elimination_level": 3
+   },
+   {
+    "k": 14,
+    "result": null,
+    "solve_seconds": 375.066,
+    "cnf_sha256": "2bd477eed5b6c2519184887c0c9a1a205ab49aa155ae5a5f155f285abf0b630d",
+    "elimination_level": 3
+   }
+  ],
+  "seconds": 831.5
+ },
+ {
+  "name": "SYM5:011001",
+  "n": 5,
+  "basis": "U2",
+  "kmin": 10,
+  "lower": 12,
+  "upper": null,
+  "exact": false,
+  "label": "Open",
+  "per_k": [
+   {
+    "k": "1..9",
+    "result": false,
+    "via": "Lemma 5(a) with results/restriction_costs.json"
+   },
+   {
+    "k": 10,
+    "result": false,
+    "solve_seconds": 0.105,
+    "cnf_sha256": "13842fe728295a053ec9cd457d58b3d1b4be9282f5291ad701908de0306fb709",
+    "elimination_level": 3,
+    "proof_sha256": "68ebe60f18acbda92bb589f1c333245f13e3f8b659b250a71857265c45ee49ff",
+    "proof_bytes": 16762,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.1
+   },
+   {
+    "k": 11,
+    "result": false,
+    "solve_seconds": 0.177,
+    "cnf_sha256": "767609611dfe7b34f0a524283ad7aa5ab6a8d047eea0b3171ddb41d501793773",
+    "elimination_level": 3,
+    "proof_sha256": "94c063fc7167a092272020b0fad2ae970ff71c11eec6741b0f30035e80200570",
+    "proof_bytes": 532995,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.3
+   },
+   {
+    "k": 12,
+    "result": null,
+    "solve_seconds": 468.218,
+    "cnf_sha256": "5715e421798b589507f7945dafb78da397238ec09beef5672fb68eedc810dede",
+    "elimination_level": 3
+   },
+   {
+    "k": 13,
+    "result": null,
+    "solve_seconds": 391.36,
+    "cnf_sha256": "97e0327d6cd3be37dfc19d73c5a01eb770f52a86093c85288614f4b380b8807d",
+    "elimination_level": 3
+   },
+   {
+    "k": 14,
+    "result": null,
+    "solve_seconds": 442.031,
+    "cnf_sha256": "8499f3604bfb50a7fcd664c925c09cdd67565d3cf45768bce385f340caac67f2",
+    "elimination_level": 3
+   }
+  ],
+  "seconds": 1304.1
+ },
+ {
+  "name": "SYM5:011110",
+  "n": 5,
+  "basis": "U2",
+  "kmin": 1,
+  "lower": 9,
+  "upper": 9,
+  "exact": true,
+  "label": "Machine-checked",
+  "circuit": "g6 = x>y(x1,x2); g7 = AND(x3,x4); g8 = OR(x3,x4); g9 = x>y(x2,x5); g10 = x>y(x5,g7); g11 = x<y(x1,g8); g12 = OR(g9,g11); g13 = OR(g6,g12); g14 = OR(g10,g13)",
+  "gates": [
+   [
+    5,
+    0,
+    1,
+    [
+     0,
+     0,
+     1,
+     0
+    ]
+   ],
+   [
+    6,
+    2,
+    3,
+    [
+     0,
+     0,
+     0,
+     1
+    ]
+   ],
+   [
+    7,
+    2,
+    3,
+    [
+     0,
+     1,
+     1,
+     1
+    ]
+   ],
+   [
+    8,
+    1,
+    4,
+    [
+     0,
+     0,
+     1,
+     0
+    ]
+   ],
+   [
+    9,
+    4,
+    6,
+    [
+     0,
+     0,
+     1,
+     0
+    ]
+   ],
+   [
+    10,
+    0,
+    7,
+    [
+     0,
+     1,
+     0,
+     0
+    ]
+   ],
+   [
+    11,
+    8,
+    10,
+    [
+     0,
+     1,
+     1,
+     1
+    ]
+   ],
+   [
+    12,
+    5,
+    11,
+    [
+     0,
+     1,
+     1,
+     1
+    ]
+   ],
+   [
+    13,
+    9,
+    12,
+    [
+     0,
+     1,
+     1,
+     1
+    ]
+   ]
+  ],
+  "per_k": [
+   {
+    "k": 1,
+    "result": false,
+    "solve_seconds": 0.002,
+    "cnf_sha256": "c991a393c4024f61c19ea7e61ed1d8eb6bb49f0ae552d7bd3e6d107ea0871238",
+    "proof_sha256": "1e1ec779122605fd52cc59f87db4db4897b8a8ea79bfad9503dec85d4106a227",
+    "proof_bytes": 562,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.1
+   },
+   {
+    "k": 2,
+    "result": false,
+    "solve_seconds": 0.002,
+    "cnf_sha256": "d596047079c621fbb9b8e6c70c85b179c2681aea084aaa6187b658725d15748b",
+    "proof_sha256": "ca6cae9e57401018044c4176b63e03f42aded368138228454725fe4231410577",
+    "proof_bytes": 1589,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.1
+   },
+   {
+    "k": 3,
+    "result": false,
+    "solve_seconds": 0.003,
+    "cnf_sha256": "8fba3130be2088fa0d19534f251b1f9de95373c2edbf062e2c7eb64131b17ac5",
+    "proof_sha256": "ae5e3df5fd13f570cede37782de11b28f50b9f7104ed76b478142046bb7378e7",
+    "proof_bytes": 3026,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.1
+   },
+   {
+    "k": 4,
+    "result": false,
+    "solve_seconds": 0.009,
+    "cnf_sha256": "024f6f61128be919e233d5349b9c083b577ac0d3c461250a8fc575782ced81fb",
+    "proof_sha256": "d1c6ccf25f17915ab5b4281d406a094fa76a8624a94fdb5470a24156cdfadb6a",
+    "proof_bytes": 6909,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.1
+   },
+   {
+    "k": 5,
+    "result": false,
+    "solve_seconds": 0.021,
+    "cnf_sha256": "62f13b4826107784c3ec770ea106be7f3118d7992bed8841c4498fad6f19a6f6",
+    "proof_sha256": "fd4dee4e193c82b26cd04334e615a729b9d349817e2bef4c3d5cb56f66255caa",
+    "proof_bytes": 87681,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.1
+   },
+   {
+    "k": 6,
+    "result": false,
+    "solve_seconds": 0.042,
+    "cnf_sha256": "90779c87f2ea01c9a69356cab4abac38069f444376b7c2c873588c4fe1a98d88",
+    "proof_sha256": "a278d43c077f020024890bae5eac957db95c89aa5399a68a33c9f0f6b06e7336",
+    "proof_bytes": 167234,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.1
+   },
+   {
+    "k": 7,
+    "result": false,
+    "solve_seconds": 0.333,
+    "cnf_sha256": "dc1bdf09ae167156ea01120b520487f2732a177020b4be28896111f69e3a12dc",
+    "proof_sha256": "374117b9b42fa75b2360654fdff607eaabac9a11b7a2860cf805ec48a8130bad",
+    "proof_bytes": 1180910,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 0.4
+   },
+   {
+    "k": 8,
+    "result": false,
+    "solve_seconds": 2.423,
+    "cnf_sha256": "010bf890b307f2fba5d6d67c5fd127b83f21330003d96b257daa311719065c27",
+    "proof_sha256": "5044b4202103681f6648806a78eb764c5defb69c8eca333fa14802853c755034",
+    "proof_bytes": 6132355,
+    "drat_trim_verified": true,
+    "drat_trim_seconds": 3.0
+   },
+   {
+    "k": 9,
+    "result": true,
+    "solve_seconds": 0.258,
+    "cnf_sha256": "149b60d4a7c6c2fe28f7d6421a7b50d4f09b7fb4107dac288326ea6a565dcff1"
+   }
+  ],
+  "seconds": 7.2
+ }
+]
