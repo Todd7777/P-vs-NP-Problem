@@ -156,7 +156,7 @@ bound for U2, which our own lower bounds already reach in every row.
 | class (b_0..b_5) | true on weights | B2 (Knuth) | U2 cost | label |
 |---|---|---|---|---|
 | 000001 | [5] | 4 | 4 | Theorem |
-| 000010 | [4] | 10 | [11, 12] | lower bound Machine-checked |
+| 000010 | [4] | 10 | 12 | Machine-checked |
 | 000011 (THR2_5) | [4, 5] | 10 | 10 | Machine-checked |
 | 000100 (EXACTLY2_5) | [3] | 9 | [13, 14] | lower bound Machine-checked |
 | 000101 | [3, 5] | 10 | [13, 15] | lower bound Machine-checked |

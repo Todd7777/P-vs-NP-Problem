@@ -82,10 +82,10 @@
     "0x6880": 9
    },
    "lower_from_restrictions": 10,
-   "lower": 11,
-   "lower_source": "Lemma 5(a) with the restriction costs in results/restriction_costs.json; k = 10: results/symmetric5_refutations.json",
+   "lower": 12,
+   "lower_source": "Lemma 5(a) with the restriction costs in results/restriction_costs.json; k = 10: results/symmetric5_refutations.json; k = 11: results/cube_certificates.json (elimination level 3)",
    "upper": 12,
-   "label": "Open",
+   "label": "Machine-checked",
    "circuit": "g6 = AND(x3,x4); g7 = OR(x2,g6); g8 = OR(x3,x4); g9 = AND(g8,g7); g10 = AND(x2,g6); g11 = OR(x5,g10); g12 = AND(g11,g9); g13 = AND(x5,g10); g14 = x<y(x1,g13); g15 = x>y(x1,g13); g16 = OR(g15,g14); g17 = AND(g16,g12)",
    "gates": [
     [
