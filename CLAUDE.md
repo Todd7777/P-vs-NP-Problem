@@ -89,7 +89,9 @@ full runs take much longer.
   table): 19 classes. Exact: AND5 = 4 and parity = 12 (Theorem), THR2 = 10, MAJ = 10, NAE5 = 9 and
   EXACTLY1_5 = 12 (class 000010; Machine-checked: k = 11 refuted as 75 cubes with level-3 constraints,
   `certify_cubes.py SYM5:000010 U2 11 --refine 1:7,2:7,5:7 --elim --elim-level 3 --delete-proofs`, 28
-  CPU-min + 43 drat-trim). The other 13 are intervals with Machine-checked lower bounds of 11-13 (Lemma 5(a)
+  CPU-min + 43 drat-trim). Class 000110 (weights {3,4}) rose to [12, 15] the same way (k = 11 as 35 cubes,
+  4 min); its k = 12 (Numerical gauge, level 3, two-level split) leaves 36 of 115 cubes undecided at 3M
+  conflicts and finds no circuit. The other 12 are intervals with Machine-checked lower bounds of 11-13 (Lemma 5(a)
   with all 16 restriction costs certified, then `certify_u2_suite.py --elim 3`: refutations with
   elimination constraints, 3M conflicts per k) and upper bounds 12-20 from local improvement of
   XOR-expanded B2 circuits (`symmetric5_upper.json`; XOR-budgeted B2 searches found nothing within
