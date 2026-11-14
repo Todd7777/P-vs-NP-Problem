@@ -77,8 +77,14 @@ full runs take much longer.
   --refine 0:7,1:7,2:7,5:7,12:7 --elim --elim-level 2 --delete-proofs`, 115 cubes, 2.5 CPU-hours of
   solving and 4.7 of drat-trim, 9.7 GB of proofs (deleted after checking; hashes recorded), hardest
   cube 690 s. Gauges before that: level 1 refuted 86 cubes within 1M conflicts, level 2 another 17
-  within 3M, the last 12 needed 3.4M to 6.4M. Next: MOD3_5 at k = 13 (bounds 3 and 4; much harder), or
-  better upper bounds (both upper bounds come from local search that converged from several starts).
+  within 3M, the last 12 needed 3.4M to 6.4M.
+- Level 3 (`--elim-level 3`, E4: constants propagated down the chain; ENCODING.md §5 remark) is sound
+  on all 3-input functions (tests) and 69 4-input ones (scratch run), and halves the conflicts of the
+  hardest EXACTLY2_5 k = 12 cubes (about 2.9M instead of 5.3M-6.1M). k = 13 is much harder (Numerical
+  probe): first-level cubes of both EXACTLY2_5 and MOD3_5 stay undecided at 2M conflicts, and splitting
+  EXACTLY2_5's cube (x1,x2) over gate 7 leaves 6 of 21 sub-cubes undecided at 2M with level 3; a
+  certified k = 13 refutation looks like tens of CPU-hours or more. Symmetric functions can be named
+  'SYM<n>:<bits>' in every script (bits[w] = value on inputs of weight w; SYM5:001000 is EXACTLY2_5).
 - The U2 cost of all 65,536 functions of 4 variables is now complete (`results/n4_u2_complete.json`):
   the four NPN classes the earlier runs left open all cost 10 (`certify_n4_u2.py`, checked proofs).
   `summarize_u2_n4.py` cannot be rerun, because its input `results/n4_u2_closure.json` was never committed.
