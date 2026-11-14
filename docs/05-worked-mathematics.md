@@ -120,6 +120,16 @@ gates (`experiments/ENCODING.md`, Lemma 1). So Theorem 5.3 supplies the matching
 > construction above or the explicit 12-gate circuit in `experiments/results/explicit_costs.json`
 > (also listed in `experiments/results/explicit_final.json`).
 
+**Gate elimination inside a SAT search.** The elimination step works for any $f$: fixing $x_v=c$
+deletes every gate that reads $x_v$, and every reader of a gate that $c$ makes constant, so every
+$k$-gate $U_2$ circuit for $f$ satisfies $|N(v)\cup\bigcup_g S(g)|\le k-C_{U_2}(f|_{x_v=c})$, where $N(v)$ is
+the set of gates reading $x_v$ and $g$ ranges over those that $c$ makes constant
+(`experiments/ENCODING.md` §5). These are local inequalities, so they can be added to the exact-synthesis
+CNF. Together with Machine-checked costs of the 4-variable restrictions they certify
+$C_{U_2}(\mathrm{MOD3}_5)\ge13$ and $C_{U_2}(\mathrm{EXACTLY2}_5)\ge13$, where the plain search had stalled at
+12 gates (README, U2 table). It is Schnorr's method applied at a fixed small $n$, with the case
+analysis delegated to the solver; it says nothing about the asymptotic limits discussed next.
+
 **Why gate elimination stops at $\approx3n$.** The argument removes a constant number of gates per
 eliminated variable. Li–Yang (2022) push the constant to $3.1$ with an elaborate case analysis and
 a cleverly chosen function (an unrefereed Nov 2026 revision of Mishra–Santhanam, ECCC TR26-260,
