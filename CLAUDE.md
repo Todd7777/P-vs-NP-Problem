@@ -95,6 +95,8 @@ full runs take much longer.
   --shannon`: the pair (f|x5=0, f|x5=1) synthesized jointly with SAT on 16 rows, or the certified optimal
   circuits of the two restrictions side by side, plus a 3-gate multiplexer, then local improvement):
   {2,3,4} 20 -> 13, {1,5} 17 -> 14, {2,3} 18 -> 15, {3,5} 15 -> 14, {3,4} 15 -> 13, {2,3,5} 19 -> 17.
+  {2,3,4} at k = 11 (Numerical gauge, level 3, two-level split): 88 of 115 cubes refuted, 27 undecided at
+  2M conflicts, no circuit; about 1.6 CPU-hours spent.
   The other 12 are intervals with Machine-checked lower bounds of 11-13 (Lemma 5(a)
   with all 16 restriction costs certified, then `certify_u2_suite.py --elim 3`: refutations with
   elimination constraints, 3M conflicts per k) and upper bounds 13-17 (`symmetric5_upper.json`;
