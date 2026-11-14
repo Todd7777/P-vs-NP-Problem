@@ -750,8 +750,8 @@
     "0x7ee8": 9
    },
    "lower_from_restrictions": 10,
-   "lower": 11,
-   "lower_source": "Lemma 5(a) with the restriction costs in results/restriction_costs.json; k = 10: results/symmetric5_refutations.json",
+   "lower": 12,
+   "lower_source": "Lemma 5(a) with the restriction costs in results/restriction_costs.json; k = 10: results/symmetric5_refutations.json; k = 11: results/cube_certificates.json (elimination level 3)",
    "upper": 15,
    "label": "Open",
    "circuit": "g6 = OR(x3,x4); g7 = AND(x3,x4); g8 = x<y(g7,g6); g9 = x>y(x5,g8); g10 = OR(x1,g9); g11 = OR(x2,g10); g12 = AND(x1,x2); g13 = AND(g12,g9); g14 = x<y(g6,g13); g15 = OR(x5,g12); g16 = x<y(g15,g8); g17 = x>y(g6,g16); g18 = x<y(g13,g17); g19 = OR(g18,g14); g20 = AND(g19,g11)",

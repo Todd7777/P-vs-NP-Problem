@@ -18458,5 +18458,1800 @@
    "source": "results/restriction_costs.json",
    "soundness": "ENCODING.md \u00a75"
   }
+ },
+ {
+  "name": "SYM5:000110",
+  "basis": "U2",
+  "k": 11,
+  "gate": 6,
+  "refine": {
+   "5": 7
+  },
+  "full_cnf_sha256": "da0ff5ea683c5e4535239b28cd558849964eaa230f93ce4e28fa3a609542f22d",
+  "coverage": "clause s[6][0..14] is in the CNF; one cube per literal; cubes ['5'] are split again over the at-least-one clause of gate(s) [7], also in the CNF",
+  "all_unsat_and_verified": true,
+  "cubes": [
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q0",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     11
+    ],
+    "nvars": 7557,
+    "nclauses": 129079,
+    "cnf_sha256": "cf78f6758c6ceabfa073039fa6cdf8f8255598f76e191ff4649c2b367caf9b9c",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.07,
+    "stats": {
+     "restarts": 1,
+     "conflicts": 97,
+     "decisions": 1155,
+     "propagations": 13054
+    },
+    "proof_bytes": 17446,
+    "proof_sha256": "ab7f6f199e3ae429b8d6c3006589feb5577b6850da7ef7dedee08f66d1eabd3a",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 405 of 129079 clauses in core                            \n\nc 63 of 1098 lemmas in core using 1945 resolution steps\n\nc 0 RAT lemmas in core; 10 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.156 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      0,
+      [
+       0,
+       1
+      ]
+     ]
+    ],
+    "cube_literals": [
+     11
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q1",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     12
+    ],
+    "nvars": 7557,
+    "nclauses": 129079,
+    "cnf_sha256": "77dfd350c615c743799dc3cadeaf792c26630ea0eb0129cc0f92a35b16d632b6",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 45.785,
+    "stats": {
+     "restarts": 23824,
+     "conflicts": 608578,
+     "decisions": 1104097,
+     "propagations": 118534526
+    },
+    "proof_bytes": 75515300,
+    "proof_sha256": "2dc3a2d17c69c0e1bc82f01de5f9ca4b51d0f33e59e4bbb8387ef95b693fd77e",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 55.3,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 33139 of 129079 clauses in core                            \n\nc 400079 of 848505 lemmas in core using 29865444 resolution steps\n\nc 0 RAT lemmas in core; 448586 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 55.300 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      1,
+      [
+       0,
+       2
+      ]
+     ]
+    ],
+    "cube_literals": [
+     12
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q2",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     13
+    ],
+    "nvars": 7557,
+    "nclauses": 129079,
+    "cnf_sha256": "647b1ce1dfec4e41e0f3a5c6a31a7e4fe2f714a54734473dd9bf5e646ebc7a78",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 71.304,
+    "stats": {
+     "restarts": 22046,
+     "conflicts": 860718,
+     "decisions": 1361144,
+     "propagations": 165106551
+    },
+    "proof_bytes": 107176815,
+    "proof_sha256": "35ac5563e13df2a1ad6067419ef02ad5ad01e3acfea2ab754c880069d07b682e",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 112.6,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 34124 of 129079 clauses in core                            \n\nc 649663 of 1109068 lemmas in core using 51849281 resolution steps\n\nc 0 RAT lemmas in core; 845380 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 112.577 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      2,
+      [
+       1,
+       2
+      ]
+     ]
+    ],
+    "cube_literals": [
+     13
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q3",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     14
+    ],
+    "nvars": 7557,
+    "nclauses": 129079,
+    "cnf_sha256": "3fdf924eda238bff3b4ca8649109ecedb618ce86c2c8e4c3957d12337c0ff820",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.071,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 40,
+     "decisions": 483,
+     "propagations": 9519
+    },
+    "proof_bytes": 15469,
+    "proof_sha256": "a57be8d9ddf132bc1c222860453dfc4d0b5b2faa4840f0249ab497bdb2d311c5",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 42 of 129079 clauses in core                            \n\nc 3 of 857 lemmas in core using 80 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.156 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      3,
+      [
+       0,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     14
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q4",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     15
+    ],
+    "nvars": 7557,
+    "nclauses": 129079,
+    "cnf_sha256": "a5d36367bf983768106e41c6a14ef1fb344ebb8ad14722c0b668c053c3652984",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.072,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 39,
+     "decisions": 457,
+     "propagations": 9825
+    },
+    "proof_bytes": 16087,
+    "proof_sha256": "bdcc2bdd4177ab16c2ddcdef12a77e907c9be021fc1991451512476d75dd236e",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 80 of 129079 clauses in core                            \n\nc 4 of 1013 lemmas in core using 163 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.197 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      4,
+      [
+       1,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     15
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q0",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     26
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "a156696a093f217d4db1132064c16235e76e0346dc500b18194269e932fd8122",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.07,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 304
+    },
+    "proof_bytes": 13193,
+    "proof_sha256": "932602c4d795391604db33a9dcf17a6a1d9b5fce2dd8603ddc879d643b609aab",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 8 of 129080 clauses in core                            \n\nc 1 of 593 lemmas in core using 8 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.148 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      0,
+      [
+       0,
+       1
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     26
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q1",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     27
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "522c865e8519eb8a19c44bec4efceaacf5eab625a6155578ba9e6b7cb2cd3c1d",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.063,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 304
+    },
+    "proof_bytes": 13193,
+    "proof_sha256": "2a898cc75c6791facee1a2a59c969761dfe797ac5f01691f95debc183f17a280",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 7 of 129080 clauses in core                            \n\nc 1 of 593 lemmas in core using 7 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.148 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      1,
+      [
+       0,
+       2
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     27
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q2",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     28
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "03ca9677b87b41a927aa012985bcc0762732047c64ee502fd22b82f490f61b8b",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.067,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 304
+    },
+    "proof_bytes": 13193,
+    "proof_sha256": "181f8d7b81a8b09a65aa40e9aa845c4854b4747a4f79e99f99a85c7f5debdb49",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 6 of 129080 clauses in core                            \n\nc 1 of 593 lemmas in core using 6 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.147 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      2,
+      [
+       1,
+       2
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     28
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q3",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     29
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "75feffe99bf71782684e310c2aa57dc7be7a9984bd031db9dfd94c37714269ee",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.067,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 304
+    },
+    "proof_bytes": 13193,
+    "proof_sha256": "03bb0e21e3ef2001b83ebc3ed96281f6e669e4ca5cd16387643f96d3e747333e",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 5 of 129080 clauses in core                            \n\nc 1 of 593 lemmas in core using 5 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.181 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      3,
+      [
+       0,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     29
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q4",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     30
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "86bda19cdd9bf8c49fd2ec558d8bd95d45a075a8451db0bfd69078fdba63a812",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.068,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 304
+    },
+    "proof_bytes": 13193,
+    "proof_sha256": "200aeeda93fd175c54a80866be28969aac02638c0a023a6d712c7bf910d6555d",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 4 of 129080 clauses in core                            \n\nc 1 of 593 lemmas in core using 4 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.151 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      4,
+      [
+       1,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     30
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q5",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     31
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "d6952af4e92b22e92a06b9fcaff1f3be440e51fceafe949ea685fe3b179927ee",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.07,
+    "stats": {
+     "restarts": 1,
+     "conflicts": 121,
+     "decisions": 532,
+     "propagations": 13295
+    },
+    "proof_bytes": 18541,
+    "proof_sha256": "a4dc92399c71ca2921e21e042e4e6bf4087d90e605952bb834ea1a7a2ceefe0c",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 302 of 129080 clauses in core                            \n\nc 70 of 1217 lemmas in core using 2131 resolution steps\n\nc 0 RAT lemmas in core; 1 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.183 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      5,
+      [
+       2,
+       3
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     31
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q6",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     32
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "bb3aa898e061b97994152e14f7b12c57f1b05642fe0f1455e14a2b97e4a14529",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 25.684,
+    "stats": {
+     "restarts": 13583,
+     "conflicts": 397722,
+     "decisions": 640065,
+     "propagations": 69480602
+    },
+    "proof_bytes": 45150588,
+    "proof_sha256": "0834d95c885c74d6ed424ce32b6719a75f6b4c5dfb477345ec25bfd2bd31d636",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 35.4,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 26936 of 129080 clauses in core                            \n\nc 313294 of 574896 lemmas in core using 20999940 resolution steps\n\nc 0 RAT lemmas in core; 306514 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 35.389 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      6,
+      [
+       0,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     32
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q7",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     33
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "df937660de92d7e5774528dd6bdb144955a0a38108ef1551a2bb5188816747e3",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 17.89,
+    "stats": {
+     "restarts": 7180,
+     "conflicts": 287736,
+     "decisions": 450528,
+     "propagations": 52229565
+    },
+    "proof_bytes": 36180307,
+    "proof_sha256": "4a74ef5a5ea7cba0581630c28837ca38cdf8e591be1961ff91fa6be43200ca9b",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 22.1,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 26158 of 129080 clauses in core                            \n\nc 230947 of 440902 lemmas in core using 15579271 resolution steps\n\nc 0 RAT lemmas in core; 223962 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 22.089 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      7,
+      [
+       1,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     33
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q8",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     34
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "3facece3bc2af878b7b8968337dad27a146ea6958a03b4916452a34164da7039",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 14.094,
+    "stats": {
+     "restarts": 6080,
+     "conflicts": 212909,
+     "decisions": 362093,
+     "propagations": 37465986
+    },
+    "proof_bytes": 26215507,
+    "proof_sha256": "48b930b521ba54abf6c38d6b1eec5d3ce3d9a889858c6a782b9edc90ce8ec4ff",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 15.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 25478 of 129080 clauses in core                            \n\nc 166890 of 341133 lemmas in core using 10124655 resolution steps\n\nc 0 RAT lemmas in core; 154831 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 15.170 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      8,
+      [
+       2,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     34
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q9",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     35
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "cbcdc6fadbdadb587830904fbb79817f2e7fd08bd49ce6a24c302f1235b6ff81",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 14.798,
+    "stats": {
+     "restarts": 5108,
+     "conflicts": 245927,
+     "decisions": 382659,
+     "propagations": 41480476
+    },
+    "proof_bytes": 29162592,
+    "proof_sha256": "02bf24f7f00448979082fd8ec8c0f26e4883edd40f07ddbc96e8c8cde6ed52fd",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 17.4,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 24620 of 129080 clauses in core                            \n\nc 199635 of 385381 lemmas in core using 11928707 resolution steps\n\nc 0 RAT lemmas in core; 179725 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 17.386 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      9,
+      [
+       3,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     35
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q10",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     36
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "872c6046b7b46e57de735cf8a032a8d2bf3332dd5d8fec7b0af8371a45dc64b1",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.063,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 377
+    },
+    "proof_bytes": 13544,
+    "proof_sha256": "3fea441958964151ac246957d70c7bda7b59a133427e7232a98ebe9c75472b4e",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 27 of 129080 clauses in core                            \n\nc 1 of 685 lemmas in core using 27 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.152 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      10,
+      [
+       0,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     36
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q11",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     37
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "bb76035574786a986e703d3e036516a9c70f742860acd589306f21bd8f4cb4ec",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.065,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 308
+    },
+    "proof_bytes": 13340,
+    "proof_sha256": "7a5e9ab464c60f5721bf0089a02c61c6d609103afc993a0da25353bb863a19d0",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 24 of 129080 clauses in core                            \n\nc 1 of 632 lemmas in core using 24 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.150 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      11,
+      [
+       1,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     37
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q12",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     38
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "9df96d900bc735d19a671a5576d7c8803f5e3b16c8bbe5f05499f7c0e105b343",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 9.923,
+    "stats": {
+     "restarts": 5878,
+     "conflicts": 180006,
+     "decisions": 307360,
+     "propagations": 29239387
+    },
+    "proof_bytes": 19123489,
+    "proof_sha256": "2f41a9b60931d1ee37aa7d425b670346d552e149a79721a741de35d1983c8743",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 11.9,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 24052 of 129080 clauses in core                            \n\nc 144540 of 309527 lemmas in core using 8430507 resolution steps\n\nc 0 RAT lemmas in core; 109126 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 11.870 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      12,
+      [
+       2,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     38
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q13",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     39
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "03f08324ac79fdd4bc16e6309299952d8cde18935b2a3ca306b8cab8298e2de6",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 10.474,
+    "stats": {
+     "restarts": 5534,
+     "conflicts": 185754,
+     "decisions": 300696,
+     "propagations": 30536134
+    },
+    "proof_bytes": 22070751,
+    "proof_sha256": "407a1594e00ab8179e28d5ac61431f00e82cf751b28dbed59ea54fd3a7fc3f12",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 13.0,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 22824 of 129080 clauses in core                            \n\nc 149806 of 319105 lemmas in core using 8459042 resolution steps\n\nc 0 RAT lemmas in core; 120689 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 13.023 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      13,
+      [
+       3,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     39
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q14",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     40
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "af4cc5ea4ca3d397e3a5255cce7c1e5130a454769adda6227d2b5c2a39ab1d06",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 27.698,
+    "stats": {
+     "restarts": 16329,
+     "conflicts": 413594,
+     "decisions": 730104,
+     "propagations": 73310518
+    },
+    "proof_bytes": 50569882,
+    "proof_sha256": "e3c4d291d141671f7d804bc3eafd38de97d7db8a4eb1b7ff2454121e63700c67",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 35.8,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 29260 of 129080 clauses in core                            \n\nc 307525 of 619680 lemmas in core using 21494417 resolution steps\n\nc 0 RAT lemmas in core; 265987 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 35.827 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      14,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     40
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q15",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     41
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "80ff9289e8afbe3a4f78dfcb3ee24b497b0733d1d1b4f3ca440830b4cbd6d53a",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 8.01,
+    "stats": {
+     "restarts": 5918,
+     "conflicts": 154952,
+     "decisions": 273174,
+     "propagations": 25275826
+    },
+    "proof_bytes": 16095918,
+    "proof_sha256": "573332b6af502ea03a2eb2eaf67691134b200691b9f320a749bf800904467dc1",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 9.8,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 22694 of 129080 clauses in core                            \n\nc 127345 of 269136 lemmas in core using 7360365 resolution steps\n\nc 0 RAT lemmas in core; 82836 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 9.787 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      15,
+      [
+       0,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     41
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q16",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     42
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "4c3bceb9fd6fff3158210d23fd557f73cfe80b330886e9a615915692087cb4c4",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 7.895,
+    "stats": {
+     "restarts": 5751,
+     "conflicts": 132697,
+     "decisions": 239453,
+     "propagations": 22448224
+    },
+    "proof_bytes": 13767925,
+    "proof_sha256": "e8031b376d89057622e7014ae90ab902f9a3f6b74557314b39575cfebb437e39",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 8.3,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 23211 of 129080 clauses in core                            \n\nc 110224 of 247269 lemmas in core using 6104746 resolution steps\n\nc 0 RAT lemmas in core; 60561 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 8.338 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      16,
+      [
+       1,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     42
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q17",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     43
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "bb3b04dd99b6769adfc8db10feea2ad047ed8932d533e72313283465e3911b4b",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.065,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 304
+    },
+    "proof_bytes": 13193,
+    "proof_sha256": "1196bb7296a21844680575c640046287a060746fdf2118de32e8b48f35ebe045",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 3 of 129080 clauses in core                            \n\nc 1 of 593 lemmas in core using 3 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.151 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      17,
+      [
+       2,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     43
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q18",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     44
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "9320b663085202d502b3c018ab50390e3bd31d55d5337fbcb7deb6749d43f453",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.063,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 0,
+     "decisions": 0,
+     "propagations": 304
+    },
+    "proof_bytes": 13193,
+    "proof_sha256": "f0f99311dc351551995a8bb8a43fa9abf01232b1d75cc7adb5ed765780a7f6d0",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 3 of 129080 clauses in core                            \n\nc 1 of 593 lemmas in core using 3 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.150 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      18,
+      [
+       3,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     44
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q19",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     45
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "b0cf8b1976861b5aa3e081b3cda3bc916cc455c03dbeffae9849eca7dea0c75e",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 18.339,
+    "stats": {
+     "restarts": 8658,
+     "conflicts": 267726,
+     "decisions": 474544,
+     "propagations": 46080004
+    },
+    "proof_bytes": 34740605,
+    "proof_sha256": "8618bff9011cf90a2f36c9feb59d9ec1add50c0bc52d185f5e41b7bfca581f52",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 24.3,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 27462 of 129080 clauses in core                            \n\nc 217310 of 400325 lemmas in core using 13981208 resolution steps\n\nc 0 RAT lemmas in core; 231815 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 24.283 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      19,
+      [
+       4,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     45
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q5_g7q20",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     16,
+     46
+    ],
+    "nvars": 7557,
+    "nclauses": 129080,
+    "cnf_sha256": "7e8a21eb042fb757f30078f0da9bb1978cdcb9c271e4685deeb355688d6bd6f6",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 15.443,
+    "stats": {
+     "restarts": 7128,
+     "conflicts": 248149,
+     "decisions": 441939,
+     "propagations": 42155089
+    },
+    "proof_bytes": 31237279,
+    "proof_sha256": "d28d406001d884730f0245321981cdae6c3340fc2fdf6d699b8c86f94b9e38ee",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 21.9,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 26833 of 129080 clauses in core                            \n\nc 204021 of 390147 lemmas in core using 11779568 resolution steps\n\nc 0 RAT lemmas in core; 192030 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 21.870 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      5,
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      7,
+      20,
+      [
+       5,
+       6
+      ]
+     ]
+    ],
+    "cube_literals": [
+     16,
+     46
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q6",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     17
+    ],
+    "nvars": 7557,
+    "nclauses": 129079,
+    "cnf_sha256": "517535926b73875e9393719eec33eebaa5789233dac37d560fe93fc6d259f317",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.133,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 6,
+     "decisions": 29,
+     "propagations": 1212
+    },
+    "proof_bytes": 14101,
+    "proof_sha256": "9e38f1fde10d575e5e3391407f80e393b31f348429863e8dab52dc2220287345",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 43 of 129079 clauses in core                            \n\nc 5 of 819 lemmas in core using 76 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.230 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      6,
+      [
+       0,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     17
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q7",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     18
+    ],
+    "nvars": 7557,
+    "nclauses": 129079,
+    "cnf_sha256": "717135d5e0cc607bb73b9a1c9298273030541e10d61c0e048bf6629b639c8c4e",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.126,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 9,
+     "decisions": 42,
+     "propagations": 1509
+    },
+    "proof_bytes": 14143,
+    "proof_sha256": "93a0f87ad0f10b37a6df0929365c9f49e1add744f0e7edd055f0aef857872a7e",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 43 of 129079 clauses in core                            \n\nc 5 of 830 lemmas in core using 110 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.179 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      7,
+      [
+       1,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     18
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q8",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     19
+    ],
+    "nvars": 7557,
+    "nclauses": 129079,
+    "cnf_sha256": "8ffe943842e2c59b07a5022eede400e8f2f1de2476c836c53e99a5f9afba4aa9",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.138,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 8,
+     "decisions": 49,
+     "propagations": 2051
+    },
+    "proof_bytes": 14320,
+    "proof_sha256": "154d5c48c2742637df0398ab431ccf3e03ebd70f0f9873755f8279194371faee",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 51 of 129079 clauses in core                            \n\nc 5 of 867 lemmas in core using 103 resolution steps\n\nc 0 RAT lemmas in core; 1 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.232 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      8,
+      [
+       2,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     19
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q9",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     20
+    ],
+    "nvars": 7557,
+    "nclauses": 129079,
+    "cnf_sha256": "8c1a865532fdeec3a1970a557df1acf943a1c26cd65c03b4f9442b91bc296298",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.135,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 13,
+     "decisions": 55,
+     "propagations": 1881
+    },
+    "proof_bytes": 14045,
+    "proof_sha256": "30103a18127b5edd545cdfd9ced0b557f247b2dcf03518667615dd2a899e6f1b",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 56 of 129079 clauses in core                            \n\nc 9 of 797 lemmas in core using 163 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.185 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      9,
+      [
+       3,
+       4
+      ]
+     ]
+    ],
+    "cube_literals": [
+     20
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q10",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     21
+    ],
+    "nvars": 7557,
+    "nclauses": 129079,
+    "cnf_sha256": "c5fcdca888de7783268a8b12130694e093233af217cf3ab7e6cf6bfdac646278",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.067,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 248
+    },
+    "proof_bytes": 13049,
+    "proof_sha256": "841d3faba73c475f250a18ffa432cb6eaeb58117e00b7a92065f725cfec6947a",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 15 of 129079 clauses in core                            \n\nc 1 of 562 lemmas in core using 15 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.149 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      10,
+      [
+       0,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     21
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q11",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     22
+    ],
+    "nvars": 7557,
+    "nclauses": 129079,
+    "cnf_sha256": "02be623212b9e2ab1589f29c7999e7480cb2266fbafb2ac86c20d6bfc6ec0f12",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.066,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 1,
+     "decisions": 0,
+     "propagations": 230
+    },
+    "proof_bytes": 13026,
+    "proof_sha256": "2b96375ca17cd22cda6cc598dfcef3cf318f16178435ee2deec2d1355caabf2c",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.3,
+     "output": "\nc UNSAT via unit propagation on the input instance\n\nc 15 of 129079 clauses in core                            \n\nc 1 of 556 lemmas in core using 15 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.272 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      11,
+      [
+       1,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     22
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q12",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     23
+    ],
+    "nvars": 7557,
+    "nclauses": 129079,
+    "cnf_sha256": "3625575c493c7055e1e0fcccf2d4f40ed9e5600d25083d899ac6a99c8efd178b",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 37.689,
+    "stats": {
+     "restarts": 23715,
+     "conflicts": 530012,
+     "decisions": 957181,
+     "propagations": 95198005
+    },
+    "proof_bytes": 57862295,
+    "proof_sha256": "4b1e676b85945f629909e9a4f2b484783b2128965254697ae9c59ddfd5536ba5",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 46.8,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 31640 of 129079 clauses in core                            \n\nc 378017 of 728241 lemmas in core using 30284780 resolution steps\n\nc 0 RAT lemmas in core; 304045 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 46.754 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      12,
+      [
+       2,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     23
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q13",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     24
+    ],
+    "nvars": 7557,
+    "nclauses": 129079,
+    "cnf_sha256": "3fc523e615b34bb17f3936e5780d9699f26cfb4bd22a086c5be4ce0b1fd1cc07",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.125,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 7,
+     "decisions": 57,
+     "propagations": 1534
+    },
+    "proof_bytes": 13840,
+    "proof_sha256": "cd3e8e39e12f520a9eed994c58aaee5620b57b4d70b39208ae7590c29c8480c0",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 38 of 129079 clauses in core                            \n\nc 3 of 748 lemmas in core using 68 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.222 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      13,
+      [
+       3,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     24
+    ]
+   },
+   {
+    "tag": "SYM5_000110_U2_k11_elim3_g6q14",
+    "n": 5,
+    "k": 11,
+    "basis": "U2",
+    "rules": "ADLRV",
+    "units": [
+     25
+    ],
+    "nvars": 7557,
+    "nclauses": 129079,
+    "cnf_sha256": "818b5947d56ad2b0b64b9996b6091065d9e7199e11cc60a78aca90044546164f",
+    "solver": "cadical195",
+    "result": false,
+    "solve_seconds": 0.128,
+    "stats": {
+     "restarts": 0,
+     "conflicts": 8,
+     "decisions": 50,
+     "propagations": 1567
+    },
+    "proof_bytes": 14165,
+    "proof_sha256": "3878b5a8ab8c4437c6c8630a58ff054fb0c72218db543be48ac8d95b7c88d304",
+    "drat_trim": {
+     "verified": true,
+     "seconds": 0.2,
+     "output": "\nc detected empty clause; start verification via backward checking\n\nc 41 of 129079 clauses in core                            \n\nc 5 of 832 lemmas in core using 71 resolution steps\n\nc 0 RAT lemmas in core; 0 redundant literals in core lemmas\n\ns VERIFIED\n\nc verification time: 0.214 seconds"
+    },
+    "files_deleted_after_check": true,
+    "name": "SYM5:000110",
+    "cube": [
+     [
+      6,
+      14,
+      [
+       4,
+       5
+      ]
+     ]
+    ],
+    "cube_literals": [
+     25
+    ]
+   }
+  ],
+  "elimination": {
+   "L": [
+    [
+     7,
+     9
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     7,
+     9
+    ]
+   ],
+   "level": 3,
+   "restriction_costs": {
+    "0xe880": 7,
+    "0x7ee8": 9
+   },
+   "source": "results/restriction_costs.json",
+   "soundness": "ENCODING.md \u00a75"
+  }
  }
 ]

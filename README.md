@@ -160,7 +160,7 @@ bound for U2, which our own lower bounds already reach in every row.
 | 000011 (THR2_5) | [4, 5] | 10 | 10 | Machine-checked |
 | 000100 (EXACTLY2_5) | [3] | 9 | [13, 14] | lower bound Machine-checked |
 | 000101 | [3, 5] | 10 | [13, 15] | lower bound Machine-checked |
-| 000110 | [3, 4] | 10 | [11, 15] | lower bound Machine-checked |
+| 000110 | [3, 4] | 10 | [12, 15] | lower bound Machine-checked |
 | 000111 (MAJ_5) | [3, 4, 5] | 9 | 10 | Machine-checked |
 | 001001 (MOD3_5) | [2, 5] | 10 | [13, 15] | lower bound Machine-checked |
 | 001010 | [2, 4] | 8 | [13, 14] | lower bound Machine-checked |
