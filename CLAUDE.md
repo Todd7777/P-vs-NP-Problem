@@ -91,11 +91,14 @@ full runs take much longer.
   `certify_cubes.py SYM5:000010 U2 11 --refine 1:7,2:7,5:7 --elim --elim-level 3 --delete-proofs`, 28
   CPU-min + 43 drat-trim). Class 000110 (weights {3,4}) rose to [12, 15] the same way (k = 11 as 35 cubes,
   4 min); its k = 12 (Numerical gauge, level 3, two-level split) leaves 36 of 115 cubes undecided at 3M
-  conflicts and finds no circuit. The other 12 are intervals with Machine-checked lower bounds of 11-13 (Lemma 5(a)
+  conflicts and finds no circuit. Upper bounds improved by Shannon decomposition on x5 (`symmetric5_u2.py
+  --shannon`: the pair (f|x5=0, f|x5=1) synthesized jointly with SAT on 16 rows, or the certified optimal
+  circuits of the two restrictions side by side, plus a 3-gate multiplexer, then local improvement):
+  {2,3,4} 20 -> 13, {1,5} 17 -> 14, {2,3} 18 -> 15, {3,5} 15 -> 14, {3,4} 15 -> 13, {2,3,5} 19 -> 17.
+  The other 12 are intervals with Machine-checked lower bounds of 11-13 (Lemma 5(a)
   with all 16 restriction costs certified, then `certify_u2_suite.py --elim 3`: refutations with
-  elimination constraints, 3M conflicts per k) and upper bounds 12-20 from local improvement of
-  XOR-expanded B2 circuits (`symmetric5_upper.json`; XOR-budgeted B2 searches found nothing within
-  6 min). The elimination scan is fast: most k up to 12 fall in seconds. Next: better upper bounds
+  elimination constraints, 3M conflicts per k) and upper bounds 13-17 (`symmetric5_upper.json`;
+  XOR-budgeted B2 searches found nothing within 6 min). The elimination scan is fast: most k up to 12 fall in seconds. Next: better upper bounds
   (the gaps are mostly on that side), e.g. cube gauges at k = lower with `--elim` (they print circuits).
 - The U2 cost of all 65,536 functions of 4 variables is now complete (`results/n4_u2_complete.json`):
   the four NPN classes the earlier runs left open all cost 10 (`certify_n4_u2.py`, checked proofs).

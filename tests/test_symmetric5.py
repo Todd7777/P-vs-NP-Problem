@@ -69,3 +69,15 @@ def test_recorded_symmetric5():
         assert (r["label"] == "Open") == (r["lower"] < r["upper"])
         if "lower_from_restrictions" in r:
             assert r["lower_from_restrictions"] == max(r["restriction_costs"].values()) + 1
+
+
+def test_shannon_start_both_paths():
+    """f = x5 ? f1 : f0: from a joint SAT synthesis of (f0, f1), or, when that finds nothing within the
+    budget, from the certified optimal circuits of f0 and f1 side by side."""
+    if not os.path.exists(os.path.join(RESULTS, "restriction_costs.json")):
+        pytest.skip("results/restriction_costs.json not written yet")
+    full, n, tt = C.suite_function("SYM5:011110")                      # NAE5, U2 cost 9
+    chain, how = S.shannon_start("011110")
+    assert E.verify(n, tt, chain) and "jointly" in how and len(chain) == 9
+    chain, how = S.shannon_start("011110", budget=1, kmax=2)            # forces the fallback
+    assert E.verify(n, tt, chain) and "side by side" in how

@@ -25,6 +25,7 @@ Every circuit is re-evaluated here. Writes results/symmetric5_u2.json; --table p
 Usage: python3 symmetric5_u2.py [--table]            (assemble results/symmetric5_u2.json)
        python3 symmetric5_u2.py --knuth PATH/knuthies.dat   (B2 costs from optimal5)
        python3 symmetric5_u2.py --upper V1,V2,... [MINUTES]  (upper bounds; keeps the best circuit)
+       python3 symmetric5_u2.py --shannon V1,V2,... [MINUTES]  (upper bounds from f = x5 ? f1 : f0)
 """
 import json, os, sys
 
@@ -219,7 +220,79 @@ def upper_job(args):
                      f"local_improve.py (windows <= 7, resub 4, plateau 40, {minutes:g} min)")
 
 
+def shannon_start(v, budget=2000000, kmax=14):
+    """A U2 circuit for SYM5:v from f = x5 ? f1 : f0 with f_c = f|x5=c (functions of x1..x4): the pair
+    (f0, f1) synthesized jointly with SAT on 16 rows (smallest k found within the budget), or, if that
+    fails, the two certified optimal circuits of results/restriction_costs.json side by side; then a
+    3-gate multiplexer. Returns (chain, description)."""
+    import local_improve as L
+    full, n, tt = C.suite_function("SYM5:" + v)
+    f0, f1 = EL.restriction(n, tt, 4, 0), EL.restriction(n, tt, 4, 1)
+    G, nid = {}, 5
+    rows = [(tuple((t >> j) & 1 for j in range(4)), (f0[t], f1[t])) for t in range(16)]
+    sol = None
+    for k in range(1, kmax + 1):
+        sol = L.synthesize(4, rows, 2, k, "U2", budget=budget)
+        if sol is not None:
+            break
+    if sol is not None:
+        gates, outmap = sol
+        ids = [0, 1, 2, 3]
+        for (p, q, t) in gates:
+            G[nid] = [ids[p], ids[q], t]
+            ids.append(nid)
+            nid += 1
+        (a, pa), (b, pb) = [(ids[nd], pol) for nd, pol in outmap]
+        how = f"Shannon decomposition on x5: the pair (f|x5=0, f|x5=1) synthesized jointly with SAT ({k} gates)"
+    else:
+        table = {(r["n"], r["tt"]): r for r in json.load(open(os.path.join(R, "restriction_costs.json")))}
+        outs = []
+        for f in (f0, f1):
+            rec = table[(4, EL.tt_hex(f))]
+            ids = {j: j for j in range(4)}
+            for (i, j, l, t) in rec["gates"]:
+                G[nid] = [ids[j], ids[l], tuple(t)]
+                ids[i] = nid
+                nid += 1
+            out = ids[rec["gates"][-1][0]]
+            val = L.evaluate(5, G, L.topo(G, out, 5))[out]
+            want = sum(1 << t for t in range(32) if f[t & 15])
+            assert val in (want, ((1 << 32) - 1) ^ want)
+            outs.append((out, int(val != want)))
+        (a, pa), (b, pb) = outs
+        how = ("Shannon decomposition on x5: the certified optimal circuits of f|x5=0 and f|x5=1 "
+               "(results/restriction_costs.json) side by side")
+    G[nid] = [a, 4, (0, 0, 1, 0) if not pa else (1, 0, 0, 0)]          # f0 and not x5
+    G[nid + 1] = [b, 4, (0, 0, 0, 1) if not pb else (0, 1, 0, 0)]      # f1 and x5
+    G[nid + 2] = [nid, nid + 1, (0, 1, 1, 1)]
+    chain = L.to_chain(n, G, nid + 2, 0)
+    assert E.verify(n, tt, chain), v
+    return chain, how + ", plus a 3-gate multiplexer"
+
+
+def shannon_job(args):
+    v, minutes = args
+    import time
+    import local_improve as L
+    full, n, tt = C.suite_function("SYM5:" + v)
+    chain, how = shannon_start(v)
+    best = L.improve(n, tt, chain, "U2", max_window=7, max_inputs=10, budget=50000, resub=5, plateau=40, seed=1,
+                     log=lambda s: None, deadline=time.time() + 60 * minutes)
+    return v, best, f"{how} ({len(chain)} gates), then local_improve.py (resub 5, plateau 40, {minutes:g} min)"
+
+
 if __name__ == "__main__":
+    if len(sys.argv) >= 3 and sys.argv[1] == "--shannon":      # --shannon V1,V2,... [minutes]
+        from multiprocessing import Pool
+        minutes = float(sys.argv[3]) if len(sys.argv) > 3 else 5
+        with Pool(4, maxtasksperchild=1) as pool:
+            for v, best, source in pool.imap_unordered(shannon_job, [(v, minutes) for v in sys.argv[2].split(",")]):
+                data = load_upper()
+                kept = record_upper_circuit(data, v, best, source)
+                if kept:
+                    save_upper(data)
+                print(v, len(best), "recorded" if kept else "not better", flush=True)
+        sys.exit()
     if len(sys.argv) == 3 and sys.argv[1] == "--knuth":
         knuth_costs(sys.argv[2])
         sys.exit()

@@ -159,16 +159,16 @@ bound for U2, which our own lower bounds already reach in every row.
 | 000010 | [4] | 10 | 12 | Machine-checked |
 | 000011 (THR2_5) | [4, 5] | 10 | 10 | Machine-checked |
 | 000100 (EXACTLY2_5) | [3] | 9 | [13, 14] | lower bound Machine-checked |
-| 000101 | [3, 5] | 10 | [13, 15] | lower bound Machine-checked |
-| 000110 | [3, 4] | 10 | [12, 15] | lower bound Machine-checked |
+| 000101 | [3, 5] | 10 | [13, 14] | lower bound Machine-checked |
+| 000110 | [3, 4] | 10 | [12, 13] | lower bound Machine-checked |
 | 000111 (MAJ_5) | [3, 4, 5] | 9 | 10 | Machine-checked |
 | 001001 (MOD3_5) | [2, 5] | 10 | [13, 15] | lower bound Machine-checked |
 | 001010 | [2, 4] | 8 | [13, 14] | lower bound Machine-checked |
 | 001011 | [2, 4, 5] | 9 | [13, 15] | lower bound Machine-checked |
-| 001100 | [2, 3] | 8 | [12, 18] | lower bound Machine-checked |
-| 001101 | [2, 3, 5] | 10 | [13, 19] | lower bound Machine-checked |
-| 001110 | [2, 3, 4] | 10 | [11, 20] | lower bound Machine-checked |
-| 010001 | [1, 5] | 9 | [12, 17] | lower bound Machine-checked |
+| 001100 | [2, 3] | 8 | [12, 15] | lower bound Machine-checked |
+| 001101 | [2, 3, 5] | 10 | [13, 17] | lower bound Machine-checked |
+| 001110 | [2, 3, 4] | 10 | [11, 13] | lower bound Machine-checked |
+| 010001 | [1, 5] | 9 | [12, 14] | lower bound Machine-checked |
 | 010010 | [1, 4] | 9 | [13, 15] | lower bound Machine-checked |
 | 010101 (parity_5) | [1, 3, 5] | 4 | 12 | Theorem |
 | 010110 | [1, 3, 4] | 11 | [13, 16] | lower bound Machine-checked |
