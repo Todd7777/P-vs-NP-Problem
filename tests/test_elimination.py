@@ -64,7 +64,7 @@ def test_substitution_deletes_what_the_lemma_says():
                 assert got == want
 
 
-@pytest.mark.parametrize("level", [1, 2])
+@pytest.mark.parametrize("level", [1, 2, 3])
 def test_constraints_keep_an_optimal_circuit_for_every_3_input_function(level):
     """At k = C(f), with the exact restriction costs, the CNF plus the elimination constraints is
     satisfiable for every function of 3 inputs that depends on all of them."""
@@ -93,7 +93,7 @@ def test_constraints_keep_an_optimal_circuit_for_every_3_input_function(level):
     assert count == 218
 
 
-@pytest.mark.parametrize("level", [1, 2])
+@pytest.mark.parametrize("level", [1, 2, 3])
 def test_constraints_bind(level):
     """The constraints are not vacuous: with an (unjustified) bound that forbids any fan-out above 1,
     a function whose every circuit needs an input of fan-out 2 becomes unsatisfiable."""
