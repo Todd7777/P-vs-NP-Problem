@@ -128,8 +128,8 @@ def build():
                     break
                 lower = k + 1
             gates = upper[v]["gates"] if v in upper else None
-            if ref.get("upper") == lower and ref.get("gates"):  # a circuit at the lower bound: exact
-                gates = ref["gates"]
+            if ref.get("gates") and (gates is None or len(ref["gates"]) < len(gates)):
+                gates = ref["gates"]                         # a smaller circuit found by the scan
             if known:                                        # the suite records may be stronger
                 kl, ku, klabel, ksrc, kgates = known
                 if kl > lower:

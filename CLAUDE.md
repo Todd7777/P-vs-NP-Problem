@@ -85,6 +85,14 @@ full runs take much longer.
   EXACTLY2_5's cube (x1,x2) over gate 7 leaves 6 of 21 sub-cubes undecided at 2M with level 3; a
   certified k = 13 refutation looks like tens of CPU-hours or more. Symmetric functions can be named
   'SYM<n>:<bits>' in every script (bits[w] = value on inputs of weight w; SYM5:001000 is EXACTLY2_5).
+- Symmetric functions of 5 inputs in U2 (`symmetric5_u2.py`, `results/symmetric5_u2.json`, README
+  table): 19 classes. Exact: AND5 = 4 and parity = 12 (Theorem), THR2 = 10, MAJ = 10, NAE5 = 9
+  (Machine-checked). The other 14 are intervals with Machine-checked lower bounds of 11-13 (Lemma 5(a)
+  with all 16 restriction costs certified, then `certify_u2_suite.py --elim 3`: refutations with
+  elimination constraints, 3M conflicts per k) and upper bounds 12-20 from local improvement of
+  XOR-expanded B2 circuits (`symmetric5_upper.json`; XOR-budgeted B2 searches found nothing within
+  6 min). The elimination scan is fast: most k up to 12 fall in seconds. Next: better upper bounds
+  (the gaps are mostly on that side), e.g. cube gauges at k = lower with `--elim` (they print circuits).
 - The U2 cost of all 65,536 functions of 4 variables is now complete (`results/n4_u2_complete.json`):
   the four NPN classes the earlier runs left open all cost 10 (`certify_n4_u2.py`, checked proofs).
   `summarize_u2_n4.py` cannot be rerun, because its input `results/n4_u2_closure.json` was never committed.
