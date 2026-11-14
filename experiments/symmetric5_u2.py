@@ -10,9 +10,10 @@ into 19 classes; each is represented by its smallest vector with b_0 = 0.
 For each class the record combines:
   - lower bounds. (1) Lemma 5(a) of ENCODING.md: every circuit for f reads each input, so
     C(f) >= C(f|x_v=c) + 1, with the 4-input restriction costs Machine-checked in
-    results/restriction_costs.json (certify_restrictions.py). (2) Refutations of larger k recorded
-    in results/cube_certificates.json (certify_cubes.py, with or without --elim), accepted only when
-    every smaller k is refuted, by (1) or by an earlier certificate. (3) For a class that contains an
+    results/restriction_costs.json (certify_restrictions.py). (2) Refutations of larger k, each with
+    a drat-trim-verified proof, in results/symmetric5_refutations.json (certify_u2_suite.py --only
+    SYM5:... --proofs ... --out results/symmetric5_refutations.json) or results/cube_certificates.json
+    (certify_cubes.py, with or without --elim), accepted only in increasing k from (1). (3) For a class that contains an
     explicit-suite function, the value already recorded in results/u2_suite.json or
     results/explicit_final.json.
   - upper bounds: verified circuits (results/symmetric5_upper.json, from the XOR expansion of a B2
@@ -33,6 +34,7 @@ import exact_circuit_complexity as E
 
 R = os.path.join(os.path.dirname(os.path.abspath(__file__)), "results")
 OUT = os.path.join(R, "symmetric5_u2.json")
+REFS = os.path.join(R, "symmetric5_refutations.json")     # certify_u2_suite.py --only SYM5:... --out
 SUITE = {"010101": "parity_5", "000111": "MAJ_5", "000011": "THR2_5", "000100": "EXACTLY2_5", "001001": "MOD3_5"}
 SUITE_VECTOR = {"parity_5": "010101", "MAJ_5": "000111", "THR2_5": "001111", "EXACTLY2_5": "001000", "MOD3_5": "100100"}
 
@@ -95,6 +97,7 @@ def suite_record(v):
 def build():
     upper = {u["v"]: u for u in load_upper()["classes"]}
     certs = json.load(open(os.path.join(R, "cube_certificates.json")))
+    refs = {d["name"]: d for d in json.load(open(REFS))} if os.path.exists(REFS) else {}
     rows = []
     for v in classes():
         full, n, tt = C.suite_function("SYM5:" + v)
@@ -111,15 +114,22 @@ def build():
             rec["restriction_costs"] = used
             rec["lower_from_restrictions"] = lower
             src = ["Lemma 5(a) with the restriction costs in results/restriction_costs.json"]
+            ref = refs.get(full, {})
+            plain = {st["k"] for st in ref.get("per_k", []) if st["result"] is False and st.get("drat_trim_verified")}
             for k in range(lower, 20):                       # raise by certified refutations, in order
                 ok = [c for c in certs if c["name"] == full and c["basis"] == "U2" and c["k"] == k
                       and c["all_unsat_and_verified"]]
-                if not ok:
+                if k in plain:
+                    src.append(f"k = {k}: results/symmetric5_refutations.json")
+                elif ok:
+                    src.append(f"k = {k}: results/cube_certificates.json"
+                               + (f" (elimination level {ok[0]['elimination'].get('level', 1)})" if "elimination" in ok[0] else ""))
+                else:
                     break
                 lower = k + 1
-                src.append(f"k = {k}: results/cube_certificates.json"
-                           + (f" (elimination level {ok[0]['elimination'].get('level', 1)})" if "elimination" in ok[0] else ""))
             gates = upper[v]["gates"] if v in upper else None
+            if ref.get("upper") == lower and ref.get("gates"):  # a circuit at the lower bound: exact
+                gates = ref["gates"]
             if known:                                        # the suite records may be stronger
                 kl, ku, klabel, ksrc, kgates = known
                 if kl > lower:
